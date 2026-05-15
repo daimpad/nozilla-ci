@@ -14,18 +14,6 @@ Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 
 ---
 
-## Wer wir sind
-
-nozilla ist eine Boutique-Agentur für **ehrliche Software**. Wir bauen digitale Plattformen, Prototypen und Interfaces für Menschen, die Komplexität ernst nehmen.
-
-Unsere Marke hat zwei Gesichter:
-- **Außen**: handwerklich, neo-brutalistisch — klare Kanten, schwere Typografie, Papier-Gelb, Tinte-Schwarz
-- **Innen**: augenzwinkernde Retro-Digitales — Pixel-Gemüse, Mono-Kommentare, grüner Leucht-Marker
-
-**Seriös da, wo es zählt; verspielt, wo es gut tut.**
-
----
-
 ## 🎨 Farben
 
 Unsere Palette hat **genau drei Rollen** — mehr nicht.
