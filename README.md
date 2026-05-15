@@ -391,16 +391,5 @@ Englisch, hohl. (Und würde Emoji brauchen, die wir nicht verwenden.)
 - Schriften: Zilla Slab, Inter, Space Mono (lokale Dateien notwendig)
 - Eckenradius: **0** überall
 
----
 
-## 📞 Fragen?
 
-- **Email**: ci@nozilla.de
-- **Visuelle Referenz**: [`index.html`](./index.html)
-- **Für Claude Code**: [`CLAUDE.md`](./CLAUDE.md)
-
----
-
-**nozilla CI — v1.0 · April 2026**
-
-_Gute digitale Dienste._
