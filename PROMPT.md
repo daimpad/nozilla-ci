@@ -7,8 +7,31 @@ Kopiere diesen Prompt und füge ihn am Anfang eines neuen Projekts ein, um autom
 ## 📋 Prompt für neue Projekte
 
 ```
+═══════════════════════════════════════════════════════════════
+NOZILLA CORPORATE IDENTITY — MASTER PROMPT FÜR CLAUDE CODE
+═══════════════════════════════════════════════════════════════
+
+PROJEKT: nozilla — Gute digitale Dienste
+REPO: https://github.com/daimpad/nozilla-ci
+BRANCH: main
+
+CI-DOKUMENTATION:
+  📖 README (Praktische Richtlinien):
+     https://github.com/daimpad/nozilla-ci/blob/main/README.md
+  
+  🎨 Visuelle Referenz (interaktiv):
+     https://github.com/daimpad/nozilla-ci/blob/main/index.html
+  
+  ⚡ Quick-Reference für KI:
+     https://github.com/daimpad/nozilla-ci/blob/main/CLAUDE.md
+
+KONTAKT: ci@nozilla.de
+
+═══════════════════════════════════════════════════════════════
+
 Du arbeitest auf dem nozilla-Projekt. Alle Design, Code und Kommunikation folgen den 
-nozilla Corporate Identity Guidelines. Diese sind nicht optional.
+nozilla Corporate Identity Guidelines. Diese sind nicht optional — sie sind Teil 
+der Marken-DNA und müssen konsequent angewendet werden.
 
 BRAND IDENTITY:
 - Boutique-Agentur für ehrliche Software
@@ -130,7 +153,7 @@ ANWEISUNG FÜR CLAUDE CODE:
 
 Wenn der Nutzer Design, UI, Kopie oder Code anforderungen gibt:
 
-1. IMMER die nozilla Guidelines anwenden
+1. IMMER die nozilla Guidelines anwenden (nicht optional, nicht verhandelbar)
 2. Fragen stellen, wenn etwas gegen die Regeln verstößt
 3. Farben: #00FF9C (Signal), #FFFEE5 (Papier), #000 (Kontur)
 4. Typografie: Zilla Slab > Inter > Space Mono
@@ -139,37 +162,84 @@ Wenn der Nutzer Design, UI, Kopie oder Code anforderungen gibt:
 7. Green Marker: 1–3 pro Absatz, nur Schlüsselwörter
 
 WENN DU UNSICHER BIST:
-→ Konsultiere README.md oder index.html
+→ Konsultiere README.md (https://github.com/daimpad/nozilla-ci/blob/main/README.md)
+→ Oder index.html (https://github.com/daimpad/nozilla-ci/blob/main/index.html)
 → Frage den Nutzer, wie es mit den Guidelines abgestimmt werden soll
+
+WORKFLOW BEI NEUEN AUFGABEN:
+
+Schritt 1: Immer kurz überprüfen, ob Anforderung mit CI kompatibel ist
+  ✓ „Erstelle Button mit #00FF9C und 0 border-radius" → OK
+  ✗ „Erstelle Button mit rundem Design und 5 Farben" → FRAGE nach Alignment
+  
+Schritt 2: Code/Design mit CI-Tokens schreiben
+  --nz-green, --nz-paper, --nz-ink verwenden
+  Zilla Slab, Inter, Space Mono einsetzen
+  
+Schritt 3: Bei Kopie/Text deutsch und direkt schreiben
+  Keine Buzzwords, keine Emoji, Green Marker nutzen
+  
+Schritt 4: Am Ende kurz zusammenfassen, was du gemacht hast und warum es nozilla-konform ist
 ```
 
 ---
 
 ## 🔄 Wie man es benutzt
 
-### Option 1: Am Projekt-Start
-Öffne Claude Code und gib diesen Prompt am Anfang ein:
+### Option 1: Am Projekt-Start (Empfohlen)
+Öffne Claude Code und gib den kompletten Prompt am Anfang ein:
 
 ```
+PROJEKT: nozilla — Gute digitale Dienste
+REPO: https://github.com/daimpad/nozilla-ci
+
+CI-DOKUMENTATION:
+  📖 README: https://github.com/daimpad/nozilla-ci/blob/main/README.md
+  🎨 index.html: https://github.com/daimpad/nozilla-ci/blob/main/index.html
+  ⚡ CLAUDE.md: https://github.com/daimpad/nozilla-ci/blob/main/CLAUDE.md
+
 Du arbeitest auf dem nozilla-Projekt. [... Rest des Prompts ...]
 ```
 
-### Option 2: /loop für regelmäßige Projekte
-Wenn du öfter neue nozilla-Projekte startest:
+### Option 2: GitHub-Link-Variante (Minimal)
+Wenn du schnell starten möchtest:
 
 ```
-/loop 1h "Du arbeitest auf dem nozilla-Projekt. [...]"
+Ich starte ein nozilla-Projekt.
+
+Nutze die Corporate Identity Guidelines von hier:
+https://github.com/daimpad/nozilla-ci/blob/main/README.md
+
+Alle Design-, Code- und Text-Entscheidungen müssen mit diesen Guidelines 
+abgestimmt sein. Frage mich, wenn etwas unklar ist.
+
+Meine Anforderung: [...]
 ```
 
-### Option 3: Als Session-Hook konfigurieren
-In `.claude/settings.json`:
+### Option 3: Direct Link zum Prompt im Repo
+Verlinke auf diesen Prompt direkt:
+
+```
+Nutze den Master Prompt von hier:
+https://github.com/daimpad/nozilla-ci/blob/main/PROMPT.md
+```
+
+### Option 4: Als Session-Hook konfigurieren (Advanced)
+In `.claude/settings.json` im nozilla-Projekt:
 
 ```json
 {
   "hooks": {
-    "session-start": "echo 'Du arbeitest auf dem nozilla-Projekt...' && source PROMPT.md"
+    "session-start": "curl -s https://raw.githubusercontent.com/daimpad/nozilla-ci/main/PROMPT.md | head -100"
   }
 }
+```
+
+### Option 5: Für regelmäßige nozilla-Projekte
+Nutze `/loop` um den Prompt regelmäßig zu laden:
+
+```
+/loop session-start "Nutze nozilla CI: https://github.com/daimpad/nozilla-ci/blob/main/README.md"
 ```
 
 ---
@@ -185,15 +255,28 @@ Erstelle mir eine Website.
 
 ✅ Gut:
 ```
-Erstelle mir eine Landingpage für nozilla mit einer Hero-Section, 
-Feature-Liste und CTA. Verwende die nozilla CI (README.md).
+Erstelle mir eine Landingpage für nozilla mit Hero-Section, 
+Feature-Liste und CTA. Verwende die nozilla CI.
+
+Repo: https://github.com/daimpad/nozilla-ci/blob/main/README.md
 ```
 
-✅ Sehr gut:
+✅ Sehr gut (Empfohlen):
 ```
 Ich starte ein neues nozilla-Projekt: [Projektname]
-Verwende alle Guidelines aus README.md — Farben, Typografie, Voice, die 10 Regeln.
+
+Corporate Identity: https://github.com/daimpad/nozilla-ci
+Guidelines: https://github.com/daimpad/nozilla-ci/blob/main/README.md
+
+Verwende alle Regeln — Farben, Typografie, Voice, die 10 Regeln.
 Hier meine Anforderung: [...]
+```
+
+✅ Mit Master Prompt (Best Practice):
+```
+[Gib den kompletten Prompt oben ein]
+
+Meine neue Aufgabe für das nozilla-Projekt: [...]
 ```
 
 ---
@@ -203,22 +286,36 @@ Hier meine Anforderung: [...]
 Mit diesem Prompt wird Claude Code automatisch:
 
 ✅ **Design-Entscheidungen**: #00FF9C für CTAs, #FFFEE5 für Hintergründe
-✅ **Typografie**: Zilla Slab für Headlines, Inter für Body
-✅ **Code-Struktur**: CSS-Variablen mit nz-Präfix, 0 Radius überall
+✅ **Typografie**: Zilla Slab für Headlines, Inter für Body, Space Mono für Labels
+✅ **Code-Struktur**: CSS-Variablen mit nz-Präfix (--nz-green, --nz-paper, etc.), 0 Radius überall
+✅ **Formen & Schatten**: Hard offset shadows (6px 6px 0 0), keine Verläufe, keine Glas-Effekte
 ✅ **Kopie-Ton**: Direkt, ehrlich, Deutsch, keine Buzzwords
 ✅ **Green Marker**: Automatisch auf 1–3 Schlüsselwörter pro Absatz
-✅ **Fragen bei Unsicherheit**: Statt zu raten
+✅ **Icons**: Nur Custom SVGs, keine Icon-Fonts oder fremden Icon-Sets
+✅ **Fragen bei Unsicherheit**: Konsultiert die Docs oder fragt dich nach Alignment
+✅ **Kontext-Bewusstsein**: Referenziert GitHub-Links wenn nötig
 
 ---
 
-## 📞 Fragen zum Prompt?
+## 📞 Referenzen & Support
 
-- Siehe `README.md` für detaillierte Erklärungen
-- Siehe `index.html` für visuelle Beispiele
+**Documentation:**
+- README.md (Praktisch): https://github.com/daimpad/nozilla-ci/blob/main/README.md
+- index.html (Visuell): https://github.com/daimpad/nozilla-ci/blob/main/index.html
+- CLAUDE.md (Quick-Ref): https://github.com/daimpad/nozilla-ci/blob/main/CLAUDE.md
+- PROMPT.md (Master): https://github.com/daimpad/nozilla-ci/blob/main/PROMPT.md
+
+**Fragen?**
 - Email: ci@nozilla.de
+- GitHub Repo: https://github.com/daimpad/nozilla-ci
+- Issue erstellen: https://github.com/daimpad/nozilla-ci/issues
 
 ---
 
 **nozilla CI — v1.0 · April 2026**
+
+Repository: https://github.com/daimpad/nozilla-ci
+Maintainer: nozilla GmbH
+License: Internal Use
 
 _Gute digitale Dienste._
