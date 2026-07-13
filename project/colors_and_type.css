@@ -1,0 +1,52 @@
+/* ============================================================================
+   nozilla — Foundation: Colors & Type
+   Shared token foundation loaded by the Corporate Identity document
+   (index.html / ci.css).
+
+   This is the file index.html has always referenced. It defines the brand
+   tokens and loads the brand type — the SAME token vocabulary and values as
+   design-system.css, so the CI document and the component library stay in
+   lockstep. design-system.css remains the canonical, self-contained reference;
+   keep the shared values below in sync with it.
+
+   Fonts: loaded from Google Fonts for portability. For a fully self-hosted
+   deploy, replace the @import with local @font-face rules pointing at
+   project/fonts/ (brand preference: self-contained assets).
+============================================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Zilla+Slab:wght@500;600;700&display=swap");
+
+:root {
+  /* ── Type families ─────────────────────────────────────────────────────── */
+  --nz-font-display: "Zilla Slab", Georgia, "Times New Roman", serif;
+  --nz-font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --nz-font-mono:    "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* ── Signal — the one action color, both themes ────────────────────────── */
+  --nz-green:        #00FF9C;
+  --nz-green-strong: #00E88D;
+  --nz-green-soft:   #B7FFE0;
+
+  /* ── Paper — the light canvas ──────────────────────────────────────────── */
+  --nz-paper:        #FFFEE5;
+  --nz-paper-alt:    #FAF8D4;
+  --nz-paper-deep:   #F4F1C4;
+
+  /* ── Ink — text, lines, borders (with alpha steps) ─────────────────────── */
+  --nz-ink:          #000000;
+  --nz-ink-70:       rgba(0, 0, 0, .72);  /* secondary text          */
+  --nz-ink-50:       rgba(0, 0, 0, .50);  /* muted                    */
+  --nz-ink-20:       rgba(0, 0, 0, .18);  /* hairlines                */
+
+  /* ── Structural — shared with the design system ────────────────────────── */
+  --nz-radius:        0;      /* always. sharp corners only. */
+  --nz-stroke-hair:   1.5px;
+  --nz-stroke-rule:   2px;
+  --nz-stroke-strong: 3px;
+  --nz-stroke-heavy:  4px;
+  --nz-shadow:        6px 6px 0 0 var(--nz-ink);  /* hard offset, never blur */
+  --nz-container:     1200px;
+  --nz-dur:           160ms;
+  --nz-ease:          cubic-bezier(.2, 0, 0, 1);
+
+  color-scheme: light;
+}

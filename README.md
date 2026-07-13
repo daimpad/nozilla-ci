@@ -9,8 +9,92 @@ Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 ## 📖 Dokumentation
 
 - **Visuelle Version** (mit Farbmustern, Typographie-Beispiele, Icons): [`index.html`](./index.html)
+- **Design System** (Komponenten + Dark Theme, live): [`design-system.html`](./design-system.html)
 - **Schnell-Referenz für Claude**: [`CLAUDE.md`](./CLAUDE.md)
 - **Diese Datei**: Praktische Richtlinien für Menschen
+
+---
+
+## ⚙️ Design System
+
+Ein produktionsfertiges, theme-fähiges Komponenten-System — inklusive warmem Dark Theme. Neo-brutalistisch per Disziplin: scharfe Kanten, harte Offset-Schatten, kein Glas.
+
+| Datei | Zweck |
+|-------|-------|
+| [`design-system.css`](./design-system.css) | Die Bibliothek — Tokens + Komponenten, selbst-enthalten |
+| [`design-system.html`](./design-system.html) | Live-Showcase mit Theme-Toggle |
+| [`project/colors_and_type.css`](./project/colors_and_type.css) | Geteilte Basis (Farben + Fonts) für das CI-Dokument |
+
+### Einbinden
+
+```html
+<!-- Nur das Design System (bringt alle Tokens selbst mit) -->
+<link rel="stylesheet" href="design-system.css"/>
+
+<!-- Fonts: Zilla Slab · Inter · Space Mono -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Zilla+Slab:wght@500;600;700&display=swap"/>
+```
+
+`design-system.css` und `project/colors_and_type.css` teilen **dasselbe Token-Vokabular** (`--nz-signal`/`--nz-green`, `--nz-paper`, `--nz-ink`, `--nz-font-*` …). Das CI-Dokument und die Komponenten bleiben so in Sync.
+
+### Theming
+
+Light ist Default. Dark greift automatisch über `prefers-color-scheme` — oder explizit per `data-theme`, das die OS-Einstellung überschreibt:
+
+```html
+<html data-theme="dark"> … </html>   <!-- erzwingt Dark   -->
+<html data-theme="light"> … </html>  <!-- erzwingt Light  -->
+<html> … </html>                     <!-- folgt dem System -->
+```
+
+```js
+// Toggle + Persistenz
+const root = document.documentElement;
+const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+localStorage.setItem('nz-theme', next);
+```
+
+Der Dark-Modus ist **warm** (Near-Black `#0C0C0A`, das das Papier-Gelb echot), Text wird zu Papier `#FFFEE5`, harte Schatten werden papierfarben. Signal-Grün bleibt in beiden Themes konstant.
+
+### Semantische Tokens
+
+Komponenten referenzieren nur semantische Tokens — ein Theme-Wechsel tauscht die Map, nicht die Komponenten.
+
+| Token | Rolle | Light | Dark |
+|-------|-------|-------|------|
+| `--nz-bg` | Canvas | `#FFFEE5` | `#0C0C0A` |
+| `--nz-surface` | Karten/Panels | `#FFFFFF` | `#17160F` |
+| `--nz-text` | Primärtext | `#000000` | `#FFFEE5` |
+| `--nz-text-muted` | Sekundärtext | ink/66 | paper/64 |
+| `--nz-line` | Rahmen/Linien | `#000000` | `#FFFEE5` |
+| `--nz-signal` | Aktionsfarbe | `#00FF9C` | `#00FF9C` |
+| `--nz-shadow-color` | Harte Schatten | `#000000` | `#FFFEE5` |
+
+### Komponenten (Auswahl)
+
+```html
+<!-- Buttons: primary / secondary / ghost / danger · sm / md / lg -->
+<button class="nz-btn nz-btn--primary">Los geht's</button>
+<button class="nz-btn nz-btn--secondary nz-btn--sm">Mehr</button>
+
+<!-- Card mit Signal-Schatten -->
+<div class="nz-card nz-card--featured">
+  <div class="nz-label nz-card__label">Akzent</div>
+  <div class="nz-card__title">Featured</div>
+  <p class="nz-muted nz-small">Für <mark>eine</mark> Sache pro Screen.</p>
+</div>
+
+<!-- Badge · Alert · Feld -->
+<span class="nz-badge nz-badge--signal">Live</span>
+<div class="nz-alert nz-alert--signal">…</div>
+<label class="nz-field">
+  <span class="nz-field__label">E-Mail</span>
+  <input class="nz-input" type="email" placeholder="ci@nozilla.de"/>
+</label>
+```
+
+Enthalten: Buttons · Cards · Formulare (Input/Select/Textarea/Checkbox/Radio/Switch) · Badges & Status-Dots · Alerts · Tabs · Tabelle · Progress · Tooltip · Avatar · Swatches. Alle mit sichtbaren `:focus-visible`-Ringen; Bewegung hinter `prefers-reduced-motion`.
 
 ---
 
