@@ -9,11 +9,10 @@
    lockstep. design-system.css remains the canonical, self-contained reference;
    keep the shared values below in sync with it.
 
-   Fonts: loaded from Google Fonts for portability. For a fully self-hosted
-   deploy, replace the @import with local @font-face rules pointing at
-   project/fonts/ (brand preference: self-contained assets).
+   Fonts: self-hosted via fonts.css (@font-face → project/fonts/*.ttf).
+   No third-party CDN — the CI renders fully offline.
 ============================================================================ */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Zilla+Slab:wght@500;600;700&display=swap");
+@import url("fonts.css");
 
 :root {
   /* ── Type families ─────────────────────────────────────────────────────── */

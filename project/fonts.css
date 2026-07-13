@@ -1,0 +1,57 @@
+/* ============================================================================
+   nozilla — Self-hosted brand fonts
+   Zilla Slab · Inter · Space Mono — all SIL Open Font License 1.1.
+   See project/fonts/OFL.txt. Bundled so the CI renders offline and
+   without a third-party font CDN (brand preference: self-contained assets).
+============================================================================ */
+
+/* ── Zilla Slab — Display ──────────────────────────────────────────────── */
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: normal; font-weight: 500; font-display: swap;
+  src: url("fonts/ZillaSlab-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/ZillaSlab-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Zilla Slab";
+  font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/ZillaSlab-Bold.ttf") format("truetype");
+}
+
+/* ── Inter — Body ──────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Inter";
+  font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal; font-weight: 500; font-display: swap;
+  src: url("fonts/Inter-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/Inter-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/Inter-Bold.ttf") format("truetype");
+}
+
+/* ── Space Mono — Labels & Code ────────────────────────────────────────── */
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
+}
