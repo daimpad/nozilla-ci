@@ -188,6 +188,21 @@
   --nz-shadow-signal: 6px 6px 0 0 var(--nz-signal);
 }
 
+/* Foundation aliases — the legacy token names used by the CI document
+   (project/colors_and_type.css · ci.css · index.html). Exposing them here
+   means anything built on the design system shares one vocabulary with the
+   corporate-identity document. These resolve lazily, so the alpha-ink names
+   follow the active theme. */
+:root {
+  --nz-green:     var(--nz-signal);
+  --nz-paper:     var(--nz-c-paper);
+  --nz-ink:       var(--nz-c-ink);
+  --nz-ink-70:    var(--nz-text-muted);
+  --nz-ink-50:    var(--nz-text-faint);
+  --nz-ink-20:    var(--nz-line-soft);
+  --nz-shadow:    var(--nz-shadow-md);
+}
+
 /* ── 3. BASE ─────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 

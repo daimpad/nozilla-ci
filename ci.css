@@ -1,6 +1,7 @@
 /* Nozilla CI — Corporate Identity Document Styles */
 
 html, body { margin: 0; padding: 0; background: var(--nz-paper); color: var(--nz-ink); }
+body { font-family: var(--nz-font-body); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
 
 .page { max-width: 1040px; margin: 0 auto; padding: 64px 56px 120px; }
 
