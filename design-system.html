@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>nozilla — Design System</title>
+  <meta name="description" content="nozilla Design System — Komponenten, Tokens & Dark Theme. Gute digitale Dienste."/>
+  <meta name="color-scheme" content="light dark"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Zilla+Slab:wght@500;600;700&display=swap"/>
+  <link rel="stylesheet" href="design-system.css"/>
+  <style>
+    /* Page-level scaffolding only — everything visual comes from the system. */
+    body { padding-bottom: var(--nz-space-10); }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-4);
+      padding: var(--nz-space-4) var(--nz-space-6);
+      background: var(--nz-bg);
+      border-bottom: var(--nz-stroke-rule) solid var(--nz-line);
+    }
+    .brand { font-family: var(--nz-font-display); font-weight: 700; font-size: 24px; letter-spacing: -0.02em; }
+    .brand span { color: var(--nz-signal); -webkit-text-stroke: 0; }
+    .hero { padding: var(--nz-space-9) 0 var(--nz-space-7); }
+    .section { padding: var(--nz-space-8) 0; border-top: var(--nz-stroke-rule) solid var(--nz-line); }
+    .section__head { display: flex; align-items: baseline; gap: var(--nz-space-4); margin-bottom: var(--nz-space-6); flex-wrap: wrap; }
+    .section__num { font-family: var(--nz-font-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--nz-text-muted); }
+    .demo { margin-top: var(--nz-space-5); }
+    .swatch-scale { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--nz-space-4); }
+    .scale-row { display: flex; align-items: baseline; gap: var(--nz-space-4); padding: var(--nz-space-3) 0; border-top: var(--nz-stroke-hair) solid var(--nz-line-soft); }
+    .scale-row:first-child { border-top: 0; }
+    .space-demo { display: flex; align-items: flex-end; gap: var(--nz-space-3); flex-wrap: wrap; }
+    .space-box { background: var(--nz-signal); border: var(--nz-stroke-rule) solid var(--nz-line); }
+    .space-box i { display: block; font-family: var(--nz-font-mono); font-size: 10px; text-align: center; color: var(--nz-text-muted); margin-top: 6px; font-style: normal; }
+    .theme-toggle { align-items: center; }
+    footer.foot { margin-top: var(--nz-space-9); padding: var(--nz-space-6); border-top: var(--nz-stroke-rule) solid var(--nz-line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--nz-space-3); }
+  </style>
+</head>
+<body>
+  <!-- Prevent theme flash: apply stored/OS preference before first paint -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('nz-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+      } catch (e) {}
+    })();
+  </script>
+
+  <header class="topbar">
+    <div class="brand">nozilla<span>.</span></div>
+    <div class="nz-row theme-toggle">
+      <span class="nz-label" id="theme-label">Light</span>
+      <label class="nz-switch" title="Theme umschalten">
+        <input type="checkbox" id="theme-switch" role="switch" aria-label="Dark Theme umschalten"/>
+        <span class="nz-switch__track"><span class="nz-switch__thumb"></span></span>
+      </label>
+    </div>
+  </header>
+
+  <div class="nz-container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="nz-label">Design System · v1.0 · April 2026</div>
+      <h1 class="nz-display" style="margin-top: var(--nz-space-4);">Ein <mark>ehrliches</mark><br/>System.</h1>
+      <p class="nz-lead nz-muted" style="max-width: 620px; margin-top: var(--nz-space-5);">
+        Neo-brutalistisch per Disziplin: scharfe Kanten, harte Schatten, kein Glas.
+        Fancy durch Handwerk — inklusive warmem Dark Theme. Schalte oben um.
+      </p>
+      <div class="nz-row" style="margin-top: var(--nz-space-6);">
+        <a class="nz-btn nz-btn--primary nz-btn--lg" href="#components">Komponenten ansehen →</a>
+        <a class="nz-btn nz-btn--secondary nz-btn--lg" href="README.md">Guidelines</a>
+      </div>
+    </section>
+
+    <!-- FOUNDATIONS: COLOR -->
+    <section class="section" id="farbe">
+      <div class="section__head">
+        <span class="section__num">01 — Foundations</span>
+        <h2>Farbe &amp; Themes.</h2>
+      </div>
+      <p class="nz-muted" style="max-width: 640px;">Semantische Tokens bilden beide Themes ab. Signal-Grün bleibt konstant — es ist die einzige Aktionsfarbe, hell wie dunkel.</p>
+      <div class="swatch-scale demo">
+        <div class="nz-swatch"><div class="nz-swatch__chip" style="background:#00FF9C;"></div><div class="nz-swatch__info"><div class="nz-swatch__name">Signal</div><div class="nz-swatch__hex">#00FF9C</div></div></div>
+        <div class="nz-swatch"><div class="nz-swatch__chip" style="background:#FFFEE5;"></div><div class="nz-swatch__info"><div class="nz-swatch__name">Papier</div><div class="nz-swatch__hex">#FFFEE5</div></div></div>
+        <div class="nz-swatch"><div class="nz-swatch__chip" style="background:#0C0C0A;"></div><div class="nz-swatch__info"><div class="nz-swatch__name">Ink 900</div><div class="nz-swatch__hex">#0C0C0A</div></div></div>
+        <div class="nz-swatch"><div class="nz-swatch__chip" style="background:#000;"></div><div class="nz-swatch__info"><div class="nz-swatch__name">Ink</div><div class="nz-swatch__hex">#000000</div></div></div>
+        <div class="nz-swatch"><div class="nz-swatch__chip" style="background:#FF5F1F;"></div><div class="nz-swatch__info"><div class="nz-swatch__name">Warn</div><div class="nz-swatch__hex">#FF5F1F</div></div></div>
+      </div>
+    </section>
+
+    <!-- FOUNDATIONS: TYPE -->
+    <section class="section" id="typografie">
+      <div class="section__head">
+        <span class="section__num">02 — Foundations</span>
+        <h2>Typografie.</h2>
+      </div>
+      <div class="nz-stack demo">
+        <div class="scale-row"><span class="nz-label" style="width:120px;">Display</span><span class="nz-display" style="font-size:56px;">Zilla Slab</span></div>
+        <div class="scale-row"><span class="nz-label" style="width:120px;">Heading</span><h3 style="margin:0;">Klare Hierarchie im System.</h3></div>
+        <div class="scale-row"><span class="nz-label" style="width:120px;">Body</span><span style="font-size:var(--nz-text-base);">Inter Regular — 17px, line-height 1.55.</span></div>
+        <div class="scale-row"><span class="nz-label" style="width:120px;">Mono</span><code>Space Mono · LABELS &amp; CODE</code></div>
+      </div>
+    </section>
+
+    <!-- FOUNDATIONS: ELEVATION + SPACING -->
+    <section class="section">
+      <div class="section__head">
+        <span class="section__num">03 — Foundations</span>
+        <h2>Elevation &amp; Raster.</h2>
+      </div>
+      <div class="nz-grid nz-grid--2 demo">
+        <div>
+          <div class="nz-label" style="margin-bottom:var(--nz-space-4);">Harte Schatten — nie Blur</div>
+          <div class="nz-row" style="gap:var(--nz-space-6);">
+            <div class="nz-card" style="box-shadow:var(--nz-shadow-sm);">sm · 3px</div>
+            <div class="nz-card" style="box-shadow:var(--nz-shadow-md);">md · 6px</div>
+            <div class="nz-card" style="box-shadow:var(--nz-shadow-lg);">lg · 10px</div>
+          </div>
+        </div>
+        <div>
+          <div class="nz-label" style="margin-bottom:var(--nz-space-4);">Spacing — 4px Basis</div>
+          <div class="space-demo">
+            <div><div class="space-box" style="width:8px;height:8px;"></div><i>8</i></div>
+            <div><div class="space-box" style="width:16px;height:16px;"></div><i>16</i></div>
+            <div><div class="space-box" style="width:24px;height:24px;"></div><i>24</i></div>
+            <div><div class="space-box" style="width:32px;height:32px;"></div><i>32</i></div>
+            <div><div class="space-box" style="width:48px;height:48px;"></div><i>48</i></div>
+            <div><div class="space-box" style="width:64px;height:64px;"></div><i>64</i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS: BUTTONS -->
+    <section class="section" id="components">
+      <div class="section__head">
+        <span class="section__num">04 — Komponenten</span>
+        <h2>Buttons.</h2>
+      </div>
+      <p class="nz-muted">Hover hebt an, Klick schlägt zu — der Schatten kollabiert. Reiner Transform, kein Weichzeichner.</p>
+      <div class="nz-row demo">
+        <button class="nz-btn nz-btn--primary">Primär</button>
+        <button class="nz-btn nz-btn--secondary">Sekundär</button>
+        <button class="nz-btn nz-btn--ghost">Ghost</button>
+        <button class="nz-btn nz-btn--danger">Löschen</button>
+        <button class="nz-btn nz-btn--primary" disabled>Disabled</button>
+      </div>
+      <div class="nz-row demo">
+        <button class="nz-btn nz-btn--primary nz-btn--sm">Small</button>
+        <button class="nz-btn nz-btn--primary">Medium</button>
+        <button class="nz-btn nz-btn--primary nz-btn--lg">Large</button>
+        <span class="nz-tooltip">
+          <button class="nz-btn nz-btn--secondary nz-btn--icon" aria-label="Info">i</button>
+          <span class="nz-tooltip__pop" role="tooltip">Harter Tooltip · kein Blur</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- COMPONENTS: BADGES -->
+    <section class="section">
+      <div class="section__head"><span class="section__num">05 — Komponenten</span><h2>Badges &amp; Status.</h2></div>
+      <div class="nz-row demo">
+        <span class="nz-badge nz-badge--signal">Signal</span>
+        <span class="nz-badge">Default</span>
+        <span class="nz-badge nz-badge--solid">Solid</span>
+        <span class="nz-badge nz-badge--soft">Soft</span>
+        <span class="nz-badge"><span class="nz-dot"></span> Live</span>
+        <span class="nz-badge"><span class="nz-dot nz-dot--warn"></span> Warnung</span>
+        <span class="nz-badge"><span class="nz-dot nz-dot--danger"></span> Fehler</span>
+        <span class="nz-badge"><span class="nz-dot nz-dot--muted"></span> Inaktiv</span>
+      </div>
+    </section>
+
+    <!-- COMPONENTS: CARDS -->
+    <section class="section">
+      <div class="section__head"><span class="section__num">06 — Komponenten</span><h2>Cards.</h2></div>
+      <div class="nz-grid nz-grid--3 demo">
+        <div class="nz-card nz-card--raised">
+          <div class="nz-label nz-card__label">Standard</div>
+          <div class="nz-card__title">Raised</div>
+          <p class="nz-muted nz-small">Harter Offset-Schatten, 6px. Der Standard für alles Erhöhte.</p>
+        </div>
+        <div class="nz-card nz-card--featured">
+          <div class="nz-label nz-card__label">Akzent</div>
+          <div class="nz-card__title">Featured</div>
+          <p class="nz-muted nz-small">Signal-Grüner Schatten. Für <mark>eine</mark> Sache pro Screen, die zählt.</p>
+        </div>
+        <a href="#components" class="nz-card nz-card--interactive">
+          <div class="nz-label nz-card__label">Interaktiv →</div>
+          <div class="nz-card__title">Hover mich</div>
+          <p class="nz-muted nz-small">Fährt beim Hover heraus. Klick führt weiter.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- COMPONENTS: FORMS -->
+    <section class="section">
+      <div class="section__head"><span class="section__num">07 — Komponenten</span><h2>Formulare.</h2></div>
+      <div class="nz-grid nz-grid--2 demo">
+        <div>
+          <label class="nz-field">
+            <span class="nz-field__label">E-Mail</span>
+            <input class="nz-input" type="email" placeholder="ci@nozilla.de"/>
+            <span class="nz-field__hint">Wir schreiben zurück. Ehrlich.</span>
+          </label>
+          <label class="nz-field">
+            <span class="nz-field__label">Projekt-Typ</span>
+            <select class="nz-select">
+              <option>Plattform</option>
+              <option>Prototyp</option>
+              <option>Interface</option>
+            </select>
+          </label>
+          <label class="nz-field">
+            <span class="nz-field__label">Nachricht</span>
+            <textarea class="nz-textarea" placeholder="Kurz. Konkret. Prüfbar."></textarea>
+          </label>
+        </div>
+        <div class="nz-stack">
+          <label class="nz-check">
+            <input type="checkbox" checked/>
+            <span class="nz-check__box"></span>
+            <span>Newsletter — nur Substanz</span>
+          </label>
+          <label class="nz-check">
+            <input type="checkbox"/>
+            <span class="nz-check__box"></span>
+            <span>Marketing-Nebel</span>
+          </label>
+          <div class="nz-stack" role="radiogroup" aria-label="Priorität" style="margin-top:var(--nz-space-4);">
+            <label class="nz-check nz-check--radio"><input type="radio" name="prio" checked/><span class="nz-check__box"></span><span>Direkt starten</span></label>
+            <label class="nz-check nz-check--radio"><input type="radio" name="prio"/><span class="nz-check__box"></span><span>Erst beraten</span></label>
+          </div>
+          <label class="nz-switch" style="margin-top:var(--nz-space-4);">
+            <input type="checkbox" checked/>
+            <span class="nz-switch__track"><span class="nz-switch__thumb"></span></span>
+            <span class="nz-small">Automatische Messpunkte</span>
+          </label>
+          <div style="margin-top:var(--nz-space-5);">
+            <div class="nz-label" style="margin-bottom:var(--nz-space-2);">Fortschritt · 72%</div>
+            <div class="nz-progress"><div class="nz-progress__bar" style="width:72%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS: ALERTS -->
+    <section class="section">
+      <div class="section__head"><span class="section__num">08 — Komponenten</span><h2>Alerts.</h2></div>
+      <div class="nz-stack demo">
+        <div class="nz-alert nz-alert--signal"><div><div class="nz-alert__title">Deployment erfolgreich</div><div class="nz-alert__body">Alle Messpunkte grün. Nichts kaputt.</div></div></div>
+        <div class="nz-alert nz-alert--info"><div><div class="nz-alert__title">Hinweis</div><div class="nz-alert__body">Neue Version der Guidelines verfügbar.</div></div></div>
+        <div class="nz-alert nz-alert--warn"><div><div class="nz-alert__title">Achtung</div><div class="nz-alert__body">Kontrast unter AA — bitte prüfen.</div></div></div>
+        <div class="nz-alert nz-alert--danger"><div><div class="nz-alert__title">Fehlgeschlagen</div><div class="nz-alert__body">Build gebrochen. Log ansehen.</div></div></div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS: TABS + TABLE -->
+    <section class="section">
+      <div class="section__head"><span class="section__num">09 — Komponenten</span><h2>Tabs &amp; Tabelle.</h2></div>
+      <div class="nz-tabs demo" role="tablist">
+        <button class="nz-tab" role="tab" aria-selected="true">Tokens</button>
+        <button class="nz-tab" role="tab" aria-selected="false">Skala</button>
+        <button class="nz-tab" role="tab" aria-selected="false">Motion</button>
+      </div>
+      <div style="overflow-x:auto;" class="demo">
+        <table class="nz-table">
+          <thead><tr><th>Token</th><th>Rolle</th><th>Wert</th></tr></thead>
+          <tbody>
+            <tr><td><code>--nz-signal</code></td><td>Aktionsfarbe</td><td>#00FF9C</td></tr>
+            <tr><td><code>--nz-bg</code></td><td>Canvas</td><td>Papier / Ink 900</td></tr>
+            <tr><td><code>--nz-radius</code></td><td>Eckenradius</td><td>0</td></tr>
+            <tr><td><code>--nz-shadow-md</code></td><td>Standard-Elevation</td><td>6px 6px 0 0</td></tr>
+            <tr><td><code>--nz-dur</code></td><td>Animation</td><td>160ms</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span class="nz-label">nozilla Design System · v1.0</span>
+    <span class="nz-label">// Gute digitale Dienste.</span>
+    <span class="nz-label">ci@nozilla.de</span>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var input = document.getElementById('theme-switch');
+      var label = document.getElementById('theme-label');
+
+      function current() {
+        var attr = root.getAttribute('data-theme');
+        if (attr) return attr;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      function sync() {
+        var t = current();
+        input.checked = (t === 'dark');
+        label.textContent = (t === 'dark') ? 'Dark' : 'Light';
+      }
+      input.addEventListener('change', function () {
+        var t = input.checked ? 'dark' : 'light';
+        root.setAttribute('data-theme', t);
+        try { localStorage.setItem('nz-theme', t); } catch (e) {}
+        sync();
+      });
+      // Follow OS changes only while the user hasn't chosen explicitly.
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+        try { if (!localStorage.getItem('nz-theme')) sync(); } catch (e) { sync(); }
+      });
+      sync();
+    })();
+  </script>
+</body>
+</html>
