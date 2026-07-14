@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>nozilla — Web-Elemente</title>
+  <meta name="description" content="nozilla Design System — Web-Elemente: Akkordeon, Modal, Toast, Dropdown, Stepper &amp; mehr. Gute digitale Dienste."/>
+  <meta name="color-scheme" content="light dark"/>
+  <link rel="icon" href="project/assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="alternate icon" href="project/assets/favicon-32.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="project/assets/favicon-180.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="nozilla — Web-Elemente"/>
+  <meta property="og:description" content="Akkordeon, Modal, Toast, Dropdown, Stepper &amp; mehr — CI-konform."/>
+  <meta property="og:image" content="project/assets/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="project/assets/og-image.png"/>
+  <link rel="stylesheet" href="project/fonts.css"/>
+  <link rel="stylesheet" href="design-system.css"/>
+  <script src="design-system.js" defer></script>
+  <style>
+    body { padding-bottom: var(--nz-space-10); }
+    .topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-4); padding: var(--nz-space-4) var(--nz-space-6); background: var(--nz-bg); border-bottom: var(--nz-stroke-rule) solid var(--nz-line); }
+    .brand { font-family: var(--nz-font-display); font-weight: 700; font-size: 24px; letter-spacing: -0.02em; }
+    .brand span { color: var(--nz-signal); }
+    .hero { padding: var(--nz-space-8) 0 var(--nz-space-6); }
+    .section { padding: var(--nz-space-7) 0; border-top: var(--nz-stroke-rule) solid var(--nz-line); }
+    .section__head { display: flex; align-items: baseline; gap: var(--nz-space-4); margin-bottom: var(--nz-space-5); flex-wrap: wrap; }
+    .section__num { font-family: var(--nz-font-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--nz-text-muted); }
+    .demo { margin-top: var(--nz-space-4); }
+    .toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--nz-space-5); }
+    .toc a { text-decoration: none; }
+    footer.foot { margin-top: var(--nz-space-8); padding: var(--nz-space-6); border-top: var(--nz-stroke-rule) solid var(--nz-line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--nz-space-3); }
+  </style>
+</head>
+<body>
+  <script>(function () { try { var s = localStorage.getItem('nz-theme'); if (s) document.documentElement.setAttribute('data-theme', s); } catch (e) {} })();</script>
+
+  <header class="topbar">
+    <div class="brand">nozilla<span>.</span> <span class="nz-label" style="color:var(--nz-text-muted)">&nbsp;Web-Elemente</span></div>
+    <div class="nz-row">
+      <span class="nz-label" id="theme-label">Light</span>
+      <label class="nz-switch" title="Theme umschalten">
+        <input type="checkbox" id="theme-switch" role="switch" aria-label="Dark Theme umschalten"/>
+        <span class="nz-switch__track"><span class="nz-switch__thumb"></span></span>
+      </label>
+    </div>
+  </header>
+
+  <div class="nz-container">
+    <section class="hero">
+      <div class="nz-label">Design System · Web-Elemente</div>
+      <h1 class="nz-display" style="font-size:clamp(48px,7vw,96px);margin-top:var(--nz-space-3);">Bausteine<br/>zum <mark>Bauen</mark>.</h1>
+      <p class="nz-lead nz-muted" style="max-width:620px;margin-top:var(--nz-space-4);">Fertige, CI-konforme Elemente. Die meisten laufen ohne JavaScript (natives <code>&lt;details&gt;</code>/<code>&lt;dialog&gt;</code>); <code>design-system.js</code> ergänzt nur den Rest.</p>
+      <nav class="toc" aria-label="Elemente">
+        <a class="nz-badge" href="#accordion">Akkordeon</a>
+        <a class="nz-badge" href="#modal">Modal</a>
+        <a class="nz-badge" href="#toast">Toast</a>
+        <a class="nz-badge" href="#dropdown">Dropdown</a>
+        <a class="nz-badge" href="#breadcrumbs">Breadcrumbs</a>
+        <a class="nz-badge" href="#pagination">Pagination</a>
+        <a class="nz-badge" href="#chips">Chips</a>
+        <a class="nz-badge" href="#stats">Stats</a>
+        <a class="nz-badge" href="#stepper">Stepper</a>
+        <a class="nz-badge" href="#timeline">Timeline</a>
+        <a class="nz-badge" href="#banner">Banner</a>
+        <a class="nz-badge" href="#segmented">Segmented</a>
+        <a class="nz-badge" href="#range">Range</a>
+        <a class="nz-badge" href="#loading">Loading</a>
+        <a class="nz-badge" href="#misc">Mehr</a>
+      </nav>
+    </section>
+
+    <!-- ACCORDION -->
+    <section class="section" id="accordion">
+      <div class="section__head"><span class="section__num">Akkordeon</span><h2>Akkordeon.</h2></div>
+      <p class="nz-muted">Nativ per <code>&lt;details&gt;</code>. <code>data-nz-single</code> schließt Geschwister automatisch.</p>
+      <div class="nz-accordion demo" data-nz-single>
+        <details class="nz-accordion__item" open>
+          <summary>Was ist nozilla?<span class="nz-accordion__ind"></span></summary>
+          <div class="nz-accordion__body">Eine Boutique-Agentur für ehrliche Software. Wir bauen Plattformen, Prototypen und Interfaces.</div>
+        </details>
+        <details class="nz-accordion__item">
+          <summary>Braucht das JavaScript?<span class="nz-accordion__ind"></span></summary>
+          <div class="nz-accordion__body">Nein. Das Akkordeon nutzt natives <code>&lt;details&gt;</code>. Nur das „single-open"-Verhalten ist optional per JS.</div>
+        </details>
+        <details class="nz-accordion__item">
+          <summary>Funktioniert es im Dark Theme?<span class="nz-accordion__ind"></span></summary>
+          <div class="nz-accordion__body">Ja — alle Elemente nutzen semantische Tokens und wechseln automatisch mit.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <section class="section" id="modal">
+      <div class="section__head"><span class="section__num">Modal</span><h2>Modal / Dialog.</h2></div>
+      <p class="nz-muted">Natives <code>&lt;dialog&gt;</code>. Backdrop-Klick und <code>data-nz-close</code> schließen.</p>
+      <div class="nz-row demo">
+        <button class="nz-btn nz-btn--primary" data-nz-open="demo-modal">Modal öffnen</button>
+      </div>
+      <dialog class="nz-modal" id="demo-modal">
+        <div class="nz-modal__head">
+          <h3 class="nz-modal__title">Projekt starten</h3>
+          <button class="nz-modal__x" data-nz-close aria-label="Schließen">✕</button>
+        </div>
+        <div class="nz-modal__body">
+          <p class="nz-muted">Kurz. Konkret. Prüfbar. Erzähl uns, was du <mark>ablösen</mark> willst.</p>
+          <label class="nz-field" style="margin-top:16px;">
+            <span class="nz-field__label">E-Mail</span>
+            <input class="nz-input" type="email" placeholder="ci@nozilla.de"/>
+          </label>
+        </div>
+        <div class="nz-modal__foot">
+          <button class="nz-btn nz-btn--ghost" data-nz-close>Abbrechen</button>
+          <button class="nz-btn nz-btn--primary" data-nz-close>Absenden</button>
+        </div>
+      </dialog>
+    </section>
+
+    <!-- TOAST -->
+    <section class="section" id="toast">
+      <div class="section__head"><span class="section__num">Toast</span><h2>Toasts.</h2></div>
+      <p class="nz-muted">Per API: <code>nz.toast({ title, body, variant })</code>.</p>
+      <div class="nz-row demo">
+        <button class="nz-btn nz-btn--secondary" onclick="nz.toast({title:'Gespeichert', body:'Alle Messpunkte grün.', variant:'signal'})">Signal</button>
+        <button class="nz-btn nz-btn--secondary" onclick="nz.toast({title:'Achtung', body:'Kontrast prüfen.', variant:'warn'})">Warn</button>
+        <button class="nz-btn nz-btn--secondary" onclick="nz.toast({title:'Fehlgeschlagen', body:'Build gebrochen.', variant:'danger'})">Danger</button>
+      </div>
+    </section>
+
+    <!-- DROPDOWN + POPOVER -->
+    <section class="section" id="dropdown">
+      <div class="section__head"><span class="section__num">Dropdown</span><h2>Dropdown &amp; Popover.</h2></div>
+      <p class="nz-muted">Nativ per <code>&lt;details&gt;</code> — kein JS nötig.</p>
+      <div class="nz-row demo" style="gap:var(--nz-space-5);">
+        <details class="nz-dropdown">
+          <summary class="nz-btn nz-btn--secondary">Menü ▾</summary>
+          <div class="nz-dropdown__menu">
+            <div class="nz-menu__label">Aktionen</div>
+            <a class="nz-menu__item" href="#dropdown">Bearbeiten</a>
+            <a class="nz-menu__item" href="#dropdown">Duplizieren</a>
+            <div class="nz-menu__sep"></div>
+            <a class="nz-menu__item" href="#dropdown">Löschen</a>
+          </div>
+        </details>
+        <details class="nz-popover">
+          <summary class="nz-btn nz-btn--secondary">Popover ▾</summary>
+          <div class="nz-popover__panel">
+            <div class="nz-label" style="margin-bottom:8px;">Info</div>
+            <p class="nz-small nz-muted" style="margin:0;">Ein Popover trägt reichhaltigeren Inhalt als ein Menü — Text, Felder, Buttons.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- BREADCRUMBS -->
+    <section class="section" id="breadcrumbs">
+      <div class="section__head"><span class="section__num">Breadcrumbs</span><h2>Breadcrumbs.</h2></div>
+      <nav class="demo" aria-label="Breadcrumb">
+        <ol class="nz-breadcrumbs">
+          <li><a href="#breadcrumbs">Start</a></li>
+          <li><a href="#breadcrumbs">Design System</a></li>
+          <li><span aria-current="page">Web-Elemente</span></li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- PAGINATION -->
+    <section class="section" id="pagination">
+      <div class="section__head"><span class="section__num">Pagination</span><h2>Pagination.</h2></div>
+      <nav class="demo" aria-label="Seiten">
+        <ul class="nz-pagination">
+          <li><a class="nz-page" href="#pagination" aria-disabled="true">←</a></li>
+          <li><a class="nz-page" href="#pagination" aria-current="page">1</a></li>
+          <li><a class="nz-page" href="#pagination">2</a></li>
+          <li><a class="nz-page" href="#pagination">3</a></li>
+          <li><a class="nz-page" href="#pagination">…</a></li>
+          <li><a class="nz-page" href="#pagination">9</a></li>
+          <li><a class="nz-page" href="#pagination">→</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- CHIPS -->
+    <section class="section" id="chips">
+      <div class="section__head"><span class="section__num">Chips</span><h2>Chips &amp; Kbd.</h2></div>
+      <div class="nz-row demo">
+        <span class="nz-chip">React <button class="nz-chip__x" data-nz-chip-remove aria-label="Entfernen">✕</button></span>
+        <span class="nz-chip">TypeScript <button class="nz-chip__x" data-nz-chip-remove aria-label="Entfernen">✕</button></span>
+        <span class="nz-chip">Design <button class="nz-chip__x" data-nz-chip-remove aria-label="Entfernen">✕</button></span>
+      </div>
+      <div class="nz-row demo">
+        <span class="nz-small nz-muted">Speichern:</span>
+        <kbd class="nz-kbd">⌘</kbd><kbd class="nz-kbd">S</kbd>
+        <span class="nz-small nz-muted" style="margin-left:16px;">Kopieren:</span>
+        <button class="nz-btn nz-btn--sm nz-btn--secondary" data-nz-copy="Gute digitale Dienste.">Text kopieren</button>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" id="stats">
+      <div class="section__head"><span class="section__num">Stats</span><h2>KPI / Stats.</h2></div>
+      <div class="nz-grid nz-grid--3 demo">
+        <div class="nz-stat nz-stat--raised"><div class="nz-stat__label">Deploys / Woche</div><div class="nz-stat__value">42</div><div class="nz-stat__delta nz-stat__delta--up">▲ 12% vs. Vorwoche</div></div>
+        <div class="nz-stat nz-stat--raised"><div class="nz-stat__label">Uptime</div><div class="nz-stat__value">99,9%</div><div class="nz-stat__delta nz-stat__delta--up">▲ stabil</div></div>
+        <div class="nz-stat nz-stat--raised"><div class="nz-stat__label">Offene Bugs</div><div class="nz-stat__value">3</div><div class="nz-stat__delta nz-stat__delta--down">▼ −5 diese Woche</div></div>
+      </div>
+    </section>
+
+    <!-- STEPPER -->
+    <section class="section" id="stepper">
+      <div class="section__head"><span class="section__num">Stepper</span><h2>Stepper.</h2></div>
+      <ol class="nz-steps demo">
+        <li class="nz-step nz-step--done"><span class="nz-step__dot">✓</span><span class="nz-step__label">Briefing</span></li>
+        <li class="nz-step nz-step--done"><span class="nz-step__dot">✓</span><span class="nz-step__label">Konzept</span></li>
+        <li class="nz-step nz-step--active"><span class="nz-step__dot">3</span><span class="nz-step__label">Bau</span></li>
+        <li class="nz-step"><span class="nz-step__dot">4</span><span class="nz-step__label">Launch</span></li>
+      </ol>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section" id="timeline">
+      <div class="section__head"><span class="section__num">Timeline</span><h2>Timeline.</h2></div>
+      <ul class="nz-timeline demo">
+        <li class="nz-timeline__item"><div class="nz-timeline__time">April 2026</div><div class="nz-timeline__title">CI v1.0 veröffentlicht</div><p class="nz-small nz-muted" style="margin:0;">Design, Typografie und Voice in einem Dokument.</p></li>
+        <li class="nz-timeline__item"><div class="nz-timeline__time">Mai 2026</div><div class="nz-timeline__title">Design System + Dark Theme</div><p class="nz-small nz-muted" style="margin:0;">Komponenten auf semantischen Tokens.</p></li>
+        <li class="nz-timeline__item"><div class="nz-timeline__time">Heute</div><div class="nz-timeline__title">Web-Elemente</div><p class="nz-small nz-muted" style="margin:0;">Akkordeon, Modal, Toast &amp; mehr.</p></li>
+      </ul>
+    </section>
+
+    <!-- BANNER -->
+    <section class="section" id="banner">
+      <div class="section__head"><span class="section__num">Banner</span><h2>Banner.</h2></div>
+      <div class="nz-stack demo">
+        <div class="nz-banner"><span>// Neu: Web-Elemente sind da.</span><a href="#accordion">Ansehen →</a></div>
+        <div class="nz-banner nz-banner--ink"><span>// Wartung: Sonntag 02:00–03:00</span><span>Status</span></div>
+      </div>
+    </section>
+
+    <!-- SEGMENTED + BUTTON GROUP -->
+    <section class="section" id="segmented">
+      <div class="section__head"><span class="section__num">Segmented</span><h2>Segmented &amp; Button-Group.</h2></div>
+      <div class="nz-row demo" style="gap:var(--nz-space-5);">
+        <div class="nz-segmented" role="radiogroup" aria-label="Ansicht">
+          <label><input type="radio" name="view" checked/><span>Tag</span></label>
+          <label><input type="radio" name="view"/><span>Woche</span></label>
+          <label><input type="radio" name="view"/><span>Monat</span></label>
+        </div>
+        <div class="nz-btn-group">
+          <button class="nz-btn nz-btn--secondary nz-btn--sm">Links</button>
+          <button class="nz-btn nz-btn--secondary nz-btn--sm">Mitte</button>
+          <button class="nz-btn nz-btn--secondary nz-btn--sm">Rechts</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANGE -->
+    <section class="section" id="range">
+      <div class="section__head"><span class="section__num">Range</span><h2>Range-Slider.</h2></div>
+      <div class="demo" style="max-width:420px;">
+        <label class="nz-field__label" for="r1">Budget</label>
+        <input class="nz-range" id="r1" type="range" min="0" max="100" value="65"/>
+      </div>
+    </section>
+
+    <!-- LOADING -->
+    <section class="section" id="loading">
+      <div class="section__head"><span class="section__num">Loading</span><h2>Spinner &amp; Skeleton.</h2></div>
+      <div class="nz-grid nz-grid--2 demo">
+        <div class="nz-row"><span class="nz-spinner" role="status" aria-label="Lädt"></span><span class="nz-small nz-muted">Stepped-Spinner (8-bit)</span></div>
+        <div class="nz-card">
+          <span class="nz-skeleton nz-skeleton--title"></span>
+          <span class="nz-skeleton nz-skeleton--text"></span>
+          <span class="nz-skeleton nz-skeleton--text" style="width:80%;"></span>
+          <span class="nz-skeleton nz-skeleton--block" style="margin-top:12px;"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISC -->
+    <section class="section" id="misc">
+      <div class="section__head"><span class="section__num">Mehr</span><h2>Description-List, Count &amp; Empty.</h2></div>
+      <div class="nz-grid nz-grid--2 demo">
+        <div>
+          <dl class="nz-dl">
+            <dt>Framework</dt><dd>Vanilla — kein Build nötig</dd>
+            <dt>Themes</dt><dd>Light &amp; Dark, automatisch</dd>
+            <dt>Abhängigkeiten</dt><dd>Keine</dd>
+            <dt>Lizenz</dt><dd>Fonts SIL OFL</dd>
+          </dl>
+          <div class="nz-row" style="margin-top:20px;">
+            <span class="nz-badge">Posteingang <span class="nz-count">12</span></span>
+            <span class="nz-badge">Updates <span class="nz-count nz-count--ink">3</span></span>
+          </div>
+        </div>
+        <div class="nz-empty">
+          <span class="nz-spinner" style="margin:0 auto;border-top-color:var(--nz-line-soft);border-color:var(--nz-line-soft);"></span>
+          <div class="nz-empty__title">Noch nichts hier.</div>
+          <p class="nz-empty__body">Leg dein erstes Projekt an — direkt, ohne Umweg.</p>
+          <button class="nz-btn nz-btn--primary">Projekt anlegen</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span class="nz-label">nozilla Web-Elemente · v1.0</span>
+    <span class="nz-label">// Gute digitale Dienste.</span>
+    <span class="nz-label">ci@nozilla.de</span>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement, input = document.getElementById('theme-switch'), label = document.getElementById('theme-label');
+      function current() { return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+      function sync() { var t = current(); input.checked = t === 'dark'; label.textContent = t === 'dark' ? 'Dark' : 'Light'; }
+      input.addEventListener('change', function () { var t = input.checked ? 'dark' : 'light'; root.setAttribute('data-theme', t); try { localStorage.setItem('nz-theme', t); } catch (e) {} sync(); });
+      sync();
+    })();
+  </script>
+</body>
+</html>
