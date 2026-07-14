@@ -31,11 +31,23 @@ Ein produktionsfertiges, theme-fähiges Komponenten-System — inklusive warmem 
 <!-- Nur das Design System (bringt alle Tokens selbst mit) -->
 <link rel="stylesheet" href="design-system.css"/>
 
-<!-- Fonts: Zilla Slab · Inter · Space Mono -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Zilla+Slab:wght@500;600;700&display=swap"/>
+<!-- Fonts: selbst-gehostet, keine CDN-Abhängigkeit -->
+<link rel="stylesheet" href="project/fonts.css"/>
 ```
 
+Die Marken-Fonts (Zilla Slab · Inter · Space Mono, alle SIL OFL) liegen in `project/fonts/` und werden über `project/fonts.css` per `@font-face` eingebunden — das CI rendert komplett **offline, ohne Dritt-CDN**.
+
 `design-system.css` und `project/colors_and_type.css` teilen **dasselbe Token-Vokabular** (`--nz-signal`/`--nz-green`, `--nz-paper`, `--nz-ink`, `--nz-font-*` …). Das CI-Dokument und die Komponenten bleiben so in Sync.
+
+### Assets & Formate
+
+| Asset | Datei | Zweck |
+|-------|-------|-------|
+| Wortmarke (digital) | `project/assets/nozilla-logo.svg` | Web · skalierbar |
+| Wortmarke (Print) | `project/assets/nozilla-logo.eps` · `.pdf` | Echte Zilla-Slab-Vektor-Outlines, K-Schwarz |
+| Favicon | `project/assets/favicon.svg` (+ `-32.png` / `-180.png`) | Browser-Tab · Apple-Touch |
+| Social Preview | `project/assets/og-image.png` (1200×630) | OG / Twitter Card |
+| Icons | `project/assets/icon-*.svg` | 14er-Set, zwei Dialekte |
 
 ### Theming
 
