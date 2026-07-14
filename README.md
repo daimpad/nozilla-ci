@@ -108,6 +108,43 @@ Komponenten referenzieren nur semantische Tokens — ein Theme-Wechsel tauscht d
 
 Enthalten: Buttons · Cards · Formulare (Input/Select/Textarea/Checkbox/Radio/Switch) · Badges & Status-Dots · Alerts · Tabs · Tabelle · Progress · Tooltip · Avatar · Swatches. Alle mit sichtbaren `:focus-visible`-Ringen; Bewegung hinter `prefers-reduced-motion`.
 
+### Web-Elemente
+
+Erweiterte, wiederverwendbare Bausteine — Live-Galerie: [`components.html`](./components.html).
+
+Akkordeon · Modal/Dialog · Toast · Dropdown · Popover · Breadcrumbs · Pagination · Chips · KPI/Stats · Stepper · Timeline · Banner · Segmented Control · Button-Group · Range-Slider · Spinner · Skeleton · Kbd · Empty-State · Description-List · Count-Badge.
+
+Die meisten laufen **ohne JavaScript** (natives `<details>` / `<dialog>`). Für Tabs, Modal-Trigger, Toasts, Chip-Entfernen und Copy gibt es eine optionale, abhängigkeitsfreie Datei:
+
+```html
+<link rel="stylesheet" href="project/fonts.css"/>
+<link rel="stylesheet" href="design-system.css"/>
+<script src="design-system.js" defer></script>
+```
+
+```js
+// Toast-API
+nz.toast({ title: "Gespeichert", body: "Alle Messpunkte grün.", variant: "signal" });
+```
+
+```html
+<!-- Modal ohne eigenes JS: Trigger + natives <dialog> -->
+<button class="nz-btn nz-btn--primary" data-nz-open="m1">Öffnen</button>
+<dialog class="nz-modal" id="m1">
+  <div class="nz-modal__head"><h3 class="nz-modal__title">Titel</h3>
+    <button class="nz-modal__x" data-nz-close aria-label="Schließen">✕</button></div>
+  <div class="nz-modal__body">…</div>
+</dialog>
+
+<!-- Akkordeon, rein nativ -->
+<div class="nz-accordion" data-nz-single>
+  <details class="nz-accordion__item" open>
+    <summary>Frage<span class="nz-accordion__ind"></span></summary>
+    <div class="nz-accordion__body">Antwort.</div>
+  </details>
+</div>
+```
+
 ---
 
 ## 🎨 Farben

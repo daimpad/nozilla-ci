@@ -60,6 +60,7 @@ for (const file of files) {
 // ── 3. Required deliverables ───────────────────────────────────────────────
 const REQUIRED = [
   "index.html", "ci.css", "design-system.css", "design-system.html",
+  "design-system.js", "components.html",
   "project/colors_and_type.css", "project/fonts.css",
   "project/fonts/ZillaSlab-Bold.ttf", "project/fonts/Inter-Regular.ttf", "project/fonts/SpaceMono-Regular.ttf",
   "project/assets/nozilla-logo.svg", "project/assets/nozilla-logo.eps", "project/assets/nozilla-logo.pdf",
