@@ -18,6 +18,7 @@ import icons as ICONS  # noqa: E402
 OUT = os.path.join(ROOT, "ci")
 ASSETS = os.path.join(ROOT, "project", "assets")
 MAIL = "contact@nozilla.de"
+BASE = "https://daimpad.github.io/nozilla-ci"   # Basis für absolute Social-URLs
 
 NAV = [
     ("Marke", [
@@ -89,7 +90,11 @@ def layout(slug, title, kicker, lede, body, index_js):
 <link rel="alternate icon" href="../project/assets/favicon-32.png" type="image/png"/>
 <meta property="og:title" content="{esc(title)} — nozilla CI"/>
 <meta property="og:description" content="{esc(lede)}"/>
-<meta property="og:image" content="../project/assets/og-image.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{BASE}/ci/{slug}"/>
+<meta property="og:image" content="{BASE}/project/assets/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{BASE}/project/assets/og-image.png"/>
 <link rel="stylesheet" href="../project/fonts.css"/>
 <link rel="stylesheet" href="../design-system.css"/>
 <link rel="stylesheet" href="ci-site.css"/>
