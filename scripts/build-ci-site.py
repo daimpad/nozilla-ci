@@ -550,11 +550,12 @@ def p_icons():
             <p class="nz-small nz-muted">Gegenstände und Funktionen. 4-px-Umriss auf 64er-Raster,
             rechtwinklige Enden, Gehrungsecken. Zielgröße 48–160 px.</p></div>
           <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Pixel-Art · {pixel}</h3>
-            <p class="nz-small nz-muted">8-Bit-Reminiszenzen als retro-digitale Interpunktion.
-            Sparsam einsetzen — ein Augenzwinkern pro Seite genügt.</p></div>
+            <p class="nz-small nz-muted">8-Bit-Reminiszenzen und Fantasiewesen — Dino, Geist, Alien,
+            Katze, Pilz. Sparsam einsetzen; ein Augenzwinkern pro Seite genügt.</p></div>
           <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Konzept · {concept}</h3>
-            <p class="nz-small nz-muted">Metaphern statt Gegenstände — für Daten, KI, Workshop,
-            Web und Prototyping. Abstrakter, mehr Grün, gern eine Prise Pixel.</p></div>
+            <p class="nz-small nz-muted">Metaphern statt Gegenstände — Daten, KI, Workshop, Web,
+            Prototyping, Betrieb, Sicherheit, Barrierefreiheit, Zusammenarbeit, Qualität.
+            Abstrakter, mehr Grün, gern eine Prise Pixel.</p></div>
         </div>
       </section>
       <section class="sec"><h2>Die Signatur.</h2>

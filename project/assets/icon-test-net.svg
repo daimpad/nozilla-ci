@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Testabdeckung">
+  <rect x="6" y="11" width="44" height="36"/>
+  <path d="M21 11 L21 47"/>
+  <path d="M35 11 L35 47"/>
+  <path d="M6 23 L50 23"/>
+  <path d="M6 35 L50 35"/>
+  <rect x="21" y="23" width="14" height="12" fill="#00FF9C" stroke="none"/>
+  <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
+</svg>

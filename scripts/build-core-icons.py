@@ -12,6 +12,7 @@ icons.py). Dieses Skript exportiert sie als SVG und stellt sicher, dass
     python3 scripts/build-core-icons.py --check    # nur pruefen (CI)
 """
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,7 +50,27 @@ def main(check_only):
                 f.write(svg)
             written += 1
 
-    # 3 · verwaiste Dateien melden (Icon wurde umbenannt oder entfernt)
+    # 3 · Icon-Matrix und Mengenangabe im CI-Dokument mitziehen
+    doc_path = os.path.join(ROOT, "index.html")
+    doc = open(doc_path).read()
+    tiles = "\n".join(
+        f'      <div class="icon-tile" role="listitem">'
+        f'<img src="project/assets/icon-{slug}.svg" alt="{label}"/></div>'
+        for slug, label, _ in ICONS.ALL)
+    matrix = ('<div class="icon-matrix" role="list" aria-label="Icon-Set">\n'
+              + tiles + '\n    </div>')
+    umfang = (f'<li><b>Umfang</b><span>{len(ICONS.HEAVY)} Heavy-Stroke, '
+              f'{len(ICONS.PIXEL)} Pixel und {len(ICONS.CONCEPT)} Konzept-Icons.</span></li>')
+    updated = re.sub(r'<div class="icon-matrix" role="list" aria-label="Icon-Set">.*?</div>\s*</section>',
+                     matrix + '\n  </section>', doc, flags=re.S)
+    updated = re.sub(r'<li><b>Umfang</b><span>[^<]*</span></li>', umfang, updated)
+    if updated != doc:
+        if check_only:
+            problems.append("index.html: Icon-Matrix oder Mengenangabe nicht auf dem Stand")
+        else:
+            open(doc_path, "w").write(updated)
+
+    # 4 · verwaiste Dateien melden (Icon wurde umbenannt oder entfernt)
     known = {f"icon-{s}.svg" for s, _, _ in ICONS.ALL}
     core_prefixes = tuple(f"icon-{s}." for s, _, _ in ICONS.ALL)
     for name in sorted(os.listdir(OUT)):

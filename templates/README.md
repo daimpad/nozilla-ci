@@ -57,7 +57,7 @@ Titel · Problem · Warum jetzt · Lösung · So funktioniert es · Produkt · N
 Warum nozilla · Referenz · Team · Investition · Nächster Schritt.
 
 ### Icon-Bibliothek
-Alle **61 Icons** (33 Heavy-Stroke, 4 Pixel-Art, 24 Konzept) in allen Dialekten, hell **und** invertiert, plus die Wortmarke auf Weiß / Signal-Grün / Tinte-Schwarz.
+Alle **89 Icons** (33 Heavy-Stroke, 14 Pixel-Art, 42 Konzept) in allen Dialekten, hell **und** invertiert, plus die Wortmarke auf Weiß / Signal-Grün / Tinte-Schwarz.
 
 > Die Icons sind **native Vektor-Shapes**, keine Bilder — in Slides direkt umfärbbar,
 > skalierbar und ohne Qualitätsverlust. Einfach anklicken, kopieren, in die eigene Folie

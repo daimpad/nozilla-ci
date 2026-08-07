@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Weggabelung">
+  <path d="M5 31 L23 31"/>
+  <path d="M23 31 L37 17 L51 17"/>
+  <path d="M23 31 L37 45 L51 45"/>
+  <circle cx="23" cy="31" r="4.4" fill="#00FF9C" stroke="none"/>
+  <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
+</svg>
