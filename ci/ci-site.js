@@ -149,6 +149,65 @@
     apply();
   }
 
+  /* ── Icon-Katalog: Kategorie + Volltext ────────────────────────────────── */
+  var catRoot = document.getElementById("catRoot");
+  if (catRoot) {
+    var catCells = Array.prototype.slice.call(catRoot.querySelectorAll(".cat-cell"));
+    var catGrps = Array.prototype.slice.call(catRoot.querySelectorAll(".cat-grp"));
+    var chips = Array.prototype.slice.call(document.querySelectorAll(".cat-chip"));
+    var cq = document.getElementById("catQ");
+    var tally = document.getElementById("catTally");
+    var empty = document.getElementById("catEmpty");
+    var reset = document.getElementById("catReset");
+    var cat = "all";
+
+    function applyCat() {
+      var t = norm(cq ? cq.value.trim() : "");
+      var shown = 0;
+      catGrps.forEach(function (g) {
+        var inCat = cat === "all" || g.getAttribute("data-cat") === cat;
+        var visibleHere = 0;
+        Array.prototype.forEach.call(g.querySelectorAll(".cat-cell"), function (c) {
+          var ok = inCat && (!t || norm(c.getAttribute("data-k")).indexOf(t) >= 0);
+          c.hidden = !ok;
+          if (ok) visibleHere++;
+        });
+        g.hidden = visibleHere === 0;
+        shown += visibleHere;
+      });
+      if (tally) tally.textContent = shown + " von " + catCells.length;
+      if (empty) empty.hidden = shown !== 0;
+    }
+
+    chips.forEach(function (ch) {
+      ch.addEventListener("click", function () {
+        cat = ch.getAttribute("data-cat");
+        chips.forEach(function (o) { o.setAttribute("aria-pressed", o === ch ? "true" : "false"); });
+        applyCat();
+        // Die gewaehlte Gruppe in den Blick holen, ohne den Filterbalken zu verdecken.
+        if (cat !== "all") {
+          var g = catRoot.querySelector('.cat-grp[data-cat="' + cat + '"]');
+          if (g) window.scrollTo({ top: g.offsetTop - 150, behavior: "smooth" });
+        }
+      });
+    });
+    if (cq) cq.addEventListener("input", applyCat);
+    if (reset) reset.addEventListener("click", function () {
+      if (cq) cq.value = "";
+      cat = "all";
+      chips.forEach(function (o) { o.setAttribute("aria-pressed", o.getAttribute("data-cat") === "all" ? "true" : "false"); });
+      applyCat();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    // Direktlink wie katalog.html#business waehlt die Kategorie vor.
+    var want = (location.hash || "").replace("#", "");
+    if (want) {
+      var pre = chips.filter(function (c) { return c.getAttribute("data-cat") === want; })[0];
+      if (pre) pre.click();
+    }
+    applyCat();
+  }
+
   /* ── Farbtabelle: Trefferzahl ──────────────────────────────────────────── */
   var ct = document.getElementById("colorTable");
   var cc = document.getElementById("colorCount");

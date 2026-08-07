@@ -162,3 +162,37 @@
   .shell { display: block; }
   .wrap { padding: 0; max-width: none; }
 }
+
+/* ── Eingebettete Bausteine ──────────────────────────────────────────────── */
+/* Design System und Web-Elemente bringen eigene Layout-Regeln mit; sie werden
+   beim Bauen aus der Quelldatei übernommen, damit es keine zweite Fassung gibt. */
+.section { padding: var(--nz-space-7) 0; border-top: var(--nz-stroke-rule) solid var(--nz-line); }
+.section:first-of-type { border-top: 0; padding-top: 0; }
+.section__head { display: flex; align-items: baseline; gap: var(--nz-space-4); margin-bottom: var(--nz-space-5); flex-wrap: wrap; }
+.section__num { font-family: var(--nz-font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--nz-text-muted); }
+.demo { margin-top: var(--nz-space-4); }
+
+/* Sprungmarken oben auf langen Seiten */
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--nz-space-6); }
+.jump a { text-decoration: none; }
+
+/* ── Vorschau-Rahmen (Dokument, Print) ───────────────────────────────────── */
+.embed { border: var(--nz-stroke-rule) solid var(--nz-line); box-shadow: var(--nz-shadow-md); background: var(--nz-surface); }
+.embed iframe { display: block; width: 100%; height: 76vh; min-height: 460px; border: 0; }
+.embed--sheet iframe { height: 620px; }
+.embed__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-3); flex-wrap: wrap; padding: 10px 14px; border-bottom: var(--nz-stroke-rule) solid var(--nz-line); }
+
+/* ── Icon-Katalog (462) ──────────────────────────────────────────────────── */
+.cat-bar { position: sticky; top: 62px; z-index: 20; background: var(--nz-bg); padding: var(--nz-space-3) 0; border-bottom: var(--nz-stroke-rule) solid var(--nz-line); margin-bottom: var(--nz-space-5); }
+.cat-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; max-height: 92px; overflow-y: auto; }
+.cat-chip { font-family: var(--nz-font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 9px; background: var(--nz-surface); color: var(--nz-text); border: var(--nz-stroke-hair) solid var(--nz-line-soft); cursor: pointer; }
+.cat-chip:hover { border-color: var(--nz-line); }
+.cat-chip[aria-pressed="true"] { background: var(--nz-signal); color: var(--nz-on-signal); border-color: var(--nz-line); }
+.cat-grp { margin-bottom: var(--nz-space-6); }
+.cat-grp > h3 { font-size: 21px; margin: 0 0 var(--nz-space-3); display: flex; align-items: baseline; gap: 10px; }
+.cat-grp > h3 span { font-family: var(--nz-font-mono); font-size: 11px; color: var(--nz-text-faint); }
+.cat-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(122px, 1fr)); }
+.cat-cell { margin: 0; border: var(--nz-stroke-rule) solid var(--nz-line); background: var(--nz-surface); text-align: center; padding: 12px 8px 10px; }
+.cat-cell svg { width: 44px; height: 44px; display: block; margin: 0 auto 8px; color: var(--nz-text); }
+.cat-cell b { display: block; font-family: var(--nz-font-mono); font-size: 10px; letter-spacing: 0.04em; word-break: break-word; }
+.cat-cell small { display: block; font-size: 11px; line-height: 1.35; color: var(--nz-text-muted); margin-top: 4px; }

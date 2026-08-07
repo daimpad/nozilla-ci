@@ -4,7 +4,8 @@
 
 Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 
-**Live:** [CI-Portal](https://daimpad.github.io/nozilla-ci/ci/) · [CI-Dokument](https://daimpad.github.io/nozilla-ci/) · [Design System](https://daimpad.github.io/nozilla-ci/design-system.html) · [Web-Elemente](https://daimpad.github.io/nozilla-ci/components.html)
+**Live:** [CI-Portal](https://daimpad.github.io/nozilla-ci/ci/) — Logo, Farbe, Typografie, Icons, Design System,
+Web-Elemente, Print und Vorlagen unter einer Navigation, mit globaler Suche.
 
 ---
 
