@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Farbe. — nozilla CI</title>
+<meta name="description" content="Drei Rollen, zehn Werte, ein Token-Vokabular."/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="../project/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="../project/assets/favicon-32.png" type="image/png"/>
+<meta property="og:title" content="Farbe. — nozilla CI"/>
+<meta property="og:description" content="Drei Rollen, zehn Werte, ein Token-Vokabular."/>
+<meta property="og:image" content="../project/assets/og-image.png"/>
+<link rel="stylesheet" href="../project/fonts.css"/>
+<link rel="stylesheet" href="../design-system.css"/>
+<link rel="stylesheet" href="ci-site.css"/>
+<script>(function(){try{var t=localStorage.getItem('nz-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <a class="side__brand" href="index.html">nozilla<span>.</span></a>
+    <div class="side__tag">Corporate Identity</div>
+    <button class="nz-btn nz-btn--sm nz-btn--secondary side__toggle" id="navToggle" aria-expanded="false">Navigation</button>
+    <nav class="side__nav" id="sideNav" aria-label="CI-Bereiche">
+        <div class="nav__group">Marke</div>
+        <a class="nav__link" href="index.html">Übersicht</a>
+        <a class="nav__link" href="grundlagen.html">Grundlagen</a>
+        <a class="nav__link" href="logo.html">Logo<span class="nav__count">3</span></a>
+        <a class="nav__link" href="sprache.html">Sprache</a>
+        <div class="nav__group">Gestaltung</div>
+        <a class="nav__link" href="farbe.html" aria-current="page">Farbe<span class="nav__count">10</span></a>
+        <a class="nav__link" href="typografie.html">Typografie<span class="nav__count">3</span></a>
+        <a class="nav__link" href="icons.html">Icons<span class="nav__count">37</span></a>
+        <a class="nav__link" href="bilder.html">Bilder</a>
+        <a class="nav__link" href="komponenten.html">Komponenten</a>
+        <div class="nav__group">Anwendung</div>
+        <a class="nav__link" href="vorlagen.html">Vorlagen</a>
+        <a class="nav__link" href="downloads.html">Downloads</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="search">
+        <input id="q" type="search" placeholder="Alles durchsuchen — Icons, Farben, Regeln …"
+               autocomplete="off" aria-label="CI durchsuchen" aria-controls="results"/>
+        <div class="results" id="results" hidden role="listbox"></div>
+      </div>
+      <label class="nz-switch" title="Theme umschalten">
+        <input type="checkbox" id="themeSwitch" role="switch" aria-label="Dark Theme"/>
+        <span class="nz-switch__track"><span class="nz-switch__thumb"></span></span>
+      </label>
+    </header>
+
+    <div class="wrap">
+      <div class="page-head">
+        <div class="nz-label">Gestaltung</div>
+        <h1>Farbe.</h1>
+        <p>Drei Rollen, zehn Werte, ein Token-Vokabular.</p>
+      </div>
+      
+      <section class="sec" style="margin-top:0"><h2>Rollen.</h2>
+        <p class="lede">Die Palette kennt drei Rollen — und weigert sich, mehr zu tragen.</p>
+        <div class="nz-grid nz-grid--3">
+          <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Signal · 5 %</h3>
+            <p class="nz-small nz-muted">Die einzige Aktionsfarbe. Buttons, Marker, Hervorhebungen, die zählen.</p></div>
+          <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Grund · 60 %</h3>
+            <p class="nz-small nz-muted">Papier-Gelb im Print und CI-Dokument, Weiß in Präsentationen.</p></div>
+          <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Kontur · 35 %</h3>
+            <p class="nz-small nz-muted">Tinte-Schwarz für Schrift, Linien, Rahmen und harte Schatten.</p></div>
+        </div>
+      </section>
+      <section class="sec"><h2>Alle Werte.</h2>
+        <div class="filter-bar"><span class="hit-count" id="colorCount"></span></div>
+        <table class="tbl" id="colorTable">
+          <thead><tr><th>Farbe</th><th>Token</th><th>Hex</th><th>Rolle</th><th>Kopieren</th></tr></thead>
+          <tbody><tr id="nz-green" data-k="signal-grün --nz-green #00ff9c buttons, ctas, marker — nur für aktion"><td><span class="chip" style="background:#00FF9C"></span><b>Signal-Grün</b></td><td><code>--nz-green</code></td><td><code>#00FF9C</code></td><td>Buttons, CTAs, Marker — nur für Aktion</td><td><button class="copy" data-copy="#00FF9C">Hex</button> <button class="copy" data-copy="var(--nz-green)">Token</button></td></tr>
+<tr id="nz-green-strong" data-k="signal hover --nz-green-strong #00e88d hover- und active-zustände"><td><span class="chip" style="background:#00E88D"></span><b>Signal Hover</b></td><td><code>--nz-green-strong</code></td><td><code>#00E88D</code></td><td>Hover- und Active-Zustände</td><td><button class="copy" data-copy="#00E88D">Hex</button> <button class="copy" data-copy="var(--nz-green-strong)">Token</button></td></tr>
+<tr id="nz-green-soft" data-k="signal tint --nz-green-soft #b7ffe0 flächige tönung, sehr sparsam"><td><span class="chip" style="background:#B7FFE0"></span><b>Signal Tint</b></td><td><code>--nz-green-soft</code></td><td><code>#B7FFE0</code></td><td>Flächige Tönung, sehr sparsam</td><td><button class="copy" data-copy="#B7FFE0">Hex</button> <button class="copy" data-copy="var(--nz-green-soft)">Token</button></td></tr>
+<tr id="nz-paper" data-k="papier-gelb --nz-paper #fffee5 globaler hintergrund (print, ci-dokument)"><td><span class="chip" style="background:#FFFEE5"></span><b>Papier-Gelb</b></td><td><code>--nz-paper</code></td><td><code>#FFFEE5</code></td><td>Globaler Hintergrund (Print, CI-Dokument)</td><td><button class="copy" data-copy="#FFFEE5">Hex</button> <button class="copy" data-copy="var(--nz-paper)">Token</button></td></tr>
+<tr id="nz-paper-alt" data-k="papier alt --nz-paper-alt #faf8d4 karten-tönung"><td><span class="chip" style="background:#FAF8D4"></span><b>Papier Alt</b></td><td><code>--nz-paper-alt</code></td><td><code>#FAF8D4</code></td><td>Karten-Tönung</td><td><button class="copy" data-copy="#FAF8D4">Hex</button> <button class="copy" data-copy="var(--nz-paper-alt)">Token</button></td></tr>
+<tr id="nz-paper-deep" data-k="papier deep --nz-paper-deep #f4f1c4 sektions-hintergründe"><td><span class="chip" style="background:#F4F1C4"></span><b>Papier Deep</b></td><td><code>--nz-paper-deep</code></td><td><code>#F4F1C4</code></td><td>Sektions-Hintergründe</td><td><button class="copy" data-copy="#F4F1C4">Hex</button> <button class="copy" data-copy="var(--nz-paper-deep)">Token</button></td></tr>
+<tr id="nz-ink" data-k="tinte-schwarz --nz-ink #000000 schrift, linien, rahmen, harte schatten"><td><span class="chip" style="background:#000000"></span><b>Tinte-Schwarz</b></td><td><code>--nz-ink</code></td><td><code>#000000</code></td><td>Schrift, Linien, Rahmen, harte Schatten</td><td><button class="copy" data-copy="#000000">Hex</button> <button class="copy" data-copy="var(--nz-ink)">Token</button></td></tr>
+<tr id="nz-c-ink-900" data-k="ink 900 --nz-c-ink-900 #0c0c0a warmes near-black — canvas im dark theme"><td><span class="chip" style="background:#0C0C0A"></span><b>Ink 900</b></td><td><code>--nz-c-ink-900</code></td><td><code>#0C0C0A</code></td><td>Warmes Near-Black — Canvas im Dark Theme</td><td><button class="copy" data-copy="#0C0C0A">Hex</button> <button class="copy" data-copy="var(--nz-c-ink-900)">Token</button></td></tr>
+<tr id="nz-c-ink-800" data-k="ink 800 --nz-c-ink-800 #17160f flächen im dark theme"><td><span class="chip" style="background:#17160F"></span><b>Ink 800</b></td><td><code>--nz-c-ink-800</code></td><td><code>#17160F</code></td><td>Flächen im Dark Theme</td><td><button class="copy" data-copy="#17160F">Hex</button> <button class="copy" data-copy="var(--nz-c-ink-800)">Token</button></td></tr>
+<tr id="nz-c-warn" data-k="warnung --nz-c-warn #ff5f1f nur für fehler- und verbotsmarkierung"><td><span class="chip" style="background:#FF5F1F"></span><b>Warnung</b></td><td><code>--nz-c-warn</code></td><td><code>#FF5F1F</code></td><td>Nur für Fehler- und Verbotsmarkierung</td><td><button class="copy" data-copy="#FF5F1F">Hex</button> <button class="copy" data-copy="var(--nz-c-warn)">Token</button></td></tr></tbody></table>
+      </section>
+      <section class="sec" id="tokens"><h2>Design Tokens.</h2>
+        <p class="lede">Komponenten nutzen ausschließlich semantische Tokens — ein Theme-Wechsel
+        tauscht die Zuordnung, nicht die Komponenten.</p>
+        <table class="tbl">
+          <thead><tr><th>Token</th><th>Rolle</th><th>Light</th><th>Dark</th></tr></thead>
+          <tbody>
+            <tr><td><code>--nz-bg</code></td><td>Canvas</td><td>#FFFEE5</td><td>#0C0C0A</td></tr>
+            <tr><td><code>--nz-surface</code></td><td>Karten, Panels</td><td>#FFFFFF</td><td>#17160F</td></tr>
+            <tr><td><code>--nz-text</code></td><td>Primärtext</td><td>#000000</td><td>#FFFEE5</td></tr>
+            <tr><td><code>--nz-line</code></td><td>Rahmen, Linien</td><td>#000000</td><td>#FFFEE5</td></tr>
+            <tr><td><code>--nz-signal</code></td><td>Aktionsfarbe</td><td>#00FF9C</td><td>#00FF9C</td></tr>
+            <tr><td><code>--nz-shadow-color</code></td><td>Harte Schatten</td><td>#000000</td><td>#FFFEE5</td></tr>
+            <tr><td><code>--nz-radius</code></td><td>Eckenradius</td><td colspan="2">0 — ausnahmslos</td></tr>
+          </tbody></table>
+      </section>
+      <footer class="foot">
+        <span class="nz-label">nozilla CI · v1.1</span>
+        <span class="nz-label">// Gute digitale Dienste.</span>
+        <a class="nz-label" href="mailto:contact@nozilla.de">contact@nozilla.de</a>
+      </footer>
+    </div>
+  </div>
+</div>
+<script>window.NZ_INDEX = [{"t":"Übersicht","c":"Seite","u":"index.html","k":"übersicht"},{"t":"Grundlagen","c":"Seite","u":"grundlagen.html","k":"grundlagen"},{"t":"Logo","c":"Seite","u":"logo.html","k":"logo"},{"t":"Sprache","c":"Seite","u":"sprache.html","k":"sprache"},{"t":"Farbe","c":"Seite","u":"farbe.html","k":"farbe"},{"t":"Typografie","c":"Seite","u":"typografie.html","k":"typografie"},{"t":"Icons","c":"Seite","u":"icons.html","k":"icons"},{"t":"Bilder","c":"Seite","u":"bilder.html","k":"bilder"},{"t":"Komponenten","c":"Seite","u":"komponenten.html","k":"komponenten"},{"t":"Vorlagen","c":"Seite","u":"vorlagen.html","k":"vorlagen"},{"t":"Downloads","c":"Seite","u":"downloads.html","k":"downloads"},{"t":"Grid","c":"Icon","u":"icons.html#icon-grid","k":"grid grid icon heavy-stroke"},{"t":"Cursor","c":"Icon","u":"icons.html#icon-cursor","k":"cursor cursor icon heavy-stroke"},{"t":"Labyrinth","c":"Icon","u":"icons.html#icon-maze","k":"labyrinth maze icon heavy-stroke"},{"t":"Terminal","c":"Icon","u":"icons.html#icon-terminal","k":"terminal terminal icon heavy-stroke"},{"t":"Chat","c":"Icon","u":"icons.html#icon-chat","k":"chat chat icon heavy-stroke"},{"t":"Spark","c":"Icon","u":"icons.html#icon-spark","k":"spark spark icon heavy-stroke"},{"t":"Pfeil","c":"Icon","u":"icons.html#icon-arrow","k":"pfeil arrow icon heavy-stroke"},{"t":"Person","c":"Icon","u":"icons.html#icon-user","k":"person user icon heavy-stroke"},{"t":"Zahnrad","c":"Icon","u":"icons.html#icon-gear","k":"zahnrad gear icon heavy-stroke"},{"t":"Ordner","c":"Icon","u":"icons.html#icon-folder","k":"ordner folder icon heavy-stroke"},{"t":"Glühbirne","c":"Icon","u":"icons.html#icon-lightbulb","k":"glühbirne lightbulb icon heavy-stroke"},{"t":"Code","c":"Icon","u":"icons.html#icon-code","k":"code code icon heavy-stroke"},{"t":"Kalender","c":"Icon","u":"icons.html#icon-calendar","k":"kalender calendar icon heavy-stroke"},{"t":"Uhr","c":"Icon","u":"icons.html#icon-clock","k":"uhr clock icon heavy-stroke"},{"t":"Diagramm","c":"Icon","u":"icons.html#icon-chart","k":"diagramm chart icon heavy-stroke"},{"t":"Ziel","c":"Icon","u":"icons.html#icon-target","k":"ziel target icon heavy-stroke"},{"t":"Schloss","c":"Icon","u":"icons.html#icon-lock","k":"schloss lock icon heavy-stroke"},{"t":"Server","c":"Icon","u":"icons.html#icon-server","k":"server server icon heavy-stroke"},{"t":"Mobil","c":"Icon","u":"icons.html#icon-mobile","k":"mobil mobile icon heavy-stroke"},{"t":"Monitor","c":"Icon","u":"icons.html#icon-monitor","k":"monitor monitor icon heavy-stroke"},{"t":"Suche","c":"Icon","u":"icons.html#icon-search","k":"suche search icon heavy-stroke"},{"t":"Mail","c":"Icon","u":"icons.html#icon-mail","k":"mail mail icon heavy-stroke"},{"t":"Warnung","c":"Icon","u":"icons.html#icon-warning","k":"warnung warning icon heavy-stroke"},{"t":"Haken","c":"Icon","u":"icons.html#icon-check","k":"haken check icon heavy-stroke"},{"t":"Kreuz","c":"Icon","u":"icons.html#icon-close","k":"kreuz close icon heavy-stroke"},{"t":"Plus","c":"Icon","u":"icons.html#icon-plus","k":"plus plus icon heavy-stroke"},{"t":"Extern","c":"Icon","u":"icons.html#icon-external","k":"extern external icon heavy-stroke"},{"t":"Rakete","c":"Icon","u":"icons.html#icon-rocket","k":"rakete rocket icon heavy-stroke"},{"t":"Stift","c":"Icon","u":"icons.html#icon-pen","k":"stift pen icon heavy-stroke"},{"t":"Papierkorb","c":"Icon","u":"icons.html#icon-trash","k":"papierkorb trash icon heavy-stroke"},{"t":"Filter","c":"Icon","u":"icons.html#icon-filter","k":"filter filter icon heavy-stroke"},{"t":"Buch","c":"Icon","u":"icons.html#icon-book","k":"buch book icon heavy-stroke"},{"t":"Glocke","c":"Icon","u":"icons.html#icon-bell","k":"glocke bell icon heavy-stroke"},{"t":"Pixel-Gurke","c":"Icon","u":"icons.html#icon-cucumber","k":"pixel-gurke cucumber icon pixel-art"},{"t":"Pixel-Herz","c":"Icon","u":"icons.html#icon-pixel-heart","k":"pixel-herz pixel-heart icon pixel-art"},{"t":"Pixel-Stern","c":"Icon","u":"icons.html#icon-pixel-star","k":"pixel-stern pixel-star icon pixel-art"},{"t":"Pixel-Diskette","c":"Icon","u":"icons.html#icon-pixel-disk","k":"pixel-diskette pixel-disk icon pixel-art"},{"t":"Signal-Grün · #00FF9C","c":"Farbe","u":"farbe.html#nz-green","k":"signal-grün --nz-green #00ff9c buttons, ctas, marker — nur für aktion signal"},{"t":"Signal Hover · #00E88D","c":"Farbe","u":"farbe.html#nz-green-strong","k":"signal hover --nz-green-strong #00e88d hover- und active-zustände signal"},{"t":"Signal Tint · #B7FFE0","c":"Farbe","u":"farbe.html#nz-green-soft","k":"signal tint --nz-green-soft #b7ffe0 flächige tönung, sehr sparsam signal"},{"t":"Papier-Gelb · #FFFEE5","c":"Farbe","u":"farbe.html#nz-paper","k":"papier-gelb --nz-paper #fffee5 globaler hintergrund (print, ci-dokument) papier"},{"t":"Papier Alt · #FAF8D4","c":"Farbe","u":"farbe.html#nz-paper-alt","k":"papier alt --nz-paper-alt #faf8d4 karten-tönung papier"},{"t":"Papier Deep · #F4F1C4","c":"Farbe","u":"farbe.html#nz-paper-deep","k":"papier deep --nz-paper-deep #f4f1c4 sektions-hintergründe papier"},{"t":"Tinte-Schwarz · #000000","c":"Farbe","u":"farbe.html#nz-ink","k":"tinte-schwarz --nz-ink #000000 schrift, linien, rahmen, harte schatten kontur"},{"t":"Ink 900 · #0C0C0A","c":"Farbe","u":"farbe.html#nz-c-ink-900","k":"ink 900 --nz-c-ink-900 #0c0c0a warmes near-black — canvas im dark theme kontur"},{"t":"Ink 800 · #17160F","c":"Farbe","u":"farbe.html#nz-c-ink-800","k":"ink 800 --nz-c-ink-800 #17160f flächen im dark theme kontur"},{"t":"Warnung · #FF5F1F","c":"Farbe","u":"farbe.html#nz-c-warn","k":"warnung --nz-c-warn #ff5f1f nur für fehler- und verbotsmarkierung status"},{"t":"Display · Zilla Slab","c":"Typo","u":"typografie.html","k":"display zilla slab schrift typografie"},{"t":"H1 · Zilla Slab","c":"Typo","u":"typografie.html","k":"h1 zilla slab schrift typografie"},{"t":"H2 · Zilla Slab","c":"Typo","u":"typografie.html","k":"h2 zilla slab schrift typografie"},{"t":"H3 · Zilla Slab","c":"Typo","u":"typografie.html","k":"h3 zilla slab schrift typografie"},{"t":"Lead · Zilla Slab","c":"Typo","u":"typografie.html","k":"lead zilla slab schrift typografie"},{"t":"Body · Inter","c":"Typo","u":"typografie.html","k":"body inter schrift typografie"},{"t":"Small · Inter","c":"Typo","u":"typografie.html","k":"small inter schrift typografie"},{"t":"Label · Space Mono","c":"Typo","u":"typografie.html","k":"label space mono schrift typografie"},{"t":"Wortmarke — Standard","c":"Artefakt","u":"logo.html","k":"logo wortmarke svg punkt grün"},{"t":"Wortmarke — einfarbig","c":"Artefakt","u":"logo.html","k":"logo mono einfarbig grün untergrund"},{"t":"Wortmarke — invers","c":"Artefakt","u":"logo.html","k":"logo invers dunkel papier"},{"t":"Briefpapier","c":"Artefakt","u":"vorlagen.html#print","k":"briefpapier letterhead a4 print"},{"t":"Visitenkarte","c":"Artefakt","u":"vorlagen.html#print","k":"visitenkarte business card 85x55"},{"t":"Präsentations-Master","c":"Artefakt","u":"vorlagen.html#slides","k":"slides deck master präsentation"},{"t":"Icon-Bibliothek (Slides)","c":"Artefakt","u":"vorlagen.html#slides","k":"slides icons bibliothek"},{"t":"Pitch-Deck","c":"Artefakt","u":"vorlagen.html#slides","k":"slides pitch deck"},{"t":"Google Docs Vorlagen","c":"Artefakt","u":"vorlagen.html#docs","k":"docs vorlagen brief angebot rechnung vertrag"},{"t":"Favicon","c":"Artefakt","u":"bilder.html","k":"favicon icon browser tab"},{"t":"Social Preview","c":"Artefakt","u":"bilder.html","k":"og image social preview twitter"},{"t":"Die 10 Regeln","c":"Artefakt","u":"grundlagen.html#regeln","k":"regeln kanon do dont"},{"t":"Green Marker","c":"Artefakt","u":"grundlagen.html#marker","k":"marker grün hervorhebung mark"},{"t":"Schreibweise nozilla","c":"Artefakt","u":"grundlagen.html#schreibweise","k":"nozilla klein punkt schreibweise"},{"t":"Buzzword-Verbot","c":"Artefakt","u":"sprache.html","k":"buzzword seamless disruptive synergy verboten"},{"t":"Web-Elemente","c":"Artefakt","u":"komponenten.html","k":"akkordeon modal toast dropdown komponenten"},{"t":"Design Tokens","c":"Artefakt","u":"farbe.html#tokens","k":"token css variablen nz"}];</script>
+<script src="ci-site.js"></script>
+</body>
+</html>
