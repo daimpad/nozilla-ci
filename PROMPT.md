@@ -25,7 +25,7 @@ CI-DOKUMENTATION:
   ⚡ Quick-Reference für KI:
      https://github.com/daimpad/nozilla-ci/blob/main/CLAUDE.md
 
-KONTAKT: ci@nozilla.de
+KONTAKT: contact@nozilla.de
 
 ═══════════════════════════════════════════════════════════════
 
@@ -306,7 +306,7 @@ Mit diesem Prompt wird Claude Code automatisch:
 - PROMPT.md (Master): https://github.com/daimpad/nozilla-ci/blob/main/PROMPT.md
 
 **Fragen?**
-- Email: ci@nozilla.de
+- Email: contact@nozilla.de
 - GitHub Repo: https://github.com/daimpad/nozilla-ci
 - Issue erstellen: https://github.com/daimpad/nozilla-ci/issues
 
@@ -315,7 +315,7 @@ Mit diesem Prompt wird Claude Code automatisch:
 **nozilla CI — v1.0 · April 2026**
 
 Repository: https://github.com/daimpad/nozilla-ci
-Maintainer: nozilla GmbH
+Maintainer: nozilla
 License: Internal Use
 
 _Gute digitale Dienste._

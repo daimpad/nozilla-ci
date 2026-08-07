@@ -105,7 +105,7 @@ Komponenten referenzieren nur semantische Tokens — ein Theme-Wechsel tauscht d
 <div class="nz-alert nz-alert--signal">…</div>
 <label class="nz-field">
   <span class="nz-field__label">E-Mail</span>
-  <input class="nz-input" type="email" placeholder="ci@nozilla.de"/>
+  <input class="nz-input" type="email" placeholder="contact@nozilla.de"/>
 </label>
 ```
 

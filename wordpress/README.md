@@ -113,4 +113,4 @@ Das Design System kann Dark ([`design-system.css`](../design-system.css)), diese
 
 ---
 
-Fragen? ci@nozilla.de
+Fragen? contact@nozilla.de

@@ -40,4 +40,4 @@ All design and verbal guidelines are documented in the **[Corporate Identity Doc
 
 For the complete guidelines with examples, color swatches, typography specimens, icon dialects, and voice examples, see **[index.html](./index.html)**.
 
-Questions? ci@nozilla.de
+Questions? contact@nozilla.de

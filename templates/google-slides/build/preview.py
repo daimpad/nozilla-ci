@@ -99,16 +99,26 @@ def render(path, out_html, max_slides=None):
                         f"fill='{fc or 'none'}' stroke='{lc or 'none'}' stroke-width='{lw*1.33:.1f}' "
                         f"stroke-linecap='square' stroke-linejoin='miter'/></svg>")
                 continue
-            if sh.shape_type is not None and 'CONNECTOR' in str(sh.shape_type):
+            if sh._element.tag.endswith('}cxnSp'):
                 lc, lw = line_css(sh)
-                flipH = sh._element.find('.//a:xfrm', NS)
-                fh = flipH is not None and flipH.get('flipH') == '1'
-                fv = flipH is not None and flipH.get('flipV') == '1'
-                x1, y1, x2, y2 = (W, 0, 0, H) if fh and not fv else \
-                                 (0, H, W, 0) if fv and not fh else (0, 0, W, H)
-                parts.append(f"<svg style='{st}' viewBox='0 0 {max(W,1):.1f} {max(H,1):.1f}'>"
-                             f"<line x1='{x1:.1f}' y1='{y1:.1f}' x2='{x2:.1f}' y2='{y2:.1f}' "
-                             f"stroke='{lc or '#000'}' stroke-width='{lw*1.33:.1f}' stroke-linecap='square'/></svg>")
+                t = max(lw * 1.33, 1.0)
+                if H < 0.6:                      # horizontal
+                    parts.append(f"<div style='position:absolute;left:{L:.1f}px;"
+                                 f"top:{T - t/2:.1f}px;width:{W:.1f}px;height:{t:.1f}px;"
+                                 f"background:{lc or '#000'}'></div>")
+                elif W < 0.6:                    # vertical
+                    parts.append(f"<div style='position:absolute;left:{L - t/2:.1f}px;"
+                                 f"top:{T:.1f}px;width:{t:.1f}px;height:{H:.1f}px;"
+                                 f"background:{lc or '#000'}'></div>")
+                else:
+                    xf = sh._element.find('.//a:xfrm', NS)
+                    fh = xf is not None and xf.get('flipH') == '1'
+                    fv = xf is not None and xf.get('flipV') == '1'
+                    x1, y1, x2, y2 = (W, 0, 0, H) if fh and not fv else \
+                                     (0, H, W, 0) if fv and not fh else (0, 0, W, H)
+                    parts.append(f"<svg style='{st}overflow:visible' viewBox='0 0 {W:.1f} {H:.1f}'>"
+                                 f"<line x1='{x1:.1f}' y1='{y1:.1f}' x2='{x2:.1f}' y2='{y2:.1f}' "
+                                 f"stroke='{lc or '#000'}' stroke-width='{t:.1f}' stroke-linecap='square'/></svg>")
                 continue
             bg = fill_css(sh)
             lc, lw = line_css(sh)
@@ -117,7 +127,11 @@ def render(path, out_html, max_slides=None):
                 box += f"background:{bg};"
             if lc and lw:
                 box += f"border:{lw*1.33:.1f}px solid {lc};box-sizing:border-box;"
-            if 'OVAL' in str(sh.shape_type):
+            try:
+                is_oval = sh.auto_shape_type is not None and 'OVAL' in str(sh.auto_shape_type)
+            except Exception:
+                is_oval = False
+            if is_oval:
                 box += "border-radius:50%;"
             inner = ""
             if sh.has_text_frame and sh.text_frame.text.strip():
