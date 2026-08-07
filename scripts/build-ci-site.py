@@ -988,8 +988,10 @@ def inline_catalog_icon(fname):
     """Umriss auf currentColor, damit das Dark Theme trägt — Grün bleibt exakt."""
     with open(os.path.join(ASSETS, "icons", fname + ".svg")) as f:
         svg = f.read()
-    svg = svg.replace('stroke="#000000"', 'stroke="currentColor"').replace('stroke="#000"', 'stroke="currentColor"')
-    return re.sub(r'\s(?:width|height)="[^"]*"', "", svg).strip()
+    # Nur die Strichfarbe wird ersetzt. Groesse kommt aus dem CSS
+    # (.cat-cell svg) — die Wurzel traegt ohnehin nur ein viewBox.
+    return (svg.replace('stroke="#000000"', 'stroke="currentColor"')
+               .replace('stroke="#000"', 'stroke="currentColor"').strip())
 
 
 def p_katalog():
@@ -1030,6 +1032,20 @@ def p_katalog():
       </section>"""
     write("katalog.html", "Icon-Katalog.", "Gestaltung",
           f"{total} Motive in {len(cats)} Kategorien — nach Name und Bedeutung durchsuchbar.", body)
+
+    # Selbsttest: Beim Einbetten darf nichts von der Geometrie verloren gehen.
+    # Ein frueherer Griff nach width/height hat hier saemtliche rect-Elemente
+    # entwertet — inklusive der gruenen Signatur.
+    out = open(os.path.join(OUT, "katalog.html")).read()
+    signed = len(re.findall(r'<rect x="54" y="54" width="6" height="6" fill="#00FF9C"', out))
+    if signed != total:
+        raise SystemExit(f"katalog.html: {signed} von {total} Icons mit vollstaendiger Signatur")
+    src_rects = sum(len(re.findall(r"<rect[^>]*width=", open(
+        os.path.join(ASSETS, "icons", f + ".svg")).read()))
+        for _, _, items in cats for f, _, _ in items)
+    out_rects = len(re.findall(r"<rect[^>]*width=", out))
+    if out_rects < src_rects:
+        raise SystemExit(f"katalog.html: {src_rects - out_rects} rect-Elemente haben ihre Groesse verloren")
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
