@@ -1,0 +1,2115 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>nozilla — Icon-Set</title>
+<link rel="icon" href="project/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="project/assets/favicon-32.png" type="image/png"/>
+<link rel="stylesheet" href="project/fonts.css"/>
+<link rel="stylesheet" href="project/colors_and_type.css"/>
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--nz-paper,#FFFEE5);color:#000;font-family:var(--nz-font-body,Inter),system-ui,sans-serif;font-size:17px;line-height:1.55;}
+  .wrap{max-width:1180px;margin:0 auto;padding:48px 24px 96px;}
+  header{border-bottom:3px solid #000;padding-bottom:28px;margin-bottom:36px;}
+  .kicker{font-family:var(--nz-font-mono,'Space Mono'),monospace;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;}
+  h1{font-family:var(--nz-font-display,'Zilla Slab'),Georgia,serif;font-weight:700;font-size:clamp(40px,8vw,84px);line-height:1.02;margin:12px 0 16px;}
+  .lead{max-width:62ch;margin:0 0 4px;}
+  mark.g{background:#00FF9C;color:#000;padding:0 .12em;}
+  .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:28px 0 0;}
+  #q{flex:1 1 260px;min-width:200px;border:3px solid #000;background:#fff;padding:12px 14px;font:inherit;}
+  #q:focus{outline:0;box-shadow:6px 6px 0 0 #00FF9C;}
+  .tally{font-family:var(--nz-font-mono,'Space Mono'),monospace;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;}
+  .grp{margin:0 0 44px;}
+  .grp h2{font-family:var(--nz-font-display,'Zilla Slab'),Georgia,serif;font-weight:700;font-size:26px;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #000;grid-column:1/-1;}
+  .cnt{font-family:var(--nz-font-mono,'Space Mono'),monospace;font-size:12px;font-weight:700;vertical-align:middle;background:#000;color:#FFFEE5;padding:2px 7px;margin-left:6px;}
+  .grp{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px;}
+  .ico{margin:0;border:2px solid #000;background:#fff;padding:16px 14px 14px;display:flex;flex-direction:column;gap:12px;}
+  .ico img{width:64px;height:64px;display:block;margin:0 auto;}
+  figcaption{border-top:2px solid #000;padding-top:10px;display:flex;flex-direction:column;gap:3px;}
+  figcaption b{font-family:var(--nz-font-mono,'Space Mono'),monospace;font-size:11px;font-weight:700;letter-spacing:.06em;word-break:break-word;}
+  figcaption span{font-size:13px;line-height:1.35;}
+  .hide{display:none !important;}
+  .empty{border:3px solid #000;padding:20px;}
+  footer{border-top:3px solid #000;padding-top:20px;margin-top:36px;font-size:14px;}
+  a{color:#000;}
+  @media (max-width:640px){.grp{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">nozilla · Ikonografie · Dialekt A</div>
+    <h1>Dicke Linie,<br/>klare Ansage.</h1>
+    <p class="lead">462 Icons aus dem freien Font-Awesome-Bestand, neu gezeichnet im nozilla CI: 64 × 64, <mark class="g">4 px Strichstärke</mark>, rechtwinklige Enden, Tinte auf Papier. Keine fremden Pfaddaten, keine Radien, keine Verläufe.</p>
+    <div class="bar">
+      <input id="q" type="search" placeholder="Suchen — Name oder Bedeutung" aria-label="Icons durchsuchen"/>
+      <div class="tally" id="tally">462 Icons</div>
+    </div>
+  </header>
+    <section class="grp" data-cat="accessibility">
+      <h2>Accessibility <span class="cnt">6</span></h2>
+      <figure class="ico" data-q="braille Braille — ertastbare Schrift">
+        <img src="project/assets/icons/nz-braille.svg" alt="Braille" width="64" height="64"/>
+        <figcaption><b>braille</b><span>Braille — ertastbare Schrift</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="closed-captioning Untertitel — Text zum Ton">
+        <img src="project/assets/icons/nz-closed-captioning.svg" alt="Untertitel" width="64" height="64"/>
+        <figcaption><b>closed-captioning</b><span>Untertitel — Text zum Ton</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ear-listen Hören — Assistenz, Verständnis">
+        <img src="project/assets/icons/nz-ear-listen.svg" alt="Hören" width="64" height="64"/>
+        <figcaption><b>ear-listen</b><span>Hören — Assistenz, Verständnis</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hands-asl-interpreting Gebärdensprache — Dolmetschen">
+        <img src="project/assets/icons/nz-hands-asl-interpreting.svg" alt="Gebärdensprache" width="64" height="64"/>
+        <figcaption><b>hands-asl-interpreting</b><span>Gebärdensprache — Dolmetschen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="universal-access Barrierefreiheit — für alle nutzbar">
+        <img src="project/assets/icons/nz-universal-access.svg" alt="Barrierefreiheit" width="64" height="64"/>
+        <figcaption><b>universal-access</b><span>Barrierefreiheit — für alle nutzbar</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wheelchair Rollstuhl — barrierefreier Zugang">
+        <img src="project/assets/icons/nz-wheelchair.svg" alt="Rollstuhl" width="64" height="64"/>
+        <figcaption><b>wheelchair</b><span>Rollstuhl — barrierefreier Zugang</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="alert">
+      <h2>Alert <span class="cnt">6</span></h2>
+      <figure class="ico" data-q="circle-exclamation Warnung — Fehler, Achtung">
+        <img src="project/assets/icons/nz-circle-exclamation.svg" alt="Warnung" width="64" height="64"/>
+        <figcaption><b>circle-exclamation</b><span>Warnung — Fehler, Achtung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-info Info — Hinweis, Erklärung">
+        <img src="project/assets/icons/nz-circle-info.svg" alt="Info" width="64" height="64"/>
+        <figcaption><b>circle-info</b><span>Info — Hinweis, Erklärung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-question Kreis mit Fragezeichen — Hilfe">
+        <img src="project/assets/icons/nz-circle-question.svg" alt="Kreis mit Fragezeichen" width="64" height="64"/>
+        <figcaption><b>circle-question</b><span>Kreis mit Fragezeichen — Hilfe</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="exclamation Ausrufezeichen — Achtung">
+        <img src="project/assets/icons/nz-exclamation.svg" alt="Ausrufezeichen" width="64" height="64"/>
+        <figcaption><b>exclamation</b><span>Ausrufezeichen — Achtung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="question Fragezeichen — Hilfe, unklar">
+        <img src="project/assets/icons/nz-question.svg" alt="Fragezeichen" width="64" height="64"/>
+        <figcaption><b>question</b><span>Fragezeichen — Hilfe, unklar</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="triangle-exclamation Achtung — Risiko, Warnung">
+        <img src="project/assets/icons/nz-triangle-exclamation.svg" alt="Achtung" width="64" height="64"/>
+        <figcaption><b>triangle-exclamation</b><span>Achtung — Risiko, Warnung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="animals">
+      <h2>Animals <span class="cnt">3</span></h2>
+      <figure class="ico" data-q="cat Katze — Haustier">
+        <img src="project/assets/icons/nz-cat.svg" alt="Katze" width="64" height="64"/>
+        <figcaption><b>cat</b><span>Katze — Haustier</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="fish Fisch — Meer, Nahrung">
+        <img src="project/assets/icons/nz-fish.svg" alt="Fisch" width="64" height="64"/>
+        <figcaption><b>fish</b><span>Fisch — Meer, Nahrung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="paw Tier — Haustier, Natur">
+        <img src="project/assets/icons/nz-paw.svg" alt="Tier" width="64" height="64"/>
+        <figcaption><b>paw</b><span>Tier — Haustier, Natur</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="arrows">
+      <h2>Arrows <span class="cnt">46</span></h2>
+      <figure class="ico" data-q="angle-down Winkel runter — Panel öffnen, Dropdown">
+        <img src="project/assets/icons/nz-angle-down.svg" alt="Winkel runter" width="64" height="64"/>
+        <figcaption><b>angle-down</b><span>Winkel runter — Panel öffnen, Dropdown</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angle-left Winkel links — vorheriger Schritt">
+        <img src="project/assets/icons/nz-angle-left.svg" alt="Winkel links" width="64" height="64"/>
+        <figcaption><b>angle-left</b><span>Winkel links — vorheriger Schritt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angle-right Winkel rechts — nächster Schritt">
+        <img src="project/assets/icons/nz-angle-right.svg" alt="Winkel rechts" width="64" height="64"/>
+        <figcaption><b>angle-right</b><span>Winkel rechts — nächster Schritt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angle-up Winkel hoch — Panel schließen">
+        <img src="project/assets/icons/nz-angle-up.svg" alt="Winkel hoch" width="64" height="64"/>
+        <figcaption><b>angle-up</b><span>Winkel hoch — Panel schließen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angles-down Doppelwinkel runter — ganz nach unten">
+        <img src="project/assets/icons/nz-angles-down.svg" alt="Doppelwinkel runter" width="64" height="64"/>
+        <figcaption><b>angles-down</b><span>Doppelwinkel runter — ganz nach unten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angles-left Doppelwinkel links — schnell zurück, Anfang">
+        <img src="project/assets/icons/nz-angles-left.svg" alt="Doppelwinkel links" width="64" height="64"/>
+        <figcaption><b>angles-left</b><span>Doppelwinkel links — schnell zurück, Anfang</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angles-right Doppelwinkel rechts — schnell vor, Ende">
+        <img src="project/assets/icons/nz-angles-right.svg" alt="Doppelwinkel rechts" width="64" height="64"/>
+        <figcaption><b>angles-right</b><span>Doppelwinkel rechts — schnell vor, Ende</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="angles-up Doppelwinkel hoch — ganz nach oben">
+        <img src="project/assets/icons/nz-angles-up.svg" alt="Doppelwinkel hoch" width="64" height="64"/>
+        <figcaption><b>angles-up</b><span>Doppelwinkel hoch — ganz nach oben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-down Pfeil runter — abwärts, weniger">
+        <img src="project/assets/icons/nz-arrow-down.svg" alt="Pfeil runter" width="64" height="64"/>
+        <figcaption><b>arrow-down</b><span>Pfeil runter — abwärts, weniger</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-left Pfeil links — zurück, rückgängig">
+        <img src="project/assets/icons/nz-arrow-left.svg" alt="Pfeil links" width="64" height="64"/>
+        <figcaption><b>arrow-left</b><span>Pfeil links — zurück, rückgängig</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-right Pfeil rechts — vorwärts, weiter, Ziel">
+        <img src="project/assets/icons/nz-arrow-right.svg" alt="Pfeil rechts" width="64" height="64"/>
+        <figcaption><b>arrow-right</b><span>Pfeil rechts — vorwärts, weiter, Ziel</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-right-arrow-left Wechseln — hin und zurück">
+        <img src="project/assets/icons/nz-arrow-right-arrow-left.svg" alt="Wechseln" width="64" height="64"/>
+        <figcaption><b>arrow-right-arrow-left</b><span>Wechseln — hin und zurück</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-right-from-bracket Abmelden — Sitzung verlassen">
+        <img src="project/assets/icons/nz-arrow-right-from-bracket.svg" alt="Abmelden" width="64" height="64"/>
+        <figcaption><b>arrow-right-from-bracket</b><span>Abmelden — Sitzung verlassen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-right-to-bracket Anmelden — Sitzung betreten">
+        <img src="project/assets/icons/nz-arrow-right-to-bracket.svg" alt="Anmelden" width="64" height="64"/>
+        <figcaption><b>arrow-right-to-bracket</b><span>Anmelden — Sitzung betreten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-rotate-left Rückgängig — Schritt zurücknehmen">
+        <img src="project/assets/icons/nz-arrow-rotate-left.svg" alt="Rückgängig" width="64" height="64"/>
+        <figcaption><b>arrow-rotate-left</b><span>Rückgängig — Schritt zurücknehmen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-rotate-right Wiederherstellen — Schritt erneut ausführen">
+        <img src="project/assets/icons/nz-arrow-rotate-right.svg" alt="Wiederherstellen" width="64" height="64"/>
+        <figcaption><b>arrow-rotate-right</b><span>Wiederherstellen — Schritt erneut ausführen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-trend-down Trend fällt — Rückgang">
+        <img src="project/assets/icons/nz-arrow-trend-down.svg" alt="Trend fällt" width="64" height="64"/>
+        <figcaption><b>arrow-trend-down</b><span>Trend fällt — Rückgang</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-trend-up Trend steigt — Wachstum">
+        <img src="project/assets/icons/nz-arrow-trend-up.svg" alt="Trend steigt" width="64" height="64"/>
+        <figcaption><b>arrow-trend-up</b><span>Trend steigt — Wachstum</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-up Pfeil hoch — aufwärts, mehr, Anstieg">
+        <img src="project/assets/icons/nz-arrow-up.svg" alt="Pfeil hoch" width="64" height="64"/>
+        <figcaption><b>arrow-up</b><span>Pfeil hoch — aufwärts, mehr, Anstieg</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrow-up-right-from-square Externer Link — neues Fenster">
+        <img src="project/assets/icons/nz-arrow-up-right-from-square.svg" alt="Externer Link" width="64" height="64"/>
+        <figcaption><b>arrow-up-right-from-square</b><span>Externer Link — neues Fenster</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrows-left-right Horizontal tauschen — Breite, Gegenrichtung">
+        <img src="project/assets/icons/nz-arrows-left-right.svg" alt="Horizontal tauschen" width="64" height="64"/>
+        <figcaption><b>arrows-left-right</b><span>Horizontal tauschen — Breite, Gegenrichtung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrows-rotate Synchronisieren — neu laden, abgleichen">
+        <img src="project/assets/icons/nz-arrows-rotate.svg" alt="Synchronisieren" width="64" height="64"/>
+        <figcaption><b>arrows-rotate</b><span>Synchronisieren — neu laden, abgleichen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrows-up-down Vertikal tauschen — Höhe, Reihenfolge">
+        <img src="project/assets/icons/nz-arrows-up-down.svg" alt="Vertikal tauschen" width="64" height="64"/>
+        <figcaption><b>arrows-up-down</b><span>Vertikal tauschen — Höhe, Reihenfolge</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="arrows-up-down-left-right Verschieben — frei bewegen">
+        <img src="project/assets/icons/nz-arrows-up-down-left-right.svg" alt="Verschieben" width="64" height="64"/>
+        <figcaption><b>arrows-up-down-left-right</b><span>Verschieben — frei bewegen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="caret-down Dreieck runter — Sortierung absteigend">
+        <img src="project/assets/icons/nz-caret-down.svg" alt="Dreieck runter" width="64" height="64"/>
+        <figcaption><b>caret-down</b><span>Dreieck runter — Sortierung absteigend</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="caret-left Dreieck links — Auswahl zurück">
+        <img src="project/assets/icons/nz-caret-left.svg" alt="Dreieck links" width="64" height="64"/>
+        <figcaption><b>caret-left</b><span>Dreieck links — Auswahl zurück</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="caret-right Dreieck rechts — Auswahl vor">
+        <img src="project/assets/icons/nz-caret-right.svg" alt="Dreieck rechts" width="64" height="64"/>
+        <figcaption><b>caret-right</b><span>Dreieck rechts — Auswahl vor</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="caret-up Dreieck hoch — Sortierung aufsteigend">
+        <img src="project/assets/icons/nz-caret-up.svg" alt="Dreieck hoch" width="64" height="64"/>
+        <figcaption><b>caret-up</b><span>Dreieck hoch — Sortierung aufsteigend</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chevron-down Chevron runter — ausklappen">
+        <img src="project/assets/icons/nz-chevron-down.svg" alt="Chevron runter" width="64" height="64"/>
+        <figcaption><b>chevron-down</b><span>Chevron runter — ausklappen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chevron-left Chevron links — Ebene zurück">
+        <img src="project/assets/icons/nz-chevron-left.svg" alt="Chevron links" width="64" height="64"/>
+        <figcaption><b>chevron-left</b><span>Chevron links — Ebene zurück</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chevron-right Chevron rechts — Listeneintrag öffnen">
+        <img src="project/assets/icons/nz-chevron-right.svg" alt="Chevron rechts" width="64" height="64"/>
+        <figcaption><b>chevron-right</b><span>Chevron rechts — Listeneintrag öffnen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chevron-up Chevron hoch — einklappen">
+        <img src="project/assets/icons/nz-chevron-up.svg" alt="Chevron hoch" width="64" height="64"/>
+        <figcaption><b>chevron-up</b><span>Chevron hoch — einklappen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="compress Verkleinern — Vollbild verlassen">
+        <img src="project/assets/icons/nz-compress.svg" alt="Verkleinern" width="64" height="64"/>
+        <figcaption><b>compress</b><span>Verkleinern — Vollbild verlassen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="download Herunterladen — Datei holen">
+        <img src="project/assets/icons/nz-download.svg" alt="Herunterladen" width="64" height="64"/>
+        <figcaption><b>download</b><span>Herunterladen — Datei holen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="expand Vergrößern — Vollbild">
+        <img src="project/assets/icons/nz-expand.svg" alt="Vergrößern" width="64" height="64"/>
+        <figcaption><b>expand</b><span>Vergrößern — Vollbild</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="location-arrow Kurs — Richtung, Navigation">
+        <img src="project/assets/icons/nz-location-arrow.svg" alt="Kurs" width="64" height="64"/>
+        <figcaption><b>location-arrow</b><span>Kurs — Richtung, Navigation</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="repeat Wiederholen — Schleife">
+        <img src="project/assets/icons/nz-repeat.svg" alt="Wiederholen" width="64" height="64"/>
+        <figcaption><b>repeat</b><span>Wiederholen — Schleife</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="reply Antworten — zurückschreiben">
+        <img src="project/assets/icons/nz-reply.svg" alt="Antworten" width="64" height="64"/>
+        <figcaption><b>reply</b><span>Antworten — zurückschreiben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="right-left Austauschen — ersetzen">
+        <img src="project/assets/icons/nz-right-left.svg" alt="Austauschen" width="64" height="64"/>
+        <figcaption><b>right-left</b><span>Austauschen — ersetzen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="share Weiterleiten — an andere geben">
+        <img src="project/assets/icons/nz-share.svg" alt="Weiterleiten" width="64" height="64"/>
+        <figcaption><b>share</b><span>Weiterleiten — an andere geben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="share-nodes Teilen — Knoten verbinden">
+        <img src="project/assets/icons/nz-share-nodes.svg" alt="Teilen" width="64" height="64"/>
+        <figcaption><b>share-nodes</b><span>Teilen — Knoten verbinden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="shuffle Zufall — Reihenfolge mischen">
+        <img src="project/assets/icons/nz-shuffle.svg" alt="Zufall" width="64" height="64"/>
+        <figcaption><b>shuffle</b><span>Zufall — Reihenfolge mischen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="sort Sortieren — Spalte ordnen">
+        <img src="project/assets/icons/nz-sort.svg" alt="Sortieren" width="64" height="64"/>
+        <figcaption><b>sort</b><span>Sortieren — Spalte ordnen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="turn-down Abbiegen runter — Ebene wechseln">
+        <img src="project/assets/icons/nz-turn-down.svg" alt="Abbiegen runter" width="64" height="64"/>
+        <figcaption><b>turn-down</b><span>Abbiegen runter — Ebene wechseln</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="turn-up Abbiegen hoch — Ebene wechseln">
+        <img src="project/assets/icons/nz-turn-up.svg" alt="Abbiegen hoch" width="64" height="64"/>
+        <figcaption><b>turn-up</b><span>Abbiegen hoch — Ebene wechseln</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="upload Hochladen — Datei senden">
+        <img src="project/assets/icons/nz-upload.svg" alt="Hochladen" width="64" height="64"/>
+        <figcaption><b>upload</b><span>Hochladen — Datei senden</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="astronomy">
+      <h2>Astronomy <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="meteor Meteor — Einschlag, Ereignis">
+        <img src="project/assets/icons/nz-meteor.svg" alt="Meteor" width="64" height="64"/>
+        <figcaption><b>meteor</b><span>Meteor — Einschlag, Ereignis</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="automotive">
+      <h2>Automotive <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="gas-pump Tankstelle — Kraftstoff">
+        <img src="project/assets/icons/nz-gas-pump.svg" alt="Tankstelle" width="64" height="64"/>
+        <figcaption><b>gas-pump</b><span>Tankstelle — Kraftstoff</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="buildings">
+      <h2>Buildings <span class="cnt">5</span></h2>
+      <figure class="ico" data-q="building-columns Institution — Bank, Behörde">
+        <img src="project/assets/icons/nz-building-columns.svg" alt="Institution" width="64" height="64"/>
+        <figcaption><b>building-columns</b><span>Institution — Bank, Behörde</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="city Stadt — Ballungsraum, Standorte">
+        <img src="project/assets/icons/nz-city.svg" alt="Stadt" width="64" height="64"/>
+        <figcaption><b>city</b><span>Stadt — Ballungsraum, Standorte</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="house Haus — Startseite, Zuhause">
+        <img src="project/assets/icons/nz-house.svg" alt="Haus" width="64" height="64"/>
+        <figcaption><b>house</b><span>Haus — Startseite, Zuhause</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="house-chimney Wohnhaus — Adresse, Privat">
+        <img src="project/assets/icons/nz-house-chimney.svg" alt="Wohnhaus" width="64" height="64"/>
+        <figcaption><b>house-chimney</b><span>Wohnhaus — Adresse, Privat</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="landmark Wahrzeichen — Ort mit Bedeutung">
+        <img src="project/assets/icons/nz-landmark.svg" alt="Wahrzeichen" width="64" height="64"/>
+        <figcaption><b>landmark</b><span>Wahrzeichen — Ort mit Bedeutung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="business">
+      <h2>Business <span class="cnt">12</span></h2>
+      <figure class="ico" data-q="briefcase Aktentasche — Auftrag, Beruf">
+        <img src="project/assets/icons/nz-briefcase.svg" alt="Aktentasche" width="64" height="64"/>
+        <figcaption><b>briefcase</b><span>Aktentasche — Auftrag, Beruf</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="building Gebäude — Firma, Standort">
+        <img src="project/assets/icons/nz-building.svg" alt="Gebäude" width="64" height="64"/>
+        <figcaption><b>building</b><span>Gebäude — Firma, Standort</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="compass Kompass — Orientierung, Kurs">
+        <img src="project/assets/icons/nz-compass.svg" alt="Kompass" width="64" height="64"/>
+        <figcaption><b>compass</b><span>Kompass — Orientierung, Kurs</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="globe Global — weltweit, Sprache">
+        <img src="project/assets/icons/nz-globe.svg" alt="Global" width="64" height="64"/>
+        <figcaption><b>globe</b><span>Global — weltweit, Sprache</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="handshake Vereinbarung — Partnerschaft">
+        <img src="project/assets/icons/nz-handshake.svg" alt="Vereinbarung" width="64" height="64"/>
+        <figcaption><b>handshake</b><span>Vereinbarung — Partnerschaft</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="industry Industrie — Produktion, Werk">
+        <img src="project/assets/icons/nz-industry.svg" alt="Industrie" width="64" height="64"/>
+        <figcaption><b>industry</b><span>Industrie — Produktion, Werk</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="paperclip Anhang — Datei beifügen">
+        <img src="project/assets/icons/nz-paperclip.svg" alt="Anhang" width="64" height="64"/>
+        <figcaption><b>paperclip</b><span>Anhang — Datei beifügen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="scale-balanced Waage — Abwägung, Fairness">
+        <img src="project/assets/icons/nz-scale-balanced.svg" alt="Waage" width="64" height="64"/>
+        <figcaption><b>scale-balanced</b><span>Waage — Abwägung, Fairness</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="table Tabelle — Zeilen und Spalten">
+        <img src="project/assets/icons/nz-table.svg" alt="Tabelle" width="64" height="64"/>
+        <figcaption><b>table</b><span>Tabelle — Zeilen und Spalten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="table-columns Spaltenlayout — geteilte Ansicht">
+        <img src="project/assets/icons/nz-table-columns.svg" alt="Spaltenlayout" width="64" height="64"/>
+        <figcaption><b>table-columns</b><span>Spaltenlayout — geteilte Ansicht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tag Etikett — Kennzeichnung, Schlagwort">
+        <img src="project/assets/icons/nz-tag.svg" alt="Etikett" width="64" height="64"/>
+        <figcaption><b>tag</b><span>Etikett — Kennzeichnung, Schlagwort</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tags Etiketten — mehrere Schlagworte">
+        <img src="project/assets/icons/nz-tags.svg" alt="Etiketten" width="64" height="64"/>
+        <figcaption><b>tags</b><span>Etiketten — mehrere Schlagworte</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="camping">
+      <h2>Camping <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="tent Zelt — Unterkunft, Notlager">
+        <img src="project/assets/icons/nz-tent.svg" alt="Zelt" width="64" height="64"/>
+        <figcaption><b>tent</b><span>Zelt — Unterkunft, Notlager</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="charity">
+      <h2>Charity <span class="cnt">3</span></h2>
+      <figure class="ico" data-q="dove Taube — Frieden, Hilfe">
+        <img src="project/assets/icons/nz-dove.svg" alt="Taube" width="64" height="64"/>
+        <figcaption><b>dove</b><span>Taube — Frieden, Hilfe</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hand-holding-heart Spende — Unterstützung geben">
+        <img src="project/assets/icons/nz-hand-holding-heart.svg" alt="Spende" width="64" height="64"/>
+        <figcaption><b>hand-holding-heart</b><span>Spende — Unterstützung geben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hands-holding-circle Verantwortung — gemeinsam tragen">
+        <img src="project/assets/icons/nz-hands-holding-circle.svg" alt="Verantwortung" width="64" height="64"/>
+        <figcaption><b>hands-holding-circle</b><span>Verantwortung — gemeinsam tragen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="charts-diagrams">
+      <h2>Charts + Diagrams <span class="cnt">10</span></h2>
+      <figure class="ico" data-q="bars-progress Fortschritt — Aufgabenstand">
+        <img src="project/assets/icons/nz-bars-progress.svg" alt="Fortschritt" width="64" height="64"/>
+        <figcaption><b>bars-progress</b><span>Fortschritt — Aufgabenstand</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chart-area Flächendiagramm — Volumen">
+        <img src="project/assets/icons/nz-chart-area.svg" alt="Flächendiagramm" width="64" height="64"/>
+        <figcaption><b>chart-area</b><span>Flächendiagramm — Volumen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chart-bar Balkendiagramm — Vergleich">
+        <img src="project/assets/icons/nz-chart-bar.svg" alt="Balkendiagramm" width="64" height="64"/>
+        <figcaption><b>chart-bar</b><span>Balkendiagramm — Vergleich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chart-line Liniendiagramm — Verlauf">
+        <img src="project/assets/icons/nz-chart-line.svg" alt="Liniendiagramm" width="64" height="64"/>
+        <figcaption><b>chart-line</b><span>Liniendiagramm — Verlauf</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chart-pie Kreisdiagramm — Anteile">
+        <img src="project/assets/icons/nz-chart-pie.svg" alt="Kreisdiagramm" width="64" height="64"/>
+        <figcaption><b>chart-pie</b><span>Kreisdiagramm — Anteile</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chart-simple Kennzahlen — einfache Auswertung">
+        <img src="project/assets/icons/nz-chart-simple.svg" alt="Kennzahlen" width="64" height="64"/>
+        <figcaption><b>chart-simple</b><span>Kennzahlen — einfache Auswertung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-half-stroke Kontrast — Theme umschalten">
+        <img src="project/assets/icons/nz-circle-half-stroke.svg" alt="Kontrast" width="64" height="64"/>
+        <figcaption><b>circle-half-stroke</b><span>Kontrast — Theme umschalten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="diagram-project Projektplan — Abhängigkeiten">
+        <img src="project/assets/icons/nz-diagram-project.svg" alt="Projektplan" width="64" height="64"/>
+        <figcaption><b>diagram-project</b><span>Projektplan — Abhängigkeiten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="square-poll-vertical Umfrage — Auswertung">
+        <img src="project/assets/icons/nz-square-poll-vertical.svg" alt="Umfrage" width="64" height="64"/>
+        <figcaption><b>square-poll-vertical</b><span>Umfrage — Auswertung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="timeline Zeitstrahl — Ablauf, Meilensteine">
+        <img src="project/assets/icons/nz-timeline.svg" alt="Zeitstrahl" width="64" height="64"/>
+        <figcaption><b>timeline</b><span>Zeitstrahl — Ablauf, Meilensteine</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="childhood">
+      <h2>Childhood <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="cookie Cookie — Einwilligung, Tracking">
+        <img src="project/assets/icons/nz-cookie.svg" alt="Cookie" width="64" height="64"/>
+        <figcaption><b>cookie</b><span>Cookie — Einwilligung, Tracking</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="robot Automatisierung — Bot, Skript">
+        <img src="project/assets/icons/nz-robot.svg" alt="Automatisierung" width="64" height="64"/>
+        <figcaption><b>robot</b><span>Automatisierung — Bot, Skript</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="clothing-fashion">
+      <h2>Clothing + Fashion <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="glasses Lesen — Ansicht, Detail">
+        <img src="project/assets/icons/nz-glasses.svg" alt="Lesen" width="64" height="64"/>
+        <figcaption><b>glasses</b><span>Lesen — Ansicht, Detail</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="shirt Kleidung — Merchandise, Textil">
+        <img src="project/assets/icons/nz-shirt.svg" alt="Kleidung" width="64" height="64"/>
+        <figcaption><b>shirt</b><span>Kleidung — Merchandise, Textil</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="coding">
+      <h2>Coding <span class="cnt">15</span></h2>
+      <figure class="ico" data-q="bars Menü — Navigation ausklappen">
+        <img src="project/assets/icons/nz-bars.svg" alt="Menü" width="64" height="64"/>
+        <figcaption><b>bars</b><span>Menü — Navigation ausklappen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bug Fehler — Bug im System">
+        <img src="project/assets/icons/nz-bug.svg" alt="Fehler" width="64" height="64"/>
+        <figcaption><b>bug</b><span>Fehler — Bug im System</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bug-slash Fehler behoben — Bug entfernt">
+        <img src="project/assets/icons/nz-bug-slash.svg" alt="Fehler behoben" width="64" height="64"/>
+        <figcaption><b>bug-slash</b><span>Fehler behoben — Bug entfernt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="code Code — Quelltext">
+        <img src="project/assets/icons/nz-code.svg" alt="Code" width="64" height="64"/>
+        <figcaption><b>code</b><span>Code — Quelltext</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="code-branch Branch — Entwicklungszweig">
+        <img src="project/assets/icons/nz-code-branch.svg" alt="Branch" width="64" height="64"/>
+        <figcaption><b>code-branch</b><span>Branch — Entwicklungszweig</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="code-commit Commit — festgeschriebene Änderung">
+        <img src="project/assets/icons/nz-code-commit.svg" alt="Commit" width="64" height="64"/>
+        <figcaption><b>code-commit</b><span>Commit — festgeschriebene Änderung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="code-fork Fork — eigener Zweig, Abspaltung">
+        <img src="project/assets/icons/nz-code-fork.svg" alt="Fork" width="64" height="64"/>
+        <figcaption><b>code-fork</b><span>Fork — eigener Zweig, Abspaltung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="code-merge Merge — Zweige zusammenführen">
+        <img src="project/assets/icons/nz-code-merge.svg" alt="Merge" width="64" height="64"/>
+        <figcaption><b>code-merge</b><span>Merge — Zweige zusammenführen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="fire-extinguisher Notfallmaßnahme — Hotfix">
+        <img src="project/assets/icons/nz-fire-extinguisher.svg" alt="Notfallmaßnahme" width="64" height="64"/>
+        <figcaption><b>fire-extinguisher</b><span>Notfallmaßnahme — Hotfix</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="laptop-code Entwicklung — Code am Rechner">
+        <img src="project/assets/icons/nz-laptop-code.svg" alt="Entwicklung" width="64" height="64"/>
+        <figcaption><b>laptop-code</b><span>Entwicklung — Code am Rechner</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="microchip Chip — Rechenkern, Hardware">
+        <img src="project/assets/icons/nz-microchip.svg" alt="Chip" width="64" height="64"/>
+        <figcaption><b>microchip</b><span>Chip — Rechenkern, Hardware</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="qrcode QR-Code — schneller Zugriff">
+        <img src="project/assets/icons/nz-qrcode.svg" alt="QR-Code" width="64" height="64"/>
+        <figcaption><b>qrcode</b><span>QR-Code — schneller Zugriff</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="sitemap Struktur — Hierarchie, Sitemap">
+        <img src="project/assets/icons/nz-sitemap.svg" alt="Struktur" width="64" height="64"/>
+        <figcaption><b>sitemap</b><span>Struktur — Hierarchie, Sitemap</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="terminal Terminal — Kommandozeile">
+        <img src="project/assets/icons/nz-terminal.svg" alt="Terminal" width="64" height="64"/>
+        <figcaption><b>terminal</b><span>Terminal — Kommandozeile</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="window-maximize Fenster — Anwendung, Ansicht">
+        <img src="project/assets/icons/nz-window-maximize.svg" alt="Fenster" width="64" height="64"/>
+        <figcaption><b>window-maximize</b><span>Fenster — Anwendung, Ansicht</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="communication">
+      <h2>Communication <span class="cnt">13</span></h2>
+      <figure class="ico" data-q="comment Kommentar — Rückmeldung">
+        <img src="project/assets/icons/nz-comment.svg" alt="Kommentar" width="64" height="64"/>
+        <figcaption><b>comment</b><span>Kommentar — Rückmeldung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="comment-dots Schreibt gerade — Aktivität">
+        <img src="project/assets/icons/nz-comment-dots.svg" alt="Schreibt gerade" width="64" height="64"/>
+        <figcaption><b>comment-dots</b><span>Schreibt gerade — Aktivität</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="comments Gespräch — Austausch">
+        <img src="project/assets/icons/nz-comments.svg" alt="Gespräch" width="64" height="64"/>
+        <figcaption><b>comments</b><span>Gespräch — Austausch</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="envelope E-Mail — Nachricht">
+        <img src="project/assets/icons/nz-envelope.svg" alt="E-Mail" width="64" height="64"/>
+        <figcaption><b>envelope</b><span>E-Mail — Nachricht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="envelope-open E-Mail gelesen — geöffnet">
+        <img src="project/assets/icons/nz-envelope-open.svg" alt="E-Mail gelesen" width="64" height="64"/>
+        <figcaption><b>envelope-open</b><span>E-Mail gelesen — geöffnet</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="inbox Posteingang — offene Vorgänge">
+        <img src="project/assets/icons/nz-inbox.svg" alt="Posteingang" width="64" height="64"/>
+        <figcaption><b>inbox</b><span>Posteingang — offene Vorgänge</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="language Sprache — Übersetzung">
+        <img src="project/assets/icons/nz-language.svg" alt="Sprache" width="64" height="64"/>
+        <figcaption><b>language</b><span>Sprache — Übersetzung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="paper-plane Senden — abschicken">
+        <img src="project/assets/icons/nz-paper-plane.svg" alt="Senden" width="64" height="64"/>
+        <figcaption><b>paper-plane</b><span>Senden — abschicken</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="phone Telefon — Anruf">
+        <img src="project/assets/icons/nz-phone.svg" alt="Telefon" width="64" height="64"/>
+        <figcaption><b>phone</b><span>Telefon — Anruf</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="phone-slash Anruf beenden — nicht erreichbar">
+        <img src="project/assets/icons/nz-phone-slash.svg" alt="Anruf beenden" width="64" height="64"/>
+        <figcaption><b>phone-slash</b><span>Anruf beenden — nicht erreichbar</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="rss Feed — Abo, Aktualisierungen">
+        <img src="project/assets/icons/nz-rss.svg" alt="Feed" width="64" height="64"/>
+        <figcaption><b>rss</b><span>Feed — Abo, Aktualisierungen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tower-cell Mobilfunk — Sendemast">
+        <img src="project/assets/icons/nz-tower-cell.svg" alt="Mobilfunk" width="64" height="64"/>
+        <figcaption><b>tower-cell</b><span>Mobilfunk — Sendemast</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wifi Funknetz — drahtlos verbunden">
+        <img src="project/assets/icons/nz-wifi.svg" alt="Funknetz" width="64" height="64"/>
+        <figcaption><b>wifi</b><span>Funknetz — drahtlos verbunden</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="connectivity">
+      <h2>Connectivity <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="circle-nodes Netz — verbundene Knoten">
+        <img src="project/assets/icons/nz-circle-nodes.svg" alt="Netz" width="64" height="64"/>
+        <figcaption><b>circle-nodes</b><span>Netz — verbundene Knoten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="satellite-dish Empfang — Signal, Satellit">
+        <img src="project/assets/icons/nz-satellite-dish.svg" alt="Empfang" width="64" height="64"/>
+        <figcaption><b>satellite-dish</b><span>Empfang — Signal, Satellit</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="signal Signalstärke — Verbindung">
+        <img src="project/assets/icons/nz-signal.svg" alt="Signalstärke" width="64" height="64"/>
+        <figcaption><b>signal</b><span>Signalstärke — Verbindung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tower-broadcast Sendung — Live, Übertragung">
+        <img src="project/assets/icons/nz-tower-broadcast.svg" alt="Sendung" width="64" height="64"/>
+        <figcaption><b>tower-broadcast</b><span>Sendung — Live, Übertragung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="construction">
+      <h2>Construction <span class="cnt">7</span></h2>
+      <figure class="ico" data-q="hammer Hammer — bauen, umsetzen">
+        <img src="project/assets/icons/nz-hammer.svg" alt="Hammer" width="64" height="64"/>
+        <figcaption><b>hammer</b><span>Hammer — bauen, umsetzen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="helmet-safety Arbeitsschutz — Baustelle">
+        <img src="project/assets/icons/nz-helmet-safety.svg" alt="Arbeitsschutz" width="64" height="64"/>
+        <figcaption><b>helmet-safety</b><span>Arbeitsschutz — Baustelle</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="person-digging Baustelle — in Arbeit">
+        <img src="project/assets/icons/nz-person-digging.svg" alt="Baustelle" width="64" height="64"/>
+        <figcaption><b>person-digging</b><span>Baustelle — in Arbeit</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ruler Maßstab — Messen, Norm">
+        <img src="project/assets/icons/nz-ruler.svg" alt="Maßstab" width="64" height="64"/>
+        <figcaption><b>ruler</b><span>Maßstab — Messen, Norm</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="screwdriver-wrench Werkzeugkasten — Instandhaltung">
+        <img src="project/assets/icons/nz-screwdriver-wrench.svg" alt="Werkzeugkasten" width="64" height="64"/>
+        <figcaption><b>screwdriver-wrench</b><span>Werkzeugkasten — Instandhaltung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="toolbox Werkzeugkiste — Sammlung an Mitteln">
+        <img src="project/assets/icons/nz-toolbox.svg" alt="Werkzeugkiste" width="64" height="64"/>
+        <figcaption><b>toolbox</b><span>Werkzeugkiste — Sammlung an Mitteln</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wrench Werkzeug — Wartung, Einstellung">
+        <img src="project/assets/icons/nz-wrench.svg" alt="Werkzeug" width="64" height="64"/>
+        <figcaption><b>wrench</b><span>Werkzeug — Wartung, Einstellung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="design">
+      <h2>Design <span class="cnt">10</span></h2>
+      <figure class="ico" data-q="bezier-curve Kurve — Pfadwerkzeug">
+        <img src="project/assets/icons/nz-bezier-curve.svg" alt="Kurve" width="64" height="64"/>
+        <figcaption><b>bezier-curve</b><span>Kurve — Pfadwerkzeug</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="brush Pinsel — malen, gestalten">
+        <img src="project/assets/icons/nz-brush.svg" alt="Pinsel" width="64" height="64"/>
+        <figcaption><b>brush</b><span>Pinsel — malen, gestalten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="eye-dropper Pipette — Farbe aufnehmen">
+        <img src="project/assets/icons/nz-eye-dropper.svg" alt="Pipette" width="64" height="64"/>
+        <figcaption><b>eye-dropper</b><span>Pipette — Farbe aufnehmen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="grip Griff — verschieben, anfassen">
+        <img src="project/assets/icons/nz-grip.svg" alt="Griff" width="64" height="64"/>
+        <figcaption><b>grip</b><span>Griff — verschieben, anfassen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="layer-group Ebenen — gestapelte Elemente">
+        <img src="project/assets/icons/nz-layer-group.svg" alt="Ebenen" width="64" height="64"/>
+        <figcaption><b>layer-group</b><span>Ebenen — gestapelte Elemente</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="object-group Gruppieren — Objekte verbinden">
+        <img src="project/assets/icons/nz-object-group.svg" alt="Gruppieren" width="64" height="64"/>
+        <figcaption><b>object-group</b><span>Gruppieren — Objekte verbinden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="palette Palette — Farben, Gestaltung">
+        <img src="project/assets/icons/nz-palette.svg" alt="Palette" width="64" height="64"/>
+        <figcaption><b>palette</b><span>Palette — Farben, Gestaltung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ruler-combined Maße — Raster, Abstände">
+        <img src="project/assets/icons/nz-ruler-combined.svg" alt="Maße" width="64" height="64"/>
+        <figcaption><b>ruler-combined</b><span>Maße — Raster, Abstände</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="swatchbook Farbfächer — Musterbuch">
+        <img src="project/assets/icons/nz-swatchbook.svg" alt="Farbfächer" width="64" height="64"/>
+        <figcaption><b>swatchbook</b><span>Farbfächer — Musterbuch</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="vector-square Vektor — Pfad, Ankerpunkte">
+        <img src="project/assets/icons/nz-vector-square.svg" alt="Vektor" width="64" height="64"/>
+        <figcaption><b>vector-square</b><span>Vektor — Pfad, Ankerpunkte</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="devices-hardware">
+      <h2>Devices + Hardware <span class="cnt">15</span></h2>
+      <figure class="ico" data-q="battery-full Akku voll — genug Energie">
+        <img src="project/assets/icons/nz-battery-full.svg" alt="Akku voll" width="64" height="64"/>
+        <figcaption><b>battery-full</b><span>Akku voll — genug Energie</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="battery-half Akku halb — begrenzte Reserve">
+        <img src="project/assets/icons/nz-battery-half.svg" alt="Akku halb" width="64" height="64"/>
+        <figcaption><b>battery-half</b><span>Akku halb — begrenzte Reserve</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="computer-mouse Maus — Zeigegerät">
+        <img src="project/assets/icons/nz-computer-mouse.svg" alt="Maus" width="64" height="64"/>
+        <figcaption><b>computer-mouse</b><span>Maus — Zeigegerät</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="desktop Desktop — Arbeitsplatzrechner">
+        <img src="project/assets/icons/nz-desktop.svg" alt="Desktop" width="64" height="64"/>
+        <figcaption><b>desktop</b><span>Desktop — Arbeitsplatzrechner</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="floppy-disk Speichern — Fassung sichern">
+        <img src="project/assets/icons/nz-floppy-disk.svg" alt="Speichern" width="64" height="64"/>
+        <figcaption><b>floppy-disk</b><span>Speichern — Fassung sichern</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hard-drive Festplatte — lokaler Speicher">
+        <img src="project/assets/icons/nz-hard-drive.svg" alt="Festplatte" width="64" height="64"/>
+        <figcaption><b>hard-drive</b><span>Festplatte — lokaler Speicher</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="keyboard Tastatur — Eingabe">
+        <img src="project/assets/icons/nz-keyboard.svg" alt="Tastatur" width="64" height="64"/>
+        <figcaption><b>keyboard</b><span>Tastatur — Eingabe</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="laptop Laptop — mobiler Rechner">
+        <img src="project/assets/icons/nz-laptop.svg" alt="Laptop" width="64" height="64"/>
+        <figcaption><b>laptop</b><span>Laptop — mobiler Rechner</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="mobile-screen Smartphone — mobile Ansicht">
+        <img src="project/assets/icons/nz-mobile-screen.svg" alt="Smartphone" width="64" height="64"/>
+        <figcaption><b>mobile-screen</b><span>Smartphone — mobile Ansicht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="network-wired Netzwerk — verkabelte Geräte">
+        <img src="project/assets/icons/nz-network-wired.svg" alt="Netzwerk" width="64" height="64"/>
+        <figcaption><b>network-wired</b><span>Netzwerk — verkabelte Geräte</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="plug Stecker — Verbindung, Integration">
+        <img src="project/assets/icons/nz-plug.svg" alt="Stecker" width="64" height="64"/>
+        <figcaption><b>plug</b><span>Stecker — Verbindung, Integration</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="power-off Ein · Aus — Gerät schalten">
+        <img src="project/assets/icons/nz-power-off.svg" alt="Ein · Aus" width="64" height="64"/>
+        <figcaption><b>power-off</b><span>Ein · Aus — Gerät schalten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="print Drucken — auf Papier ausgeben">
+        <img src="project/assets/icons/nz-print.svg" alt="Drucken" width="64" height="64"/>
+        <figcaption><b>print</b><span>Drucken — auf Papier ausgeben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="server Server — Dienst, Infrastruktur">
+        <img src="project/assets/icons/nz-server.svg" alt="Server" width="64" height="64"/>
+        <figcaption><b>server</b><span>Server — Dienst, Infrastruktur</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tablet-screen-button Tablet — mittlere Ansicht">
+        <img src="project/assets/icons/nz-tablet-screen-button.svg" alt="Tablet" width="64" height="64"/>
+        <figcaption><b>tablet-screen-button</b><span>Tablet — mittlere Ansicht</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="editing">
+      <h2>Editing <span class="cnt">12</span></h2>
+      <figure class="ico" data-q="clone Klonen — zweite Instanz">
+        <img src="project/assets/icons/nz-clone.svg" alt="Klonen" width="64" height="64"/>
+        <figcaption><b>clone</b><span>Klonen — zweite Instanz</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="crop-simple Zuschneiden — Bildausschnitt">
+        <img src="project/assets/icons/nz-crop-simple.svg" alt="Zuschneiden" width="64" height="64"/>
+        <figcaption><b>crop-simple</b><span>Zuschneiden — Bildausschnitt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="eraser Radierer — zurücksetzen">
+        <img src="project/assets/icons/nz-eraser.svg" alt="Radierer" width="64" height="64"/>
+        <figcaption><b>eraser</b><span>Radierer — zurücksetzen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="filter Filtern — Auswahl eingrenzen">
+        <img src="project/assets/icons/nz-filter.svg" alt="Filtern" width="64" height="64"/>
+        <figcaption><b>filter</b><span>Filtern — Auswahl eingrenzen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="magnifying-glass Suchen — finden">
+        <img src="project/assets/icons/nz-magnifying-glass.svg" alt="Suchen" width="64" height="64"/>
+        <figcaption><b>magnifying-glass</b><span>Suchen — finden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="magnifying-glass-minus Verkleinern — herauszoomen">
+        <img src="project/assets/icons/nz-magnifying-glass-minus.svg" alt="Verkleinern" width="64" height="64"/>
+        <figcaption><b>magnifying-glass-minus</b><span>Verkleinern — herauszoomen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="magnifying-glass-plus Vergrößern — hineinzoomen">
+        <img src="project/assets/icons/nz-magnifying-glass-plus.svg" alt="Vergrößern" width="64" height="64"/>
+        <figcaption><b>magnifying-glass-plus</b><span>Vergrößern — hineinzoomen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="pen Stift — schreiben, ändern">
+        <img src="project/assets/icons/nz-pen.svg" alt="Stift" width="64" height="64"/>
+        <figcaption><b>pen</b><span>Stift — schreiben, ändern</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="pen-to-square Bearbeiten — Eintrag ändern">
+        <img src="project/assets/icons/nz-pen-to-square.svg" alt="Bearbeiten" width="64" height="64"/>
+        <figcaption><b>pen-to-square</b><span>Bearbeiten — Eintrag ändern</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="rotate Drehen — Ausrichtung ändern">
+        <img src="project/assets/icons/nz-rotate.svg" alt="Drehen" width="64" height="64"/>
+        <figcaption><b>rotate</b><span>Drehen — Ausrichtung ändern</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="scissors Ausschneiden — trennen">
+        <img src="project/assets/icons/nz-scissors.svg" alt="Ausschneiden" width="64" height="64"/>
+        <figcaption><b>scissors</b><span>Ausschneiden — trennen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wand-magic-sparkles Automatisch — vom System erzeugt">
+        <img src="project/assets/icons/nz-wand-magic-sparkles.svg" alt="Automatisch" width="64" height="64"/>
+        <figcaption><b>wand-magic-sparkles</b><span>Automatisch — vom System erzeugt</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="education">
+      <h2>Education <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="book-open-reader Lernen — Wissen aneignen">
+        <img src="project/assets/icons/nz-book-open-reader.svg" alt="Lernen" width="64" height="64"/>
+        <figcaption><b>book-open-reader</b><span>Lernen — Wissen aneignen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="chalkboard Tafel — Schulung, Erklärung">
+        <img src="project/assets/icons/nz-chalkboard.svg" alt="Tafel" width="64" height="64"/>
+        <figcaption><b>chalkboard</b><span>Tafel — Schulung, Erklärung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="graduation-cap Abschluss — Qualifikation">
+        <img src="project/assets/icons/nz-graduation-cap.svg" alt="Abschluss" width="64" height="64"/>
+        <figcaption><b>graduation-cap</b><span>Abschluss — Qualifikation</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="school Schule — Ausbildung, Lernen">
+        <img src="project/assets/icons/nz-school.svg" alt="Schule" width="64" height="64"/>
+        <figcaption><b>school</b><span>Schule — Ausbildung, Lernen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="emoji">
+      <h2>Emoji <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="face-frown Unzufrieden — negatives Feedback">
+        <img src="project/assets/icons/nz-face-frown.svg" alt="Unzufrieden" width="64" height="64"/>
+        <figcaption><b>face-frown</b><span>Unzufrieden — negatives Feedback</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="face-meh Neutral — unentschieden">
+        <img src="project/assets/icons/nz-face-meh.svg" alt="Neutral" width="64" height="64"/>
+        <figcaption><b>face-meh</b><span>Neutral — unentschieden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="face-smile Zufrieden — positives Feedback">
+        <img src="project/assets/icons/nz-face-smile.svg" alt="Zufrieden" width="64" height="64"/>
+        <figcaption><b>face-smile</b><span>Zufrieden — positives Feedback</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="face-surprise Überrascht — unerwartet">
+        <img src="project/assets/icons/nz-face-surprise.svg" alt="Überrascht" width="64" height="64"/>
+        <figcaption><b>face-surprise</b><span>Überrascht — unerwartet</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="energy">
+      <h2>Energy <span class="cnt">7</span></h2>
+      <figure class="ico" data-q="bolt Blitz — Energie, Tempo">
+        <img src="project/assets/icons/nz-bolt.svg" alt="Blitz" width="64" height="64"/>
+        <figcaption><b>bolt</b><span>Blitz — Energie, Tempo</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="charging-station Ladestation — Strom tanken">
+        <img src="project/assets/icons/nz-charging-station.svg" alt="Ladestation" width="64" height="64"/>
+        <figcaption><b>charging-station</b><span>Ladestation — Strom tanken</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="fan Lüfter — Kühlung, Umluft">
+        <img src="project/assets/icons/nz-fan.svg" alt="Lüfter" width="64" height="64"/>
+        <figcaption><b>fan</b><span>Lüfter — Kühlung, Umluft</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="fire Feuer — dringend, brennend">
+        <img src="project/assets/icons/nz-fire.svg" alt="Feuer" width="64" height="64"/>
+        <figcaption><b>fire</b><span>Feuer — dringend, brennend</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="lightbulb Idee — Vorschlag, Einfall">
+        <img src="project/assets/icons/nz-lightbulb.svg" alt="Idee" width="64" height="64"/>
+        <figcaption><b>lightbulb</b><span>Idee — Vorschlag, Einfall</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="recycle Kreislauf — wiederverwenden">
+        <img src="project/assets/icons/nz-recycle.svg" alt="Kreislauf" width="64" height="64"/>
+        <figcaption><b>recycle</b><span>Kreislauf — wiederverwenden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="solar-panel Solarmodul — erneuerbare Energie">
+        <img src="project/assets/icons/nz-solar-panel.svg" alt="Solarmodul" width="64" height="64"/>
+        <figcaption><b>solar-panel</b><span>Solarmodul — erneuerbare Energie</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="files">
+      <h2>Files <span class="cnt">16</span></h2>
+      <figure class="ico" data-q="box-archive Archivieren — einlagern">
+        <img src="project/assets/icons/nz-box-archive.svg" alt="Archivieren" width="64" height="64"/>
+        <figcaption><b>box-archive</b><span>Archivieren — einlagern</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cloud-arrow-down Aus der Cloud laden">
+        <img src="project/assets/icons/nz-cloud-arrow-down.svg" alt="Aus der Cloud laden" width="64" height="64"/>
+        <figcaption><b>cloud-arrow-down</b><span>Aus der Cloud laden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cloud-arrow-up In die Cloud laden">
+        <img src="project/assets/icons/nz-cloud-arrow-up.svg" alt="In die Cloud laden" width="64" height="64"/>
+        <figcaption><b>cloud-arrow-up</b><span>In die Cloud laden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="copy Kopieren — Duplikat anlegen">
+        <img src="project/assets/icons/nz-copy.svg" alt="Kopieren" width="64" height="64"/>
+        <figcaption><b>copy</b><span>Kopieren — Duplikat anlegen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="database Datenbank — Speicher">
+        <img src="project/assets/icons/nz-database.svg" alt="Datenbank" width="64" height="64"/>
+        <figcaption><b>database</b><span>Datenbank — Speicher</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file Datei — einzelnes Dokument">
+        <img src="project/assets/icons/nz-file.svg" alt="Datei" width="64" height="64"/>
+        <figcaption><b>file</b><span>Datei — einzelnes Dokument</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-circle-plus Datei anlegen — neu erstellen">
+        <img src="project/assets/icons/nz-file-circle-plus.svg" alt="Datei anlegen" width="64" height="64"/>
+        <figcaption><b>file-circle-plus</b><span>Datei anlegen — neu erstellen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-code Quelltextdatei — Code">
+        <img src="project/assets/icons/nz-file-code.svg" alt="Quelltextdatei" width="64" height="64"/>
+        <figcaption><b>file-code</b><span>Quelltextdatei — Code</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-image Bilddatei — Foto, Grafik">
+        <img src="project/assets/icons/nz-file-image.svg" alt="Bilddatei" width="64" height="64"/>
+        <figcaption><b>file-image</b><span>Bilddatei — Foto, Grafik</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-lines Textdatei — Dokument mit Inhalt">
+        <img src="project/assets/icons/nz-file-lines.svg" alt="Textdatei" width="64" height="64"/>
+        <figcaption><b>file-lines</b><span>Textdatei — Dokument mit Inhalt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-pdf PDF — Druckdokument">
+        <img src="project/assets/icons/nz-file-pdf.svg" alt="PDF" width="64" height="64"/>
+        <figcaption><b>file-pdf</b><span>PDF — Druckdokument</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-zipper Archiv — komprimierte Dateien">
+        <img src="project/assets/icons/nz-file-zipper.svg" alt="Archiv" width="64" height="64"/>
+        <figcaption><b>file-zipper</b><span>Archiv — komprimierte Dateien</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="folder Ordner — Sammlung">
+        <img src="project/assets/icons/nz-folder.svg" alt="Ordner" width="64" height="64"/>
+        <figcaption><b>folder</b><span>Ordner — Sammlung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="folder-open Ordner offen — geöffnete Ablage">
+        <img src="project/assets/icons/nz-folder-open.svg" alt="Ordner offen" width="64" height="64"/>
+        <figcaption><b>folder-open</b><span>Ordner offen — geöffnete Ablage</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="paste Einfügen — aus Zwischenablage">
+        <img src="project/assets/icons/nz-paste.svg" alt="Einfügen" width="64" height="64"/>
+        <figcaption><b>paste</b><span>Einfügen — aus Zwischenablage</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="trash Papierkorb — löschen">
+        <img src="project/assets/icons/nz-trash.svg" alt="Papierkorb" width="64" height="64"/>
+        <figcaption><b>trash</b><span>Papierkorb — löschen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="film-video">
+      <h2>Film + Video <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="clapperboard Klappe — Produktion, Take">
+        <img src="project/assets/icons/nz-clapperboard.svg" alt="Klappe" width="64" height="64"/>
+        <figcaption><b>clapperboard</b><span>Klappe — Produktion, Take</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="podcast Podcast — Beitrag, Stimme">
+        <img src="project/assets/icons/nz-podcast.svg" alt="Podcast" width="64" height="64"/>
+        <figcaption><b>podcast</b><span>Podcast — Beitrag, Stimme</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ticket Ticket — Zugang, Vorgang">
+        <img src="project/assets/icons/nz-ticket.svg" alt="Ticket" width="64" height="64"/>
+        <figcaption><b>ticket</b><span>Ticket — Zugang, Vorgang</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tv Bildschirm — Ausspielung, Sendung">
+        <img src="project/assets/icons/nz-tv.svg" alt="Bildschirm" width="64" height="64"/>
+        <figcaption><b>tv</b><span>Bildschirm — Ausspielung, Sendung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="food-beverage">
+      <h2>Food + Beverage <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="burger Mittagspause — Verpflegung">
+        <img src="project/assets/icons/nz-burger.svg" alt="Mittagspause" width="64" height="64"/>
+        <figcaption><b>burger</b><span>Mittagspause — Verpflegung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="mug-saucer Kaffee — Pause, Termin">
+        <img src="project/assets/icons/nz-mug-saucer.svg" alt="Kaffee" width="64" height="64"/>
+        <figcaption><b>mug-saucer</b><span>Kaffee — Pause, Termin</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="utensils Essen — Gastronomie, Pause">
+        <img src="project/assets/icons/nz-utensils.svg" alt="Essen" width="64" height="64"/>
+        <figcaption><b>utensils</b><span>Essen — Gastronomie, Pause</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wine-glass Anstoßen — Feier, Erfolg">
+        <img src="project/assets/icons/nz-wine-glass.svg" alt="Anstoßen" width="64" height="64"/>
+        <figcaption><b>wine-glass</b><span>Anstoßen — Feier, Erfolg</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="fruits-vegetables">
+      <h2>Fruits + Vegetables <span class="cnt">3</span></h2>
+      <figure class="ico" data-q="apple-whole Apfel — gesund, natürlich">
+        <img src="project/assets/icons/nz-apple-whole.svg" alt="Apfel" width="64" height="64"/>
+        <figcaption><b>apple-whole</b><span>Apfel — gesund, natürlich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="carrot Möhre — Anreiz, frisch">
+        <img src="project/assets/icons/nz-carrot.svg" alt="Möhre" width="64" height="64"/>
+        <figcaption><b>carrot</b><span>Möhre — Anreiz, frisch</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="lemon Zitrone — frisch, sauer">
+        <img src="project/assets/icons/nz-lemon.svg" alt="Zitrone" width="64" height="64"/>
+        <figcaption><b>lemon</b><span>Zitrone — frisch, sauer</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="gaming">
+      <h2>Gaming <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="chess-knight Zug — Strategie, Taktik">
+        <img src="project/assets/icons/nz-chess-knight.svg" alt="Zug" width="64" height="64"/>
+        <figcaption><b>chess-knight</b><span>Zug — Strategie, Taktik</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="dice Würfel — Zufall, Variante">
+        <img src="project/assets/icons/nz-dice.svg" alt="Würfel" width="64" height="64"/>
+        <figcaption><b>dice</b><span>Würfel — Zufall, Variante</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="gamepad Steuerung — Spiel, Eingabe">
+        <img src="project/assets/icons/nz-gamepad.svg" alt="Steuerung" width="64" height="64"/>
+        <figcaption><b>gamepad</b><span>Steuerung — Spiel, Eingabe</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="puzzle-piece Baustein — Modul, Erweiterung">
+        <img src="project/assets/icons/nz-puzzle-piece.svg" alt="Baustein" width="64" height="64"/>
+        <figcaption><b>puzzle-piece</b><span>Baustein — Modul, Erweiterung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="gender">
+      <h2>Genders <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="venus-mars Geschlecht — Vielfalt, Angabe">
+        <img src="project/assets/icons/nz-venus-mars.svg" alt="Geschlecht" width="64" height="64"/>
+        <figcaption><b>venus-mars</b><span>Geschlecht — Vielfalt, Angabe</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="halloween">
+      <h2>Halloween <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="ghost Unsichtbar — Platzhalter, Entwurf">
+        <img src="project/assets/icons/nz-ghost.svg" alt="Unsichtbar" width="64" height="64"/>
+        <figcaption><b>ghost</b><span>Unsichtbar — Platzhalter, Entwurf</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="hands">
+      <h2>Hands <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="hand Hand — Stopp, Geste">
+        <img src="project/assets/icons/nz-hand.svg" alt="Hand" width="64" height="64"/>
+        <figcaption><b>hand</b><span>Hand — Stopp, Geste</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="household">
+      <h2>Household <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="chair Platz — Arbeitsplatz, Sitzung">
+        <img src="project/assets/icons/nz-chair.svg" alt="Platz" width="64" height="64"/>
+        <figcaption><b>chair</b><span>Platz — Arbeitsplatz, Sitzung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="couch Sofa — Wohnen, Einrichtung">
+        <img src="project/assets/icons/nz-couch.svg" alt="Sofa" width="64" height="64"/>
+        <figcaption><b>couch</b><span>Sofa — Wohnen, Einrichtung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="door-open Tür offen — Zugang möglich">
+        <img src="project/assets/icons/nz-door-open.svg" alt="Tür offen" width="64" height="64"/>
+        <figcaption><b>door-open</b><span>Tür offen — Zugang möglich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="faucet Wasserhahn — Verbrauch, Zufluss">
+        <img src="project/assets/icons/nz-faucet.svg" alt="Wasserhahn" width="64" height="64"/>
+        <figcaption><b>faucet</b><span>Wasserhahn — Verbrauch, Zufluss</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="logistics">
+      <h2>Logistics <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="boxes-stacked Bestand — gestapelte Ware">
+        <img src="project/assets/icons/nz-boxes-stacked.svg" alt="Bestand" width="64" height="64"/>
+        <figcaption><b>boxes-stacked</b><span>Bestand — gestapelte Ware</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="gears Prozesse — Abläufe, Automatik">
+        <img src="project/assets/icons/nz-gears.svg" alt="Prozesse" width="64" height="64"/>
+        <figcaption><b>gears</b><span>Prozesse — Abläufe, Automatik</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="truck Lieferung — Transport, Versand">
+        <img src="project/assets/icons/nz-truck.svg" alt="Lieferung" width="64" height="64"/>
+        <figcaption><b>truck</b><span>Lieferung — Transport, Versand</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="warehouse Lager — Bestand, Logistik">
+        <img src="project/assets/icons/nz-warehouse.svg" alt="Lager" width="64" height="64"/>
+        <figcaption><b>warehouse</b><span>Lager — Bestand, Logistik</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="maps">
+      <h2>Maps <span class="cnt">15</span></h2>
+      <figure class="ico" data-q="crosshairs Fadenkreuz — genau anvisieren">
+        <img src="project/assets/icons/nz-crosshairs.svg" alt="Fadenkreuz" width="64" height="64"/>
+        <figcaption><b>crosshairs</b><span>Fadenkreuz — genau anvisieren</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="draw-polygon Fläche zeichnen — Gebiet erfassen">
+        <img src="project/assets/icons/nz-draw-polygon.svg" alt="Fläche zeichnen" width="64" height="64"/>
+        <figcaption><b>draw-polygon</b><span>Fläche zeichnen — Gebiet erfassen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="flag Flagge — Marker, Meilenstein">
+        <img src="project/assets/icons/nz-flag.svg" alt="Flagge" width="64" height="64"/>
+        <figcaption><b>flag</b><span>Flagge — Marker, Meilenstein</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="flag-checkered Zielflagge — Abschluss erreicht">
+        <img src="project/assets/icons/nz-flag-checkered.svg" alt="Zielflagge" width="64" height="64"/>
+        <figcaption><b>flag-checkered</b><span>Zielflagge — Abschluss erreicht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="gavel Hammer — Entscheidung, Recht">
+        <img src="project/assets/icons/nz-gavel.svg" alt="Hammer" width="64" height="64"/>
+        <figcaption><b>gavel</b><span>Hammer — Entscheidung, Recht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="life-ring Hilfe — Support, Rettung">
+        <img src="project/assets/icons/nz-life-ring.svg" alt="Hilfe" width="64" height="64"/>
+        <figcaption><b>life-ring</b><span>Hilfe — Support, Rettung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="location-crosshairs Aktueller Standort — orten">
+        <img src="project/assets/icons/nz-location-crosshairs.svg" alt="Aktueller Standort" width="64" height="64"/>
+        <figcaption><b>location-crosshairs</b><span>Aktueller Standort — orten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="location-dot Markierter Punkt — Ort auf der Karte">
+        <img src="project/assets/icons/nz-location-dot.svg" alt="Markierter Punkt" width="64" height="64"/>
+        <figcaption><b>location-dot</b><span>Markierter Punkt — Ort auf der Karte</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="location-pin Standort — Ort, Adresse">
+        <img src="project/assets/icons/nz-location-pin.svg" alt="Standort" width="64" height="64"/>
+        <figcaption><b>location-pin</b><span>Standort — Ort, Adresse</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="magnifying-glass-location Ortssuche — Standort finden">
+        <img src="project/assets/icons/nz-magnifying-glass-location.svg" alt="Ortssuche" width="64" height="64"/>
+        <figcaption><b>magnifying-glass-location</b><span>Ortssuche — Standort finden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="map Karte — Übersicht, Gebiet">
+        <img src="project/assets/icons/nz-map.svg" alt="Karte" width="64" height="64"/>
+        <figcaption><b>map</b><span>Karte — Übersicht, Gebiet</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="map-location-dot Karte mit Standort — Position">
+        <img src="project/assets/icons/nz-map-location-dot.svg" alt="Karte mit Standort" width="64" height="64"/>
+        <figcaption><b>map-location-dot</b><span>Karte mit Standort — Position</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="road Straße — Verbindung, Weg">
+        <img src="project/assets/icons/nz-road.svg" alt="Straße" width="64" height="64"/>
+        <figcaption><b>road</b><span>Straße — Verbindung, Weg</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="route Route — geplanter Weg">
+        <img src="project/assets/icons/nz-route.svg" alt="Route" width="64" height="64"/>
+        <figcaption><b>route</b><span>Route — geplanter Weg</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="signs-post Wegweiser — Richtung, Beschilderung">
+        <img src="project/assets/icons/nz-signs-post.svg" alt="Wegweiser" width="64" height="64"/>
+        <figcaption><b>signs-post</b><span>Wegweiser — Richtung, Beschilderung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="maritime">
+      <h2>Maritime <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="anchor Anker — Festpunkt, Verweis">
+        <img src="project/assets/icons/nz-anchor.svg" alt="Anker" width="64" height="64"/>
+        <figcaption><b>anchor</b><span>Anker — Festpunkt, Verweis</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ship Schiff — Fracht, See">
+        <img src="project/assets/icons/nz-ship.svg" alt="Schiff" width="64" height="64"/>
+        <figcaption><b>ship</b><span>Schiff — Fracht, See</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="marketing">
+      <h2>Marketing <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="bullhorn Ansage — Kampagne, Reichweite">
+        <img src="project/assets/icons/nz-bullhorn.svg" alt="Ansage" width="64" height="64"/>
+        <figcaption><b>bullhorn</b><span>Ansage — Kampagne, Reichweite</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bullseye Ziel — Treffer, Fokus">
+        <img src="project/assets/icons/nz-bullseye.svg" alt="Ziel" width="64" height="64"/>
+        <figcaption><b>bullseye</b><span>Ziel — Treffer, Fokus</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="mathematics">
+      <h2>Mathematics <span class="cnt">12</span></h2>
+      <figure class="ico" data-q="calculator Rechner — Kalkulation">
+        <img src="project/assets/icons/nz-calculator.svg" alt="Rechner" width="64" height="64"/>
+        <figcaption><b>calculator</b><span>Rechner — Kalkulation</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="check Haken — erledigt, bestätigt">
+        <img src="project/assets/icons/nz-check.svg" alt="Haken" width="64" height="64"/>
+        <figcaption><b>check</b><span>Haken — erledigt, bestätigt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="divide Geteilt — aufteilen">
+        <img src="project/assets/icons/nz-divide.svg" alt="Geteilt" width="64" height="64"/>
+        <figcaption><b>divide</b><span>Geteilt — aufteilen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="equals Gleich — identisch, Ergebnis">
+        <img src="project/assets/icons/nz-equals.svg" alt="Gleich" width="64" height="64"/>
+        <figcaption><b>equals</b><span>Gleich — identisch, Ergebnis</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="greater-than Größer als — Schwelle">
+        <img src="project/assets/icons/nz-greater-than.svg" alt="Größer als" width="64" height="64"/>
+        <figcaption><b>greater-than</b><span>Größer als — Schwelle</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="infinity Unendlich — ohne Limit">
+        <img src="project/assets/icons/nz-infinity.svg" alt="Unendlich" width="64" height="64"/>
+        <figcaption><b>infinity</b><span>Unendlich — ohne Limit</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="less-than Kleiner als — Schwelle">
+        <img src="project/assets/icons/nz-less-than.svg" alt="Kleiner als" width="64" height="64"/>
+        <figcaption><b>less-than</b><span>Kleiner als — Schwelle</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="minus Minus — entfernen, weniger">
+        <img src="project/assets/icons/nz-minus.svg" alt="Minus" width="64" height="64"/>
+        <figcaption><b>minus</b><span>Minus — entfernen, weniger</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="percent Prozent — Anteil, Rabatt">
+        <img src="project/assets/icons/nz-percent.svg" alt="Prozent" width="64" height="64"/>
+        <figcaption><b>percent</b><span>Prozent — Anteil, Rabatt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="plus Plus — hinzufügen, neu">
+        <img src="project/assets/icons/nz-plus.svg" alt="Plus" width="64" height="64"/>
+        <figcaption><b>plus</b><span>Plus — hinzufügen, neu</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="square-root-variable Wurzel — Formel, Berechnung">
+        <img src="project/assets/icons/nz-square-root-variable.svg" alt="Wurzel" width="64" height="64"/>
+        <figcaption><b>square-root-variable</b><span>Wurzel — Formel, Berechnung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="xmark Kreuz — schließen, abbrechen">
+        <img src="project/assets/icons/nz-xmark.svg" alt="Kreuz" width="64" height="64"/>
+        <figcaption><b>xmark</b><span>Kreuz — schließen, abbrechen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="media-playback">
+      <h2>Media Playback <span class="cnt">17</span></h2>
+      <figure class="ico" data-q="backward Zurückspulen — langsamer">
+        <img src="project/assets/icons/nz-backward.svg" alt="Zurückspulen" width="64" height="64"/>
+        <figcaption><b>backward</b><span>Zurückspulen — langsamer</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="backward-fast An den Anfang — schnell zurück">
+        <img src="project/assets/icons/nz-backward-fast.svg" alt="An den Anfang" width="64" height="64"/>
+        <figcaption><b>backward-fast</b><span>An den Anfang — schnell zurück</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="backward-step Vorheriger Titel">
+        <img src="project/assets/icons/nz-backward-step.svg" alt="Vorheriger Titel" width="64" height="64"/>
+        <figcaption><b>backward-step</b><span>Vorheriger Titel</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-pause Pause im Kreis">
+        <img src="project/assets/icons/nz-circle-pause.svg" alt="Pause im Kreis" width="64" height="64"/>
+        <figcaption><b>circle-pause</b><span>Pause im Kreis</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-play Abspielen im Kreis — Video starten">
+        <img src="project/assets/icons/nz-circle-play.svg" alt="Abspielen im Kreis" width="64" height="64"/>
+        <figcaption><b>circle-play</b><span>Abspielen im Kreis — Video starten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-stop Stopp im Kreis — Vorgang beenden">
+        <img src="project/assets/icons/nz-circle-stop.svg" alt="Stopp im Kreis" width="64" height="64"/>
+        <figcaption><b>circle-stop</b><span>Stopp im Kreis — Vorgang beenden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="eject Auswerfen — Medium entfernen">
+        <img src="project/assets/icons/nz-eject.svg" alt="Auswerfen" width="64" height="64"/>
+        <figcaption><b>eject</b><span>Auswerfen — Medium entfernen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="forward Vorspulen — schneller">
+        <img src="project/assets/icons/nz-forward.svg" alt="Vorspulen" width="64" height="64"/>
+        <figcaption><b>forward</b><span>Vorspulen — schneller</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="forward-fast Ans Ende — schnell vorspulen">
+        <img src="project/assets/icons/nz-forward-fast.svg" alt="Ans Ende" width="64" height="64"/>
+        <figcaption><b>forward-fast</b><span>Ans Ende — schnell vorspulen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="forward-step Nächster Titel">
+        <img src="project/assets/icons/nz-forward-step.svg" alt="Nächster Titel" width="64" height="64"/>
+        <figcaption><b>forward-step</b><span>Nächster Titel</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="microphone Mikrofon — Aufnahme, Sprache">
+        <img src="project/assets/icons/nz-microphone.svg" alt="Mikrofon" width="64" height="64"/>
+        <figcaption><b>microphone</b><span>Mikrofon — Aufnahme, Sprache</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="microphone-slash Mikrofon aus — stumm geschaltet">
+        <img src="project/assets/icons/nz-microphone-slash.svg" alt="Mikrofon aus" width="64" height="64"/>
+        <figcaption><b>microphone-slash</b><span>Mikrofon aus — stumm geschaltet</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="pause Pause — anhalten">
+        <img src="project/assets/icons/nz-pause.svg" alt="Pause" width="64" height="64"/>
+        <figcaption><b>pause</b><span>Pause — anhalten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="record-vinyl Aufnahme — Schallplatte">
+        <img src="project/assets/icons/nz-record-vinyl.svg" alt="Aufnahme" width="64" height="64"/>
+        <figcaption><b>record-vinyl</b><span>Aufnahme — Schallplatte</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="stop Stopp — beenden">
+        <img src="project/assets/icons/nz-stop.svg" alt="Stopp" width="64" height="64"/>
+        <figcaption><b>stop</b><span>Stopp — beenden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="volume-high Ton laut">
+        <img src="project/assets/icons/nz-volume-high.svg" alt="Ton laut" width="64" height="64"/>
+        <figcaption><b>volume-high</b><span>Ton laut</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="volume-xmark Ton aus — stumm">
+        <img src="project/assets/icons/nz-volume-xmark.svg" alt="Ton aus" width="64" height="64"/>
+        <figcaption><b>volume-xmark</b><span>Ton aus — stumm</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="medical-health">
+      <h2>Medical + Health <span class="cnt">10</span></h2>
+      <figure class="ico" data-q="bandage Pflaster — Behelfslösung, Fix">
+        <img src="project/assets/icons/nz-bandage.svg" alt="Pflaster" width="64" height="64"/>
+        <figcaption><b>bandage</b><span>Pflaster — Behelfslösung, Fix</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="brain Denken — Konzept, Logik">
+        <img src="project/assets/icons/nz-brain.svg" alt="Denken" width="64" height="64"/>
+        <figcaption><b>brain</b><span>Denken — Konzept, Logik</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="heart-pulse Vitalwerte — Gesundheit, Puls">
+        <img src="project/assets/icons/nz-heart-pulse.svg" alt="Vitalwerte" width="64" height="64"/>
+        <figcaption><b>heart-pulse</b><span>Vitalwerte — Gesundheit, Puls</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hospital Krankenhaus — Versorgung">
+        <img src="project/assets/icons/nz-hospital.svg" alt="Krankenhaus" width="64" height="64"/>
+        <figcaption><b>hospital</b><span>Krankenhaus — Versorgung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="kit-medical Erste Hilfe — Notfallset">
+        <img src="project/assets/icons/nz-kit-medical.svg" alt="Erste Hilfe" width="64" height="64"/>
+        <figcaption><b>kit-medical</b><span>Erste Hilfe — Notfallset</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="pills Medikament — Dosis, Therapie">
+        <img src="project/assets/icons/nz-pills.svg" alt="Medikament" width="64" height="64"/>
+        <figcaption><b>pills</b><span>Medikament — Dosis, Therapie</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="skull Ausfall — kritischer Fehler">
+        <img src="project/assets/icons/nz-skull.svg" alt="Ausfall" width="64" height="64"/>
+        <figcaption><b>skull</b><span>Ausfall — kritischer Fehler</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="stethoscope Untersuchung — Diagnose">
+        <img src="project/assets/icons/nz-stethoscope.svg" alt="Untersuchung" width="64" height="64"/>
+        <figcaption><b>stethoscope</b><span>Untersuchung — Diagnose</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="syringe Impfung — Behandlung">
+        <img src="project/assets/icons/nz-syringe.svg" alt="Impfung" width="64" height="64"/>
+        <figcaption><b>syringe</b><span>Impfung — Behandlung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-doctor Fachkraft — Beratung, Diagnose">
+        <img src="project/assets/icons/nz-user-doctor.svg" alt="Fachkraft" width="64" height="64"/>
+        <figcaption><b>user-doctor</b><span>Fachkraft — Beratung, Diagnose</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="money">
+      <h2>Money <span class="cnt">9</span></h2>
+      <figure class="ico" data-q="coins Münzen — Guthaben, Kosten">
+        <img src="project/assets/icons/nz-coins.svg" alt="Münzen" width="64" height="64"/>
+        <figcaption><b>coins</b><span>Münzen — Guthaben, Kosten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="credit-card Karte — bargeldlos zahlen">
+        <img src="project/assets/icons/nz-credit-card.svg" alt="Karte" width="64" height="64"/>
+        <figcaption><b>credit-card</b><span>Karte — bargeldlos zahlen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="dollar-sign Dollar — Betrag, Umsatz">
+        <img src="project/assets/icons/nz-dollar-sign.svg" alt="Dollar" width="64" height="64"/>
+        <figcaption><b>dollar-sign</b><span>Dollar — Betrag, Umsatz</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="euro-sign Euro — Preis, Betrag">
+        <img src="project/assets/icons/nz-euro-sign.svg" alt="Euro" width="64" height="64"/>
+        <figcaption><b>euro-sign</b><span>Euro — Preis, Betrag</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-invoice Rechnung — Zahlungsaufforderung">
+        <img src="project/assets/icons/nz-file-invoice.svg" alt="Rechnung" width="64" height="64"/>
+        <figcaption><b>file-invoice</b><span>Rechnung — Zahlungsaufforderung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="money-bill Geldschein — Bargeld, Budget">
+        <img src="project/assets/icons/nz-money-bill.svg" alt="Geldschein" width="64" height="64"/>
+        <figcaption><b>money-bill</b><span>Geldschein — Bargeld, Budget</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="piggy-bank Sparen — Rücklage">
+        <img src="project/assets/icons/nz-piggy-bank.svg" alt="Sparen" width="64" height="64"/>
+        <figcaption><b>piggy-bank</b><span>Sparen — Rücklage</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="receipt Beleg — Quittung, Rechnung">
+        <img src="project/assets/icons/nz-receipt.svg" alt="Beleg" width="64" height="64"/>
+        <figcaption><b>receipt</b><span>Beleg — Quittung, Rechnung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wallet Geldbörse — Zahlungsmittel">
+        <img src="project/assets/icons/nz-wallet.svg" alt="Geldbörse" width="64" height="64"/>
+        <figcaption><b>wallet</b><span>Geldbörse — Zahlungsmittel</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="moving">
+      <h2>Moving <span class="cnt">1</span></h2>
+      <figure class="ico" data-q="box-open Paket offen — ausgepackt, verfügbar">
+        <img src="project/assets/icons/nz-box-open.svg" alt="Paket offen" width="64" height="64"/>
+        <figcaption><b>box-open</b><span>Paket offen — ausgepackt, verfügbar</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="music-audio">
+      <h2>Music + Audio <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="guitar Gitarre — Kultur, Kreatives">
+        <img src="project/assets/icons/nz-guitar.svg" alt="Gitarre" width="64" height="64"/>
+        <figcaption><b>guitar</b><span>Gitarre — Kultur, Kreatives</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="headphones Kopfhörer — Wiedergabe, Support">
+        <img src="project/assets/icons/nz-headphones.svg" alt="Kopfhörer" width="64" height="64"/>
+        <figcaption><b>headphones</b><span>Kopfhörer — Wiedergabe, Support</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="music Musik — Audio, Klang">
+        <img src="project/assets/icons/nz-music.svg" alt="Musik" width="64" height="64"/>
+        <figcaption><b>music</b><span>Musik — Audio, Klang</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="sliders Regler — Einstellungen anpassen">
+        <img src="project/assets/icons/nz-sliders.svg" alt="Regler" width="64" height="64"/>
+        <figcaption><b>sliders</b><span>Regler — Einstellungen anpassen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="nature">
+      <h2>Nature <span class="cnt">5</span></h2>
+      <figure class="ico" data-q="leaf Blatt — nachhaltig, ressourcenschonend">
+        <img src="project/assets/icons/nz-leaf.svg" alt="Blatt" width="64" height="64"/>
+        <figcaption><b>leaf</b><span>Blatt — nachhaltig, ressourcenschonend</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="mountain Berg — Herausforderung, Gipfel">
+        <img src="project/assets/icons/nz-mountain.svg" alt="Berg" width="64" height="64"/>
+        <figcaption><b>mountain</b><span>Berg — Herausforderung, Gipfel</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="seedling Setzling — Start, Wachstum">
+        <img src="project/assets/icons/nz-seedling.svg" alt="Setzling" width="64" height="64"/>
+        <figcaption><b>seedling</b><span>Setzling — Start, Wachstum</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="tree Baum — Bestand, Hierarchie">
+        <img src="project/assets/icons/nz-tree.svg" alt="Baum" width="64" height="64"/>
+        <figcaption><b>tree</b><span>Baum — Bestand, Hierarchie</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="water Wasser — Fluss, Strom">
+        <img src="project/assets/icons/nz-water.svg" alt="Wasser" width="64" height="64"/>
+        <figcaption><b>water</b><span>Wasser — Fluss, Strom</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="numbers">
+      <h2>Numbers <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="0 Ziffer Null">
+        <img src="project/assets/icons/nz-0.svg" alt="Ziffer Null" width="64" height="64"/>
+        <figcaption><b>0</b><span>Ziffer Null</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="1 Ziffer Eins">
+        <img src="project/assets/icons/nz-1.svg" alt="Ziffer Eins" width="64" height="64"/>
+        <figcaption><b>1</b><span>Ziffer Eins</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="2 Ziffer Zwei">
+        <img src="project/assets/icons/nz-2.svg" alt="Ziffer Zwei" width="64" height="64"/>
+        <figcaption><b>2</b><span>Ziffer Zwei</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="3 Ziffer Drei">
+        <img src="project/assets/icons/nz-3.svg" alt="Ziffer Drei" width="64" height="64"/>
+        <figcaption><b>3</b><span>Ziffer Drei</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="photos-images">
+      <h2>Photos + Images <span class="cnt">6</span></h2>
+      <figure class="ico" data-q="camera Kamera — aufnehmen">
+        <img src="project/assets/icons/nz-camera.svg" alt="Kamera" width="64" height="64"/>
+        <figcaption><b>camera</b><span>Kamera — aufnehmen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="film Film — Sequenz, Schnitt">
+        <img src="project/assets/icons/nz-film.svg" alt="Film" width="64" height="64"/>
+        <figcaption><b>film</b><span>Film — Sequenz, Schnitt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="image Bild — Grafik, Foto">
+        <img src="project/assets/icons/nz-image.svg" alt="Bild" width="64" height="64"/>
+        <figcaption><b>image</b><span>Bild — Grafik, Foto</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="images Bilder — Galerie">
+        <img src="project/assets/icons/nz-images.svg" alt="Bilder" width="64" height="64"/>
+        <figcaption><b>images</b><span>Bilder — Galerie</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="panorama Panorama — Weitwinkel">
+        <img src="project/assets/icons/nz-panorama.svg" alt="Panorama" width="64" height="64"/>
+        <figcaption><b>panorama</b><span>Panorama — Weitwinkel</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="video Video — bewegtes Bild">
+        <img src="project/assets/icons/nz-video.svg" alt="Video" width="64" height="64"/>
+        <figcaption><b>video</b><span>Video — bewegtes Bild</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="political">
+      <h2>Political <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="award Auszeichnung — Anerkennung">
+        <img src="project/assets/icons/nz-award.svg" alt="Auszeichnung" width="64" height="64"/>
+        <figcaption><b>award</b><span>Auszeichnung — Anerkennung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="check-to-slot Abstimmen — Stimme abgeben">
+        <img src="project/assets/icons/nz-check-to-slot.svg" alt="Abstimmen" width="64" height="64"/>
+        <figcaption><b>check-to-slot</b><span>Abstimmen — Stimme abgeben</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="punctuation-symbols">
+      <h2>Punctuation + Symbols <span class="cnt">7</span></h2>
+      <figure class="ico" data-q="asterisk Sternchen — Pflichtfeld, Fußnote">
+        <img src="project/assets/icons/nz-asterisk.svg" alt="Sternchen" width="64" height="64"/>
+        <figcaption><b>asterisk</b><span>Sternchen — Pflichtfeld, Fußnote</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="at At-Zeichen — E-Mail-Adresse">
+        <img src="project/assets/icons/nz-at.svg" alt="At-Zeichen" width="64" height="64"/>
+        <figcaption><b>at</b><span>At-Zeichen — E-Mail-Adresse</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ellipsis Drei Punkte — mehr Optionen">
+        <img src="project/assets/icons/nz-ellipsis.svg" alt="Drei Punkte" width="64" height="64"/>
+        <figcaption><b>ellipsis</b><span>Drei Punkte — mehr Optionen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="ellipsis-vertical Drei Punkte hoch — Kontextmenü">
+        <img src="project/assets/icons/nz-ellipsis-vertical.svg" alt="Drei Punkte hoch" width="64" height="64"/>
+        <figcaption><b>ellipsis-vertical</b><span>Drei Punkte hoch — Kontextmenü</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hashtag Raute — Tag, Kanal, Nummer">
+        <img src="project/assets/icons/nz-hashtag.svg" alt="Raute" width="64" height="64"/>
+        <figcaption><b>hashtag</b><span>Raute — Tag, Kanal, Nummer</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="quote-left Anführungszeichen — Zitat">
+        <img src="project/assets/icons/nz-quote-left.svg" alt="Anführungszeichen" width="64" height="64"/>
+        <figcaption><b>quote-left</b><span>Anführungszeichen — Zitat</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="section Paragraf — Abschnitt, Recht">
+        <img src="project/assets/icons/nz-section.svg" alt="Paragraf" width="64" height="64"/>
+        <figcaption><b>section</b><span>Paragraf — Abschnitt, Recht</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="religion">
+      <h2>Religion <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="peace Frieden — Ausgleich">
+        <img src="project/assets/icons/nz-peace.svg" alt="Frieden" width="64" height="64"/>
+        <figcaption><b>peace</b><span>Frieden — Ausgleich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="yin-yang Gleichgewicht — Ausgleich zweier Seiten">
+        <img src="project/assets/icons/nz-yin-yang.svg" alt="Gleichgewicht" width="64" height="64"/>
+        <figcaption><b>yin-yang</b><span>Gleichgewicht — Ausgleich zweier Seiten</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="science">
+      <h2>Science <span class="cnt">7</span></h2>
+      <figure class="ico" data-q="atom Atom — Grundbaustein, Forschung">
+        <img src="project/assets/icons/nz-atom.svg" alt="Atom" width="64" height="64"/>
+        <figcaption><b>atom</b><span>Atom — Grundbaustein, Forschung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="dna DNA — Struktur, Herkunft">
+        <img src="project/assets/icons/nz-dna.svg" alt="DNA" width="64" height="64"/>
+        <figcaption><b>dna</b><span>DNA — Struktur, Herkunft</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="flask Experiment — Test, Labor">
+        <img src="project/assets/icons/nz-flask.svg" alt="Experiment" width="64" height="64"/>
+        <figcaption><b>flask</b><span>Experiment — Test, Labor</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="magnet Magnet — Anziehung, Bindung">
+        <img src="project/assets/icons/nz-magnet.svg" alt="Magnet" width="64" height="64"/>
+        <figcaption><b>magnet</b><span>Magnet — Anziehung, Bindung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="microscope Analyse — genau untersuchen">
+        <img src="project/assets/icons/nz-microscope.svg" alt="Analyse" width="64" height="64"/>
+        <figcaption><b>microscope</b><span>Analyse — genau untersuchen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="temperature-high Hitze — Grenzwert überschritten">
+        <img src="project/assets/icons/nz-temperature-high.svg" alt="Hitze" width="64" height="64"/>
+        <figcaption><b>temperature-high</b><span>Hitze — Grenzwert überschritten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="vial Probe — Messwert, Analyse">
+        <img src="project/assets/icons/nz-vial.svg" alt="Probe" width="64" height="64"/>
+        <figcaption><b>vial</b><span>Probe — Messwert, Analyse</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="security">
+      <h2>Security <span class="cnt">14</span></h2>
+      <figure class="ico" data-q="eye Sichtbar — anzeigen">
+        <img src="project/assets/icons/nz-eye.svg" alt="Sichtbar" width="64" height="64"/>
+        <figcaption><b>eye</b><span>Sichtbar — anzeigen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="eye-slash Verborgen — ausblenden">
+        <img src="project/assets/icons/nz-eye-slash.svg" alt="Verborgen" width="64" height="64"/>
+        <figcaption><b>eye-slash</b><span>Verborgen — ausblenden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="file-shield Geschützte Datei — vertraulich">
+        <img src="project/assets/icons/nz-file-shield.svg" alt="Geschützte Datei" width="64" height="64"/>
+        <figcaption><b>file-shield</b><span>Geschützte Datei — vertraulich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="fingerprint Fingerabdruck — eindeutige Identität">
+        <img src="project/assets/icons/nz-fingerprint.svg" alt="Fingerabdruck" width="64" height="64"/>
+        <figcaption><b>fingerprint</b><span>Fingerabdruck — eindeutige Identität</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="id-badge Dienstausweis — Rolle, Zutritt">
+        <img src="project/assets/icons/nz-id-badge.svg" alt="Dienstausweis" width="64" height="64"/>
+        <figcaption><b>id-badge</b><span>Dienstausweis — Rolle, Zutritt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="key Schlüssel — Zugang, Zugangsdaten">
+        <img src="project/assets/icons/nz-key.svg" alt="Schlüssel" width="64" height="64"/>
+        <figcaption><b>key</b><span>Schlüssel — Zugang, Zugangsdaten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="lock Gesperrt — geschützter Bereich">
+        <img src="project/assets/icons/nz-lock.svg" alt="Gesperrt" width="64" height="64"/>
+        <figcaption><b>lock</b><span>Gesperrt — geschützter Bereich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="lock-open Entsperrt — Zugriff frei">
+        <img src="project/assets/icons/nz-lock-open.svg" alt="Entsperrt" width="64" height="64"/>
+        <figcaption><b>lock-open</b><span>Entsperrt — Zugriff frei</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="shield Schutz — abgesichert">
+        <img src="project/assets/icons/nz-shield.svg" alt="Schutz" width="64" height="64"/>
+        <figcaption><b>shield</b><span>Schutz — abgesichert</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="shield-halved Teilschutz — abgestufte Sicherheit">
+        <img src="project/assets/icons/nz-shield-halved.svg" alt="Teilschutz" width="64" height="64"/>
+        <figcaption><b>shield-halved</b><span>Teilschutz — abgestufte Sicherheit</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="unlock-keyhole Schloss offen — freigegeben">
+        <img src="project/assets/icons/nz-unlock-keyhole.svg" alt="Schloss offen" width="64" height="64"/>
+        <figcaption><b>unlock-keyhole</b><span>Schloss offen — freigegeben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-secret Anonym — nicht identifiziert">
+        <img src="project/assets/icons/nz-user-secret.svg" alt="Anonym" width="64" height="64"/>
+        <figcaption><b>user-secret</b><span>Anonym — nicht identifiziert</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-shield Datenschutz — geschützte Person">
+        <img src="project/assets/icons/nz-user-shield.svg" alt="Datenschutz" width="64" height="64"/>
+        <figcaption><b>user-shield</b><span>Datenschutz — geschützte Person</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="virus Schadsoftware — Bedrohung">
+        <img src="project/assets/icons/nz-virus.svg" alt="Schadsoftware" width="64" height="64"/>
+        <figcaption><b>virus</b><span>Schadsoftware — Bedrohung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="shapes">
+      <h2>Shapes <span class="cnt">13</span></h2>
+      <figure class="ico" data-q="ban Verboten — gesperrt, nicht erlaubt">
+        <img src="project/assets/icons/nz-ban.svg" alt="Verboten" width="64" height="64"/>
+        <figcaption><b>ban</b><span>Verboten — gesperrt, nicht erlaubt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bookmark Lesezeichen — gemerkt, später">
+        <img src="project/assets/icons/nz-bookmark.svg" alt="Lesezeichen" width="64" height="64"/>
+        <figcaption><b>bookmark</b><span>Lesezeichen — gemerkt, später</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="certificate Siegel — Zertifikat, geprüft">
+        <img src="project/assets/icons/nz-certificate.svg" alt="Siegel" width="64" height="64"/>
+        <figcaption><b>certificate</b><span>Siegel — Zertifikat, geprüft</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle Kreis — Status, Punkt, Marker">
+        <img src="project/assets/icons/nz-circle.svg" alt="Kreis" width="64" height="64"/>
+        <figcaption><b>circle</b><span>Kreis — Status, Punkt, Marker</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cloud Wolke — Cloud, entferntes System">
+        <img src="project/assets/icons/nz-cloud.svg" alt="Wolke" width="64" height="64"/>
+        <figcaption><b>cloud</b><span>Wolke — Cloud, entferntes System</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cube Würfel — Paket, Modul, Objekt">
+        <img src="project/assets/icons/nz-cube.svg" alt="Würfel" width="64" height="64"/>
+        <figcaption><b>cube</b><span>Würfel — Paket, Modul, Objekt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="diamond Raute — Knotenpunkt, Entscheidung">
+        <img src="project/assets/icons/nz-diamond.svg" alt="Raute" width="64" height="64"/>
+        <figcaption><b>diamond</b><span>Raute — Knotenpunkt, Entscheidung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="heart Herz — gemerkt, gemocht">
+        <img src="project/assets/icons/nz-heart.svg" alt="Herz" width="64" height="64"/>
+        <figcaption><b>heart</b><span>Herz — gemerkt, gemocht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="play Dreieck — abspielen, starten">
+        <img src="project/assets/icons/nz-play.svg" alt="Dreieck" width="64" height="64"/>
+        <figcaption><b>play</b><span>Dreieck — abspielen, starten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="shapes Formen — Bausteine, Elemente">
+        <img src="project/assets/icons/nz-shapes.svg" alt="Formen" width="64" height="64"/>
+        <figcaption><b>shapes</b><span>Formen — Bausteine, Elemente</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="square Quadrat — Fläche, Kachel">
+        <img src="project/assets/icons/nz-square.svg" alt="Quadrat" width="64" height="64"/>
+        <figcaption><b>square</b><span>Quadrat — Fläche, Kachel</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="star Stern — Bewertung, Favorit">
+        <img src="project/assets/icons/nz-star.svg" alt="Stern" width="64" height="64"/>
+        <figcaption><b>star</b><span>Stern — Bewertung, Favorit</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="thumbtack Pinnadel — anheften, fixieren">
+        <img src="project/assets/icons/nz-thumbtack.svg" alt="Pinnadel" width="64" height="64"/>
+        <figcaption><b>thumbtack</b><span>Pinnadel — anheften, fixieren</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="shopping">
+      <h2>Shopping <span class="cnt">11</span></h2>
+      <figure class="ico" data-q="bag-shopping Einkaufstasche — Kauf">
+        <img src="project/assets/icons/nz-bag-shopping.svg" alt="Einkaufstasche" width="64" height="64"/>
+        <figcaption><b>bag-shopping</b><span>Einkaufstasche — Kauf</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="barcode Barcode — Artikelnummer">
+        <img src="project/assets/icons/nz-barcode.svg" alt="Barcode" width="64" height="64"/>
+        <figcaption><b>barcode</b><span>Barcode — Artikelnummer</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cart-shopping Warenkorb — Bestellung">
+        <img src="project/assets/icons/nz-cart-shopping.svg" alt="Warenkorb" width="64" height="64"/>
+        <figcaption><b>cart-shopping</b><span>Warenkorb — Bestellung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="crown Krone — höchste Stufe, Premium">
+        <img src="project/assets/icons/nz-crown.svg" alt="Krone" width="64" height="64"/>
+        <figcaption><b>crown</b><span>Krone — höchste Stufe, Premium</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="gem Wertig — Premium, besonders">
+        <img src="project/assets/icons/nz-gem.svg" alt="Wertig" width="64" height="64"/>
+        <figcaption><b>gem</b><span>Wertig — Premium, besonders</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="gift Geschenk — Bonus, Aktion">
+        <img src="project/assets/icons/nz-gift.svg" alt="Geschenk" width="64" height="64"/>
+        <figcaption><b>gift</b><span>Geschenk — Bonus, Aktion</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="shop Laden — Geschäft, Filiale">
+        <img src="project/assets/icons/nz-shop.svg" alt="Laden" width="64" height="64"/>
+        <figcaption><b>shop</b><span>Laden — Geschäft, Filiale</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="star-half-stroke Halber Stern — Teilbewertung">
+        <img src="project/assets/icons/nz-star-half-stroke.svg" alt="Halber Stern" width="64" height="64"/>
+        <figcaption><b>star-half-stroke</b><span>Halber Stern — Teilbewertung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="store Filiale — Verkaufsstelle">
+        <img src="project/assets/icons/nz-store.svg" alt="Filiale" width="64" height="64"/>
+        <figcaption><b>store</b><span>Filiale — Verkaufsstelle</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="trophy Pokal — Erfolg, Sieg">
+        <img src="project/assets/icons/nz-trophy.svg" alt="Pokal" width="64" height="64"/>
+        <figcaption><b>trophy</b><span>Pokal — Erfolg, Sieg</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="truck-fast Expressversand — schnelle Lieferung">
+        <img src="project/assets/icons/nz-truck-fast.svg" alt="Expressversand" width="64" height="64"/>
+        <figcaption><b>truck-fast</b><span>Expressversand — schnelle Lieferung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="social">
+      <h2>Social <span class="cnt">2</span></h2>
+      <figure class="ico" data-q="thumbs-down Ablehnung — gefällt nicht">
+        <img src="project/assets/icons/nz-thumbs-down.svg" alt="Ablehnung" width="64" height="64"/>
+        <figcaption><b>thumbs-down</b><span>Ablehnung — gefällt nicht</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="thumbs-up Zustimmung — gefällt">
+        <img src="project/assets/icons/nz-thumbs-up.svg" alt="Zustimmung" width="64" height="64"/>
+        <figcaption><b>thumbs-up</b><span>Zustimmung — gefällt</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="spinners">
+      <h2>Spinners <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="circle-notch Ladering — Fortschritt unbestimmt">
+        <img src="project/assets/icons/nz-circle-notch.svg" alt="Ladering" width="64" height="64"/>
+        <figcaption><b>circle-notch</b><span>Ladering — Fortschritt unbestimmt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hourglass Sanduhr — Wartezeit">
+        <img src="project/assets/icons/nz-hourglass.svg" alt="Sanduhr" width="64" height="64"/>
+        <figcaption><b>hourglass</b><span>Sanduhr — Wartezeit</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hourglass-half Sanduhr halb — läuft noch">
+        <img src="project/assets/icons/nz-hourglass-half.svg" alt="Sanduhr halb" width="64" height="64"/>
+        <figcaption><b>hourglass-half</b><span>Sanduhr halb — läuft noch</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="spinner Ladeanzeige — arbeitet">
+        <img src="project/assets/icons/nz-spinner.svg" alt="Ladeanzeige" width="64" height="64"/>
+        <figcaption><b>spinner</b><span>Ladeanzeige — arbeitet</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="sports-fitness">
+      <h2>Sports + Fitness <span class="cnt">4</span></h2>
+      <figure class="ico" data-q="dumbbell Training — Belastungstest">
+        <img src="project/assets/icons/nz-dumbbell.svg" alt="Training" width="64" height="64"/>
+        <figcaption><b>dumbbell</b><span>Training — Belastungstest</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="futbol Ball — Spiel, Wettbewerb">
+        <img src="project/assets/icons/nz-futbol.svg" alt="Ball" width="64" height="64"/>
+        <figcaption><b>futbol</b><span>Ball — Spiel, Wettbewerb</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="medal Medaille — Platzierung">
+        <img src="project/assets/icons/nz-medal.svg" alt="Medaille" width="64" height="64"/>
+        <figcaption><b>medal</b><span>Medaille — Platzierung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="person-running Laufen — Tempo, aktiv">
+        <img src="project/assets/icons/nz-person-running.svg" alt="Laufen" width="64" height="64"/>
+        <figcaption><b>person-running</b><span>Laufen — Tempo, aktiv</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="text-formatting">
+      <h2>Text Formatting <span class="cnt">22</span></h2>
+      <figure class="ico" data-q="align-center Zentriert">
+        <img src="project/assets/icons/nz-align-center.svg" alt="Zentriert" width="64" height="64"/>
+        <figcaption><b>align-center</b><span>Zentriert</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="align-justify Blocksatz">
+        <img src="project/assets/icons/nz-align-justify.svg" alt="Blocksatz" width="64" height="64"/>
+        <figcaption><b>align-justify</b><span>Blocksatz</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="align-left Linksbündig">
+        <img src="project/assets/icons/nz-align-left.svg" alt="Linksbündig" width="64" height="64"/>
+        <figcaption><b>align-left</b><span>Linksbündig</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="align-right Rechtsbündig">
+        <img src="project/assets/icons/nz-align-right.svg" alt="Rechtsbündig" width="64" height="64"/>
+        <figcaption><b>align-right</b><span>Rechtsbündig</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bold Fett — starke Betonung">
+        <img src="project/assets/icons/nz-bold.svg" alt="Fett" width="64" height="64"/>
+        <figcaption><b>bold</b><span>Fett — starke Betonung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="font Schrift — Typografie wählen">
+        <img src="project/assets/icons/nz-font.svg" alt="Schrift" width="64" height="64"/>
+        <figcaption><b>font</b><span>Schrift — Typografie wählen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="heading Überschrift — Hierarchie">
+        <img src="project/assets/icons/nz-heading.svg" alt="Überschrift" width="64" height="64"/>
+        <figcaption><b>heading</b><span>Überschrift — Hierarchie</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="highlighter Marker — Schlüsselbegriff hervorheben">
+        <img src="project/assets/icons/nz-highlighter.svg" alt="Marker" width="64" height="64"/>
+        <figcaption><b>highlighter</b><span>Marker — Schlüsselbegriff hervorheben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="indent Einrücken — Ebene tiefer">
+        <img src="project/assets/icons/nz-indent.svg" alt="Einrücken" width="64" height="64"/>
+        <figcaption><b>indent</b><span>Einrücken — Ebene tiefer</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="italic Kursiv — leichte Betonung">
+        <img src="project/assets/icons/nz-italic.svg" alt="Kursiv" width="64" height="64"/>
+        <figcaption><b>italic</b><span>Kursiv — leichte Betonung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="link Link — Verweis setzen">
+        <img src="project/assets/icons/nz-link.svg" alt="Link" width="64" height="64"/>
+        <figcaption><b>link</b><span>Link — Verweis setzen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="link-slash Link entfernen — Verweis lösen">
+        <img src="project/assets/icons/nz-link-slash.svg" alt="Link entfernen" width="64" height="64"/>
+        <figcaption><b>link-slash</b><span>Link entfernen — Verweis lösen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="list-ol Nummerierte Liste — Reihenfolge">
+        <img src="project/assets/icons/nz-list-ol.svg" alt="Nummerierte Liste" width="64" height="64"/>
+        <figcaption><b>list-ol</b><span>Nummerierte Liste — Reihenfolge</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="list-ul Aufzählung — ungeordnet">
+        <img src="project/assets/icons/nz-list-ul.svg" alt="Aufzählung" width="64" height="64"/>
+        <figcaption><b>list-ul</b><span>Aufzählung — ungeordnet</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="outdent Ausrücken — Ebene höher">
+        <img src="project/assets/icons/nz-outdent.svg" alt="Ausrücken" width="64" height="64"/>
+        <figcaption><b>outdent</b><span>Ausrücken — Ebene höher</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="paragraph Absatz — Textblock">
+        <img src="project/assets/icons/nz-paragraph.svg" alt="Absatz" width="64" height="64"/>
+        <figcaption><b>paragraph</b><span>Absatz — Textblock</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="quote-right Zitat schließen">
+        <img src="project/assets/icons/nz-quote-right.svg" alt="Zitat schließen" width="64" height="64"/>
+        <figcaption><b>quote-right</b><span>Zitat schließen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="strikethrough Durchgestrichen — nicht mehr gültig">
+        <img src="project/assets/icons/nz-strikethrough.svg" alt="Durchgestrichen" width="64" height="64"/>
+        <figcaption><b>strikethrough</b><span>Durchgestrichen — nicht mehr gültig</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="subscript Tiefgestellt — Index">
+        <img src="project/assets/icons/nz-subscript.svg" alt="Tiefgestellt" width="64" height="64"/>
+        <figcaption><b>subscript</b><span>Tiefgestellt — Index</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="superscript Hochgestellt — Exponent">
+        <img src="project/assets/icons/nz-superscript.svg" alt="Hochgestellt" width="64" height="64"/>
+        <figcaption><b>superscript</b><span>Hochgestellt — Exponent</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="text-height Zeilenhöhe — vertikaler Abstand">
+        <img src="project/assets/icons/nz-text-height.svg" alt="Zeilenhöhe" width="64" height="64"/>
+        <figcaption><b>text-height</b><span>Zeilenhöhe — vertikaler Abstand</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="underline Unterstrichen">
+        <img src="project/assets/icons/nz-underline.svg" alt="Unterstrichen" width="64" height="64"/>
+        <figcaption><b>underline</b><span>Unterstrichen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="time">
+      <h2>Time <span class="cnt">6</span></h2>
+      <figure class="ico" data-q="bell Benachrichtigung — Hinweis">
+        <img src="project/assets/icons/nz-bell.svg" alt="Benachrichtigung" width="64" height="64"/>
+        <figcaption><b>bell</b><span>Benachrichtigung — Hinweis</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bell-slash Benachrichtigung aus — stummgeschaltet">
+        <img src="project/assets/icons/nz-bell-slash.svg" alt="Benachrichtigung aus" width="64" height="64"/>
+        <figcaption><b>bell-slash</b><span>Benachrichtigung aus — stummgeschaltet</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="calendar-check Termin bestätigt — eingetragen">
+        <img src="project/assets/icons/nz-calendar-check.svg" alt="Termin bestätigt" width="64" height="64"/>
+        <figcaption><b>calendar-check</b><span>Termin bestätigt — eingetragen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="calendar-days Kalender — Termine, Monat">
+        <img src="project/assets/icons/nz-calendar-days.svg" alt="Kalender" width="64" height="64"/>
+        <figcaption><b>calendar-days</b><span>Kalender — Termine, Monat</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="clock Uhr — Zeitpunkt, Dauer">
+        <img src="project/assets/icons/nz-clock.svg" alt="Uhr" width="64" height="64"/>
+        <figcaption><b>clock</b><span>Uhr — Zeitpunkt, Dauer</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="stopwatch Stoppuhr — Messung, Tempo">
+        <img src="project/assets/icons/nz-stopwatch.svg" alt="Stoppuhr" width="64" height="64"/>
+        <figcaption><b>stopwatch</b><span>Stoppuhr — Messung, Tempo</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="toggle">
+      <h2>Toggle <span class="cnt">9</span></h2>
+      <figure class="ico" data-q="circle-check Kreis mit Haken — erfolgreich">
+        <img src="project/assets/icons/nz-circle-check.svg" alt="Kreis mit Haken" width="64" height="64"/>
+        <figcaption><b>circle-check</b><span>Kreis mit Haken — erfolgreich</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-dot Radio gewählt — eine Option">
+        <img src="project/assets/icons/nz-circle-dot.svg" alt="Radio gewählt" width="64" height="64"/>
+        <figcaption><b>circle-dot</b><span>Radio gewählt — eine Option</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-minus Kreis mit Minus — entfernen">
+        <img src="project/assets/icons/nz-circle-minus.svg" alt="Kreis mit Minus" width="64" height="64"/>
+        <figcaption><b>circle-minus</b><span>Kreis mit Minus — entfernen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-plus Kreis mit Plus — hinzufügen">
+        <img src="project/assets/icons/nz-circle-plus.svg" alt="Kreis mit Plus" width="64" height="64"/>
+        <figcaption><b>circle-plus</b><span>Kreis mit Plus — hinzufügen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-xmark Kreis mit Kreuz — fehlgeschlagen">
+        <img src="project/assets/icons/nz-circle-xmark.svg" alt="Kreis mit Kreuz" width="64" height="64"/>
+        <figcaption><b>circle-xmark</b><span>Kreis mit Kreuz — fehlgeschlagen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="square-check Kästchen angehakt — ausgewählt">
+        <img src="project/assets/icons/nz-square-check.svg" alt="Kästchen angehakt" width="64" height="64"/>
+        <figcaption><b>square-check</b><span>Kästchen angehakt — ausgewählt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="square-minus Kästchen teilweise — gemischte Auswahl">
+        <img src="project/assets/icons/nz-square-minus.svg" alt="Kästchen teilweise" width="64" height="64"/>
+        <figcaption><b>square-minus</b><span>Kästchen teilweise — gemischte Auswahl</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="toggle-off Schalter aus — inaktiv">
+        <img src="project/assets/icons/nz-toggle-off.svg" alt="Schalter aus" width="64" height="64"/>
+        <figcaption><b>toggle-off</b><span>Schalter aus — inaktiv</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="toggle-on Schalter an — aktiv">
+        <img src="project/assets/icons/nz-toggle-on.svg" alt="Schalter an" width="64" height="64"/>
+        <figcaption><b>toggle-on</b><span>Schalter an — aktiv</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="transportation">
+      <h2>Transportation <span class="cnt">6</span></h2>
+      <figure class="ico" data-q="bicycle Fahrrad — kurze Wege">
+        <img src="project/assets/icons/nz-bicycle.svg" alt="Fahrrad" width="64" height="64"/>
+        <figcaption><b>bicycle</b><span>Fahrrad — kurze Wege</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="bus Bus — Nahverkehr">
+        <img src="project/assets/icons/nz-bus.svg" alt="Bus" width="64" height="64"/>
+        <figcaption><b>bus</b><span>Bus — Nahverkehr</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="car Auto — Fahrt, Anreise">
+        <img src="project/assets/icons/nz-car.svg" alt="Auto" width="64" height="64"/>
+        <figcaption><b>car</b><span>Auto — Fahrt, Anreise</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="motorcycle Motorrad — schneller Kurier">
+        <img src="project/assets/icons/nz-motorcycle.svg" alt="Motorrad" width="64" height="64"/>
+        <figcaption><b>motorcycle</b><span>Motorrad — schneller Kurier</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="rocket Start — Launch, neues Vorhaben">
+        <img src="project/assets/icons/nz-rocket.svg" alt="Start" width="64" height="64"/>
+        <figcaption><b>rocket</b><span>Start — Launch, neues Vorhaben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="train Zug — Bahn, Schiene">
+        <img src="project/assets/icons/nz-train.svg" alt="Zug" width="64" height="64"/>
+        <figcaption><b>train</b><span>Zug — Bahn, Schiene</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="travel-hotel">
+      <h2>Travel + Hotel <span class="cnt">6</span></h2>
+      <figure class="ico" data-q="bed Bett — Übernachtung, Ruhe">
+        <img src="project/assets/icons/nz-bed.svg" alt="Bett" width="64" height="64"/>
+        <figcaption><b>bed</b><span>Bett — Übernachtung, Ruhe</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="earth-europe Erde — global, international">
+        <img src="project/assets/icons/nz-earth-europe.svg" alt="Erde" width="64" height="64"/>
+        <figcaption><b>earth-europe</b><span>Erde — global, international</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="hotel Hotel — Übernachtung">
+        <img src="project/assets/icons/nz-hotel.svg" alt="Hotel" width="64" height="64"/>
+        <figcaption><b>hotel</b><span>Hotel — Übernachtung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="plane Flug — Reise, weite Strecke">
+        <img src="project/assets/icons/nz-plane.svg" alt="Flug" width="64" height="64"/>
+        <figcaption><b>plane</b><span>Flug — Reise, weite Strecke</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="suitcase-rolling Koffer — Reise, Gepäck">
+        <img src="project/assets/icons/nz-suitcase-rolling.svg" alt="Koffer" width="64" height="64"/>
+        <figcaption><b>suitcase-rolling</b><span>Koffer — Reise, Gepäck</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="taxi Taxi — Fahrdienst">
+        <img src="project/assets/icons/nz-taxi.svg" alt="Taxi" width="64" height="64"/>
+        <figcaption><b>taxi</b><span>Taxi — Fahrdienst</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="users-people">
+      <h2>Users + People <span class="cnt">11</span></h2>
+      <figure class="ico" data-q="address-book Adressbuch — Kontakte">
+        <img src="project/assets/icons/nz-address-book.svg" alt="Adressbuch" width="64" height="64"/>
+        <figcaption><b>address-book</b><span>Adressbuch — Kontakte</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="circle-user Profilbild — Konto im Kreis">
+        <img src="project/assets/icons/nz-circle-user.svg" alt="Profilbild" width="64" height="64"/>
+        <figcaption><b>circle-user</b><span>Profilbild — Konto im Kreis</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="id-card Ausweis — Identität, Zugang">
+        <img src="project/assets/icons/nz-id-card.svg" alt="Ausweis" width="64" height="64"/>
+        <figcaption><b>id-card</b><span>Ausweis — Identität, Zugang</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="person-walking Fußweg — unterwegs, Weg">
+        <img src="project/assets/icons/nz-person-walking.svg" alt="Fußweg" width="64" height="64"/>
+        <figcaption><b>person-walking</b><span>Fußweg — unterwegs, Weg</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user Person — Nutzerkonto">
+        <img src="project/assets/icons/nz-user.svg" alt="Person" width="64" height="64"/>
+        <figcaption><b>user</b><span>Person — Nutzerkonto</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-check Person bestätigt — freigegeben">
+        <img src="project/assets/icons/nz-user-check.svg" alt="Person bestätigt" width="64" height="64"/>
+        <figcaption><b>user-check</b><span>Person bestätigt — freigegeben</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-gear Kontoeinstellungen — Profil verwalten">
+        <img src="project/assets/icons/nz-user-gear.svg" alt="Kontoeinstellungen" width="64" height="64"/>
+        <figcaption><b>user-gear</b><span>Kontoeinstellungen — Profil verwalten</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-group Personengruppe — Abteilung">
+        <img src="project/assets/icons/nz-user-group.svg" alt="Personengruppe" width="64" height="64"/>
+        <figcaption><b>user-group</b><span>Personengruppe — Abteilung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-plus Person hinzufügen — einladen">
+        <img src="project/assets/icons/nz-user-plus.svg" alt="Person hinzufügen" width="64" height="64"/>
+        <figcaption><b>user-plus</b><span>Person hinzufügen — einladen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="user-tie Ansprechpartner — Kundenkontakt">
+        <img src="project/assets/icons/nz-user-tie.svg" alt="Ansprechpartner" width="64" height="64"/>
+        <figcaption><b>user-tie</b><span>Ansprechpartner — Kundenkontakt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="users Gruppe — Team, mehrere Personen">
+        <img src="project/assets/icons/nz-users.svg" alt="Gruppe" width="64" height="64"/>
+        <figcaption><b>users</b><span>Gruppe — Team, mehrere Personen</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="weather">
+      <h2>Weather <span class="cnt">9</span></h2>
+      <figure class="ico" data-q="cloud-bolt Gewitter — Unwetter">
+        <img src="project/assets/icons/nz-cloud-bolt.svg" alt="Gewitter" width="64" height="64"/>
+        <figcaption><b>cloud-bolt</b><span>Gewitter — Unwetter</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cloud-rain Regen — Niederschlag">
+        <img src="project/assets/icons/nz-cloud-rain.svg" alt="Regen" width="64" height="64"/>
+        <figcaption><b>cloud-rain</b><span>Regen — Niederschlag</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="cloud-sun Wechselhaft — teils sonnig">
+        <img src="project/assets/icons/nz-cloud-sun.svg" alt="Wechselhaft" width="64" height="64"/>
+        <figcaption><b>cloud-sun</b><span>Wechselhaft — teils sonnig</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="moon Mond — dunkel, Nachtmodus">
+        <img src="project/assets/icons/nz-moon.svg" alt="Mond" width="64" height="64"/>
+        <figcaption><b>moon</b><span>Mond — dunkel, Nachtmodus</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="snowflake Schnee — Kälte, Frost">
+        <img src="project/assets/icons/nz-snowflake.svg" alt="Schnee" width="64" height="64"/>
+        <figcaption><b>snowflake</b><span>Schnee — Kälte, Frost</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="sun Sonne — hell, Tagmodus">
+        <img src="project/assets/icons/nz-sun.svg" alt="Sonne" width="64" height="64"/>
+        <figcaption><b>sun</b><span>Sonne — hell, Tagmodus</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="temperature-half Temperatur — Messwert, Klima">
+        <img src="project/assets/icons/nz-temperature-half.svg" alt="Temperatur" width="64" height="64"/>
+        <figcaption><b>temperature-half</b><span>Temperatur — Messwert, Klima</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="umbrella Schirm — Absicherung, Schutz">
+        <img src="project/assets/icons/nz-umbrella.svg" alt="Schirm" width="64" height="64"/>
+        <figcaption><b>umbrella</b><span>Schirm — Absicherung, Schutz</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="wind Wind — Bewegung, Strömung">
+        <img src="project/assets/icons/nz-wind.svg" alt="Wind" width="64" height="64"/>
+        <figcaption><b>wind</b><span>Wind — Bewegung, Strömung</span></figcaption>
+      </figure>
+    </section>
+    <section class="grp" data-cat="writing">
+      <h2>Writing <span class="cnt">9</span></h2>
+      <figure class="ico" data-q="book Buch — Dokumentation, Leitfaden">
+        <img src="project/assets/icons/nz-book.svg" alt="Buch" width="64" height="64"/>
+        <figcaption><b>book</b><span>Buch — Dokumentation, Leitfaden</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="book-open Aufgeschlagenes Buch — lesen">
+        <img src="project/assets/icons/nz-book-open.svg" alt="Aufgeschlagenes Buch" width="64" height="64"/>
+        <figcaption><b>book-open</b><span>Aufgeschlagenes Buch — lesen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="clipboard Zwischenablage — übernommen">
+        <img src="project/assets/icons/nz-clipboard.svg" alt="Zwischenablage" width="64" height="64"/>
+        <figcaption><b>clipboard</b><span>Zwischenablage — übernommen</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="clipboard-check Checkliste geprüft — abgehakt">
+        <img src="project/assets/icons/nz-clipboard-check.svg" alt="Checkliste geprüft" width="64" height="64"/>
+        <figcaption><b>clipboard-check</b><span>Checkliste geprüft — abgehakt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="list-check Aufgabenliste — Fortschritt">
+        <img src="project/assets/icons/nz-list-check.svg" alt="Aufgabenliste" width="64" height="64"/>
+        <figcaption><b>list-check</b><span>Aufgabenliste — Fortschritt</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="newspaper Nachrichten — Presse, Meldung">
+        <img src="project/assets/icons/nz-newspaper.svg" alt="Nachrichten" width="64" height="64"/>
+        <figcaption><b>newspaper</b><span>Nachrichten — Presse, Meldung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="note-sticky Notiz — kurze Anmerkung">
+        <img src="project/assets/icons/nz-note-sticky.svg" alt="Notiz" width="64" height="64"/>
+        <figcaption><b>note-sticky</b><span>Notiz — kurze Anmerkung</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="pen-nib Federkiel — Autorenschaft">
+        <img src="project/assets/icons/nz-pen-nib.svg" alt="Federkiel" width="64" height="64"/>
+        <figcaption><b>pen-nib</b><span>Federkiel — Autorenschaft</span></figcaption>
+      </figure>
+      <figure class="ico" data-q="signature Unterschrift — freigegeben">
+        <img src="project/assets/icons/nz-signature.svg" alt="Unterschrift" width="64" height="64"/>
+        <figcaption><b>signature</b><span>Unterschrift — freigegeben</span></figcaption>
+      </figure>
+    </section>
+  <p class="empty hide" id="empty">Kein Treffer. Der vollständige Katalog aller 1895 freien Font-Awesome-Namen steht in <a href="ICONS.md">ICONS.md</a>.</p>
+  <footer>
+    Vollständiger Katalog aller 2060 freien Font-Awesome-Icons: <a href="ICONS.md">ICONS.md</a> ·
+    Regeln: <a href="index.html#ikonografie">CI-Dokument, Abschnitt 06</a> ·
+    Fragen? <a href="mailto:ci@nozilla.de">ci@nozilla.de</a>
+  </footer>
+</div>
+<script>
+  const q = document.getElementById('q');
+  const tally = document.getElementById('tally');
+  const empty = document.getElementById('empty');
+  const all = [...document.querySelectorAll('.ico')];
+  const groups = [...document.querySelectorAll('.grp')];
+  q.addEventListener('input', () => {
+    const t = q.value.trim().toLowerCase();
+    let n = 0;
+    for (const el of all) {
+      const hit = !t || el.dataset.q.toLowerCase().includes(t);
+      el.classList.toggle('hide', !hit);
+      if (hit) n++;
+    }
+    for (const g of groups) g.classList.toggle('hide', !g.querySelector('.ico:not(.hide)'));
+    tally.textContent = n + (n === 1 ? ' Icon' : ' Icons');
+    empty.classList.toggle('hide', n > 0);
+  });
+</script>
+</body>
+</html>
