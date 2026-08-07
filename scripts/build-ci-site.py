@@ -557,11 +557,25 @@ def p_icons():
             Web und Prototyping. Abstrakter, mehr Grün, gern eine Prise Pixel.</p></div>
         </div>
       </section>
+      <section class="sec"><h2>Die Signatur.</h2>
+        <p class="lede">Jedes nozilla-Icon trägt unten rechts denselben Signal-Grün-Punkt —
+        dieselbe Marke, die die Wortmarke am Wortende und das Favicon tragen.</p>
+        <table class="tbl"><tbody>
+          <tr><td><b>Form</b></td><td><code>&lt;rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/&gt;</code></td></tr>
+          <tr><td><b>Regel</b></td><td>Immer dieselbe Stelle, immer dieselbe Größe, immer als letztes Element.
+            Kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende.</td></tr>
+          <tr><td><b>Freihaltezone</b></td><td>Kein Motiv ragt in die Ecke — der Build prüft das geometrisch und schlägt sonst fehl.</td></tr>
+          <tr><td><b>Gilt für</b></td><td>Alle {len(ICONS.ALL)} Kern-Icons und alle 462 Motive im
+            <a href="katalog.html">Katalog</a>. Nicht für Wortmarke und Favicon — die tragen ihren Punkt selbst.</td></tr>
+          <tr><td><b>Gesetzt von</b></td><td><code>icons.py</code> für Deck und Web zugleich —
+            nicht von Hand in einzelne Icons schreiben. Export und Pruefung: <code>python3 scripts/build-core-icons.py</code>.</td></tr>
+        </tbody></table>
+      </section>
       <section class="sec"><h2>Verwendung.</h2>
         <table class="tbl"><tbody>
           <tr><td><b>Web</b></td><td><code>&lt;img src="project/assets/icon-grid.svg" alt="Grid"/&gt;</code></td></tr>
           <tr><td><b>Slides</b></td><td>Icon-Bibliothek öffnen, Form anklicken, kopieren — native Vektoren, direkt umfärbbar.</td></tr>
-          <tr><td><b>Farbe</b></td><td>Tinte auf hell, Papier auf dunkel. Grün nur als Akzentfüllung.</td></tr>
+          <tr><td><b>Farbe</b></td><td>Tinte auf hell, Papier auf dunkel. Grün nur als Akzentfüllung — plus die Signatur.</td></tr>
           <tr><td><b>Verboten</b></td><td>Keine Emoji, keine Icon-Fonts, keine fremden Sets.</td></tr>
         </tbody></table>
       </section>"""

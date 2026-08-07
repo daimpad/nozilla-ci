@@ -4,5 +4,5 @@
   <path d="M26 32 L54 32"/>
   <path d="M30 32 L33 50 L47 50 L50 32 Z"/>
   <rect x="37" y="39" width="6" height="6" fill="#00FF9C" stroke="none"/>
-  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
+  <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

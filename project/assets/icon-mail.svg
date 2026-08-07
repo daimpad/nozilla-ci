@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Mail">
   <rect x="8" y="16" width="48" height="32"/>
   <path d="M8 16 L32 36 L56 16"/>
-  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
+  <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

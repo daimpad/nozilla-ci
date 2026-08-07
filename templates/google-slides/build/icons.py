@@ -610,7 +610,9 @@ DIALECT = {**{s: "heavy" for s, _, _ in HEAVY},
 # Die Signatur: derselbe 6x6-Punkt unten rechts, den auch die 462 Katalog-
 # Icons tragen. Sie wird zentral beim Zeichnen gesetzt — nicht in den
 # einzelnen Motiven —, damit kein kuenftiges Icon sie vergessen kann.
-SIGNATURE = (54.0, 54.0, 6.0, 6.0)
+# Ganzzahlig, damit das Kernset denselben Quelltext ausgibt wie der Katalog
+# (rect x="54" …, nicht x="54.0" …) — eine Marke, eine Schreibweise.
+SIGNATURE = (54, 54, 6, 6)
 RESERVED = (52.0, 52.0)          # Faustregel fuer Entwuerfe: Ecke frei lassen
 
 

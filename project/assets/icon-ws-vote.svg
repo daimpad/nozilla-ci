@@ -10,5 +10,5 @@
   <circle cx="31" cy="8" r="3.6" fill="#00FF9C" stroke="none"/>
   <circle cx="48" cy="44" r="3.6" fill="currentColor" stroke="none"/>
   <circle cx="48" cy="35" r="3.6" fill="currentColor" stroke="none"/>
-  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
+  <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

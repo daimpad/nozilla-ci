@@ -59,3 +59,21 @@ jobs:
             exit 1
           fi
           echo "✓ Icon-Build aktuell"
+
+      # Kernset und Katalog werden getrennt gebaut. Diese Prüfung ist die eine
+      # Stelle, die die gemeinsame Regel über beide Sets hinweg festhält.
+      - name: Signatur — jedes Icon trägt den Signal-Grün-Punkt
+        run: |
+          set -e
+          shopt -s nullglob
+          missing=0
+          total=0
+          for f in project/assets/icon-*.svg project/assets/icons/*.svg; do
+            total=$((total+1))
+            grep -q 'x="54" y="54" width="6" height="6" fill="#00FF9C"' "$f" || {
+              echo "✗ Signatur fehlt: $f"; missing=$((missing+1));
+            }
+          done
+          [ "$total" -gt 0 ] || { echo "✗ keine Icons gefunden"; exit 1; }
+          [ "$missing" -eq 0 ] || { echo "✗ $missing von $total Icon(s) ohne Signatur"; exit 1; }
+          echo "✓ Signatur in allen $total Icons"
