@@ -37,7 +37,7 @@ Neues Dokument daraus: *Datei › Kopie erstellen*.
 | Datei | Inhalt |
 |-------|--------|
 | [`google-slides/nozilla-slides-master.pptx`](./google-slides/nozilla-slides-master.pptx) | **19 Folien** Präsentations-Master |
-| [`google-slides/nozilla-slides-icons.pptx`](./google-slides/nozilla-slides-icons.pptx) | **7 Folien** Icon-Bibliothek |
+| [`google-slides/nozilla-slides-icons.pptx`](./google-slides/nozilla-slides-icons.pptx) | **11 Folien** Icon-Bibliothek |
 | [`google-slides/nozilla-slides-pitch.pptx`](./google-slides/nozilla-slides-pitch.pptx) | **12 Folien** Pitch-Deck |
 
 Alle Decks laufen auf **weißem Grund** (Papier-Gelb bleibt der Palette vorbehalten);
@@ -57,8 +57,7 @@ Titel · Problem · Warum jetzt · Lösung · So funktioniert es · Produkt · N
 Warum nozilla · Referenz · Team · Investition · Nächster Schritt.
 
 ### Icon-Bibliothek
-Alle **37 Icons** (33 Heavy-Stroke + 4 Pixel-Art) in beiden Dialekten, hell **und**
-invertiert, plus die Wortmarke auf Weiß / Signal-Grün / Tinte-Schwarz.
+Alle **61 Icons** (33 Heavy-Stroke, 4 Pixel-Art, 24 Konzept) in allen Dialekten, hell **und** invertiert, plus die Wortmarke auf Weiß / Signal-Grün / Tinte-Schwarz.
 
 > Die Icons sind **native Vektor-Shapes**, keine Bilder — in Slides direkt umfärbbar,
 > skalierbar und ohne Qualitätsverlust. Einfach anklicken, kopieren, in die eigene Folie

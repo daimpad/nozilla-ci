@@ -392,13 +392,14 @@ print("master:", len(prs.slides._sldIdLst), "slides")
 lib = deck()
 HEAVY = [(s_, l_) for s_, l_, _ in ICONS.HEAVY]
 PIXEL = [(s_, l_) for s_, l_, _ in ICONS.PIXEL]
+CONCEPT = [(s_, l_) for s_, l_, _ in ICONS.CONCEPT]
 
 s = slide(lib)
 label(s, "DESIGN SYSTEM · BIBLIOTHEK", M, 0.6)
 rule(s, M, 0.95, CW)
 text(s, "Icon-", M, 2.2, CW, 1.2, font=DISPLAY, size=68, bold=True)
 marker(s, "Bibliothek", M, 3.35, 68)
-text(s, f"{len(HEAVY) + len(PIXEL)} Icons · zwei Dialekte · hell und dunkel.\n"
+text(s, f"{len(HEAVY) + len(PIXEL) + len(CONCEPT)} Icons · drei Dialekte · hell und dunkel.\n"
         "Zum Kopieren und Einsetzen.", M, 4.9, 8.0, 1.0, font=DISPLAY, size=22,
      color=GREY, spacing=1.25)
 rule(s, M, 6.2, CW)
@@ -440,11 +441,16 @@ def icon_page(items, dark, title, page):
 
 
 pages = [HEAVY[i:i + PER] for i in range(0, len(HEAVY), PER)]
+cpages = [CONCEPT[i:i + PER] for i in range(0, len(CONCEPT), PER)]
 pg = 2
 for n, chunk in enumerate(pages, 1):
     icon_page(chunk, False, f"Heavy-Stroke {n}/{len(pages)}.", pg); pg += 1
+for n, chunk in enumerate(cpages, 1):
+    icon_page(chunk, False, f"Konzept {n}/{len(cpages)}.", pg); pg += 1
 for n, chunk in enumerate(pages, 1):
     icon_page(chunk, True, f"Heavy-Stroke {n}/{len(pages)}, invertiert.", pg); pg += 1
+for n, chunk in enumerate(cpages, 1):
+    icon_page(chunk, True, f"Konzept {n}/{len(cpages)}, invertiert.", pg); pg += 1
 
 # Pixel + Wortmarke
 s = slide(lib); chrome(s, "DIALEKT B · PIXEL-ART & WORTMARKE")
