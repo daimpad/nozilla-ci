@@ -361,10 +361,10 @@ Immer dieselbe Stelle, immer dieselbe Größe, immer als letztes Element. Kein s
 | Quelle (Deck **und** Web) | [`templates/google-slides/build/icons.py`](./templates/google-slides/build/icons.py) |
 | Dateien | [`project/assets/`](./project/assets/) · `icon-<slug>.svg` |
 | Galerie | [`ci/icons.html`](./ci/icons.html) — filtern, Quelltext kopieren, laden |
-| Export | `python3 scripts/export-icons.py` (·`--check` prüft nur) |
+| Export & Prüfung | `python3 scripts/build-core-icons.py` (`--check` prüft nur) |
 | Decks | `SCRATCH=.. python3 mkdeck.py` in `templates/google-slides/build/` |
 
-Ein Icon wird genau einmal definiert und wahlweise als PPTX-Form oder als SVG gerendert — Deck und Web können so nicht auseinanderlaufen. Wer eine Geometrie ändert, führt den Export aus; die CI schlägt sonst fehl.
+Ein Icon wird genau einmal definiert und wahlweise als PPTX-Form oder als SVG gerendert — Deck und Web können so nicht auseinanderlaufen. Wer eine Geometrie ändert, führt den Export aus; die CI schlägt sonst fehl. Sie prüft dabei dreierlei: Signatur vorhanden, Freihaltezone unten rechts respektiert, committete Dateien auf dem Stand der Quelle.
 
 ### Das große Set — 462 Icons
 

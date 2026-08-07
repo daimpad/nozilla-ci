@@ -42,6 +42,10 @@ jobs:
       - name: Asset integrity check
         run: node scripts/validate-assets.mjs
 
+
+      - name: Kern-Icons — Signatur, Freihaltezone, Build aktuell
+        run: python3 scripts/build-core-icons.py --check
+
       - name: Icon set — CI rules & Font-Awesome name check
         run: node scripts/build-icons.mjs --check
 
@@ -56,25 +60,20 @@ jobs:
           fi
           echo "✓ Icon-Build aktuell"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install python-pptx
-        run: pip install --quiet python-pptx
-
-      - name: Core icons — exported from icons.py and signed
-        run: python3 scripts/export-icons.py --check
-
-      - name: Signature — every icon carries the signal-green dot
+      # Kernset und Katalog werden getrennt gebaut. Diese Prüfung ist die eine
+      # Stelle, die die gemeinsame Regel über beide Sets hinweg festhält.
+      - name: Signatur — jedes Icon trägt den Signal-Grün-Punkt
         run: |
           set -e
+          shopt -s nullglob
           missing=0
+          total=0
           for f in project/assets/icon-*.svg project/assets/icons/*.svg; do
+            total=$((total+1))
             grep -q 'x="54" y="54" width="6" height="6" fill="#00FF9C"' "$f" || {
               echo "✗ Signatur fehlt: $f"; missing=$((missing+1));
             }
           done
-          [ "$missing" -eq 0 ] || { echo "✗ $missing Icon(s) ohne Signatur"; exit 1; }
-          echo "✓ Signatur in allen Icons"
+          [ "$total" -gt 0 ] || { echo "✗ keine Icons gefunden"; exit 1; }
+          [ "$missing" -eq 0 ] || { echo "✗ $missing von $total Icon(s) ohne Signatur"; exit 1; }
+          echo "✓ Signatur in allen $total Icons"

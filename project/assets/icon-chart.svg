@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Diagramm">
-  <path d="M12 12 L12 52"/>
-  <path d="M12 52 L54 52"/>
-  <rect x="19" y="34" width="9" height="18" fill="currentColor" stroke="none"/>
-  <rect x="32" y="26" width="9" height="26" fill="currentColor" stroke="none"/>
-  <rect x="45" y="16" width="9" height="36" fill="#00FF9C" stroke="none"/>
+  <path d="M10 10 L10 50"/>
+  <path d="M10 50 L50 50"/>
+  <rect x="16" y="32" width="8" height="18" fill="currentColor" stroke="none"/>
+  <rect x="28" y="24" width="8" height="26" fill="currentColor" stroke="none"/>
+  <rect x="40" y="14" width="8" height="36" fill="#00FF9C" stroke="none"/>
   <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

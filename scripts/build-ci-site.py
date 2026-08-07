@@ -564,10 +564,11 @@ def p_icons():
           <tr><td><b>Form</b></td><td><code>&lt;rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/&gt;</code></td></tr>
           <tr><td><b>Regel</b></td><td>Immer dieselbe Stelle, immer dieselbe Größe, immer als letztes Element.
             Kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende.</td></tr>
+          <tr><td><b>Freihaltezone</b></td><td>Kein Motiv ragt in die Ecke — der Build prüft das geometrisch und schlägt sonst fehl.</td></tr>
           <tr><td><b>Gilt für</b></td><td>Alle {len(ICONS.ALL)} Kern-Icons und alle 462 Motive im
             <a href="katalog.html">Katalog</a>. Nicht für Wortmarke und Favicon — die tragen ihren Punkt selbst.</td></tr>
           <tr><td><b>Gesetzt von</b></td><td><code>icons.py</code> für Deck und Web zugleich —
-            nicht von Hand in einzelne Icons schreiben. Export: <code>python3 scripts/export-icons.py</code>.</td></tr>
+            nicht von Hand in einzelne Icons schreiben. Export und Pruefung: <code>python3 scripts/build-core-icons.py</code>.</td></tr>
         </tbody></table>
       </section>
       <section class="sec"><h2>Verwendung.</h2>
