@@ -42,6 +42,10 @@ jobs:
       - name: Asset integrity check
         run: node scripts/validate-assets.mjs
 
+
+      - name: Kern-Icons — Signatur, Freihaltezone, Build aktuell
+        run: python3 scripts/build-core-icons.py --check
+
       - name: Icon set — CI rules & Font-Awesome name check
         run: node scripts/build-icons.mjs --check
 

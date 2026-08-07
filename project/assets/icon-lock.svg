@@ -2,4 +2,5 @@
   <rect x="13" y="29" width="38" height="25"/>
   <path d="M22 29 L22 20 L32 13 L42 20 L42 29"/>
   <circle cx="32" cy="41" r="3.5" fill="#00FF9C" stroke="none"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>

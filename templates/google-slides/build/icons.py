@@ -5,9 +5,14 @@ miter joins) and can be rendered either as native PPTX vector shapes (sharp and
 recolourable inside Google Slides) or exported as SVG for the web — so the deck
 and project/assets/ can never drift apart.
 """
-from pptx.util import Pt, Emu
-from pptx.enum.shapes import MSO_SHAPE
-from pptx.dml.color import RGBColor
+try:
+    from pptx.util import Pt, Emu
+    from pptx.enum.shapes import MSO_SHAPE
+    from pptx.dml.color import RGBColor
+except ImportError:  # SVG-Export und Pruefung kommen ohne python-pptx aus
+    class RGBColor(tuple):
+        def __new__(cls, r, g, b):
+            return super().__new__(cls, (r, g, b))
 
 GREEN = RGBColor(0x00, 0xFF, 0x9C)
 GREEN_DEEP = RGBColor(0x00, 0xC0, 0x75)
@@ -138,7 +143,7 @@ class SvgPen:
 
 # ── Dialekt A — Heavy-Stroke ──────────────────────────────────────────────
 def i_grid(p):
-    for x, y in ((10, 10), (36, 10), (10, 36), (36, 36)):
+    for x, y in ((7, 7), (33, 7), (7, 33), (33, 33)):
         p.rect(x, y, 18, 18)
 
 
@@ -147,13 +152,13 @@ def i_cursor(p):
 
 
 def i_maze(p):
-    p.poly([(12, 12), (52, 12), (52, 52), (20, 52), (20, 20), (44, 20),
-            (44, 44), (28, 44), (28, 28), (36, 28)])
+    p.poly([(10, 10), (50, 10), (50, 50), (18, 50), (18, 18), (42, 18),
+            (42, 42), (26, 42), (26, 26), (34, 26)])
 
 
 def i_terminal(p):
-    p.rect(8, 12, 48, 40); p.line(8, 23, 56, 23)
-    p.poly([(16, 33), (22, 38), (16, 43)]); p.line(28, 43, 42, 43)
+    p.rect(6, 12, 45, 38); p.line(6, 23, 51, 23)
+    p.poly([(14, 31), (20, 36), (14, 41)]); p.line(26, 41, 42, 41)
 
 
 def i_chat(p):
@@ -197,11 +202,11 @@ def i_code(p):
 
 
 def i_calendar(p):
-    p.rect(9, 16, 46, 38); p.line(9, 27, 55, 27)
-    p.line(21, 10, 21, 20); p.line(43, 10, 43, 20)
-    for x in (18, 30, 42):
-        p.solid(x, 34, 6, 6, p.color)
-    p.solid(18, 44, 6, 6, GREEN)
+    p.rect(7, 14, 44, 36); p.line(7, 25, 51, 25)
+    p.line(19, 8, 19, 18); p.line(39, 8, 39, 18)
+    for x in (15, 27, 39):
+        p.solid(x, 31, 6, 6, p.color)
+    p.solid(15, 41, 6, 6, GREEN)
 
 
 def i_clock(p):
@@ -209,9 +214,9 @@ def i_clock(p):
 
 
 def i_chart(p):
-    p.line(12, 12, 12, 52); p.line(12, 52, 54, 52)
-    p.solid(19, 34, 9, 18, p.color); p.solid(32, 26, 9, 26, p.color)
-    p.solid(45, 16, 9, 36, GREEN)
+    p.line(10, 10, 10, 50); p.line(10, 50, 50, 50)
+    p.solid(16, 32, 8, 18, p.color); p.solid(28, 24, 8, 26, p.color)
+    p.solid(40, 14, 8, 36, GREEN)
 
 
 def i_target(p):
@@ -239,7 +244,7 @@ def i_monitor(p):
 
 
 def i_search(p):
-    p.circle(28, 28, 14); p.line(38, 38, 53, 53)
+    p.circle(27, 27, 14); p.line(37, 37, 50, 50)
 
 
 def i_mail(p):
@@ -247,8 +252,8 @@ def i_mail(p):
 
 
 def i_warning(p):
-    p.poly([(32, 9), (56, 53), (8, 53)], close=True)
-    p.line(32, 26, 32, 40); p.dot(32, 47, 2.6, p.color)
+    p.poly([(32, 8), (54, 50), (10, 50)], close=True)
+    p.line(32, 24, 32, 37); p.dot(32, 44, 2.6, p.color)
 
 
 def i_check(p):
@@ -403,9 +408,9 @@ def i_data_pipe(p):
 
 def i_data_layers(p):
     """Schichten — vom Rohbestand zur Auswertung."""
-    p.rect(8, 42, 48, 11)
-    p.rect(13, 28, 38, 11)
-    p.rect(18, 14, 28, 11, fill=GREEN)
+    p.rect(6, 39, 45, 10)
+    p.rect(11, 26, 35, 10)
+    p.rect(16, 13, 25, 10, fill=GREEN)
 
 
 def i_data_noise(p):
@@ -418,11 +423,11 @@ def i_data_noise(p):
 # KI
 def i_ai_grid(p):
     """Denkraster — ein Feld, in dem einzelne Zellen zuenden."""
-    p.rect(9, 9, 46, 46)
-    for cx, cy in ((17, 17), (33, 17), (25, 25), (41, 33), (17, 41), (33, 49)):
+    p.rect(8, 8, 43, 43)
+    for cx, cy in ((15, 15), (30, 15), (22, 23), (37, 30), (15, 37), (30, 44)):
         p.solid(cx, cy, 6, 6, p.color)
-    p.solid(41, 17, 6, 6, GREEN)
-    p.solid(25, 41, 6, 6, GREEN)
+    p.solid(37, 15, 6, 6, GREEN)
+    p.solid(22, 37, 6, 6, GREEN)
 
 
 def i_ai_neuron(p):
@@ -467,18 +472,18 @@ def i_ai_drift(p):
 # Workshop
 def i_ws_sticky(p):
     """Haftnotizen — drei Gedanken, einer sticht heraus."""
-    p.rect(6, 10, 24, 24)
-    p.rect(20, 22, 24, 24, fill=GREEN)
-    p.rect(34, 32, 24, 24)
+    p.rect(4, 6, 23, 23)
+    p.rect(16, 17, 23, 23, fill=GREEN)
+    p.rect(28, 28, 23, 23)
 
 
 def i_ws_vote(p):
     """Punktabfrage — wo die Klebepunkte landen."""
-    p.line(6, 54, 58, 54)
+    p.line(6, 51, 50, 51)
     for i, n in enumerate((3, 5, 2)):
-        x = 15 + i * 17
+        x = 14 + i * 17
         for k in range(n):
-            y = 46 - k * 9
+            y = 44 - k * 9
             p.dot(x, y, 3.6, GREEN if i == 1 else p.color)
 
 
@@ -507,11 +512,11 @@ def i_ws_agenda(p):
 # Web
 def i_web_layout(p):
     """Layout — Kopf, Spalte, Inhalt."""
-    p.rect(7, 9, 50, 46)
-    p.line(7, 21, 57, 21)
-    p.solid(13, 27, 12, 22, GREEN)
-    for y in (27, 36, 45):
-        p.line(31, y + 2, 51, y + 2)
+    p.rect(6, 8, 45, 42)
+    p.line(6, 20, 51, 20)
+    p.solid(11, 26, 11, 20, GREEN)
+    for y in (26, 34, 42):
+        p.line(28, y + 2, 46, y + 2)
 
 
 def i_web_responsive(p):
@@ -537,10 +542,10 @@ def i_web_speed(p):
 
 def i_web_deploy(p):
     """Ausliefern — das Paket verlaesst den Boden."""
-    p.rect(16, 34, 32, 20)
-    p.line(32, 34, 32, 20)
-    p.poly([(22, 26), (32, 14), (42, 26)], close=True, fill=GREEN)
-    p.line(10, 60, 54, 60)
+    p.rect(14, 32, 30, 18)
+    p.line(29, 32, 29, 18)
+    p.poly([(19, 24), (29, 12), (39, 24)], close=True, fill=GREEN)
+    p.line(8, 56, 48, 56)
 
 
 # Prototyping
@@ -570,11 +575,11 @@ def i_proto_fidelity(p):
 def i_proto_throwaway(p):
     """Wegwerf-Prototyp — gebaut, um verworfen zu werden.
     Flugbahn und Behaelter haengen zusammen, sonst zerfaellt das Motiv."""
-    p.rect(5, 9, 16, 16)
-    p.poly([(23, 15), (34, 9), (43, 17), (46, 30)])
-    p.line(29, 36, 61, 36)
-    p.poly([(33, 36), (36, 58), (54, 58), (57, 36)], close=True)
-    p.solid(42, 44, 6, 6, GREEN)
+    p.rect(4, 8, 15, 15)
+    p.poly([(21, 13), (31, 8), (39, 15), (42, 27)])
+    p.line(26, 32, 54, 32)
+    p.poly([(30, 32), (33, 50), (47, 50), (50, 32)], close=True)
+    p.solid(37, 39, 6, 6, GREEN)
 
 
 CONCEPT = [
@@ -602,15 +607,141 @@ DIALECT = {**{s: "heavy" for s, _, _ in HEAVY},
            **{s: "concept" for s, _, _ in CONCEPT}}
 
 
+# Die Signatur: derselbe 6x6-Punkt unten rechts, den auch die 462 Katalog-
+# Icons tragen. Sie wird zentral beim Zeichnen gesetzt — nicht in den
+# einzelnen Motiven —, damit kein kuenftiges Icon sie vergessen kann.
+SIGNATURE = (54.0, 54.0, 6.0, 6.0)
+RESERVED = (52.0, 52.0)          # Faustregel fuer Entwuerfe: Ecke frei lassen
+
+
+def _sign(pen):
+    pen.solid(*SIGNATURE, GREEN)
+
+
 def draw(slide, slug, x, y, size, color):
-    BY_SLUG[slug][1](Pen(slide, x, y, size, color))
+    pen = Pen(slide, x, y, size, color)
+    BY_SLUG[slug][1](pen)
+    _sign(pen)
 
 
 def to_svg(slug, color="currentColor"):
     lbl, fn = BY_SLUG[slug]
     pen = SvgPen(color)
     fn(pen)
+    _sign(pen)
     return pen.svg(lbl)
+
+
+class BoundsPen:
+    """Zeichnet nichts, sammelt nur Geometrie — fuer die Pruefung, ob ein Motiv
+    in die fuer die Signatur reservierte Ecke ragt. Bewusst exakt statt per
+    Huellrechteck: ein Stern oder ein Kreis beruehrt seine Bounding-Box-Ecke nie."""
+
+    HALF = 2.0                      # halbe Strichstaerke
+
+    def __init__(self):
+        self.color = "ink"
+        self.segs = []              # Strecken (Umrisse)
+        self.discs = []             # (cx, cy, r, gefuellt)
+        self.boxes = []             # gefuellte Rechtecke
+        self.polys = []             # gefuellte Vielecke
+
+    def line(self, x1, y1, x2, y2):
+        self.segs.append((x1, y1, x2, y2))
+
+    def _rect_segs(self, x, y, w, h):
+        self.segs += [(x, y, x + w, y), (x + w, y, x + w, y + h),
+                      (x + w, y + h, x, y + h), (x, y + h, x, y)]
+
+    def rect(self, x, y, w, h, fill=None):
+        self._rect_segs(x, y, w, h)
+        if fill is not None:
+            self.boxes.append((x, y, x + w, y + h))
+
+    def solid(self, x, y, w, h, fill):
+        self.boxes.append((x, y, x + w, y + h))
+
+    def circle(self, cx, cy, r, fill=None):
+        self.discs.append((cx, cy, r, fill is not None))
+
+    def dot(self, cx, cy, r, fill):
+        self.discs.append((cx, cy, r, True))
+
+    def poly(self, pts, close=False, fill=None):
+        pairs = list(zip(pts, pts[1:])) + ([(pts[-1], pts[0])] if close else [])
+        self.segs += [(a[0], a[1], b[0], b[1]) for a, b in pairs]
+        if fill is not None:
+            self.polys.append(list(pts))
+
+
+def _seg_hits_rect(x1, y1, x2, y2, r):
+    """Liang-Barsky: schneidet die Strecke das Rechteck?"""
+    rx0, ry0, rx1, ry1 = r
+    dx, dy = x2 - x1, y2 - y1
+    p = (-dx, dx, -dy, dy)
+    q = (x1 - rx0, rx1 - x1, y1 - ry0, ry1 - y1)
+    t0, t1 = 0.0, 1.0
+    for pi, qi in zip(p, q):
+        if pi == 0:
+            if qi < 0:
+                return False
+        else:
+            t = qi / pi
+            if pi < 0:
+                if t > t1:
+                    return False
+                t0 = max(t0, t)
+            else:
+                if t < t0:
+                    return False
+                t1 = min(t1, t)
+    return True
+
+
+def _disc_hits_rect(cx, cy, rad, filled, r):
+    from math import hypot
+    rx0, ry0, rx1, ry1 = r
+    nx, ny = max(rx0, min(cx, rx1)), max(ry0, min(cy, ry1))
+    near = hypot(cx - nx, cy - ny)
+    if filled:
+        return near <= rad
+    far = max(hypot(cx - x, cy - y) for x in (rx0, rx1) for y in (ry0, ry1))
+    return near <= rad + BoundsPen.HALF and far >= rad - BoundsPen.HALF
+
+
+def _point_in_poly(px, py, pts):
+    inside = False
+    j = len(pts) - 1
+    for i in range(len(pts)):
+        xi, yi = pts[i]; xj, yj = pts[j]
+        if (yi > py) != (yj > py) and px < (xj - xi) * (py - yi) / (yj - yi) + xi:
+            inside = not inside
+        j = i
+    return inside
+
+
+def clearance_violations():
+    """Motive, die in die reservierte Ecke ragen — leere Liste heisst sauber."""
+    # Gesperrt ist genau die Flaeche des Punktes (54..60), geweitet um die halbe
+    # Strichstaerke der Motive — nicht der ganze Quadrant: der Katalog reicht
+    # selbst bis y=54, nur eben nicht in die Ecke.
+    h = BoundsPen.HALF
+    sx, sy, sw, sh = SIGNATURE
+    zone = (sx - h, sy - h, sx + sw + h, sy + sh + h)
+    bad = []
+    for slug, label, fn in ALL:
+        pen = BoundsPen()
+        fn(pen)
+        hit = (any(_seg_hits_rect(*seg, zone) for seg in pen.segs)
+               or any(_disc_hits_rect(*d, zone) for d in pen.discs)
+               or any(b[2] > zone[0] and b[3] > zone[1] and b[0] < zone[2] and b[1] < zone[3]
+                      for b in pen.boxes)
+               or any(_point_in_poly(cx, cy, poly)
+                      for poly in pen.polys
+                      for cx in (zone[0], zone[2]) for cy in (zone[1], zone[3])))
+        if hit:
+            bad.append((slug, label))
+    return bad
 
 
 def wordmark(slide, x, y, w, color, green=GREEN):

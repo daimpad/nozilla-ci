@@ -3,4 +3,5 @@
   <circle cx="24" cy="26" r="2.4" fill="currentColor" stroke="none"/>
   <circle cx="32" cy="26" r="2.4" fill="currentColor" stroke="none"/>
   <circle cx="40" cy="26" r="2.4" fill="currentColor" stroke="none"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>

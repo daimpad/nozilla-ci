@@ -2,4 +2,5 @@
   <path d="M10 22 L10 54 L42 54 L42 34"/>
   <path d="M34 10 L54 10 L54 30"/>
   <path d="M54 10 L32 32"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>

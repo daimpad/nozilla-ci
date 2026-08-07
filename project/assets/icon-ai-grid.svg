@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Denkraster">
-  <rect x="9" y="9" width="46" height="46"/>
-  <rect x="17" y="17" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="33" y="17" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="25" y="25" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="41" y="33" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="17" y="41" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="33" y="49" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="41" y="17" width="6" height="6" fill="#00FF9C" stroke="none"/>
-  <rect x="25" y="41" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="8" width="43" height="43"/>
+  <rect x="15" y="15" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="30" y="15" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="22" y="23" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="37" y="30" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="15" y="37" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="30" y="44" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="37" y="15" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="22" y="37" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>
