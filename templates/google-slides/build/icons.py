@@ -370,8 +370,236 @@ PIXEL = [
     ("cucumber", "Pixel-Gurke", i_cucumber), ("pixel-heart", "Pixel-Herz", i_pixel_heart),
     ("pixel-star", "Pixel-Stern", i_pixel_star), ("pixel-disk", "Pixel-Diskette", i_pixel_disk),
 ]
-ALL = HEAVY + PIXEL
+
+# ── Dialekt C — Konzept ───────────────────────────────────────────────────
+# Abstrakter als die funktionalen Motive: Metaphern statt Gegenstaende, mehr
+# Signal-Gruen, gern eine Prise Pixel. Gleiches Raster, gleiche Strichstaerke.
+
+# Daten
+def i_data_stream(p):
+    """Datenstrom — verebbende Bloecke, gruene Spitze."""
+    for y, cols in ((12, 5), (29, 4), (46, 3)):
+        for i in range(cols):
+            p.solid(8 + i * 8, y, 6, 6, p.color)
+        p.solid(8 + cols * 8, y, 6, 6, GREEN)
+
+
+def i_data_cluster(p):
+    """Cluster — Streuung, die eine Huelle bekommt."""
+    p.poly([(12, 18), (34, 8), (52, 24), (46, 46), (20, 48)], close=True)
+    for cx, cy in ((22, 22), (32, 30), (24, 38), (38, 20), (40, 36)):
+        p.dot(cx, cy, 3, p.color)
+    p.dot(32, 30, 3.6, GREEN)
+
+
+def i_data_pipe(p):
+    """Pipeline — drei Stufen, eine traegt."""
+    p.rect(5, 25, 15, 14)
+    p.rect(25, 25, 15, 14, fill=GREEN)
+    p.rect(45, 25, 15, 14)
+    p.line(20, 32, 25, 32)
+    p.line(40, 32, 45, 32)
+
+
+def i_data_layers(p):
+    """Schichten — vom Rohbestand zur Auswertung."""
+    p.rect(8, 42, 48, 11)
+    p.rect(13, 28, 38, 11)
+    p.rect(18, 14, 28, 11, fill=GREEN)
+
+
+def i_data_noise(p):
+    """Rauschen und Signal — die gerade Linie ist die Aussage."""
+    p.poly([(6, 28), (13, 14), (20, 32), (27, 12), (34, 30), (41, 16), (48, 32), (55, 18)])
+    p.line(6, 46, 58, 46)
+    p.solid(52, 43, 6, 6, GREEN)
+
+
+# KI
+def i_ai_grid(p):
+    """Denkraster — ein Feld, in dem einzelne Zellen zuenden."""
+    p.rect(9, 9, 46, 46)
+    for cx, cy in ((17, 17), (33, 17), (25, 25), (41, 33), (17, 41), (33, 49)):
+        p.solid(cx, cy, 6, 6, p.color)
+    p.solid(41, 17, 6, 6, GREEN)
+    p.solid(25, 41, 6, 6, GREEN)
+
+
+def i_ai_neuron(p):
+    """Neuron — ein Kern, der ausstrahlt."""
+    for x, y in ((11, 15), (53, 15), (7, 32), (57, 32), (15, 51), (49, 51)):
+        p.line(32, 32, x, y)
+        p.dot(x, y, 3, p.color)
+    p.circle(32, 32, 9, fill=GREEN)
+
+
+def i_ai_prompt(p):
+    """Prompt — die Frage, die den Funken ausloest."""
+    p.poly([(8, 10), (56, 10), (56, 40), (26, 40), (16, 52), (16, 40), (8, 40)], close=True)
+    p.poly([(32, 15), (35, 22), (43, 25), (35, 28), (32, 35), (29, 28), (21, 25), (29, 22)],
+           close=True, fill=GREEN)
+
+
+def i_ai_model(p):
+    """Modell — viele Eingaben, eine Antwort. Bewusst duenn geknuepft,
+    ein voll vernetztes Raster wird bei 48 px zum Fleck."""
+    for a in (16, 48):
+        for b in (12, 32, 52):
+            p.line(10, a, 32, b)
+    for b in (12, 32, 52):
+        p.line(32, b, 54, 32)
+    for y in (16, 48):
+        p.dot(10, y, 3.4, p.color)
+    for y in (12, 52):
+        p.dot(32, y, 3.4, p.color)
+    p.dot(32, 32, 4.2, GREEN)
+    p.dot(54, 32, 3.8, p.color)
+
+
+def i_ai_drift(p):
+    """Drift — was fest begann und sich unterwegs aufloest."""
+    p.solid(6, 24, 18, 18, p.color)
+    for x, y, g in ((28, 26, 0), (34, 34, 1), (30, 44, 0), (40, 20, 0),
+                    (44, 36, 1), (50, 28, 0), (55, 45, 0)):
+        p.solid(x, y, 6, 6, GREEN if g else p.color)
+
+
+# Workshop
+def i_ws_sticky(p):
+    """Haftnotizen — drei Gedanken, einer sticht heraus."""
+    p.rect(6, 10, 24, 24)
+    p.rect(20, 22, 24, 24, fill=GREEN)
+    p.rect(34, 32, 24, 24)
+
+
+def i_ws_vote(p):
+    """Punktabfrage — wo die Klebepunkte landen."""
+    p.line(6, 54, 58, 54)
+    for i, n in enumerate((3, 5, 2)):
+        x = 15 + i * 17
+        for k in range(n):
+            y = 46 - k * 9
+            p.dot(x, y, 3.6, GREEN if i == 1 else p.color)
+
+
+def i_ws_timebox(p):
+    """Timebox — die Zeit laeuft, sichtbar."""
+    p.poly([(13, 9), (51, 9), (32, 32)], close=True)
+    p.poly([(32, 32), (51, 55), (13, 55)], close=True)
+    p.solid(26, 46, 6, 6, GREEN)
+    p.solid(32, 46, 6, 6, GREEN)
+
+
+def i_ws_diverge(p):
+    """Doppel-Diamant — erst oeffnen, dann entscheiden."""
+    p.poly([(4, 32), (18, 16), (32, 32), (18, 48)], close=True)
+    p.poly([(32, 32), (46, 16), (60, 32), (46, 48)], close=True, fill=GREEN)
+
+
+def i_ws_agenda(p):
+    """Agenda — Bloecke an einer Zeitachse."""
+    p.line(14, 8, 14, 56)
+    for i, y in enumerate((12, 26, 40)):
+        p.rect(22, y, 32, 10, fill=GREEN if i == 1 else None)
+        p.dot(14, y + 5, 3.4, p.color)
+
+
+# Web
+def i_web_layout(p):
+    """Layout — Kopf, Spalte, Inhalt."""
+    p.rect(7, 9, 50, 46)
+    p.line(7, 21, 57, 21)
+    p.solid(13, 27, 12, 22, GREEN)
+    for y in (27, 36, 45):
+        p.line(31, y + 2, 51, y + 2)
+
+
+def i_web_responsive(p):
+    """Responsiv — dasselbe, drei Breiten."""
+    p.rect(5, 13, 28, 38)
+    p.rect(37, 19, 14, 26)
+    p.rect(54, 26, 6, 12, fill=GREEN)
+
+
+def i_web_focus(p):
+    """Fokus — der Ring, der niemals fehlen darf."""
+    p.solid(21, 23, 22, 18, GREEN)
+    p.rect(13, 15, 38, 34)
+
+
+def i_web_speed(p):
+    """Tempo — der Block ist schon da, die Spuren holen auf."""
+    p.solid(42, 22, 18, 20, GREEN)
+    p.line(4, 26, 38, 26)
+    p.line(12, 32, 38, 32)
+    p.line(20, 38, 38, 38)
+
+
+def i_web_deploy(p):
+    """Ausliefern — das Paket verlaesst den Boden."""
+    p.rect(16, 34, 32, 20)
+    p.line(32, 34, 32, 20)
+    p.poly([(22, 26), (32, 14), (42, 26)], close=True, fill=GREEN)
+    p.line(10, 60, 54, 60)
+
+
+# Prototyping
+def i_proto_loop(p):
+    """Iteration — die Runde, die man mehrfach dreht."""
+    p.poly([(44, 14), (14, 14), (14, 50), (50, 50), (50, 26)])
+    p.poly([(38, 8), (48, 14), (38, 20)], close=True, fill=GREEN)
+
+
+def i_proto_clickpath(p):
+    """Klickpfad — der Weg, den jemand wirklich nimmt."""
+    pts = [(10, 50), (23, 30), (38, 40), (50, 14)]
+    p.poly(pts)
+    for i, (x, y) in enumerate(pts):
+        p.dot(x, y, 3.4, GREEN if i == 0 else p.color)
+    p.poly([(50, 14), (50, 34), (56, 28), (60, 36)])
+
+
+def i_proto_fidelity(p):
+    """Detailgrad — von grob nach fein."""
+    for x, y in ((6, 22), (14, 22), (6, 30), (14, 30)):
+        p.solid(x, y, 6, 6, p.color)
+    p.rect(26, 22, 14, 14)
+    p.solid(46, 22, 14, 14, GREEN)
+
+
+def i_proto_throwaway(p):
+    """Wegwerf-Prototyp — gebaut, um verworfen zu werden.
+    Flugbahn und Behaelter haengen zusammen, sonst zerfaellt das Motiv."""
+    p.rect(5, 9, 16, 16)
+    p.poly([(23, 15), (34, 9), (43, 17), (46, 30)])
+    p.line(29, 36, 61, 36)
+    p.poly([(33, 36), (36, 58), (54, 58), (57, 36)], close=True)
+    p.solid(42, 44, 6, 6, GREEN)
+
+
+CONCEPT = [
+    ("data-stream", "Datenstrom", i_data_stream), ("data-cluster", "Cluster", i_data_cluster),
+    ("data-pipe", "Pipeline", i_data_pipe), ("data-layers", "Schichten", i_data_layers),
+    ("data-noise", "Rauschen", i_data_noise),
+    ("ai-grid", "Denkraster", i_ai_grid), ("ai-neuron", "Neuron", i_ai_neuron),
+    ("ai-prompt", "Prompt", i_ai_prompt), ("ai-model", "Modell", i_ai_model),
+    ("ai-drift", "Drift", i_ai_drift),
+    ("ws-sticky", "Haftnotizen", i_ws_sticky), ("ws-vote", "Punktabfrage", i_ws_vote),
+    ("ws-timebox", "Timebox", i_ws_timebox), ("ws-diverge", "Doppel-Diamant", i_ws_diverge),
+    ("ws-agenda", "Agenda", i_ws_agenda),
+    ("web-layout", "Layout", i_web_layout), ("web-responsive", "Responsiv", i_web_responsive),
+    ("web-focus", "Fokus", i_web_focus), ("web-speed", "Tempo", i_web_speed),
+    ("web-deploy", "Deploy", i_web_deploy),
+    ("proto-loop", "Iteration", i_proto_loop), ("proto-clickpath", "Klickpfad", i_proto_clickpath),
+    ("proto-fidelity", "Detailgrad", i_proto_fidelity),
+    ("proto-throwaway", "Wegwerf-Prototyp", i_proto_throwaway),
+]
+
+ALL = HEAVY + PIXEL + CONCEPT
 BY_SLUG = {s: (lbl, fn) for s, lbl, fn in ALL}
+DIALECT = {**{s: "heavy" for s, _, _ in HEAVY},
+           **{s: "pixel" for s, _, _ in PIXEL},
+           **{s: "concept" for s, _, _ in CONCEPT}}
 
 
 def draw(slide, slug, x, y, size, color):

@@ -163,7 +163,8 @@ def build_index():
         for href, label, _ in items:
             idx.append({"t": label, "c": "Seite", "u": href, "k": label.lower()})
     for slug, label, _ in ICONS.ALL:
-        dial = "Pixel-Art" if slug.startswith("pixel") or slug == "cucumber" else "Heavy-Stroke"
+        dial = {"heavy": "Heavy-Stroke", "pixel": "Pixel-Art",
+                "concept": "Konzept"}[ICONS.DIALECT[slug]]
         idx.append({"t": label, "c": "Icon", "u": f"icons.html#icon-{slug}",
                     "k": f"{label} {slug} icon {dial}".lower()})
     for name, token, hexv, note, group in COLORS:
@@ -281,7 +282,7 @@ def p_index():
         ("logo.html", "Logo", "Wortmarke, drei Varianten, Freiraum, Mindestgrößen, Verbote."),
         ("farbe.html", "Farbe", f"{len(COLORS)} Werte in drei Rollen — plus alle Design Tokens."),
         ("typografie.html", "Typografie", "Zilla Slab, Inter, Space Mono — Skala und Einsatz."),
-        ("icons.html", "Icons", f"{len(ICONS.ALL)} Kern-Icons in zwei Dialekten, kopier- und ladbar."),
+        ("icons.html", "Icons", f"{len(ICONS.ALL)} Kern-Icons in drei Dialekten, kopier- und ladbar."),
         ("katalog.html", "Icon-Katalog", "462 Motive in 68 Kategorien — durchsuchbar."),
         ("bilder.html", "Bilder", "Favicon, Social Preview und alle Marken-Grafiken."),
         ("design-system.html", "Design System", "Foundations und Kern-Komponenten, Light und Dark."),
@@ -515,7 +516,7 @@ export const brand = {{
 def p_icons():
     cells = []
     for slug, label, _ in ICONS.ALL:
-        dial = "pixel" if slug.startswith("pixel") or slug == "cucumber" else "heavy"
+        dial = ICONS.DIALECT[slug]
         svg = ICONS.to_svg(slug)
         cells.append(
             f'<figure class="icon-cell" id="icon-{slug}" data-dial="{dial}" '
@@ -527,7 +528,7 @@ def p_icons():
             f'<a href="../project/assets/icon-{slug}.svg" download>Laden</a>'
             f'</div></figure>')
     grid = "\n".join(cells)
-    heavy, pixel = len(ICONS.HEAVY), len(ICONS.PIXEL)
+    heavy, pixel, concept = len(ICONS.HEAVY), len(ICONS.PIXEL), len(ICONS.CONCEPT)
     body = f"""
       <section class="sec" style="margin-top:0">
         <div class="filter-bar">
@@ -535,6 +536,7 @@ def p_icons():
             <label><input type="radio" name="dial" value="all" checked/><span>Alle</span></label>
             <label><input type="radio" name="dial" value="heavy"/><span>Heavy-Stroke</span></label>
             <label><input type="radio" name="dial" value="pixel"/><span>Pixel-Art</span></label>
+            <label><input type="radio" name="dial" value="concept"/><span>Konzept</span></label>
           </div>
           <input class="nz-input" id="iconFilter" type="search" placeholder="Icon filtern …"
                  style="max-width:240px" aria-label="Icons filtern"/>
@@ -542,14 +544,17 @@ def p_icons():
         </div>
         <div class="icon-grid" id="iconGrid">{grid}</div>
       </section>
-      <section class="sec"><h2>Zwei Dialekte.</h2>
-        <div class="nz-grid nz-grid--2">
+      <section class="sec"><h2>Drei Dialekte.</h2>
+        <div class="nz-grid nz-grid--3">
           <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Heavy-Stroke · {heavy}</h3>
-            <p class="nz-small nz-muted">4-px-Umriss auf 64er-Raster, rechtwinklige Enden, Gehrungsecken.
-            Tinte-Schwarz, optional mit Signal-grünem Fill. Zielgröße 48–160 px.</p></div>
+            <p class="nz-small nz-muted">Gegenstände und Funktionen. 4-px-Umriss auf 64er-Raster,
+            rechtwinklige Enden, Gehrungsecken. Zielgröße 48–160 px.</p></div>
           <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Pixel-Art · {pixel}</h3>
             <p class="nz-small nz-muted">8-Bit-Reminiszenzen als retro-digitale Interpunktion.
             Sparsam einsetzen — ein Augenzwinkern pro Seite genügt.</p></div>
+          <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Konzept · {concept}</h3>
+            <p class="nz-small nz-muted">Metaphern statt Gegenstände — für Daten, KI, Workshop,
+            Web und Prototyping. Abstrakter, mehr Grün, gern eine Prise Pixel.</p></div>
         </div>
       </section>
       <section class="sec"><h2>Verwendung.</h2>
@@ -561,7 +566,7 @@ def p_icons():
         </tbody></table>
       </section>"""
     write("icons.html", "Icons.", "Gestaltung",
-          f"{len(ICONS.ALL)} Icons in zwei Dialekten — filtern, Quelltext kopieren, laden.", body)
+          f"{len(ICONS.ALL)} Icons in drei Dialekten — filtern, Quelltext kopieren, laden.", body)
 
 
 def p_bilder():

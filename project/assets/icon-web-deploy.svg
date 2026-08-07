@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Deploy">
+  <rect x="16" y="34" width="32" height="20"/>
+  <path d="M32 34 L32 20"/>
+  <path d="M22 26 L32 14 L42 26 Z" fill="#00FF9C"/>
+  <path d="M10 60 L54 60"/>
+</svg>

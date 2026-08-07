@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Agenda">
+  <path d="M14 8 L14 56"/>
+  <rect x="22" y="12" width="32" height="10"/>
+  <circle cx="14" cy="17" r="3.4" fill="currentColor" stroke="none"/>
+  <rect x="22" y="26" width="32" height="10" fill="#00FF9C"/>
+  <circle cx="14" cy="31" r="3.4" fill="currentColor" stroke="none"/>
+  <rect x="22" y="40" width="32" height="10"/>
+  <circle cx="14" cy="45" r="3.4" fill="currentColor" stroke="none"/>
+</svg>
