@@ -1,3 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Zeitstrahl">
 <path d="M6 32 H58"/><circle cx="16" cy="32" r="5"/><circle cx="32" cy="32" r="5"/><circle cx="48" cy="32" r="5"/><path d="M16 27 V12"/><path d="M32 37 V52"/><path d="M48 27 V12"/>
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

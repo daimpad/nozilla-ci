@@ -1,3 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Personengruppe">
 <circle cx="20" cy="22" r="10"/><circle cx="46" cy="22" r="8"/><path d="M4 54 C4 40 36 40 36 54"/><path d="M40 38 C52 38 60 44 60 54"/>
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

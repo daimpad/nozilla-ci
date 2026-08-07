@@ -72,8 +72,17 @@ if (problems.length) {
 // ── SVG erzeugen ────────────────────────────────────────────────────────────
 const HEAD = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"`;
 
+/* Die nozilla-Signatur: derselbe 6 × 6 Signal-Grün-Punkt, den die Wortmarke am
+   Wortende und das Favicon tragen. Immer unten rechts auf (54,54), immer gleich
+   groß, immer als letztes Element — der Punkt liegt vor der Tinte und sieht
+   damit in jedem Icon identisch aus. Genau dafür ist die Ecke gewählt: bei 322
+   der 462 Icons ist sie ohnehin leer, und wo Geometrie hinreicht, verdeckt der
+   Punkt nur einen Randbereich, der nichts zur Lesbarkeit beiträgt.
+   `stroke="none"` ist Pflicht, sonst erbt der Punkt die 4-px-Kontur. */
+const MARK = `<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>`;
+
 const svgFor = (ic) =>
-  `${HEAD} role="img" aria-label="${ic.de.split(" — ")[0]}">\n${ic.g}\n</svg>\n`;
+  `${HEAD} role="img" aria-label="${ic.de.split(" — ")[0]}">\n${ic.g}\n${MARK}\n</svg>\n`;
 
 if (!CHECK_ONLY) {
   if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
@@ -112,7 +121,21 @@ lines.push(`Die ${fa.counts.brands} \`brands\`-Icons sind Logos fremder Unterneh
 lines.push("");
 lines.push("## Nachbau — Dialekt A");
 lines.push("");
-lines.push("Jedes Icon: SVG, 64 × 64 Grundraster, 4 px Strichstärke, `stroke-linecap=\"square\"`, `stroke-linejoin=\"miter\"`, Tinte-Schwarz `#000`, Signal-Grün `#00FF9C` nur als Akzent. Keine Radien, keine Verläufe, keine Filter.");
+lines.push("Jedes Icon: SVG, 64 × 64 Grundraster, 4 px Strichstärke, `stroke-linecap=\"square\"`, `stroke-linejoin=\"miter\"`, Tinte-Schwarz `#000`. Keine Radien, keine Verläufe, keine Filter.");
+lines.push("");
+lines.push("### Die Signatur");
+lines.push("");
+lines.push("Jedes Icon trägt unten rechts denselben **6 × 6 großen Signal-Grün-Punkt** — dieselbe Marke, die die Wortmarke am Wortende und das Favicon tragen:");
+lines.push("");
+lines.push("```svg");
+lines.push('<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>');
+lines.push("```");
+lines.push("");
+lines.push("Immer dieselbe Stelle, immer dieselbe Größe, immer als letztes Element. Sie ist kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende. Bei 322 der 462 Icons ist die Ecke ohnehin leer; wo Geometrie hinreicht, deckt der Punkt nur Randfläche ab, die zur Lesbarkeit nichts beiträgt.");
+lines.push("");
+lines.push("Sieben Icons führen zusätzlich **semantisches** Grün — `battery-full`, `bars-progress`, `bullseye`, `highlighter`, `server`, `toggle-on`, `tower-broadcast`. Dort trägt die Farbe Bedeutung (Ladestand, Fortschritt, Schalterzustand), die Signatur kommt davon unabhängig dazu.");
+lines.push("");
+lines.push("`stroke=\"none\"` ist Pflicht — sonst erbt der Punkt die 4-px-Kontur des Wurzelelements.");
 lines.push("");
 lines.push("Dateien liegen in [`project/assets/icons/`](./project/assets/icons/) als `nz-<name>.svg`. Galerie: [`icons.html`](./icons.html).");
 lines.push("");
@@ -273,6 +296,7 @@ const html = `<!doctype html>
     <div class="kicker">nozilla · Ikonografie · Dialekt A</div>
     <h1>Dicke Linie,<br/>klare Ansage.</h1>
     <p class="lead">${icons.length} Icons aus dem freien Font-Awesome-Bestand, neu gezeichnet im nozilla CI: 64 × 64, <mark class="g">4 px Strichstärke</mark>, rechtwinklige Enden, Tinte auf Papier. Keine fremden Pfaddaten, keine Radien, keine Verläufe.</p>
+    <p class="lead">Unten rechts trägt jedes Icon denselben <mark class="g">6 × 6 Signal-Grün-Punkt</mark> — die Signatur des Sets, so wie die Wortmarke ihren Punkt am Wortende trägt.</p>
     <div class="bar">
       <input id="q" type="search" placeholder="Suchen — Name oder Bedeutung" aria-label="Icons durchsuchen"/>
       <div class="tally" id="tally">${icons.length} Icons</div>
