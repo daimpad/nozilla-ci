@@ -19,10 +19,9 @@ jobs:
         run: |
           set -e
           shopt -s nullglob
-          svgs=(project/assets/*.svg)
+          svgs=(project/assets/*.svg project/assets/icons/*.svg)
           if [ ${#svgs[@]} -eq 0 ]; then echo "no SVGs found"; exit 1; fi
           for f in "${svgs[@]}"; do
-            echo "checking $f"
             xmllint --noout "$f"
           done
           echo "✓ ${#svgs[@]} SVG(s) well-formed"
@@ -42,3 +41,17 @@ jobs:
 
       - name: Asset integrity check
         run: node scripts/validate-assets.mjs
+
+      - name: Icon set — CI rules & Font-Awesome name check
+        run: node scripts/build-icons.mjs --check
+
+      - name: Icon set — build is committed and up to date
+        run: |
+          set -e
+          node scripts/build-icons.mjs
+          if ! git diff --quiet -- project/assets/icons ICONS.md icons.html; then
+            echo "✗ Icon-Build ist nicht aktuell — 'node scripts/build-icons.mjs' ausführen und committen:"
+            git --no-pager diff --stat -- project/assets/icons ICONS.md icons.html
+            exit 1
+          fi
+          echo "✓ Icon-Build aktuell"

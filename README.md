@@ -9,6 +9,7 @@ Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 ## 📖 Dokumentation
 
 - **Visuelle Version** (mit Farbmustern, Typographie-Beispiele, Icons): [`index.html`](./index.html)
+- **Icon-Galerie** (462 Icons, durchsuchbar): [`icons.html`](./icons.html) · Katalog: [`ICONS.md`](./ICONS.md)
 - **Design System** (Komponenten + Dark Theme, live): [`design-system.html`](./design-system.html)
 - **WordPress** (Divi · Gravity Forms · Thrive Quiz): [`wordpress/`](./wordpress/)
 - **Google Docs & Slides** (12 Dokument-Vorlagen, Präsentations-Master, Icon-Bibliothek): [`templates/`](./templates/)
@@ -50,7 +51,8 @@ Die Marken-Fonts (Zilla Slab · Inter · Space Mono, alle SIL OFL) liegen in `pr
 | Wortmarke (Print) | `project/assets/nozilla-logo.eps` · `.pdf` | Echte Zilla-Slab-Vektor-Outlines, K-Schwarz |
 | Favicon | `project/assets/favicon.svg` (+ `-32.png` / `-180.png`) | Browser-Tab · Apple-Touch |
 | Social Preview | `project/assets/og-image.png` (1200×630) | OG / Twitter Card |
-| Icons | `project/assets/icon-*.svg` | 14er-Set, zwei Dialekte |
+| Icons (Kernset) | `project/assets/icon-*.svg` | 14er-Set, zwei Dialekte |
+| Icons (großes Set) | `project/assets/icons/nz-*.svg` | 462 Stück, Dialekt A — [`icons.html`](./icons.html) · [`ICONS.md`](./ICONS.md) |
 
 ### Theming
 
@@ -335,6 +337,26 @@ Zwei Dialekte, eine Familie.
 - ❌ Icon-Sets von anderen (Lucide, Heroicons, Tabler)
 
 Alle Icons sind **Custom SVGs** von nozilla.
+
+### Das große Set — 462 Icons
+
+Der frei verfügbare Font-Awesome-Bestand dient als **Bedarfsliste**, nicht als Bezugsquelle: 462 der gängigsten Motive sind in Dialekt A neu gezeichnet — gleiche Namen, eigene Geometrie.
+
+| | |
+|---|---|
+| Galerie (durchsuchbar) | [`icons.html`](./icons.html) |
+| Vollständiger Katalog aller 2.060 freien Font-Awesome-Icons | [`ICONS.md`](./ICONS.md) |
+| Dateien | [`project/assets/icons/`](./project/assets/icons/) · `nz-<name>.svg` |
+| Geometrien | [`scripts/icons/`](./scripts/icons/) |
+| Build | `node scripts/build-icons.mjs` |
+
+```html
+<img src="project/assets/icons/nz-arrow-right.svg" alt="Weiter" width="48" height="48"/>
+```
+
+Der Build erzwingt die CI-Regeln: 64 × 64, 4 px, square caps, miter joins, keine Radien an Rechtecken, keine Verläufe, nur Tinte-Schwarz und Signal-Grün. Wer eine Regel bricht, bekommt einen roten Build.
+
+**Nicht nachgebaut:** die 495 `brands`-Icons. Fremde Markenlogos werden nicht umgezeichnet — ein Logo funktioniert nur im Original.
 
 ---
 
