@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Telefonhörer">
-  <path d="M12 32 A20 20 0 0 1 52 32"/>
-  <rect x="6" y="30" width="16" height="14"/>
-  <rect x="42" y="30" width="16" height="14"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Telefonhoerer">
+  <path d="M10 38 L10 24 L22 13 L42 13 L54 24 L54 38"/>
+  <rect x="6" y="36" width="15" height="13"/>
+  <rect x="43" y="38" width="11" height="9" fill="#00FF9C" stroke="none"/>
+  <rect x="43" y="36" width="15" height="13"/>
   <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

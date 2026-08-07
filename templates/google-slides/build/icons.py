@@ -251,6 +251,32 @@ def i_mail(p):
     p.rect(8, 16, 48, 32); p.poly([(8, 16), (32, 36), (56, 16)])
 
 
+def i_phone(p):
+    """Hoerer: zwei Muscheln, dazwischen ein Buegel. Kanten statt Bogen."""
+    p.poly([(10, 38), (10, 24), (22, 13), (42, 13), (54, 24), (54, 38)])
+    p.rect(6, 36, 15, 13); p.solid(43, 38, 11, 9, GREEN)
+    p.rect(43, 36, 15, 13)
+
+
+def i_callback(p):
+    """Rueckruf: derselbe Hoerer, darueber ein Pfeil, der umkehrt.
+
+    Er sitzt hoeher als der Hoerer allein, weil die Ecke unten rechts der
+    Signatur gehoert und die rechte Muschel sonst hineinragt.
+    """
+    p.poly([(48, 26), (48, 10), (24, 10)])
+    p.poly([(17, 11), (31, 11), (24, 22)], close=True, fill=GREEN)
+    p.poly([(14, 42), (14, 33), (24, 28), (40, 28), (50, 33), (50, 42)])
+    p.rect(9, 40, 12, 9); p.rect(43, 40, 12, 9)
+
+
+def i_form(p):
+    """Formular: ein Blatt mit zwei Feldern, das zweite ausgefuellt."""
+    p.rect(10, 8, 38, 46)
+    p.rect(18, 19, 22, 9)
+    p.solid(18, 35, 22, 9, GREEN)
+
+
 def i_warning(p):
     p.poly([(32, 8), (54, 50), (10, 50)], close=True)
     p.line(32, 24, 32, 37); p.dot(32, 44, 2.6, p.color)
@@ -641,7 +667,8 @@ HEAVY = [
     ("check", "Haken", i_check), ("close", "Kreuz", i_close), ("plus", "Plus", i_plus),
     ("external", "Extern", i_external), ("rocket", "Rakete", i_rocket), ("pen", "Stift", i_pen),
     ("trash", "Papierkorb", i_trash), ("filter", "Filter", i_filter), ("book", "Buch", i_book),
-    ("bell", "Glocke", i_bell),
+    ("bell", "Glocke", i_bell), ("phone", "Telefonhoerer", i_phone),
+    ("callback", "Rueckruf", i_callback), ("form", "Formular", i_form),
 ]
 PIXEL = [
     ("cucumber", "Pixel-Gurke", i_cucumber), ("pixel-heart", "Pixel-Herz", i_pixel_heart),
