@@ -101,7 +101,7 @@ def _hex(c):
 class SvgPen:
     """Same drawing API, emits SVG — keeps web assets identical to the deck."""
 
-    def __init__(self, color="#000000", stroke=4.0):
+    def __init__(self, color="currentColor", stroke=4.0):
         self.color = color
         self.sw = stroke
         self.out = []
@@ -378,7 +378,7 @@ def draw(slide, slug, x, y, size, color):
     BY_SLUG[slug][1](Pen(slide, x, y, size, color))
 
 
-def to_svg(slug, color="#000000"):
+def to_svg(slug, color="currentColor"):
     lbl, fn = BY_SLUG[slug]
     pen = SvgPen(color)
     fn(pen)

@@ -8,6 +8,7 @@ Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 
 ## 📖 Dokumentation
 
+- **CI-Portal** (durchsuchbar: Logo, Farbe, Typo, Icons, Bilder, Vorlagen): [`ci/`](./ci/index.html)
 - **Visuelle Version** (mit Farbmustern, Typographie-Beispiele, Icons): [`index.html`](./index.html)
 - **Icon-Galerie** (462 Icons, durchsuchbar): [`icons.html`](./icons.html) · Katalog: [`ICONS.md`](./ICONS.md)
 - **Design System** (Komponenten + Dark Theme, live): [`design-system.html`](./design-system.html)

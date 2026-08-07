@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"/>
+<title>nozilla — Briefpapier</title>
+<link rel="stylesheet" href="../project/fonts.css"/>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #9a9a9a; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: #000; }
+  .sheet { background: #fff; position: relative; overflow: hidden; margin: 16px auto;
+           box-shadow: 0 0 0 1px rgba(0,0,0,.25); }
+  .mono { font-family: 'Space Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+  .wm { font-family: 'Zilla Slab', serif; font-weight: 700; letter-spacing: -.02em; }
+  .wm i { color: #00FF9C; font-style: normal; }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; page-break-after: always; }
+    .no-print { display: none !important; }
+  }
+
+  .sheet { width: 210mm; height: 297mm; padding: 20mm 20mm 16mm; }
+  .head { display: flex; justify-content: space-between; align-items: flex-start;
+          border-bottom: 2px solid #000; padding-bottom: 6mm; }
+  .head .wm { font-size: 30pt; line-height: 1; }
+  .head .meta { text-align: right; font-size: 7pt; line-height: 1.7; color: #555; }
+  .fold { position: absolute; left: 0; width: 6mm; height: 0; border-top: .4pt solid #999; }
+  .fold--1 { top: 105mm; } .fold--2 { top: 210mm; } .fold--punch { top: 148.5mm; width: 10mm; border-top-width: .6pt; }
+  .addr { margin-top: 18mm; font-size: 10pt; line-height: 1.5; min-height: 30mm; }
+  .addr .from { font-size: 6.5pt; color: #555; border-bottom: .4pt solid #999;
+                padding-bottom: 1mm; margin-bottom: 3mm; }
+  .date { margin-top: 6mm; }
+  .subject { font-family: 'Zilla Slab', serif; font-weight: 700; font-size: 15pt;
+             line-height: 1.2; margin: 10mm 0 6mm; }
+  .body { font-size: 10pt; line-height: 1.6; }
+  .body p { margin: 0 0 4mm; }
+  mark { background: #00FF9C; padding: 0 .12em; }
+  .foot { position: absolute; left: 20mm; right: 20mm; bottom: 12mm;
+          border-top: 2px solid #000; padding-top: 3mm;
+          display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm;
+          font-size: 6.5pt; line-height: 1.6; color: #555; }
+</style></head>
+<body>
+<div class="sheet">
+  <div class="fold fold--1"></div><div class="fold fold--punch"></div><div class="fold fold--2"></div>
+  <header class="head">
+    <div class="wm">nozilla<i>.</i></div>
+    <div class="meta mono">nozilla<br/>[STRASSE NR.]<br/>[PLZ ORT]<br/>contact@nozilla.de</div>
+  </header>
+  <div class="addr">
+    <div class="from mono">nozilla · [STRASSE NR.] · [PLZ ORT]</div>
+    [FIRMA]<br/>[ANSPRECHPARTNER:IN]<br/>[STRASSE NR.]<br/>[PLZ ORT]
+  </div>
+  <div class="mono date" style="font-size:7.5pt;color:#555">[ORT], [TT.MM.JJJJ]</div>
+  <div class="subject">[BETREFF IN EINEM SATZ.]</div>
+  <div class="body">
+    <p>Sehr geehrte:r [NAME],</p>
+    <p>[EINSTIEG: Was ist der Anlass? Ein Satz, keine Floskel.]</p>
+    <p>[KERN: Was schlagen wir vor? <mark>Eine Behauptung</mark>, die man prüfen kann.]</p>
+    <p>[ABSCHLUSS: Der nächste konkrete Schritt. Wer macht was bis wann?]</p>
+    <p style="margin-top:8mm">Mit freundlichen Grüßen<br/><br/><br/>[NAME] · [ROLLE]</p>
+  </div>
+  <footer class="foot mono">
+    <div>nozilla<br/>[STRASSE NR.]<br/>[PLZ ORT]</div>
+    <div>contact@nozilla.de<br/>nozilla.de<br/>[TELEFON]</div>
+    <div>[INHABER:IN / GF]<br/>[REGISTER-NR.]<br/>USt-ID: [DE…]</div>
+    <div>[BANK]<br/>IBAN [DE…]<br/>BIC [—]</div>
+  </footer>
+</div>
+<p class="no-print mono" style="text-align:center;font-size:9pt;color:#fff;padding:8px 0 24px">
+  Drucken → „Als PDF sichern“ · Ränder: keine · Hintergrundgrafiken: an
+  &nbsp;·&nbsp; <a href="vorlagen.html" style="color:#00FF9C">zurück zum CI-Portal</a></p>
+</body></html>

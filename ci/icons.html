@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Icons. — nozilla CI</title>
+<meta name="description" content="37 Icons in zwei Dialekten — filtern, Quelltext kopieren, laden."/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="../project/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="../project/assets/favicon-32.png" type="image/png"/>
+<meta property="og:title" content="Icons. — nozilla CI"/>
+<meta property="og:description" content="37 Icons in zwei Dialekten — filtern, Quelltext kopieren, laden."/>
+<meta property="og:image" content="../project/assets/og-image.png"/>
+<link rel="stylesheet" href="../project/fonts.css"/>
+<link rel="stylesheet" href="../design-system.css"/>
+<link rel="stylesheet" href="ci-site.css"/>
+<script>(function(){try{var t=localStorage.getItem('nz-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <a class="side__brand" href="index.html">nozilla<span>.</span></a>
+    <div class="side__tag">Corporate Identity</div>
+    <button class="nz-btn nz-btn--sm nz-btn--secondary side__toggle" id="navToggle" aria-expanded="false">Navigation</button>
+    <nav class="side__nav" id="sideNav" aria-label="CI-Bereiche">
+        <div class="nav__group">Marke</div>
+        <a class="nav__link" href="index.html">Übersicht</a>
+        <a class="nav__link" href="grundlagen.html">Grundlagen</a>
+        <a class="nav__link" href="logo.html">Logo<span class="nav__count">3</span></a>
+        <a class="nav__link" href="sprache.html">Sprache</a>
+        <div class="nav__group">Gestaltung</div>
+        <a class="nav__link" href="farbe.html">Farbe<span class="nav__count">10</span></a>
+        <a class="nav__link" href="typografie.html">Typografie<span class="nav__count">3</span></a>
+        <a class="nav__link" href="icons.html" aria-current="page">Icons<span class="nav__count">37</span></a>
+        <a class="nav__link" href="bilder.html">Bilder</a>
+        <a class="nav__link" href="komponenten.html">Komponenten</a>
+        <div class="nav__group">Anwendung</div>
+        <a class="nav__link" href="vorlagen.html">Vorlagen</a>
+        <a class="nav__link" href="downloads.html">Downloads</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="search">
+        <input id="q" type="search" placeholder="Alles durchsuchen — Icons, Farben, Regeln …"
+               autocomplete="off" aria-label="CI durchsuchen" aria-controls="results"/>
+        <div class="results" id="results" hidden role="listbox"></div>
+      </div>
+      <label class="nz-switch" title="Theme umschalten">
+        <input type="checkbox" id="themeSwitch" role="switch" aria-label="Dark Theme"/>
+        <span class="nz-switch__track"><span class="nz-switch__thumb"></span></span>
+      </label>
+    </header>
+
+    <div class="wrap">
+      <div class="page-head">
+        <div class="nz-label">Gestaltung</div>
+        <h1>Icons.</h1>
+        <p>37 Icons in zwei Dialekten — filtern, Quelltext kopieren, laden.</p>
+      </div>
+      
+      <section class="sec" style="margin-top:0">
+        <div class="filter-bar">
+          <div class="nz-segmented" role="radiogroup" aria-label="Dialekt">
+            <label><input type="radio" name="dial" value="all" checked/><span>Alle</span></label>
+            <label><input type="radio" name="dial" value="heavy"/><span>Heavy-Stroke</span></label>
+            <label><input type="radio" name="dial" value="pixel"/><span>Pixel-Art</span></label>
+          </div>
+          <input class="nz-input" id="iconFilter" type="search" placeholder="Icon filtern …"
+                 style="max-width:240px" aria-label="Icons filtern"/>
+          <span class="hit-count" id="iconCount"></span>
+        </div>
+        <div class="icon-grid" id="iconGrid"><figure class="icon-cell" id="icon-grid" data-dial="heavy" data-k="grid grid"><div class="icon-cell__art" role="img" aria-label="Grid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Grid">
+  <rect x="10" y="10" width="18" height="18"/>
+  <rect x="36" y="10" width="18" height="18"/>
+  <rect x="10" y="36" width="18" height="18"/>
+  <rect x="36" y="36" width="18" height="18"/>
+</svg>
+</div><figcaption class="icon-cell__name">Grid</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Grid&quot;&gt;
+  &lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;18&quot; height=&quot;18&quot;/&gt;
+  &lt;rect x=&quot;36&quot; y=&quot;10&quot; width=&quot;18&quot; height=&quot;18&quot;/&gt;
+  &lt;rect x=&quot;10&quot; y=&quot;36&quot; width=&quot;18&quot; height=&quot;18&quot;/&gt;
+  &lt;rect x=&quot;36&quot; y=&quot;36&quot; width=&quot;18&quot; height=&quot;18&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-grid.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-cursor" data-dial="heavy" data-k="cursor cursor"><div class="icon-cell__art" role="img" aria-label="Cursor"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Cursor">
+  <path d="M18 12 L18 46 L27 38 L33 52 L39 49 L33 36 L44 36 Z"/>
+</svg>
+</div><figcaption class="icon-cell__name">Cursor</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Cursor&quot;&gt;
+  &lt;path d=&quot;M18 12 L18 46 L27 38 L33 52 L39 49 L33 36 L44 36 Z&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-cursor.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-maze" data-dial="heavy" data-k="labyrinth maze"><div class="icon-cell__art" role="img" aria-label="Labyrinth"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Labyrinth">
+  <path d="M12 12 L52 12 L52 52 L20 52 L20 20 L44 20 L44 44 L28 44 L28 28 L36 28"/>
+</svg>
+</div><figcaption class="icon-cell__name">Labyrinth</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Labyrinth&quot;&gt;
+  &lt;path d=&quot;M12 12 L52 12 L52 52 L20 52 L20 20 L44 20 L44 44 L28 44 L28 28 L36 28&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-maze.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-terminal" data-dial="heavy" data-k="terminal terminal"><div class="icon-cell__art" role="img" aria-label="Terminal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Terminal">
+  <rect x="8" y="12" width="48" height="40"/>
+  <path d="M8 23 L56 23"/>
+  <path d="M16 33 L22 38 L16 43"/>
+  <path d="M28 43 L42 43"/>
+</svg>
+</div><figcaption class="icon-cell__name">Terminal</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Terminal&quot;&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;12&quot; width=&quot;48&quot; height=&quot;40&quot;/&gt;
+  &lt;path d=&quot;M8 23 L56 23&quot;/&gt;
+  &lt;path d=&quot;M16 33 L22 38 L16 43&quot;/&gt;
+  &lt;path d=&quot;M28 43 L42 43&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-terminal.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-chat" data-dial="heavy" data-k="chat chat"><div class="icon-cell__art" role="img" aria-label="Chat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Chat">
+  <path d="M10 12 L54 12 L54 40 L26 40 L16 50 L16 40 L10 40 Z"/>
+  <circle cx="24" cy="26" r="2.4" fill="currentColor" stroke="none"/>
+  <circle cx="32" cy="26" r="2.4" fill="currentColor" stroke="none"/>
+  <circle cx="40" cy="26" r="2.4" fill="currentColor" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Chat</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Chat&quot;&gt;
+  &lt;path d=&quot;M10 12 L54 12 L54 40 L26 40 L16 50 L16 40 L10 40 Z&quot;/&gt;
+  &lt;circle cx=&quot;24&quot; cy=&quot;26&quot; r=&quot;2.4&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;26&quot; r=&quot;2.4&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;40&quot; cy=&quot;26&quot; r=&quot;2.4&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-chat.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-spark" data-dial="heavy" data-k="spark spark"><div class="icon-cell__art" role="img" aria-label="Spark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Spark">
+  <path d="M32 8 L37 27 L56 32 L37 37 L32 56 L27 37 L8 32 L27 27 Z" fill="#00FF9C"/>
+</svg>
+</div><figcaption class="icon-cell__name">Spark</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Spark&quot;&gt;
+  &lt;path d=&quot;M32 8 L37 27 L56 32 L37 37 L32 56 L27 37 L8 32 L27 27 Z&quot; fill=&quot;#00FF9C&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-spark.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-arrow" data-dial="heavy" data-k="pfeil arrow"><div class="icon-cell__art" role="img" aria-label="Pfeil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Pfeil">
+  <path d="M10 32 L50 32"/>
+  <path d="M38 20 L52 32 L38 44"/>
+</svg>
+</div><figcaption class="icon-cell__name">Pfeil</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Pfeil&quot;&gt;
+  &lt;path d=&quot;M10 32 L50 32&quot;/&gt;
+  &lt;path d=&quot;M38 20 L52 32 L38 44&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-arrow.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-user" data-dial="heavy" data-k="person user"><div class="icon-cell__art" role="img" aria-label="Person"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Person">
+  <circle cx="32" cy="22" r="10"/>
+  <path d="M14 52 L18 43 L32 39 L46 43 L50 52"/>
+</svg>
+</div><figcaption class="icon-cell__name">Person</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Person&quot;&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;22&quot; r=&quot;10&quot;/&gt;
+  &lt;path d=&quot;M14 52 L18 43 L32 39 L46 43 L50 52&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-user.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-gear" data-dial="heavy" data-k="zahnrad gear"><div class="icon-cell__art" role="img" aria-label="Zahnrad"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Zahnrad">
+  <circle cx="32" cy="32" r="15"/>
+  <circle cx="32" cy="32" r="5"/>
+  <path d="M47 32 L53 32"/>
+  <path d="M32 47 L32 53"/>
+  <path d="M17 32 L11 32"/>
+  <path d="M32 17 L32 11"/>
+  <path d="M42.6 42.6 L47 47"/>
+  <path d="M21.4 42.6 L17 47"/>
+  <path d="M21.4 21.4 L17 17"/>
+  <path d="M42.6 21.4 L47 17"/>
+</svg>
+</div><figcaption class="icon-cell__name">Zahnrad</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Zahnrad&quot;&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;15&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;5&quot;/&gt;
+  &lt;path d=&quot;M47 32 L53 32&quot;/&gt;
+  &lt;path d=&quot;M32 47 L32 53&quot;/&gt;
+  &lt;path d=&quot;M17 32 L11 32&quot;/&gt;
+  &lt;path d=&quot;M32 17 L32 11&quot;/&gt;
+  &lt;path d=&quot;M42.6 42.6 L47 47&quot;/&gt;
+  &lt;path d=&quot;M21.4 42.6 L17 47&quot;/&gt;
+  &lt;path d=&quot;M21.4 21.4 L17 17&quot;/&gt;
+  &lt;path d=&quot;M42.6 21.4 L47 17&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-gear.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-folder" data-dial="heavy" data-k="ordner folder"><div class="icon-cell__art" role="img" aria-label="Ordner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Ordner">
+  <path d="M10 20 L26 20 L31 26 L54 26 L54 48 L10 48 Z"/>
+</svg>
+</div><figcaption class="icon-cell__name">Ordner</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Ordner&quot;&gt;
+  &lt;path d=&quot;M10 20 L26 20 L31 26 L54 26 L54 48 L10 48 Z&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-folder.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-lightbulb" data-dial="heavy" data-k="glühbirne lightbulb"><div class="icon-cell__art" role="img" aria-label="Glühbirne"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Glühbirne">
+  <circle cx="32" cy="26" r="14" fill="#00FF9C"/>
+  <path d="M24 44 L40 44"/>
+  <path d="M26 50 L38 50"/>
+</svg>
+</div><figcaption class="icon-cell__name">Glühbirne</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Glühbirne&quot;&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;26&quot; r=&quot;14&quot; fill=&quot;#00FF9C&quot;/&gt;
+  &lt;path d=&quot;M24 44 L40 44&quot;/&gt;
+  &lt;path d=&quot;M26 50 L38 50&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-lightbulb.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-code" data-dial="heavy" data-k="code code"><div class="icon-cell__art" role="img" aria-label="Code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Code">
+  <path d="M24 18 L12 32 L24 46"/>
+  <path d="M40 18 L52 32 L40 46"/>
+  <path d="M36 14 L28 50"/>
+</svg>
+</div><figcaption class="icon-cell__name">Code</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Code&quot;&gt;
+  &lt;path d=&quot;M24 18 L12 32 L24 46&quot;/&gt;
+  &lt;path d=&quot;M40 18 L52 32 L40 46&quot;/&gt;
+  &lt;path d=&quot;M36 14 L28 50&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-code.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-calendar" data-dial="heavy" data-k="kalender calendar"><div class="icon-cell__art" role="img" aria-label="Kalender"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Kalender">
+  <rect x="9" y="16" width="46" height="38"/>
+  <path d="M9 27 L55 27"/>
+  <path d="M21 10 L21 20"/>
+  <path d="M43 10 L43 20"/>
+  <rect x="18" y="34" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="30" y="34" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="42" y="34" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="18" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Kalender</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Kalender&quot;&gt;
+  &lt;rect x=&quot;9&quot; y=&quot;16&quot; width=&quot;46&quot; height=&quot;38&quot;/&gt;
+  &lt;path d=&quot;M9 27 L55 27&quot;/&gt;
+  &lt;path d=&quot;M21 10 L21 20&quot;/&gt;
+  &lt;path d=&quot;M43 10 L43 20&quot;/&gt;
+  &lt;rect x=&quot;18&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;30&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;42&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;18&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-calendar.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-clock" data-dial="heavy" data-k="uhr clock"><div class="icon-cell__art" role="img" aria-label="Uhr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Uhr">
+  <circle cx="32" cy="32" r="21"/>
+  <path d="M32 32 L32 19"/>
+  <path d="M32 32 L43 32"/>
+</svg>
+</div><figcaption class="icon-cell__name">Uhr</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Uhr&quot;&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;21&quot;/&gt;
+  &lt;path d=&quot;M32 32 L32 19&quot;/&gt;
+  &lt;path d=&quot;M32 32 L43 32&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-clock.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-chart" data-dial="heavy" data-k="diagramm chart"><div class="icon-cell__art" role="img" aria-label="Diagramm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Diagramm">
+  <path d="M12 12 L12 52"/>
+  <path d="M12 52 L54 52"/>
+  <rect x="19" y="34" width="9" height="18" fill="currentColor" stroke="none"/>
+  <rect x="32" y="26" width="9" height="26" fill="currentColor" stroke="none"/>
+  <rect x="45" y="16" width="9" height="36" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Diagramm</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Diagramm&quot;&gt;
+  &lt;path d=&quot;M12 12 L12 52&quot;/&gt;
+  &lt;path d=&quot;M12 52 L54 52&quot;/&gt;
+  &lt;rect x=&quot;19&quot; y=&quot;34&quot; width=&quot;9&quot; height=&quot;18&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;26&quot; width=&quot;9&quot; height=&quot;26&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;45&quot; y=&quot;16&quot; width=&quot;9&quot; height=&quot;36&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-chart.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-target" data-dial="heavy" data-k="ziel target"><div class="icon-cell__art" role="img" aria-label="Ziel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Ziel">
+  <circle cx="32" cy="32" r="21"/>
+  <circle cx="32" cy="32" r="11"/>
+  <circle cx="32" cy="32" r="4.5" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Ziel</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Ziel&quot;&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;21&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;11&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;4.5&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-target.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-lock" data-dial="heavy" data-k="schloss lock"><div class="icon-cell__art" role="img" aria-label="Schloss"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Schloss">
+  <rect x="13" y="29" width="38" height="25"/>
+  <path d="M22 29 L22 20 L32 13 L42 20 L42 29"/>
+  <circle cx="32" cy="41" r="3.5" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Schloss</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Schloss&quot;&gt;
+  &lt;rect x=&quot;13&quot; y=&quot;29&quot; width=&quot;38&quot; height=&quot;25&quot;/&gt;
+  &lt;path d=&quot;M22 29 L22 20 L32 13 L42 20 L42 29&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;41&quot; r=&quot;3.5&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-lock.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-server" data-dial="heavy" data-k="server server"><div class="icon-cell__art" role="img" aria-label="Server"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Server">
+  <rect x="9" y="12" width="46" height="14"/>
+  <rect x="9" y="30" width="46" height="14"/>
+  <rect x="15" y="17" width="5" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="15" y="35" width="5" height="4" fill="currentColor" stroke="none"/>
+  <path d="M9 50 L55 50"/>
+</svg>
+</div><figcaption class="icon-cell__name">Server</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Server&quot;&gt;
+  &lt;rect x=&quot;9&quot; y=&quot;12&quot; width=&quot;46&quot; height=&quot;14&quot;/&gt;
+  &lt;rect x=&quot;9&quot; y=&quot;30&quot; width=&quot;46&quot; height=&quot;14&quot;/&gt;
+  &lt;rect x=&quot;15&quot; y=&quot;17&quot; width=&quot;5&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;15&quot; y=&quot;35&quot; width=&quot;5&quot; height=&quot;4&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+  &lt;path d=&quot;M9 50 L55 50&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-server.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-mobile" data-dial="heavy" data-k="mobil mobile"><div class="icon-cell__art" role="img" aria-label="Mobil"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Mobil">
+  <rect x="20" y="8" width="24" height="48"/>
+  <path d="M27 15 L37 15"/>
+  <path d="M26 49 L38 49"/>
+</svg>
+</div><figcaption class="icon-cell__name">Mobil</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Mobil&quot;&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;8&quot; width=&quot;24&quot; height=&quot;48&quot;/&gt;
+  &lt;path d=&quot;M27 15 L37 15&quot;/&gt;
+  &lt;path d=&quot;M26 49 L38 49&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-mobile.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-monitor" data-dial="heavy" data-k="monitor monitor"><div class="icon-cell__art" role="img" aria-label="Monitor"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Monitor">
+  <rect x="8" y="12" width="48" height="31"/>
+  <path d="M32 43 L32 52"/>
+  <path d="M22 52 L42 52"/>
+</svg>
+</div><figcaption class="icon-cell__name">Monitor</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Monitor&quot;&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;12&quot; width=&quot;48&quot; height=&quot;31&quot;/&gt;
+  &lt;path d=&quot;M32 43 L32 52&quot;/&gt;
+  &lt;path d=&quot;M22 52 L42 52&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-monitor.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-search" data-dial="heavy" data-k="suche search"><div class="icon-cell__art" role="img" aria-label="Suche"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Suche">
+  <circle cx="28" cy="28" r="14"/>
+  <path d="M38 38 L53 53"/>
+</svg>
+</div><figcaption class="icon-cell__name">Suche</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Suche&quot;&gt;
+  &lt;circle cx=&quot;28&quot; cy=&quot;28&quot; r=&quot;14&quot;/&gt;
+  &lt;path d=&quot;M38 38 L53 53&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-search.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-mail" data-dial="heavy" data-k="mail mail"><div class="icon-cell__art" role="img" aria-label="Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Mail">
+  <rect x="8" y="16" width="48" height="32"/>
+  <path d="M8 16 L32 36 L56 16"/>
+</svg>
+</div><figcaption class="icon-cell__name">Mail</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Mail&quot;&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;16&quot; width=&quot;48&quot; height=&quot;32&quot;/&gt;
+  &lt;path d=&quot;M8 16 L32 36 L56 16&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-mail.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-warning" data-dial="heavy" data-k="warnung warning"><div class="icon-cell__art" role="img" aria-label="Warnung"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Warnung">
+  <path d="M32 9 L56 53 L8 53 Z"/>
+  <path d="M32 26 L32 40"/>
+  <circle cx="32" cy="47" r="2.6" fill="currentColor" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Warnung</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Warnung&quot;&gt;
+  &lt;path d=&quot;M32 9 L56 53 L8 53 Z&quot;/&gt;
+  &lt;path d=&quot;M32 26 L32 40&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;47&quot; r=&quot;2.6&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-warning.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-check" data-dial="heavy" data-k="haken check"><div class="icon-cell__art" role="img" aria-label="Haken"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Haken">
+  <path d="M12 34 L26 48 L52 16"/>
+</svg>
+</div><figcaption class="icon-cell__name">Haken</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Haken&quot;&gt;
+  &lt;path d=&quot;M12 34 L26 48 L52 16&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-check.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-close" data-dial="heavy" data-k="kreuz close"><div class="icon-cell__art" role="img" aria-label="Kreuz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Kreuz">
+  <path d="M14 14 L50 50"/>
+  <path d="M50 14 L14 50"/>
+</svg>
+</div><figcaption class="icon-cell__name">Kreuz</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Kreuz&quot;&gt;
+  &lt;path d=&quot;M14 14 L50 50&quot;/&gt;
+  &lt;path d=&quot;M50 14 L14 50&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-close.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-plus" data-dial="heavy" data-k="plus plus"><div class="icon-cell__art" role="img" aria-label="Plus"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Plus">
+  <path d="M32 12 L32 52"/>
+  <path d="M12 32 L52 32"/>
+</svg>
+</div><figcaption class="icon-cell__name">Plus</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Plus&quot;&gt;
+  &lt;path d=&quot;M32 12 L32 52&quot;/&gt;
+  &lt;path d=&quot;M12 32 L52 32&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-plus.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-external" data-dial="heavy" data-k="extern external"><div class="icon-cell__art" role="img" aria-label="Extern"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Extern">
+  <path d="M10 22 L10 54 L42 54 L42 34"/>
+  <path d="M34 10 L54 10 L54 30"/>
+  <path d="M54 10 L32 32"/>
+</svg>
+</div><figcaption class="icon-cell__name">Extern</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Extern&quot;&gt;
+  &lt;path d=&quot;M10 22 L10 54 L42 54 L42 34&quot;/&gt;
+  &lt;path d=&quot;M34 10 L54 10 L54 30&quot;/&gt;
+  &lt;path d=&quot;M54 10 L32 32&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-external.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-rocket" data-dial="heavy" data-k="rakete rocket"><div class="icon-cell__art" role="img" aria-label="Rakete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Rakete">
+  <path d="M32 8 L42 27 L42 45 L22 45 L22 27 Z"/>
+  <path d="M22 34 L13 51 L22 45"/>
+  <path d="M42 34 L51 51 L42 45"/>
+  <circle cx="32" cy="25" r="4.5" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Rakete</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Rakete&quot;&gt;
+  &lt;path d=&quot;M32 8 L42 27 L42 45 L22 45 L22 27 Z&quot;/&gt;
+  &lt;path d=&quot;M22 34 L13 51 L22 45&quot;/&gt;
+  &lt;path d=&quot;M42 34 L51 51 L42 45&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;25&quot; r=&quot;4.5&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-rocket.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-pen" data-dial="heavy" data-k="stift pen"><div class="icon-cell__art" role="img" aria-label="Stift"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Stift">
+  <path d="M13 51 L17 39 L43 13 L51 21 L25 47 Z"/>
+  <path d="M39 17 L47 25"/>
+</svg>
+</div><figcaption class="icon-cell__name">Stift</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Stift&quot;&gt;
+  &lt;path d=&quot;M13 51 L17 39 L43 13 L51 21 L25 47 Z&quot;/&gt;
+  &lt;path d=&quot;M39 17 L47 25&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-pen.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-trash" data-dial="heavy" data-k="papierkorb trash"><div class="icon-cell__art" role="img" aria-label="Papierkorb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Papierkorb">
+  <path d="M9 19 L55 19"/>
+  <rect x="16" y="19" width="32" height="35"/>
+  <rect x="26" y="10" width="12" height="9"/>
+  <path d="M27 28 L27 45"/>
+  <path d="M37 28 L37 45"/>
+</svg>
+</div><figcaption class="icon-cell__name">Papierkorb</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Papierkorb&quot;&gt;
+  &lt;path d=&quot;M9 19 L55 19&quot;/&gt;
+  &lt;rect x=&quot;16&quot; y=&quot;19&quot; width=&quot;32&quot; height=&quot;35&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;10&quot; width=&quot;12&quot; height=&quot;9&quot;/&gt;
+  &lt;path d=&quot;M27 28 L27 45&quot;/&gt;
+  &lt;path d=&quot;M37 28 L37 45&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-trash.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-filter" data-dial="heavy" data-k="filter filter"><div class="icon-cell__art" role="img" aria-label="Filter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Filter">
+  <path d="M9 13 L55 13 L38 32 L38 53 L26 45 L26 32 Z"/>
+</svg>
+</div><figcaption class="icon-cell__name">Filter</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Filter&quot;&gt;
+  &lt;path d=&quot;M9 13 L55 13 L38 32 L38 53 L26 45 L26 32 Z&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-filter.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-book" data-dial="heavy" data-k="buch book"><div class="icon-cell__art" role="img" aria-label="Buch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Buch">
+  <rect x="10" y="13" width="44" height="38"/>
+  <path d="M32 13 L32 51"/>
+  <path d="M17 24 L26 24"/>
+  <path d="M38 24 L47 24"/>
+</svg>
+</div><figcaption class="icon-cell__name">Buch</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Buch&quot;&gt;
+  &lt;rect x=&quot;10&quot; y=&quot;13&quot; width=&quot;44&quot; height=&quot;38&quot;/&gt;
+  &lt;path d=&quot;M32 13 L32 51&quot;/&gt;
+  &lt;path d=&quot;M17 24 L26 24&quot;/&gt;
+  &lt;path d=&quot;M38 24 L47 24&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-book.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-bell" data-dial="heavy" data-k="glocke bell"><div class="icon-cell__art" role="img" aria-label="Glocke"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Glocke">
+  <path d="M20 43 L20 28 L32 16 L44 28 L44 43 Z"/>
+  <path d="M13 43 L51 43"/>
+  <circle cx="32" cy="50" r="3.4" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Glocke</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Glocke&quot;&gt;
+  &lt;path d=&quot;M20 43 L20 28 L32 16 L44 28 L44 43 Z&quot;/&gt;
+  &lt;path d=&quot;M13 43 L51 43&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;50&quot; r=&quot;3.4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-bell.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-cucumber" data-dial="pixel" data-k="pixel-gurke cucumber"><div class="icon-cell__art" role="img" aria-label="Pixel-Gurke"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Pixel-Gurke">
+  <rect x="40" y="12" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="12" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="36" y="16" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="40" y="16" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="16" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="20" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="36" y="20" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="40" y="20" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="28" y="24" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="24" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="36" y="24" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="24" y="28" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="28" y="28" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="28" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="32" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="24" y="32" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="28" y="32" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="16" y="36" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="36" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="24" y="36" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="12" y="40" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="16" y="40" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="40" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="12" y="44" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="16" y="44" width="4" height="4" fill="#00FF9C" stroke="none"/>
+  <rect x="40" y="16" width="4" height="4" fill="#00C075" stroke="none"/>
+  <rect x="32" y="24" width="4" height="4" fill="#00C075" stroke="none"/>
+  <rect x="24" y="32" width="4" height="4" fill="#00C075" stroke="none"/>
+  <rect x="16" y="40" width="4" height="4" fill="#00C075" stroke="none"/>
+  <rect x="44" y="12" width="4" height="4" fill="#B7FFE0" stroke="none"/>
+  <rect x="36" y="20" width="4" height="4" fill="#B7FFE0" stroke="none"/>
+  <rect x="12" y="44" width="4" height="4" fill="currentColor" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Pixel-Gurke</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Pixel-Gurke&quot;&gt;
+  &lt;rect x=&quot;40&quot; y=&quot;12&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;12&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;36&quot; y=&quot;16&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;40&quot; y=&quot;16&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;16&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;20&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;36&quot; y=&quot;20&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;40&quot; y=&quot;20&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;28&quot; y=&quot;24&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;24&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;36&quot; y=&quot;24&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;24&quot; y=&quot;28&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;28&quot; y=&quot;28&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;28&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;32&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;24&quot; y=&quot;32&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;28&quot; y=&quot;32&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;16&quot; y=&quot;36&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;36&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;24&quot; y=&quot;36&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;12&quot; y=&quot;40&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;16&quot; y=&quot;40&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;40&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;12&quot; y=&quot;44&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;16&quot; y=&quot;44&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;40&quot; y=&quot;16&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;24&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;24&quot; y=&quot;32&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;16&quot; y=&quot;40&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;12&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;36&quot; y=&quot;20&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;12&quot; y=&quot;44&quot; width=&quot;4&quot; height=&quot;4&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-cucumber.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-pixel-heart" data-dial="pixel" data-k="pixel-herz pixel-heart"><div class="icon-cell__art" role="img" aria-label="Pixel-Herz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Pixel-Herz">
+  <rect x="11" y="8" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="8" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="8" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="8" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="5" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="53" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="5" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="53" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="5" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="53" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="50" width="6" height="6" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Pixel-Herz</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Pixel-Herz&quot;&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;8&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;8&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;8&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;8&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;5&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;53&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;5&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;53&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;5&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;53&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;50&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-pixel-heart.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-pixel-star" data-dial="pixel" data-k="pixel-stern pixel-star"><div class="icon-cell__art" role="img" aria-label="Pixel-Stern"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Pixel-Stern">
+  <rect x="29" y="8" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="14" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="5" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="53" y="20" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="26" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="29" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="32" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="17" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="23" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="35" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="41" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="38" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="5" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="11" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="47" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="53" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Pixel-Stern</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Pixel-Stern&quot;&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;8&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;14&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;5&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;53&quot; y=&quot;20&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;26&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;29&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;32&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;17&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;23&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;35&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;41&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;38&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;5&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;11&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;47&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;53&quot; y=&quot;44&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-pixel-star.svg" download>Laden</a></div></figure>
+<figure class="icon-cell" id="icon-pixel-disk" data-dial="pixel" data-k="pixel-diskette pixel-disk"><div class="icon-cell__art" role="img" aria-label="Pixel-Diskette"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Pixel-Diskette">
+  <rect x="8" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="10" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="16" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="22" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="28" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="34" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="40" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="8" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="14" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="26" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="32" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="38" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="44" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="50" y="46" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="20" y="34" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="20" y="40" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="26" y="34" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="26" y="40" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="32" y="34" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="32" y="40" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="38" y="34" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="38" y="40" width="6" height="6" fill="#B7FFE0" stroke="none"/>
+  <rect x="20" y="10" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="20" y="16" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="26" y="10" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="26" y="16" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="32" y="10" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="32" y="16" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="38" y="10" width="6" height="6" fill="#00C075" stroke="none"/>
+  <rect x="38" y="16" width="6" height="6" fill="#00C075" stroke="none"/>
+</svg>
+</div><figcaption class="icon-cell__name">Pixel-Diskette</figcaption><div class="icon-cell__bar"><button class="copy-svg" data-svg="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4.0&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot; role=&quot;img&quot; aria-label=&quot;Pixel-Diskette&quot;&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;22&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;28&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;8&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;14&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;44&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;50&quot; y=&quot;46&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00FF9C&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;34&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;40&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#B7FFE0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;26&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;32&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;10&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+  &lt;rect x=&quot;38&quot; y=&quot;16&quot; width=&quot;6&quot; height=&quot;6&quot; fill=&quot;#00C075&quot; stroke=&quot;none&quot;/&gt;
+&lt;/svg&gt;
+" title="SVG-Quelltext kopieren">SVG</button><a href="../project/assets/icon-pixel-disk.svg" download>Laden</a></div></figure></div>
+      </section>
+      <section class="sec"><h2>Zwei Dialekte.</h2>
+        <div class="nz-grid nz-grid--2">
+          <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Heavy-Stroke · 33</h3>
+            <p class="nz-small nz-muted">4-px-Umriss auf 64er-Raster, rechtwinklige Enden, Gehrungsecken.
+            Tinte-Schwarz, optional mit Signal-grünem Fill. Zielgröße 48–160 px.</p></div>
+          <div class="nz-card nz-card--raised"><h3 class="nz-card__title">Pixel-Art · 4</h3>
+            <p class="nz-small nz-muted">8-Bit-Reminiszenzen als retro-digitale Interpunktion.
+            Sparsam einsetzen — ein Augenzwinkern pro Seite genügt.</p></div>
+        </div>
+      </section>
+      <section class="sec"><h2>Verwendung.</h2>
+        <table class="tbl"><tbody>
+          <tr><td><b>Web</b></td><td><code>&lt;img src="project/assets/icon-grid.svg" alt="Grid"/&gt;</code></td></tr>
+          <tr><td><b>Slides</b></td><td>Icon-Bibliothek öffnen, Form anklicken, kopieren — native Vektoren, direkt umfärbbar.</td></tr>
+          <tr><td><b>Farbe</b></td><td>Tinte auf hell, Papier auf dunkel. Grün nur als Akzentfüllung.</td></tr>
+          <tr><td><b>Verboten</b></td><td>Keine Emoji, keine Icon-Fonts, keine fremden Sets.</td></tr>
+        </tbody></table>
+      </section>
+      <footer class="foot">
+        <span class="nz-label">nozilla CI · v1.1</span>
+        <span class="nz-label">// Gute digitale Dienste.</span>
+        <a class="nz-label" href="mailto:contact@nozilla.de">contact@nozilla.de</a>
+      </footer>
+    </div>
+  </div>
+</div>
+<script>window.NZ_INDEX = [{"t":"Übersicht","c":"Seite","u":"index.html","k":"übersicht"},{"t":"Grundlagen","c":"Seite","u":"grundlagen.html","k":"grundlagen"},{"t":"Logo","c":"Seite","u":"logo.html","k":"logo"},{"t":"Sprache","c":"Seite","u":"sprache.html","k":"sprache"},{"t":"Farbe","c":"Seite","u":"farbe.html","k":"farbe"},{"t":"Typografie","c":"Seite","u":"typografie.html","k":"typografie"},{"t":"Icons","c":"Seite","u":"icons.html","k":"icons"},{"t":"Bilder","c":"Seite","u":"bilder.html","k":"bilder"},{"t":"Komponenten","c":"Seite","u":"komponenten.html","k":"komponenten"},{"t":"Vorlagen","c":"Seite","u":"vorlagen.html","k":"vorlagen"},{"t":"Downloads","c":"Seite","u":"downloads.html","k":"downloads"},{"t":"Grid","c":"Icon","u":"icons.html#icon-grid","k":"grid grid icon heavy-stroke"},{"t":"Cursor","c":"Icon","u":"icons.html#icon-cursor","k":"cursor cursor icon heavy-stroke"},{"t":"Labyrinth","c":"Icon","u":"icons.html#icon-maze","k":"labyrinth maze icon heavy-stroke"},{"t":"Terminal","c":"Icon","u":"icons.html#icon-terminal","k":"terminal terminal icon heavy-stroke"},{"t":"Chat","c":"Icon","u":"icons.html#icon-chat","k":"chat chat icon heavy-stroke"},{"t":"Spark","c":"Icon","u":"icons.html#icon-spark","k":"spark spark icon heavy-stroke"},{"t":"Pfeil","c":"Icon","u":"icons.html#icon-arrow","k":"pfeil arrow icon heavy-stroke"},{"t":"Person","c":"Icon","u":"icons.html#icon-user","k":"person user icon heavy-stroke"},{"t":"Zahnrad","c":"Icon","u":"icons.html#icon-gear","k":"zahnrad gear icon heavy-stroke"},{"t":"Ordner","c":"Icon","u":"icons.html#icon-folder","k":"ordner folder icon heavy-stroke"},{"t":"Glühbirne","c":"Icon","u":"icons.html#icon-lightbulb","k":"glühbirne lightbulb icon heavy-stroke"},{"t":"Code","c":"Icon","u":"icons.html#icon-code","k":"code code icon heavy-stroke"},{"t":"Kalender","c":"Icon","u":"icons.html#icon-calendar","k":"kalender calendar icon heavy-stroke"},{"t":"Uhr","c":"Icon","u":"icons.html#icon-clock","k":"uhr clock icon heavy-stroke"},{"t":"Diagramm","c":"Icon","u":"icons.html#icon-chart","k":"diagramm chart icon heavy-stroke"},{"t":"Ziel","c":"Icon","u":"icons.html#icon-target","k":"ziel target icon heavy-stroke"},{"t":"Schloss","c":"Icon","u":"icons.html#icon-lock","k":"schloss lock icon heavy-stroke"},{"t":"Server","c":"Icon","u":"icons.html#icon-server","k":"server server icon heavy-stroke"},{"t":"Mobil","c":"Icon","u":"icons.html#icon-mobile","k":"mobil mobile icon heavy-stroke"},{"t":"Monitor","c":"Icon","u":"icons.html#icon-monitor","k":"monitor monitor icon heavy-stroke"},{"t":"Suche","c":"Icon","u":"icons.html#icon-search","k":"suche search icon heavy-stroke"},{"t":"Mail","c":"Icon","u":"icons.html#icon-mail","k":"mail mail icon heavy-stroke"},{"t":"Warnung","c":"Icon","u":"icons.html#icon-warning","k":"warnung warning icon heavy-stroke"},{"t":"Haken","c":"Icon","u":"icons.html#icon-check","k":"haken check icon heavy-stroke"},{"t":"Kreuz","c":"Icon","u":"icons.html#icon-close","k":"kreuz close icon heavy-stroke"},{"t":"Plus","c":"Icon","u":"icons.html#icon-plus","k":"plus plus icon heavy-stroke"},{"t":"Extern","c":"Icon","u":"icons.html#icon-external","k":"extern external icon heavy-stroke"},{"t":"Rakete","c":"Icon","u":"icons.html#icon-rocket","k":"rakete rocket icon heavy-stroke"},{"t":"Stift","c":"Icon","u":"icons.html#icon-pen","k":"stift pen icon heavy-stroke"},{"t":"Papierkorb","c":"Icon","u":"icons.html#icon-trash","k":"papierkorb trash icon heavy-stroke"},{"t":"Filter","c":"Icon","u":"icons.html#icon-filter","k":"filter filter icon heavy-stroke"},{"t":"Buch","c":"Icon","u":"icons.html#icon-book","k":"buch book icon heavy-stroke"},{"t":"Glocke","c":"Icon","u":"icons.html#icon-bell","k":"glocke bell icon heavy-stroke"},{"t":"Pixel-Gurke","c":"Icon","u":"icons.html#icon-cucumber","k":"pixel-gurke cucumber icon pixel-art"},{"t":"Pixel-Herz","c":"Icon","u":"icons.html#icon-pixel-heart","k":"pixel-herz pixel-heart icon pixel-art"},{"t":"Pixel-Stern","c":"Icon","u":"icons.html#icon-pixel-star","k":"pixel-stern pixel-star icon pixel-art"},{"t":"Pixel-Diskette","c":"Icon","u":"icons.html#icon-pixel-disk","k":"pixel-diskette pixel-disk icon pixel-art"},{"t":"Signal-Grün · #00FF9C","c":"Farbe","u":"farbe.html#nz-green","k":"signal-grün --nz-green #00ff9c buttons, ctas, marker — nur für aktion signal"},{"t":"Signal Hover · #00E88D","c":"Farbe","u":"farbe.html#nz-green-strong","k":"signal hover --nz-green-strong #00e88d hover- und active-zustände signal"},{"t":"Signal Tint · #B7FFE0","c":"Farbe","u":"farbe.html#nz-green-soft","k":"signal tint --nz-green-soft #b7ffe0 flächige tönung, sehr sparsam signal"},{"t":"Papier-Gelb · #FFFEE5","c":"Farbe","u":"farbe.html#nz-paper","k":"papier-gelb --nz-paper #fffee5 globaler hintergrund (print, ci-dokument) papier"},{"t":"Papier Alt · #FAF8D4","c":"Farbe","u":"farbe.html#nz-paper-alt","k":"papier alt --nz-paper-alt #faf8d4 karten-tönung papier"},{"t":"Papier Deep · #F4F1C4","c":"Farbe","u":"farbe.html#nz-paper-deep","k":"papier deep --nz-paper-deep #f4f1c4 sektions-hintergründe papier"},{"t":"Tinte-Schwarz · #000000","c":"Farbe","u":"farbe.html#nz-ink","k":"tinte-schwarz --nz-ink #000000 schrift, linien, rahmen, harte schatten kontur"},{"t":"Ink 900 · #0C0C0A","c":"Farbe","u":"farbe.html#nz-c-ink-900","k":"ink 900 --nz-c-ink-900 #0c0c0a warmes near-black — canvas im dark theme kontur"},{"t":"Ink 800 · #17160F","c":"Farbe","u":"farbe.html#nz-c-ink-800","k":"ink 800 --nz-c-ink-800 #17160f flächen im dark theme kontur"},{"t":"Warnung · #FF5F1F","c":"Farbe","u":"farbe.html#nz-c-warn","k":"warnung --nz-c-warn #ff5f1f nur für fehler- und verbotsmarkierung status"},{"t":"Display · Zilla Slab","c":"Typo","u":"typografie.html","k":"display zilla slab schrift typografie"},{"t":"H1 · Zilla Slab","c":"Typo","u":"typografie.html","k":"h1 zilla slab schrift typografie"},{"t":"H2 · Zilla Slab","c":"Typo","u":"typografie.html","k":"h2 zilla slab schrift typografie"},{"t":"H3 · Zilla Slab","c":"Typo","u":"typografie.html","k":"h3 zilla slab schrift typografie"},{"t":"Lead · Zilla Slab","c":"Typo","u":"typografie.html","k":"lead zilla slab schrift typografie"},{"t":"Body · Inter","c":"Typo","u":"typografie.html","k":"body inter schrift typografie"},{"t":"Small · Inter","c":"Typo","u":"typografie.html","k":"small inter schrift typografie"},{"t":"Label · Space Mono","c":"Typo","u":"typografie.html","k":"label space mono schrift typografie"},{"t":"Wortmarke — Standard","c":"Artefakt","u":"logo.html","k":"logo wortmarke svg punkt grün"},{"t":"Wortmarke — einfarbig","c":"Artefakt","u":"logo.html","k":"logo mono einfarbig grün untergrund"},{"t":"Wortmarke — invers","c":"Artefakt","u":"logo.html","k":"logo invers dunkel papier"},{"t":"Briefpapier","c":"Artefakt","u":"vorlagen.html#print","k":"briefpapier letterhead a4 print"},{"t":"Visitenkarte","c":"Artefakt","u":"vorlagen.html#print","k":"visitenkarte business card 85x55"},{"t":"Präsentations-Master","c":"Artefakt","u":"vorlagen.html#slides","k":"slides deck master präsentation"},{"t":"Icon-Bibliothek (Slides)","c":"Artefakt","u":"vorlagen.html#slides","k":"slides icons bibliothek"},{"t":"Pitch-Deck","c":"Artefakt","u":"vorlagen.html#slides","k":"slides pitch deck"},{"t":"Google Docs Vorlagen","c":"Artefakt","u":"vorlagen.html#docs","k":"docs vorlagen brief angebot rechnung vertrag"},{"t":"Favicon","c":"Artefakt","u":"bilder.html","k":"favicon icon browser tab"},{"t":"Social Preview","c":"Artefakt","u":"bilder.html","k":"og image social preview twitter"},{"t":"Die 10 Regeln","c":"Artefakt","u":"grundlagen.html#regeln","k":"regeln kanon do dont"},{"t":"Green Marker","c":"Artefakt","u":"grundlagen.html#marker","k":"marker grün hervorhebung mark"},{"t":"Schreibweise nozilla","c":"Artefakt","u":"grundlagen.html#schreibweise","k":"nozilla klein punkt schreibweise"},{"t":"Buzzword-Verbot","c":"Artefakt","u":"sprache.html","k":"buzzword seamless disruptive synergy verboten"},{"t":"Web-Elemente","c":"Artefakt","u":"komponenten.html","k":"akkordeon modal toast dropdown komponenten"},{"t":"Design Tokens","c":"Artefakt","u":"farbe.html#tokens","k":"token css variablen nz"}];</script>
+<script src="ci-site.js"></script>
+</body>
+</html>

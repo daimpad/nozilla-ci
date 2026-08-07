@@ -36,7 +36,12 @@ const ASSET_RE = /["'(]([^"'()\s*]+\.(?:css|js|mjs|svg|png|jpe?g|webp|ico|woff2?
 
 for (const file of files) {
   if (!/\.(html?|css)$/i.test(file)) continue;
-  const src = readFileSync(file, "utf8");
+  // Code samples and data-* payloads contain paths that are documentation,
+  // not references — strip them before scanning or they read as broken links.
+  const src = readFileSync(file, "utf8")
+    .replace(/<pre[\s\S]*?<\/pre>/gi, "")
+    .replace(/<code[\s\S]*?<\/code>/gi, "")
+    .replace(/\sdata-[a-z-]+="[^"]*"/gi, "");
   const base = dirname(file);
   const seen = new Set();
   for (const m of src.matchAll(ASSET_RE)) {
