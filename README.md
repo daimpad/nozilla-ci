@@ -10,6 +10,7 @@ Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 
 - **Visuelle Version** (mit Farbmustern, Typographie-Beispiele, Icons): [`index.html`](./index.html)
 - **Design System** (Komponenten + Dark Theme, live): [`design-system.html`](./design-system.html)
+- **WordPress** (Divi · Gravity Forms · Thrive Quiz): [`wordpress/`](./wordpress/)
 - **Schnell-Referenz für Claude**: [`CLAUDE.md`](./CLAUDE.md)
 - **Diese Datei**: Praktische Richtlinien für Menschen
 
@@ -24,6 +25,7 @@ Ein produktionsfertiges, theme-fähiges Komponenten-System — inklusive warmem 
 | [`design-system.css`](./design-system.css) | Die Bibliothek — Tokens + Komponenten, selbst-enthalten |
 | [`design-system.html`](./design-system.html) | Live-Showcase mit Theme-Toggle |
 | [`project/colors_and_type.css`](./project/colors_and_type.css) | Geteilte Basis (Farben + Fonts) für das CI-Dokument |
+| [`wordpress/nozilla-wordpress.css`](./wordpress/nozilla-wordpress.css) | Drop-in für WordPress: Divi · Gravity Forms · Thrive Quiz Builder |
 
 ### Einbinden
 
