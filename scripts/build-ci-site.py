@@ -31,12 +31,20 @@ NAV = [
         ("farbe.html", "Farbe", "10"),
         ("typografie.html", "Typografie", "3"),
         ("icons.html", "Icons", str(len(ICONS.ALL))),
+        ("katalog.html", "Icon-Katalog", "462"),
         ("bilder.html", "Bilder", ""),
-        ("komponenten.html", "Komponenten", ""),
+    ]),
+    ("Bausteine", [
+        ("design-system.html", "Design System", ""),
+        ("web-elemente.html", "Web-Elemente", "21"),
     ]),
     ("Anwendung", [
+        ("print.html", "Print", "2"),
         ("vorlagen.html", "Vorlagen", ""),
         ("downloads.html", "Downloads", ""),
+    ]),
+    ("Referenz", [
+        ("dokument.html", "CI-Dokument", ""),
     ]),
 ]
 
@@ -69,7 +77,7 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
-def layout(slug, title, kicker, lede, body, index_js):
+def layout(slug, title, kicker, lede, body, index_js, head="", scripts=""):
     nav = []
     for group, items in NAV:
         nav.append(f'<div class="nav__group">{group}</div>')
@@ -98,6 +106,7 @@ def layout(slug, title, kicker, lede, body, index_js):
 <link rel="stylesheet" href="../project/fonts.css"/>
 <link rel="stylesheet" href="../design-system.css"/>
 <link rel="stylesheet" href="ci-site.css"/>
+{head}
 <script>(function(){{try{{var t=localStorage.getItem('nz-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();</script>
 </head>
 <body>
@@ -141,6 +150,7 @@ def layout(slug, title, kicker, lede, body, index_js):
 </div>
 <script>window.NZ_INDEX = {index_js};</script>
 <script src="ci-site.js"></script>
+{scripts}
 </body>
 </html>
 """
@@ -182,6 +192,32 @@ def build_index():
         ("Design Tokens", "farbe.html#tokens", "token css variablen nz"),
     ]:
         idx.append({"t": t, "c": "Artefakt", "u": u, "k": k})
+    for label, anchor in [
+        ("Akkordeon", "accordion"), ("Modal", "modal"), ("Toast", "toast"),
+        ("Dropdown", "dropdown"), ("Popover", "dropdown"), ("Breadcrumbs", "breadcrumbs"),
+        ("Pagination", "pagination"), ("Chips", "chips"), ("Kbd", "chips"),
+        ("KPI / Stats", "stats"), ("Stepper", "stepper"), ("Timeline", "timeline"),
+        ("Banner", "banner"), ("Segmented Control", "segmented"), ("Button-Group", "segmented"),
+        ("Range-Slider", "range"), ("Spinner", "loading"), ("Skeleton", "loading"),
+        ("Empty-State", "misc"), ("Description-List", "misc"), ("Count-Badge", "misc"),
+    ]:
+        idx.append({"t": label, "c": "Element", "u": f"web-elemente.html#{anchor}",
+                    "k": f"{label} {anchor} element komponente baustein".lower()})
+    for label, anchor in [("Buttons", "components"), ("Cards", "components"),
+                          ("Formulare", "components"), ("Alerts", "components"),
+                          ("Elevation", "components"), ("Tabelle", "components")]:
+        idx.append({"t": label, "c": "Element", "u": f"design-system.html#{anchor}",
+                    "k": f"{label} design system komponente".lower()})
+    # Kategorien des Icon-Katalogs direkt aus der erzeugten Seite
+    try:
+        with open(os.path.join(ROOT, "icons.html")) as fh:
+            cat_src = fh.read()
+        for c, lbl in re.findall(r'<section class="grp" data-cat="([^"]+)">\s*<h2>(.*?)<span',
+                                 cat_src, re.S):
+            idx.append({"t": lbl.strip(), "c": "Kategorie", "u": f"katalog.html#{c}",
+                        "k": f"{lbl} {c} katalog icon".lower()})
+    except OSError:
+        pass
     import json
     return json.dumps(idx, ensure_ascii=False, separators=(",", ":"))
 
@@ -189,11 +225,53 @@ def build_index():
 IDX = build_index()
 
 
-def write(slug, title, kicker, lede, body):
+def write(slug, title, kicker, lede, body, head="", scripts=""):
     path = os.path.join(OUT, slug)
     with open(path, "w") as f:
-        f.write(layout(slug, title, kicker, lede, body, IDX))
+        f.write(layout(slug, title, kicker, lede, body, IDX, head, scripts))
     return path
+
+
+# ── Bestehende Seiten einbetten, statt sie zu kopieren ────────────────────
+def _read(rel_path):
+    with open(os.path.join(ROOT, rel_path)) as f:
+        return f.read()
+
+
+def extract_body(rel_path):
+    """Inhalt des .nz-container einer bestehenden Seite — eine Quelle, keine Kopie."""
+    src = _read(rel_path)
+    head_part = src.split('<footer class="foot">')[0]
+    marker = '<div class="nz-container">'
+    inner = head_part[head_part.index(marker) + len(marker):].rstrip()
+    if inner.endswith("</div>"):
+        inner = inner[:-6]
+    # Der Hero der Quellseite entfällt — die Portalseite hat einen eigenen Kopf.
+    inner = re.sub(r'<section class="hero">.*?</section>', "", inner, flags=re.S)
+    return inner.strip()
+
+
+def extract_style(rel_path):
+    """Seitenspezifische Regeln übernehmen, Portal-Chrome dabei aussparen."""
+    src = _read(rel_path)
+    m = re.search(r"<style>(.*?)</style>", src, re.S)
+    if not m:
+        return ""
+    drop = ("body ", "body{", ".topbar", ".brand", ".hero", "footer.foot", ".theme-toggle", ".wrap")
+    keep = [ln.strip() for ln in m.group(1).splitlines()
+            if ln.strip() and not ln.strip().startswith("/*")
+            and not any(ln.strip().startswith(d) for d in drop)]
+    return "<style>\n  " + "\n  ".join(keep) + "\n</style>" if keep else ""
+
+
+def jump_nav(inner):
+    """Sprungmarken aus den Abschnitten der eingebetteten Seite."""
+    items = re.findall(r'<section class="section" id="([^"]+)".*?<h2[^>]*>(.*?)</h2>', inner, re.S)
+    if not items:
+        return ""
+    chips = "".join(f'<a class="nz-badge" href="#{i}">{re.sub("<[^>]+>", "", t).strip().rstrip(".")}</a>'
+                    for i, t in items)
+    return f'<nav class="jump" aria-label="Abschnitte">{chips}</nav>' 
 
 
 # ── Seiten ────────────────────────────────────────────────────────────────
@@ -203,18 +281,23 @@ def p_index():
         ("logo.html", "Logo", "Wortmarke, drei Varianten, Freiraum, Mindestgrößen, Verbote."),
         ("farbe.html", "Farbe", f"{len(COLORS)} Werte in drei Rollen — plus alle Design Tokens."),
         ("typografie.html", "Typografie", "Zilla Slab, Inter, Space Mono — Skala und Einsatz."),
-        ("icons.html", "Icons", f"{len(ICONS.ALL)} Icons in zwei Dialekten, kopier- und ladbar."),
+        ("icons.html", "Icons", f"{len(ICONS.ALL)} Kern-Icons in zwei Dialekten, kopier- und ladbar."),
+        ("katalog.html", "Icon-Katalog", "462 Motive in 68 Kategorien — durchsuchbar."),
         ("bilder.html", "Bilder", "Favicon, Social Preview und alle Marken-Grafiken."),
-        ("komponenten.html", "Komponenten", "Design System und Web-Elemente für Oberflächen."),
+        ("design-system.html", "Design System", "Foundations und Kern-Komponenten, Light und Dark."),
+        ("web-elemente.html", "Web-Elemente", "21 Bausteine — Akkordeon, Modal, Toast und mehr."),
         ("sprache.html", "Sprache", "Tonalität, Wortwahl, richtig gegen falsch."),
-        ("vorlagen.html", "Vorlagen", "Briefpapier, Visitenkarte, Google Docs und Slides."),
+        ("print.html", "Print", "Briefpapier und Visitenkarte — Vorschau und PDF."),
+        ("vorlagen.html", "Vorlagen", "Präsentationen und 14 Dokument-Vorlagen."),
         ("downloads.html", "Downloads", "Alle Dateien gebündelt — Web, Print, Fonts."),
+        ("dokument.html", "CI-Dokument", "Die vollständige Fassung am Stück."),
     ]
     cards = "\n".join(
         f'<a class="card-link" href="{h}"><div class="nz-label">{i + 1:02d}</div>'
         f'<h3>{t}</h3><p>{d}</p></a>' for i, (h, t, d) in enumerate(tiles))
-    stats = [(str(len(ICONS.ALL)), "Icons"), ("3", "Logo-Varianten"), (str(len(COLORS)), "Farbwerte"),
-             ("3", "Schriften"), ("21", "Web-Elemente"), ("14", "Dokument-Vorlagen")]
+    stats = [(str(len(ICONS.ALL)), "Kern-Icons"), ("462", "Katalog-Icons"),
+             (str(len(COLORS)), "Farbwerte"), ("3", "Schriften"),
+             ("21", "Web-Elemente"), ("14", "Dokument-Vorlagen")]
     statrow = "\n".join(
         f'<div class="nz-stat nz-stat--raised"><div class="nz-stat__label">{l}</div>'
         f'<div class="nz-stat__value">{v}</div></div>' for v, l in stats)
@@ -576,19 +659,10 @@ def p_sprache():
 
 def p_vorlagen():
     body = f"""
-      <section class="sec" style="margin-top:0" id="print"><h2>Print.</h2>
-        <p class="lede">Beide Vorlagen sind druckfertiges HTML — im Browser öffnen und über
-        „Drucken → Als PDF sichern“ ausgeben. Die PDF-Fassung liegt daneben.</p>
-        <div class="cards">
-          <a class="card-link" href="briefpapier.html"><div class="nz-label">DIN A4</div>
-            <h3>Briefpapier.</h3><p>Kopf mit Wortmarke, Falzmarken, Fußzeile mit Pflichtangaben.</p></a>
-          <a class="card-link" href="visitenkarte.html"><div class="nz-label">85 × 55 mm</div>
-            <h3>Visitenkarte.</h3><p>Vorder- und Rückseite, mit 3 mm Beschnitt.</p></a>
-        </div>
-        <div class="nz-row" style="margin-top:var(--nz-space-4)">
-          <a class="nz-btn nz-btn--secondary" href="../project/assets/print/briefpapier.pdf" download>Briefpapier · PDF</a>
-          <a class="nz-btn nz-btn--secondary" href="../project/assets/print/visitenkarte.pdf" download>Visitenkarte · PDF</a>
-        </div>
+      <section class="sec" style="margin-top:0"><h2>Print.</h2>
+        <p class="lede">Briefpapier und Visitenkarte stehen mit Vorschau, PDF und den
+        Druckeinstellungen auf einer eigenen Seite.</p>
+        <a class="nz-btn nz-btn--primary" href="print.html">Zu den Print-Vorlagen →</a>
       </section>
       <section class="sec" id="slides"><h2>Präsentationen.</h2>
         <p class="lede">In Drive ziehen → Rechtsklick → „Öffnen mit &rsaquo; Google Präsentationen“.</p>
@@ -791,10 +865,161 @@ def p_visitenkarte():
         f.write(html_doc)
 
 
+
+# ── Bausteine, Print, Dokument, Katalog ───────────────────────────────────
+def p_designsystem():
+    inner = extract_body("design-system.html")
+    body = jump_nav(inner) + inner
+    write("design-system.html", "Design System.", "Bausteine",
+          "Foundations und Kern-Komponenten — Farbe, Typografie, Elevation, Buttons, Formulare.",
+          body, head=extract_style("design-system.html"),
+          scripts='<script src="../design-system.js" defer></script>')
+
+
+def p_webelemente():
+    inner = extract_body("components.html")
+    body = jump_nav(inner) + inner
+    write("web-elemente.html", "Web-Elemente.", "Bausteine",
+          "21 wiederverwendbare Bausteine — die meisten laufen ohne JavaScript.",
+          body, head=extract_style("components.html"),
+          scripts='<script src="../design-system.js" defer></script>')
+
+
+def p_dokument():
+    body = """
+      <section class="sec" style="margin-top:0">
+        <div class="embed">
+          <div class="embed__bar">
+            <span class="nz-label">Corporate Identity · Fassung am Stück</span>
+            <span class="nz-row">
+              <a class="nz-btn nz-btn--sm nz-btn--secondary" href="../index.html" target="_blank" rel="noopener">Vollbild öffnen</a>
+              <a class="nz-btn nz-btn--sm nz-btn--ghost" href="../index.html" download>Herunterladen</a>
+            </span>
+          </div>
+          <iframe src="../index.html" title="nozilla Corporate Identity — Dokument" loading="lazy"></iframe>
+        </div>
+        <p class="nz-muted" style="margin-top:var(--nz-space-4);max-width:68ch">
+          Dasselbe Material wie im Portal, nur als durchgehendes Dokument — praktisch zum
+          Ausdrucken oder Weitergeben. Die einzelnen Kapitel stehen links in der Navigation.
+        </p>
+      </section>"""
+    write("dokument.html", "CI-Dokument.", "Referenz",
+          "Die vollständige Fassung als ein Dokument — zum Lesen, Drucken, Weitergeben.", body)
+
+
+def p_print():
+    body = """
+      <section class="sec" style="margin-top:0" id="briefpapier"><h2>Briefpapier.</h2>
+        <p class="lede">DIN A4 mit Falz- und Lochmarken, Adressfeld und Fußzeile für die
+        Pflichtangaben. Im Browser öffnen und über „Drucken → Als PDF sichern“ ausgeben.</p>
+        <div class="embed embed--sheet">
+          <div class="embed__bar">
+            <span class="nz-label">210 × 297 mm</span>
+            <span class="nz-row">
+              <a class="nz-btn nz-btn--sm nz-btn--secondary" href="briefpapier.html" target="_blank" rel="noopener">Vollbild</a>
+              <a class="nz-btn nz-btn--sm nz-btn--primary" href="../project/assets/print/briefpapier.pdf" download>PDF laden</a>
+            </span>
+          </div>
+          <iframe src="briefpapier.html" title="Briefpapier" loading="lazy"></iframe>
+        </div>
+      </section>
+      <section class="sec" id="visitenkarte"><h2>Visitenkarte.</h2>
+        <p class="lede">85 × 55 mm mit 3 mm Beschnitt. Grüner Balken und dunkle Rückseite laufen
+        randabfallend; die Schnittmarke ist eine Hilfslinie und druckt nicht mit.</p>
+        <div class="embed embed--sheet">
+          <div class="embed__bar">
+            <span class="nz-label">85 × 55 mm + 3 mm Beschnitt</span>
+            <span class="nz-row">
+              <a class="nz-btn nz-btn--sm nz-btn--secondary" href="visitenkarte.html" target="_blank" rel="noopener">Vollbild</a>
+              <a class="nz-btn nz-btn--sm nz-btn--primary" href="../project/assets/print/visitenkarte.pdf" download>PDF laden</a>
+            </span>
+          </div>
+          <iframe src="visitenkarte.html" title="Visitenkarte" loading="lazy"></iframe>
+        </div>
+      </section>
+      <section class="sec"><h2>Vor dem Druck.</h2>
+        <table class="tbl"><tbody>
+          <tr><td><b>Ränder</b></td><td>Im Druckdialog auf „keine“ stellen, sonst skaliert der Browser.</td></tr>
+          <tr><td><b>Hintergrundgrafiken</b></td><td>Einschalten — sonst fehlen Balken und dunkle Flächen.</td></tr>
+          <tr><td><b>Farbe</b></td><td>Signal-Grün #00FF9C, Tinte 100 % K. Für Offset vorher Profil abstimmen.</td></tr>
+          <tr><td><b>Papier</b></td><td>Ungestrichen, 100–120 g für Briefe, 300–350 g für Karten.</td></tr>
+        </tbody></table>
+      </section>"""
+    write("print.html", "Print.", "Anwendung",
+          "Briefpapier und Visitenkarte — Vorschau, PDF und die Einstellungen für den Druck.", body)
+
+
+def parse_catalog():
+    """Den erzeugten Katalog auslesen — icons.html bleibt unangetastet (CI prüft es)."""
+    src = _read("icons.html")
+    cats = []
+    for m in re.finditer(r'<section class="grp" data-cat="([^"]+)">\s*<h2>(.*?)<span class="cnt">'
+                         r'(\d+)</span></h2>(.*?)</section>', src, re.S):
+        slug, label, body = m.group(1), m.group(2).strip(), m.group(4)
+        items = re.findall(r'<figure class="ico" data-q="[^"]*">\s*'
+                           r'<img src="project/assets/icons/(nz-[^"]+)\.svg"[^>]*/>\s*'
+                           r'<figcaption><b>([^<]+)</b><span>([^<]*)</span>', body)
+        if items:
+            cats.append((slug, label, items))
+    return cats
+
+
+def inline_catalog_icon(fname):
+    """Umriss auf currentColor, damit das Dark Theme trägt — Grün bleibt exakt."""
+    with open(os.path.join(ASSETS, "icons", fname + ".svg")) as f:
+        svg = f.read()
+    svg = svg.replace('stroke="#000000"', 'stroke="currentColor"').replace('stroke="#000"', 'stroke="currentColor"')
+    return re.sub(r'\s(?:width|height)="[^"]*"', "", svg).strip()
+
+
+def p_katalog():
+    cats = parse_catalog()
+    total = sum(len(i) for _, _, i in cats)
+    chips = "".join(f'<button class="cat-chip" data-cat="{c}" aria-pressed="false">{l} '
+                    f'<span style="opacity:.6">{len(i)}</span></button>' for c, l, i in cats)
+    groups = []
+    for c, label, items in cats:
+        cells = "".join(
+            f'<figure class="cat-cell" data-k="{esc((n + " " + meaning + " " + label).lower())}">'
+            f'{inline_catalog_icon(f)}<b>{n}</b><small>{esc(meaning)}</small></figure>'
+            for f, n, meaning in items)
+        groups.append(f'<section class="cat-grp" data-cat="{c}"><h3>{label} '
+                      f'<span>{len(items)}</span></h3><div class="cat-grid">{cells}</div></section>')
+    body = f"""
+      <div class="cat-bar">
+        <div class="nz-row">
+          <input class="nz-input" id="catQ" type="search" placeholder="Nach Name oder Bedeutung suchen …"
+                 style="max-width:340px" aria-label="Katalog durchsuchen"/>
+          <button class="nz-btn nz-btn--sm nz-btn--secondary" id="catReset">Zurücksetzen</button>
+          <span class="hit-count" id="catTally"></span>
+        </div>
+        <div class="cat-chips" role="group" aria-label="Kategorien">
+          <button class="cat-chip" data-cat="all" aria-pressed="true">Alle {total}</button>{chips}
+        </div>
+      </div>
+      <div id="catRoot">{"".join(groups)}</div>
+      <p class="results__empty" id="catEmpty" hidden>Nichts gefunden — andere Schreibweise probieren?</p>
+      <section class="sec"><h2>Herkunft.</h2>
+        <p class="lede">{total} Motive aus dem freien Font-Awesome-Bestand, komplett neu gezeichnet
+        im nozilla-Raster: 64 × 64, 4 px Strichstärke, rechtwinklige Enden. Keine fremden Pfaddaten.</p>
+        <table class="tbl"><tbody>
+          <tr><td><b>Signatur</b></td><td>Jedes Icon trägt unten rechts denselben 6 × 6 großen Signal-Grün-Punkt — wie die Wortmarke ihren Punkt am Wortende.</td></tr>
+          <tr><td><b>Nicht dabei</b></td><td>Die 495 <code>brands</code>-Motive: fremde Logos sind markenrechtlich geschützt und im nozilla-Stil weder zulässig noch wiedererkennbar.</td></tr>
+          <tr><td><b>Dateien</b></td><td><code>project/assets/icons/nz-*.svg</code> · Katalog auch als <a href="../icons.html">eigenständige Seite</a> und in <a href="../ICONS.md">ICONS.md</a>.</td></tr>
+        </tbody></table>
+      </section>"""
+    write("katalog.html", "Icon-Katalog.", "Gestaltung",
+          f"{total} Motive in {len(cats)} Kategorien — nach Name und Bedeutung durchsuchbar.", body)
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     p_index(); p_grundlagen(); p_logo(); p_farbe(); p_typografie()
-    p_icons(); p_bilder(); p_komponenten(); p_sprache(); p_vorlagen(); p_downloads()
+    p_icons(); p_katalog(); p_bilder(); p_sprache()
+    p_designsystem(); p_webelemente()
+    p_print(); p_vorlagen(); p_downloads(); p_dokument()
     p_briefpapier(); p_visitenkarte()
+    old = os.path.join(OUT, "komponenten.html")
+    if os.path.exists(old):
+        os.remove(old)
     pages = sorted(f for f in os.listdir(OUT) if f.endswith(".html"))
     print(f"{len(pages)} Seiten gebaut: {', '.join(pages)}")
