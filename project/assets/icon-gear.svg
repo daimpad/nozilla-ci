@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Zahnrad">
-  <circle cx="32" cy="32" r="15"/>
-  <circle cx="32" cy="32" r="5"/>
-  <path d="M47 32 L53 32"/>
-  <path d="M32 47 L32 53"/>
-  <path d="M17 32 L11 32"/>
-  <path d="M32 17 L32 11"/>
-  <path d="M42.6 42.6 L47 47"/>
-  <path d="M21.4 42.6 L17 47"/>
-  <path d="M21.4 21.4 L17 17"/>
-  <path d="M42.6 21.4 L47 17"/>
+  <circle cx="31" cy="31" r="14"/>
+  <circle cx="31" cy="31" r="5" fill="#00FF9C" stroke="none"/>
+  <path d="M45 31 L51 31"/>
+  <path d="M31 45 L31 51"/>
+  <path d="M17 31 L11 31"/>
+  <path d="M31 17 L31 11"/>
+  <path d="M41 41 L45 45"/>
+  <path d="M21 41 L17 45"/>
+  <path d="M21 21 L17 17"/>
+  <path d="M41 21 L45 17"/>
   <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>
