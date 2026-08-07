@@ -29,8 +29,8 @@
 
   /* Paper — warm cream. The light canvas / the dark ink-on-dark text. */
   --nz-c-paper:        #FFFEE5;
-  --nz-c-paper-alt:    #FAF8D4;
-  --nz-c-paper-deep:   #F4F1C4;
+  --nz-c-paper-alt:    #FFFEE5;
+  --nz-c-paper-deep:   #FFFEE5;
 
   /* Ink — true black plus warm near-blacks for the dark canvas. */
   --nz-c-ink:          #000000;
@@ -71,14 +71,14 @@
   --nz-font-mono:    "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   /* Type scale */
-  --nz-text-xs:   11px;
-  --nz-text-sm:   14px;
-  --nz-text-base: 17px;
-  --nz-text-lg:   22px;
-  --nz-text-xl:   28px;
-  --nz-text-2xl:  40px;
-  --nz-text-3xl:  56px;
-  --nz-text-4xl:  clamp(56px, 9vw, 128px);
+  --nz-text-xs:   12px;
+  --nz-text-sm:   13px;
+  --nz-text-base: 16px;
+  --nz-text-lg:   21px;
+  --nz-text-xl:   34px;
+  --nz-text-2xl:  48px;
+  --nz-text-3xl:  68px;
+  --nz-text-4xl:  clamp(64px, 10vw, 140px);
 
   /* Motion */
   --nz-dur:  160ms;
@@ -98,7 +98,7 @@
   --nz-bg:            var(--nz-c-paper);
   --nz-surface:       #FFFFFF;
   --nz-surface-alt:   var(--nz-c-paper-alt);
-  --nz-surface-raised:#FFFDF0;
+  --nz-surface-raised:#FFFFFF;
 
   --nz-text:          var(--nz-c-ink);
   --nz-text-muted:    rgba(0, 0, 0, .66);
