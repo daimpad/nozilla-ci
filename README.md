@@ -55,7 +55,7 @@ Die Marken-Fonts (Zilla Slab · Inter · Space Mono, alle SIL OFL) liegen in `pr
 | Wortmarke (Print) | `project/assets/nozilla-logo.eps` · `.pdf` | Echte Zilla-Slab-Vektor-Outlines, K-Schwarz |
 | Favicon | `project/assets/favicon.svg` (+ `-32.png` / `-180.png`) | Browser-Tab · Apple-Touch |
 | Social Preview | `project/assets/og-image.png` (1200×630) | OG / Twitter Card |
-| Icons (Kernset) | `project/assets/icon-*.svg` | 14er-Set, zwei Dialekte |
+| Icons (Kernset) | `project/assets/icon-*.svg` | 61 Stück, drei Dialekte — Quelle: `templates/google-slides/build/icons.py` |
 | Icons (großes Set) | `project/assets/icons/nz-*.svg` | 462 Stück, Dialekt A — [`icons.html`](./icons.html) · [`ICONS.md`](./ICONS.md) |
 
 ### Theming
@@ -318,7 +318,7 @@ die sich gegenseitig stützen.</p>
 
 ## 🎨 Ikonografie
 
-Zwei Dialekte, eine Familie.
+Drei Dialekte, eine Familie — und in jedem Icon derselbe grüne Signaturpunkt.
 
 ### Dialekt A: Heavy-Stroke
 
@@ -342,6 +342,30 @@ Zwei Dialekte, eine Familie.
 
 Alle Icons sind **Custom SVGs** von nozilla.
 
+### Die Signatur — in jedem Icon
+
+Jedes nozilla-Icon trägt unten rechts denselben Signal-Grün-Punkt — dieselbe 6 × 6-Marke, die die Wortmarke am Wortende und das Favicon tragen:
+
+```svg
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
+```
+
+Immer dieselbe Stelle, immer dieselbe Größe, immer als letztes Element. Kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende. Sie gilt für **alle 523 Icons** — Kernset wie Katalog. Nicht für Wortmarke und Favicon, die tragen ihren Punkt selbst.
+
+`stroke="none"` ist Pflicht, sonst erbt der Punkt die 4-px-Kontur des Wurzelelements. Beide Builds setzen die Signatur automatisch — **nicht von Hand in einzelne Icons schreiben**, sonst läuft sie beim nächsten Export auseinander.
+
+### Das Kernset — 61 Icons
+
+| | |
+|---|---|
+| Quelle (Deck **und** Web) | [`templates/google-slides/build/icons.py`](./templates/google-slides/build/icons.py) |
+| Dateien | [`project/assets/`](./project/assets/) · `icon-<slug>.svg` |
+| Galerie | [`ci/icons.html`](./ci/icons.html) — filtern, Quelltext kopieren, laden |
+| Export | `python3 scripts/export-icons.py` (·`--check` prüft nur) |
+| Decks | `SCRATCH=.. python3 mkdeck.py` in `templates/google-slides/build/` |
+
+Ein Icon wird genau einmal definiert und wahlweise als PPTX-Form oder als SVG gerendert — Deck und Web können so nicht auseinanderlaufen. Wer eine Geometrie ändert, führt den Export aus; die CI schlägt sonst fehl.
+
 ### Das große Set — 462 Icons
 
 Der frei verfügbare Font-Awesome-Bestand dient als **Bedarfsliste**, nicht als Bezugsquelle: 462 der gängigsten Motive sind in Dialekt A neu gezeichnet — gleiche Namen, eigene Geometrie.
@@ -359,14 +383,6 @@ Der frei verfügbare Font-Awesome-Bestand dient als **Bedarfsliste**, nicht als 
 ```
 
 Der Build erzwingt die CI-Regeln: 64 × 64, 4 px, square caps, miter joins, keine Radien an Rechtecken, keine Verläufe, nur Tinte-Schwarz und Signal-Grün. Wer eine Regel bricht, bekommt einen roten Build.
-
-**Die Signatur.** Jedes Icon trägt unten rechts denselben Signal-Grün-Punkt — dieselbe 6 × 6-Marke, die die Wortmarke am Wortende und das Favicon tragen:
-
-```svg
-<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
-```
-
-Immer dieselbe Stelle, immer dieselbe Größe. Kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende. Der Build setzt ihn automatisch — nicht von Hand in die Geometrie schreiben.
 
 **Nicht nachgebaut:** die 495 `brands`-Icons. Fremde Markenlogos werden nicht umgezeichnet — ein Logo funktioniert nur im Original.
 

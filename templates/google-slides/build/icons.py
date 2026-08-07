@@ -602,14 +602,30 @@ DIALECT = {**{s: "heavy" for s, _, _ in HEAVY},
            **{s: "concept" for s, _, _ in CONCEPT}}
 
 
+# ── Die nozilla-Signatur ──────────────────────────────────────────────────
+# Derselbe 6 x 6 grosse Signal-Gruen-Punkt, den die Wortmarke am Wortende und
+# das Favicon tragen: ein Punkt am Satzende, kein semantischer Marker. Er sitzt
+# in jedem Icon an derselben Stelle, in derselben Groesse, als letztes Element.
+# Beide Renderer setzen ihn hier — Deck und Web koennen so nicht auseinander-
+# laufen, und kein einzelnes Icon kann ihn vergessen.
+SIGNATURE = (54, 54, 6, 6)
+
+
+def _sign(pen):
+    pen.solid(*SIGNATURE, GREEN)
+
+
 def draw(slide, slug, x, y, size, color):
-    BY_SLUG[slug][1](Pen(slide, x, y, size, color))
+    pen = Pen(slide, x, y, size, color)
+    BY_SLUG[slug][1](pen)
+    _sign(pen)
 
 
 def to_svg(slug, color="currentColor"):
     lbl, fn = BY_SLUG[slug]
     pen = SvgPen(color)
     fn(pen)
+    _sign(pen)
     return pen.svg(lbl)
 
 

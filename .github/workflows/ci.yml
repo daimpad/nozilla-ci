@@ -55,3 +55,26 @@ jobs:
             exit 1
           fi
           echo "✓ Icon-Build aktuell"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install python-pptx
+        run: pip install --quiet python-pptx
+
+      - name: Core icons — exported from icons.py and signed
+        run: python3 scripts/export-icons.py --check
+
+      - name: Signature — every icon carries the signal-green dot
+        run: |
+          set -e
+          missing=0
+          for f in project/assets/icon-*.svg project/assets/icons/*.svg; do
+            grep -q 'x="54" y="54" width="6" height="6" fill="#00FF9C"' "$f" || {
+              echo "✗ Signatur fehlt: $f"; missing=$((missing+1));
+            }
+          done
+          [ "$missing" -eq 0 ] || { echo "✗ $missing Icon(s) ohne Signatur"; exit 1; }
+          echo "✓ Signatur in allen Icons"
