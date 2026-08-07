@@ -23,7 +23,21 @@ Die 495 `brands`-Icons sind Logos fremder Unternehmen und Produkte. Sie sind mar
 
 ## Nachbau — Dialekt A
 
-Jedes Icon: SVG, 64 × 64 Grundraster, 4 px Strichstärke, `stroke-linecap="square"`, `stroke-linejoin="miter"`, Tinte-Schwarz `#000`, Signal-Grün `#00FF9C` nur als Akzent. Keine Radien, keine Verläufe, keine Filter.
+Jedes Icon: SVG, 64 × 64 Grundraster, 4 px Strichstärke, `stroke-linecap="square"`, `stroke-linejoin="miter"`, Tinte-Schwarz `#000`. Keine Radien, keine Verläufe, keine Filter.
+
+### Die Signatur
+
+Jedes Icon trägt unten rechts denselben **6 × 6 großen Signal-Grün-Punkt** — dieselbe Marke, die die Wortmarke am Wortende und das Favicon tragen:
+
+```svg
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
+```
+
+Immer dieselbe Stelle, immer dieselbe Größe, immer als letztes Element. Sie ist kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende. Bei 322 der 462 Icons ist die Ecke ohnehin leer; wo Geometrie hinreicht, deckt der Punkt nur Randfläche ab, die zur Lesbarkeit nichts beiträgt.
+
+Sieben Icons führen zusätzlich **semantisches** Grün — `battery-full`, `bars-progress`, `bullseye`, `highlighter`, `server`, `toggle-on`, `tower-broadcast`. Dort trägt die Farbe Bedeutung (Ladestand, Fortschritt, Schalterzustand), die Signatur kommt davon unabhängig dazu.
+
+`stroke="none"` ist Pflicht — sonst erbt der Punkt die 4-px-Kontur des Wurzelelements.
 
 Dateien liegen in [`project/assets/icons/`](./project/assets/icons/) als `nz-<name>.svg`. Galerie: [`icons.html`](./icons.html).
 

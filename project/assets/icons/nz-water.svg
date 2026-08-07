@@ -1,3 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Wasser">
 <path d="M4 20 C12 12 20 28 28 20 C36 12 44 28 52 20 C56 16 58 16 60 18"/><path d="M4 34 C12 26 20 42 28 34 C36 26 44 42 52 34 C56 30 58 30 60 32"/><path d="M4 48 C12 40 20 56 28 48 C36 40 44 56 52 48 C56 44 58 44 60 46"/>
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

@@ -1,3 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Sonne">
 <circle cx="32" cy="32" r="14"/><path d="M32 4 V12"/><path d="M32 52 V60"/><path d="M4 32 H12"/><path d="M52 32 H60"/><path d="M12 12 L18 18"/><path d="M46 46 L52 52"/><path d="M52 12 L46 18"/><path d="M18 46 L12 52"/>
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

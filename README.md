@@ -356,6 +356,14 @@ Der frei verfügbare Font-Awesome-Bestand dient als **Bedarfsliste**, nicht als 
 
 Der Build erzwingt die CI-Regeln: 64 × 64, 4 px, square caps, miter joins, keine Radien an Rechtecken, keine Verläufe, nur Tinte-Schwarz und Signal-Grün. Wer eine Regel bricht, bekommt einen roten Build.
 
+**Die Signatur.** Jedes Icon trägt unten rechts denselben Signal-Grün-Punkt — dieselbe 6 × 6-Marke, die die Wortmarke am Wortende und das Favicon tragen:
+
+```svg
+<rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
+```
+
+Immer dieselbe Stelle, immer dieselbe Größe. Kein semantischer Marker, sondern das Erkennungszeichen des Sets: ein Punkt am Satzende. Der Build setzt ihn automatisch — nicht von Hand in die Geometrie schreiben.
+
 **Nicht nachgebaut:** die 495 `brands`-Icons. Fremde Markenlogos werden nicht umgezeichnet — ein Logo funktioniert nur im Original.
 
 ---
