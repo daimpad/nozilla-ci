@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Labyrinth">
-  <path d="M10 10 L50 10 L50 50 L18 50 L18 18 L42 18 L42 42 L26 42 L26 26 L34 26"/>
+  <rect x="28" y="22" width="10" height="10" fill="#00FF9C" stroke="none"/>
+  <path d="M12 12 L49 12 L49 49 L20 49 L20 20 L41 20 L41 41 L27 41 L27 27 L34 27"/>
   <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Cursor">
-  <path d="M18 12 L18 46 L27 38 L33 52 L39 49 L33 36 L44 36 Z"/>
+  <rect x="7" y="12" width="45" height="30"/>
+  <path d="M7 48 L52 48"/>
+  <rect x="14" y="19" width="15" height="9" fill="#00FF9C" stroke="none"/>
+  <path d="M34 18 L34 38 L39 33 L43 40 L46 39 L42 32 L48 32 Z" fill="currentColor"/>
   <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
 </svg>

@@ -143,32 +143,39 @@ class SvgPen:
 
 # ── Dialekt A — Heavy-Stroke ──────────────────────────────────────────────
 def i_grid(p):
-    for x, y in ((7, 7), (33, 7), (7, 33), (33, 33)):
-        p.rect(x, y, 18, 18)
+    p.rect(9, 9, 17, 17, fill=GREEN); p.rect(30, 9, 17, 17)
+    p.rect(9, 30, 17, 17); p.rect(30, 30, 17, 17)
 
 
 def i_cursor(p):
-    p.poly([(18, 12), (18, 46), (27, 38), (33, 52), (39, 49), (33, 36), (44, 36)], close=True)
+    """Ein Fenster, darin ein Zeiger. Die Webseite zeigt damit Bedienung, nicht
+    nur den Mauszeiger."""
+    p.rect(7, 12, 45, 30); p.line(7, 48, 52, 48)
+    p.solid(14, 19, 15, 9, GREEN)
+    p.poly([(34, 18), (34, 38), (39, 33), (43, 40), (46, 39), (42, 32), (48, 32)],
+           close=True, fill=p.color)
 
 
 def i_maze(p):
-    p.poly([(10, 10), (50, 10), (50, 50), (18, 50), (18, 18), (42, 18),
-            (42, 42), (26, 42), (26, 26), (34, 26)])
+    p.solid(28, 22, 10, 10, GREEN)
+    p.poly([(12, 12), (49, 12), (49, 49), (20, 49), (20, 20), (41, 20), (41, 41),
+            (27, 41), (27, 27), (34, 27)])
 
 
 def i_terminal(p):
-    p.rect(6, 12, 45, 38); p.line(6, 23, 51, 23)
-    p.poly([(14, 31), (20, 36), (14, 41)]); p.line(26, 41, 42, 41)
+    p.solid(8, 12, 44, 11, GREEN)
+    p.rect(8, 12, 44, 38); p.line(8, 23, 52, 23)
+    p.poly([(16, 31), (22, 36), (16, 41)]); p.line(28, 41, 42, 41)
 
 
 def i_chat(p):
-    p.poly([(10, 12), (54, 12), (54, 40), (26, 40), (16, 50), (16, 40), (10, 40)], close=True)
-    for cx in (24, 32, 40):
-        p.dot(cx, 26, 2.4, p.color)
+    p.poly([(10, 12), (50, 12), (50, 37), (25, 37), (16, 46), (16, 37), (10, 37)],
+           close=True, fill=GREEN)
+    p.dot(24, 24, 2.4, p.color); p.dot(31, 24, 2.4, p.color); p.dot(38, 24, 2.4, p.color)
 
 
 def i_spark(p):
-    p.poly([(32, 8), (37, 27), (56, 32), (37, 37), (32, 56), (27, 37), (8, 32), (27, 27)],
+    p.poly([(31, 8), (36, 26), (54, 31), (36, 36), (31, 50), (26, 36), (8, 31), (26, 26)],
            close=True, fill=GREEN)
 
 
@@ -177,36 +184,40 @@ def i_arrow(p):
 
 
 def i_user(p):
-    p.circle(32, 22, 10); p.poly([(14, 52), (18, 43), (32, 39), (46, 43), (50, 52)])
+    """Kopf und Schultern. Die Webseite zeichnet die Schultern als Bogen, hier
+    sind es Kanten: derselbe Umriss, in der Sprache dieses Hauses."""
+    p.circle(31, 21, 10, fill=GREEN)
+    p.poly([(13, 50), (17, 40), (31, 36), (45, 40), (49, 50)])
 
 
 def i_gear(p):
-    p.circle(32, 32, 15); p.circle(32, 32, 5)
-    for a, b, c, d in ((47, 32, 53, 32), (32, 47, 32, 53), (17, 32, 11, 32), (32, 17, 32, 11),
-                       (42.6, 42.6, 47, 47), (21.4, 42.6, 17, 47),
-                       (21.4, 21.4, 17, 17), (42.6, 21.4, 47, 17)):
-        p.line(a, b, c, d)
+    p.circle(31, 31, 14); p.dot(31, 31, 5, GREEN)
+    p.line(45, 31, 51, 31); p.line(31, 45, 31, 51)
+    p.line(17, 31, 11, 31); p.line(31, 17, 31, 11)
+    p.line(41, 41, 45, 45); p.line(21, 41, 17, 45)
+    p.line(21, 21, 17, 17); p.line(41, 21, 45, 17)
 
 
 def i_folder(p):
-    p.poly([(10, 20), (26, 20), (31, 26), (54, 26), (54, 48), (10, 48)], close=True)
+    p.poly([(10, 20), (26, 20), (31, 26), (51, 26), (51, 48), (10, 48)],
+           close=True, fill=GREEN)
 
 
 def i_lightbulb(p):
-    p.circle(32, 26, 14, fill=GREEN); p.line(24, 44, 40, 44); p.line(26, 50, 38, 50)
+    p.circle(31, 25, 14, fill=GREEN)
+    p.line(23, 43, 39, 43); p.line(25, 49, 37, 49)
 
 
 def i_code(p):
-    p.poly([(24, 18), (12, 32), (24, 46)]); p.poly([(40, 18), (52, 32), (40, 46)])
+    p.solid(26, 26, 12, 12, GREEN)
+    p.poly([(24, 18), (12, 32), (24, 46)]); p.poly([(40, 18), (51, 32), (40, 46)])
     p.line(36, 14, 28, 50)
 
 
 def i_calendar(p):
-    p.rect(7, 14, 44, 36); p.line(7, 25, 51, 25)
-    p.line(19, 8, 19, 18); p.line(39, 8, 39, 18)
-    for x in (15, 27, 39):
-        p.solid(x, 31, 6, 6, p.color)
-    p.solid(15, 41, 6, 6, GREEN)
+    p.rect(8, 14, 44, 34); p.line(8, 26, 52, 26)
+    p.line(19, 8, 19, 18); p.line(41, 8, 41, 18)
+    p.solid(16, 33, 10, 9, GREEN)
 
 
 def i_clock(p):
@@ -230,9 +241,9 @@ def i_lock(p):
 
 
 def i_server(p):
-    p.rect(9, 12, 46, 14); p.rect(9, 30, 46, 14)
-    p.solid(15, 17, 5, 4, GREEN); p.solid(15, 35, 5, 4, p.color)
-    p.line(9, 50, 55, 50)
+    p.rect(10, 12, 42, 16); p.rect(10, 34, 42, 16)
+    p.line(39, 20, 45, 20); p.line(39, 42, 45, 42)
+    p.solid(17, 16, 8, 8, GREEN)
 
 
 def i_mobile(p):
@@ -248,7 +259,8 @@ def i_search(p):
 
 
 def i_mail(p):
-    p.rect(8, 16, 48, 32); p.poly([(8, 16), (32, 36), (56, 16)])
+    p.rect(8, 16, 44, 30)
+    p.poly([(8, 16), (30, 34), (52, 16)], close=True, fill=GREEN)
 
 
 def i_phone(p):
@@ -261,13 +273,13 @@ def i_phone(p):
 def i_callback(p):
     """Rueckruf: derselbe Hoerer, darueber ein Pfeil, der umkehrt.
 
-    Er sitzt hoeher als der Hoerer allein, weil die Ecke unten rechts der
-    Signatur gehoert und die rechte Muschel sonst hineinragt.
+    Der Pfeil sitzt hoeher als der Hoerer und beruehrt ihn nicht: Zwei Formen,
+    die sich kreuzen, liest man als eine dritte.
     """
-    p.poly([(48, 26), (48, 10), (24, 10)])
-    p.poly([(17, 11), (31, 11), (24, 22)], close=True, fill=GREEN)
-    p.poly([(14, 42), (14, 33), (24, 28), (40, 28), (50, 33), (50, 42)])
-    p.rect(9, 40, 12, 9); p.rect(43, 40, 12, 9)
+    p.poly([(12, 42), (12, 32), (23, 25), (41, 25), (52, 32), (52, 42)])
+    p.rect(7, 40, 15, 10); p.rect(42, 40, 15, 10)
+    p.poly([(46, 12), (46, 5), (28, 5)])
+    p.poly([(19, 6), (37, 6), (28, 19)], close=True, fill=GREEN)
 
 
 def i_form(p):
@@ -295,8 +307,9 @@ def i_plus(p):
 
 
 def i_external(p):
-    p.poly([(10, 22), (10, 54), (42, 54), (42, 34)])
-    p.poly([(34, 10), (54, 10), (54, 30)]); p.line(54, 10, 32, 32)
+    p.poly([(10, 22), (10, 50), (40, 50), (40, 32)])
+    p.line(28, 32, 45, 15)
+    p.poly([(34, 10), (50, 10), (50, 26)], close=True, fill=GREEN)
 
 
 def i_rocket(p):
@@ -320,8 +333,12 @@ def i_filter(p):
 
 
 def i_book(p):
-    p.rect(10, 13, 44, 38); p.line(32, 13, 32, 51)
-    p.line(17, 24, 26, 24); p.line(38, 24, 47, 24)
+    """Aufgeschlagenes Buch, eine Seite gruen. Statt der Bogenkanten der
+    Webseite zwei Trapeze: Der Stift kennt keinen Bogen, und das CI sagt zur
+    Formsprache Kanten."""
+    p.poly([(31, 16), (10, 12), (10, 45), (31, 49)], close=True)
+    p.poly([(31, 16), (50, 12), (50, 45), (31, 49)], close=True, fill=GREEN)
+    p.line(31, 16, 31, 49)
 
 
 def i_bell(p):
