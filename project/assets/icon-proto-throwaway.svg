@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Wegwerf-Prototyp">
-  <rect x="5" y="9" width="16" height="16"/>
-  <path d="M23 15 L34 9 L43 17 L46 30"/>
-  <path d="M29 36 L61 36"/>
-  <path d="M33 36 L36 58 L54 58 L57 36 Z"/>
-  <rect x="42" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="4" y="8" width="15" height="15"/>
+  <path d="M21 13 L31 8 L39 15 L42 27"/>
+  <path d="M26 32 L54 32"/>
+  <path d="M30 32 L33 50 L47 50 L50 32 Z"/>
+  <rect x="37" y="39" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>

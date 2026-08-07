@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Kalender">
-  <rect x="9" y="16" width="46" height="38"/>
-  <path d="M9 27 L55 27"/>
-  <path d="M21 10 L21 20"/>
-  <path d="M43 10 L43 20"/>
-  <rect x="18" y="34" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="30" y="34" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="42" y="34" width="6" height="6" fill="currentColor" stroke="none"/>
-  <rect x="18" y="44" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="7" y="14" width="44" height="36"/>
+  <path d="M7 25 L51 25"/>
+  <path d="M19 8 L19 18"/>
+  <path d="M39 8 L39 18"/>
+  <rect x="15" y="31" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="27" y="31" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="39" y="31" width="6" height="6" fill="currentColor" stroke="none"/>
+  <rect x="15" y="41" width="6" height="6" fill="#00FF9C" stroke="none"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>

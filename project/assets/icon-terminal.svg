@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Terminal">
-  <rect x="8" y="12" width="48" height="40"/>
-  <path d="M8 23 L56 23"/>
-  <path d="M16 33 L22 38 L16 43"/>
-  <path d="M28 43 L42 43"/>
+  <rect x="6" y="12" width="45" height="38"/>
+  <path d="M6 23 L51 23"/>
+  <path d="M14 31 L20 36 L14 41"/>
+  <path d="M26 41 L42 41"/>
+  <rect x="54.0" y="54.0" width="6.0" height="6.0" fill="#00FF9C" stroke="none"/>
 </svg>
