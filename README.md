@@ -11,6 +11,7 @@ Ein Leitfaden für Design, Code und Kommunikation bei nozilla.
 - **Visuelle Version** (mit Farbmustern, Typographie-Beispiele, Icons): [`index.html`](./index.html)
 - **Design System** (Komponenten + Dark Theme, live): [`design-system.html`](./design-system.html)
 - **WordPress** (Divi · Gravity Forms · Thrive Quiz): [`wordpress/`](./wordpress/)
+- **Google Docs & Slides** (12 Dokument-Vorlagen, Präsentations-Master, Icon-Bibliothek): [`templates/`](./templates/)
 - **Schnell-Referenz für Claude**: [`CLAUDE.md`](./CLAUDE.md)
 - **Diese Datei**: Praktische Richtlinien für Menschen
 
