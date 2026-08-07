@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Berechtigung">
+  <circle cx="16" cy="31" r="9"/>
+  <circle cx="16" cy="31" r="3.4" fill="#00FF9C" stroke="none"/>
+  <path d="M25 31 L50 31"/>
+  <path d="M42 31 L42 40"/>
+  <path d="M48 31 L48 37"/>
+  <rect x="54" y="54" width="6" height="6" fill="#00FF9C" stroke="none"/>
+</svg>

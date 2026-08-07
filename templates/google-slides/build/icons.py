@@ -357,6 +357,278 @@ def i_pixel_disk(p):
 
 
 # ── Registry: slug · label · draw ─────────────────────────────────────────
+# ── Dialekt C — Konzept, zweite Staffel ───────────────────────────────────
+# Betrieb
+def i_ops_pulse(p):
+    """Monitoring — der Ausschlag, auf den man wartet."""
+    p.poly([(4, 32), (14, 32), (19, 18), (25, 46), (31, 24), (36, 32), (46, 32)])
+    p.dot(48, 32, 4, GREEN)
+
+
+def i_ops_incident(p):
+    """Stoerung — der Blitz im Kasten."""
+    p.rect(7, 11, 40, 34)
+    p.poly([(30, 15), (19, 31), (27, 31), (22, 43), (35, 26), (27, 26)],
+           close=True, fill=GREEN)
+
+
+def i_ops_rollback(p):
+    """Zuruecknehmen — die Runde rueckwaerts."""
+    p.poly([(22, 13), (48, 13), (48, 46), (14, 46), (14, 27)])
+    p.poly([(7, 28), (14, 17), (21, 28)], close=True, fill=GREEN)
+
+
+def i_ops_scale(p):
+    """Skalieren — Stufe fuer Stufe, nicht auf einmal."""
+    p.line(5, 50, 49, 50)
+    p.solid(8, 38, 10, 12, p.color)
+    p.solid(22, 28, 10, 22, p.color)
+    p.solid(36, 14, 10, 36, GREEN)
+
+
+def i_ops_backup(p):
+    """Sicherung — dieselbe Sache, an einem zweiten Ort."""
+    p.rect(5, 13, 20, 14)
+    p.rect(5, 33, 20, 14)
+    p.rect(31, 23, 18, 14, fill=GREEN)
+    p.line(25, 30, 31, 30)
+
+
+# Sicherheit
+def i_sec_encrypt(p):
+    """Verschluesseln — was links steht, ist rechts nicht mehr lesbar."""
+    p.rect(5, 15, 19, 30)
+    for x, y, g in ((31, 16, 0), (40, 16, 1), (34, 25, 0), (44, 27, 0),
+                    (31, 34, 1), (42, 36, 0), (35, 43, 0)):
+        p.solid(x, y, 6, 6, GREEN if g else p.color)
+
+
+def i_sec_surface(p):
+    """Angriffsflaeche — alles, was von aussen erreichbar ist."""
+    p.rect(17, 17, 31, 28)
+    for y in (21, 31, 41):
+        p.poly([(4, y - 4), (13, y), (4, y + 4)], close=True, fill=GREEN)
+
+
+def i_sec_key(p):
+    """Berechtigung — ein Schluessel, kein Generalschluessel."""
+    p.circle(16, 31, 9)
+    p.dot(16, 31, 3.4, GREEN)
+    p.line(25, 31, 50, 31)
+    p.line(42, 31, 42, 40)
+    p.line(48, 31, 48, 37)
+
+
+# Barrierefreiheit
+def i_a11y_contrast(p):
+    """Kontrast — der Unterschied muss messbar sein."""
+    p.rect(8, 17, 22, 28, fill=p.color)
+    p.rect(30, 17, 22, 28, fill=GREEN)
+
+
+def i_a11y_keyboard(p):
+    """Tastaturpfad — jede Station muss erreichbar sein."""
+    p.rect(6, 25, 12, 12)
+    p.rect(24, 25, 12, 12, fill=GREEN)
+    p.rect(42, 25, 12, 12)
+    p.line(18, 31, 24, 31)
+    p.line(36, 31, 42, 31)
+
+
+def i_a11y_voice(p):
+    """Vorlesen — Text, der auch klingt."""
+    for i, (x, y, h) in enumerate(((7, 28, 8), (17, 21, 22), (27, 15, 34),
+                                   (37, 23, 18), (47, 30, 5))):
+        p.solid(x, y, 6, h, GREEN if i == 2 else p.color)
+
+
+# Zusammenarbeit
+def i_team_handover(p):
+    """Uebergabe — der Moment, in dem Wissen den Besitzer wechselt."""
+    p.rect(4, 20, 18, 20)
+    p.rect(38, 20, 18, 20)
+    p.line(24, 30, 34, 30)
+    p.poly([(32, 25), (38, 30), (32, 35)], close=True, fill=GREEN)
+
+
+def i_team_review(p):
+    """Review — jemand schaut wirklich hin."""
+    p.rect(5, 19, 27, 25)
+    p.poly([(11, 31), (17, 37), (27, 25)])
+    p.circle(41, 25, 10)
+    p.line(48, 32, 51, 35)
+    p.dot(41, 25, 3.4, GREEN)
+
+
+def i_team_fork(p):
+    """Weggabelung — hier faellt die Entscheidung."""
+    p.line(5, 31, 23, 31)
+    p.poly([(23, 31), (37, 17), (51, 17)])
+    p.poly([(23, 31), (37, 45), (51, 45)])
+    p.dot(23, 31, 4.4, GREEN)
+
+
+# Qualitaet
+def i_debt_pile(p):
+    """Technische Schuld — der Stapel, der schief steht."""
+    p.rect(8, 38, 34, 10)
+    p.rect(13, 27, 31, 10)
+    p.rect(18, 16, 28, 10)
+    p.rect(24, 5, 24, 10, fill=GREEN)
+
+
+def i_refactor(p):
+    """Aufraeumen — aus dem Knaeuel wird eine Linie."""
+    p.poly([(7, 19), (23, 43), (7, 43), (23, 19)], close=True)
+    p.line(31, 31, 50, 31)
+    p.solid(45, 28, 6, 6, GREEN)
+
+
+def i_legacy_crack(p):
+    """Altsystem — die Schichten halten, aber es zieht sich ein Riss durch."""
+    p.rect(6, 13, 44, 11)
+    p.rect(6, 28, 44, 11)
+    p.rect(6, 43, 40, 8)
+    for x, y in ((26, 13), (23, 28), (28, 43)):
+        p.solid(x, y, 5, 5, GREEN)
+
+
+def i_test_net(p):
+    """Testabdeckung — ehrlich: ein Feld ist wirklich geprueft."""
+    p.rect(6, 11, 44, 36)
+    p.line(21, 11, 21, 47)
+    p.line(35, 11, 35, 47)
+    p.line(6, 23, 50, 23)
+    p.line(6, 35, 50, 35)
+    p.solid(21, 23, 14, 12, GREEN)
+
+
+# ── Dialekt B — Pixel-Art als String-Art ──────────────────────────────────
+# Ein Motiv ist im Code direkt zu erkennen: '#' Signal-Gruen, 'o' dunkleres
+# Gruen, '+' helles Gruen, 'x' Tinte, '.' leer. Raster 8x8 auf 6er-Zellen ab
+# (4,4) — die rechte untere Ecke bleibt damit der Signatur.
+_PX_PALETTE = {"#": "green", "o": "deep", "+": "soft", "x": "ink"}
+
+
+def _pixels(p, art, cell=6.0, ox=4.0, oy=4.0):
+    tone = {"green": GREEN, "deep": GREEN_DEEP, "soft": GREEN_SOFT, "ink": p.color}
+    for r, row in enumerate(art):
+        for c, ch in enumerate(row):
+            key = _PX_PALETTE.get(ch)
+            if key:
+                p.solid(ox + c * cell, oy + r * cell, cell, cell, tone[key])
+
+
+def i_pixel_dino(p):
+    _pixels(p, [".....###",
+                ".....#x#",
+                ".....###",
+                ".#...####"[:8],
+                ".#######",
+                ".######.",
+                "..####..",
+                "..#..#.."])
+
+
+def i_pixel_ghost(p):
+    _pixels(p, ["..####..",
+                ".######.",
+                "##x##x##",
+                "########",
+                "########",
+                "########",
+                "########",
+                "#.#..#.#"])
+
+
+def i_pixel_alien(p):
+    _pixels(p, ["..#..#..",
+                "...##...",
+                "..####..",
+                ".#x##x#.",
+                "########",
+                "#.####.#",
+                "#.#..#.#",
+                "..#..#.."])
+
+
+def i_pixel_robot(p):
+    _pixels(p, ["...##...",
+                "..####..",
+                ".######.",
+                "#x####x#",
+                ".######.",
+                ".#.##.#.",
+                ".######.",
+                ".##..##."])
+
+
+def i_pixel_cat(p):
+    _pixels(p, ["#......#",
+                "##....##",
+                "########",
+                "#x#..#x#",
+                "########",
+                "#.####.#",
+                "########",
+                ".#....#."])
+
+
+def i_pixel_mushroom(p):
+    _pixels(p, ["..####..",
+                ".######.",
+                "##+##+##",
+                "########",
+                ".oooooo.",
+                "...oo...",
+                "...oo...",
+                "..oooo.."])
+
+
+def i_pixel_bug(p):
+    _pixels(p, ["#..##..#",
+                ".#.##.#.",
+                "..####..",
+                ".#x##x#.",
+                "########",
+                ".######.",
+                "#.####.#",
+                ".#....#."])
+
+
+def i_pixel_skull(p):
+    _pixels(p, [".######.",
+                "########",
+                "#xx##xx#",
+                "########",
+                ".###x##.",
+                ".######.",
+                "..#x#x#.",
+                "........"])
+
+
+def i_pixel_crown(p):
+    _pixels(p, [".#..#..#",
+                ".#.##.#.",
+                ".#.##.##",
+                ".#######",
+                ".#o#o#o#",
+                ".#######",
+                "........",
+                "........"])
+
+
+def i_pixel_coffee(p):
+    _pixels(p, ["..o.o...",
+                "...o.o..",
+                "........",
+                "#######.",
+                "#+++++#o",
+                "#+++++#o",
+                "#######.",
+                ".#####.."])
+
+
 HEAVY = [
     ("grid", "Grid", i_grid), ("cursor", "Cursor", i_cursor), ("maze", "Labyrinth", i_maze),
     ("terminal", "Terminal", i_terminal), ("chat", "Chat", i_chat), ("spark", "Spark", i_spark),
@@ -374,6 +646,11 @@ HEAVY = [
 PIXEL = [
     ("cucumber", "Pixel-Gurke", i_cucumber), ("pixel-heart", "Pixel-Herz", i_pixel_heart),
     ("pixel-star", "Pixel-Stern", i_pixel_star), ("pixel-disk", "Pixel-Diskette", i_pixel_disk),
+    ("pixel-dino", "Pixel-Dino", i_pixel_dino), ("pixel-ghost", "Pixel-Geist", i_pixel_ghost),
+    ("pixel-alien", "Pixel-Alien", i_pixel_alien), ("pixel-robot", "Pixel-Roboter", i_pixel_robot),
+    ("pixel-cat", "Pixel-Katze", i_pixel_cat), ("pixel-mushroom", "Pixel-Pilz", i_pixel_mushroom),
+    ("pixel-bug", "Pixel-Kaefer", i_pixel_bug), ("pixel-skull", "Pixel-Totenkopf", i_pixel_skull),
+    ("pixel-crown", "Pixel-Krone", i_pixel_crown), ("pixel-coffee", "Pixel-Kaffee", i_pixel_coffee),
 ]
 
 # ── Dialekt C — Konzept ───────────────────────────────────────────────────
@@ -582,6 +859,7 @@ def i_proto_throwaway(p):
     p.solid(37, 39, 6, 6, GREEN)
 
 
+
 CONCEPT = [
     ("data-stream", "Datenstrom", i_data_stream), ("data-cluster", "Cluster", i_data_cluster),
     ("data-pipe", "Pipeline", i_data_pipe), ("data-layers", "Schichten", i_data_layers),
@@ -598,6 +876,17 @@ CONCEPT = [
     ("proto-loop", "Iteration", i_proto_loop), ("proto-clickpath", "Klickpfad", i_proto_clickpath),
     ("proto-fidelity", "Detailgrad", i_proto_fidelity),
     ("proto-throwaway", "Wegwerf-Prototyp", i_proto_throwaway),
+    ("ops-pulse", "Monitoring", i_ops_pulse), ("ops-incident", "Stoerung", i_ops_incident),
+    ("ops-rollback", "Rollback", i_ops_rollback), ("ops-scale", "Skalieren", i_ops_scale),
+    ("ops-backup", "Sicherung", i_ops_backup),
+    ("sec-encrypt", "Verschluesseln", i_sec_encrypt),
+    ("sec-surface", "Angriffsflaeche", i_sec_surface), ("sec-key", "Berechtigung", i_sec_key),
+    ("a11y-contrast", "Kontrast", i_a11y_contrast),
+    ("a11y-keyboard", "Tastaturpfad", i_a11y_keyboard), ("a11y-voice", "Vorlesen", i_a11y_voice),
+    ("team-handover", "Uebergabe", i_team_handover), ("team-review", "Review", i_team_review),
+    ("team-fork", "Weggabelung", i_team_fork),
+    ("debt-pile", "Technische Schuld", i_debt_pile), ("refactor", "Aufraeumen", i_refactor),
+    ("legacy-crack", "Altsystem", i_legacy_crack), ("test-net", "Testabdeckung", i_test_net),
 ]
 
 ALL = HEAVY + PIXEL + CONCEPT
