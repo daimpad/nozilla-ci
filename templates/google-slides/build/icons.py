@@ -672,6 +672,11 @@ def i_pixel_coffee(p):
                 ".#####.."])
 
 
+# Der zweite Eintrag ist kein Kommentar, sondern der sichtbare Name. Er landet
+# als aria-label im SVG und als alt-Text in der Tafel des Dokuments, deshalb
+# steht er mit Umlaut, auch wenn die Prosa in dieser Datei ohne auskommt. Acht
+# Namen standen lange als "Rueckruf" oder "Stoerung" da und lasen sich in einer
+# Zeichenliste wie ein Fehler des Werkzeugs.
 HEAVY = [
     ("grid", "Grid", i_grid), ("cursor", "Cursor", i_cursor), ("maze", "Labyrinth", i_maze),
     ("terminal", "Terminal", i_terminal), ("chat", "Chat", i_chat), ("spark", "Spark", i_spark),
@@ -684,8 +689,8 @@ HEAVY = [
     ("check", "Haken", i_check), ("close", "Kreuz", i_close), ("plus", "Plus", i_plus),
     ("external", "Extern", i_external), ("rocket", "Rakete", i_rocket), ("pen", "Stift", i_pen),
     ("trash", "Papierkorb", i_trash), ("filter", "Filter", i_filter), ("book", "Buch", i_book),
-    ("bell", "Glocke", i_bell), ("phone", "Telefonhoerer", i_phone),
-    ("callback", "Rueckruf", i_callback), ("form", "Formular", i_form),
+    ("bell", "Glocke", i_bell), ("phone", "Telefonhörer", i_phone),
+    ("callback", "Rückruf", i_callback), ("form", "Formular", i_form),
 ]
 PIXEL = [
     ("cucumber", "Pixel-Gurke", i_cucumber), ("pixel-heart", "Pixel-Herz", i_pixel_heart),
@@ -693,7 +698,7 @@ PIXEL = [
     ("pixel-dino", "Pixel-Dino", i_pixel_dino), ("pixel-ghost", "Pixel-Geist", i_pixel_ghost),
     ("pixel-alien", "Pixel-Alien", i_pixel_alien), ("pixel-robot", "Pixel-Roboter", i_pixel_robot),
     ("pixel-cat", "Pixel-Katze", i_pixel_cat), ("pixel-mushroom", "Pixel-Pilz", i_pixel_mushroom),
-    ("pixel-bug", "Pixel-Kaefer", i_pixel_bug), ("pixel-skull", "Pixel-Totenkopf", i_pixel_skull),
+    ("pixel-bug", "Pixel-Käfer", i_pixel_bug), ("pixel-skull", "Pixel-Totenkopf", i_pixel_skull),
     ("pixel-crown", "Pixel-Krone", i_pixel_crown), ("pixel-coffee", "Pixel-Kaffee", i_pixel_coffee),
 ]
 
@@ -920,16 +925,16 @@ CONCEPT = [
     ("proto-loop", "Iteration", i_proto_loop), ("proto-clickpath", "Klickpfad", i_proto_clickpath),
     ("proto-fidelity", "Detailgrad", i_proto_fidelity),
     ("proto-throwaway", "Wegwerf-Prototyp", i_proto_throwaway),
-    ("ops-pulse", "Monitoring", i_ops_pulse), ("ops-incident", "Stoerung", i_ops_incident),
+    ("ops-pulse", "Monitoring", i_ops_pulse), ("ops-incident", "Störung", i_ops_incident),
     ("ops-rollback", "Rollback", i_ops_rollback), ("ops-scale", "Skalieren", i_ops_scale),
     ("ops-backup", "Sicherung", i_ops_backup),
-    ("sec-encrypt", "Verschluesseln", i_sec_encrypt),
-    ("sec-surface", "Angriffsflaeche", i_sec_surface), ("sec-key", "Berechtigung", i_sec_key),
+    ("sec-encrypt", "Verschlüsseln", i_sec_encrypt),
+    ("sec-surface", "Angriffsfläche", i_sec_surface), ("sec-key", "Berechtigung", i_sec_key),
     ("a11y-contrast", "Kontrast", i_a11y_contrast),
     ("a11y-keyboard", "Tastaturpfad", i_a11y_keyboard), ("a11y-voice", "Vorlesen", i_a11y_voice),
-    ("team-handover", "Uebergabe", i_team_handover), ("team-review", "Review", i_team_review),
+    ("team-handover", "Übergabe", i_team_handover), ("team-review", "Review", i_team_review),
     ("team-fork", "Weggabelung", i_team_fork),
-    ("debt-pile", "Technische Schuld", i_debt_pile), ("refactor", "Aufraeumen", i_refactor),
+    ("debt-pile", "Technische Schuld", i_debt_pile), ("refactor", "Aufräumen", i_refactor),
     ("legacy-crack", "Altsystem", i_legacy_crack), ("test-net", "Testabdeckung", i_test_net),
 ]
 
