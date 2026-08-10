@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Angriffsflaeche">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.0" stroke-linecap="square" stroke-linejoin="miter" role="img" aria-label="Angriffsfläche">
   <rect x="17" y="17" width="31" height="28"/>
   <path d="M4 17 L13 21 L4 25 Z" fill="#00FF9C"/>
   <path d="M4 27 L13 31 L4 35 Z" fill="#00FF9C"/>
