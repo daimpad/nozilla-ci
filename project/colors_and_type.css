@@ -24,11 +24,16 @@
   --nz-green:        #00FF9C;
   --nz-green-strong: #00E88D;
   --nz-green-soft:   #B7FFE0;
+  /* The darkest step of the icon ramp. Shading inside a drawing, never a
+     surface, never an action. See design-system.css for the long version. */
+  --nz-green-deep:   #00C075;
 
   /* ── Paper — the light canvas ──────────────────────────────────────────── */
   --nz-paper:        #FFFEE5;
-  --nz-paper-alt:    #FAF8D4;
-  --nz-paper-deep:   #F4F1C4;
+  /* One cream, three names. The website won on 7 August 2026 and it has a
+     single paper tone; the names stay because components reference them. */
+  --nz-paper-alt:    #FFFEE5;
+  --nz-paper-deep:   #FFFEE5;
 
   /* ── Ink — text, lines, borders (with alpha steps) ─────────────────────── */
   --nz-ink:          #000000;
