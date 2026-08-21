@@ -26,6 +26,11 @@
   --nz-c-green:        #00FF9C;
   --nz-c-green-strong: #00E88D;
   --nz-c-green-soft:   #B7FFE0;
+  /* The darkest step of the icon ramp. It shades the pixel row and three more
+     icons; it is not an action color and never fills a surface. Green-strong
+     sits too close to the signal for that: fine as a hover state, invisible
+     as a shadow. */
+  --nz-c-green-deep:   #00C075;
 
   /* Paper — warm cream. The light canvas / the dark ink-on-dark text. */
   --nz-c-paper:        #FFFEE5;
