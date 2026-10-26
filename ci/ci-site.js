@@ -32,10 +32,9 @@
   }
 
   /* ── Globale Suche ─────────────────────────────────────────────────────── */
-  var q = document.getElementById("q");
-  var box = document.getElementById("results");
+  /* Ein Index, beliebig viele Felder: die Kopfzeile auf jeder Seite, auf der
+     Startseite zusätzlich der Hero. Jedes Feld zeigt seine Treffer selbst an. */
   var idx = window.NZ_INDEX || [];
-  var active = -1;
 
   function norm(s) {
     return (s || "").toLowerCase()
@@ -61,25 +60,26 @@
     return hits.slice(0, 12).map(function (h) { return h.item; });
   }
 
-  function render(list) {
-    if (!list.length) {
-      box.innerHTML = '<div class="results__empty">Nichts gefunden. Andere Schreibweise probieren?</div>';
-      box.hidden = false;
-      return;
-    }
-    box.innerHTML = list.map(function (it) {
-      return '<a href="' + it.u + '" role="option"><span>' + it.t +
-        '</span><span class="cat">' + it.c + "</span></a>";
-    }).join("");
-    box.hidden = false;
-    active = -1;
-  }
+  function bindSearch(q, box) {
+    if (!q || !box) return;
+    var active = -1;
 
-  if (q && box) {
+    function render(list) {
+      active = -1;
+      box.hidden = false;
+      if (!list.length) {
+        box.innerHTML = '<div class="results__empty">Nichts gefunden. Andere Schreibweise probieren?</div>';
+        return;
+      }
+      box.innerHTML = list.map(function (it) {
+        return '<a href="' + it.u + '" role="option"><span>' + it.t +
+          '</span><span class="cat">' + it.c + "</span></a>";
+      }).join("");
+    }
+
     q.addEventListener("input", function () {
-      var v = q.value;
-      if (!v.trim()) { box.hidden = true; return; }
-      render(search(v));
+      if (!q.value.trim()) { box.hidden = true; return; }
+      render(search(q.value));
     });
     q.addEventListener("keydown", function (e) {
       var links = box.querySelectorAll("a");
@@ -92,20 +92,72 @@
         if (active >= links.length) active = 0;
         for (var i = 0; i < links.length; i++) links[i].classList.toggle("is-active", i === active);
         links[active].scrollIntoView({ block: "nearest" });
-      } else if (e.key === "Enter" && active >= 0) {
+      } else if (e.key === "Enter") {
         e.preventDefault();
-        links[active].click();
+        links[active >= 0 ? active : 0].click();
       }
     });
     document.addEventListener("click", function (e) {
       if (!box.contains(e.target) && e.target !== q) box.hidden = true;
     });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "/" && document.activeElement !== q &&
-          !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) {
-        e.preventDefault(); q.focus();
-      }
+    /* Formular abschicken (Knopf „Suchen") öffnet den besten Treffer. Bewusst
+       neu gesucht: der Klick auf den Knopf hat die Liste da schon geschlossen. */
+    var form = q.form;
+    if (form) form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var list = search(q.value);
+      if (list.length) location.href = list[0].u;
+      else if (q.value.trim()) render(list);
+      else q.focus();
     });
+  }
+
+  var q = document.getElementById("q");
+  var hq = document.getElementById("hq");
+  bindSearch(q, document.getElementById("results"));
+  bindSearch(hq, document.getElementById("hresults"));
+
+  /* „/" springt ins Suchfeld — in den Hero, solange er zu sehen ist */
+  var heroSearch = document.querySelector(".hero-search");
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "/" || /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
+    var target = hq && !document.body.classList.contains("hero-out") ? hq : q;
+    if (target) { e.preventDefault(); target.focus(); }
+  });
+  if (heroSearch && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      document.body.classList.toggle("hero-out", !entries[0].isIntersecting);
+    }).observe(heroSearch);
+  } else if (heroSearch) {
+    document.body.classList.add("hero-out");
+  }
+
+  /* ── Icon-Mosaik (Startseite) ──────────────────────────────────────────── */
+  /* Alle 2,4 s tauscht eine Kachel ihr Motiv mit der Reserve: kurz invertiert,
+     dann das neue Icon — harter Schnitt, kein Fade. Pausiert bei Hover, im
+     Hintergrund-Tab und bei reduzierter Bewegung. */
+  var mosaic = document.querySelector(".mosaic");
+  var poolTpl = document.getElementById("mosaic-pool");
+  if (mosaic && poolTpl && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var tiles = [].slice.call(mosaic.querySelectorAll(".mosaic__tile"));
+    var pool = [].slice.call(poolTpl.content.querySelectorAll(".mosaic__tile"))
+      .map(function (t) { return t.innerHTML; });
+    var paused = false, turn = 0;
+    mosaic.addEventListener("mouseenter", function () { paused = true; });
+    mosaic.addEventListener("mouseleave", function () { paused = false; });
+    setInterval(function () {
+      if (paused || document.hidden || !pool.length) return;
+      var visible = tiles.filter(function (t) { return t.offsetParent !== null; });
+      var tile = visible[Math.floor(Math.random() * visible.length)];
+      if (!tile) return;
+      tile.classList.add("is-swap");
+      setTimeout(function () {
+        var slot = turn++ % pool.length, old = tile.innerHTML;
+        tile.innerHTML = pool[slot];
+        pool[slot] = old;
+        tile.classList.remove("is-swap");
+      }, 140);
+    }, 2400);
   }
 
   /* ── Kopieren ──────────────────────────────────────────────────────────── */

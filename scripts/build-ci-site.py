@@ -78,7 +78,7 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
-def layout(slug, title, kicker, lede, body, index_js, head="", scripts=""):
+def layout(slug, title, kicker, lede, body, index_js, head="", scripts="", hero=""):
     nav = []
     for group, items in NAV:
         nav.append(f'<div class="nav__group">{group}</div>')
@@ -87,6 +87,13 @@ def layout(slug, title, kicker, lede, body, index_js, head="", scripts=""):
             c = f'<span class="nav__count">{count}</span>' if count else ""
             nav.append(f'<a class="nav__link" href="{href}"{cur}>{label}{c}</a>')
     navhtml = "\n        ".join(nav)
+    # Die Startseite bringt einen eigenen Hero mit, alle anderen den Standardkopf.
+    pagehead = hero or f"""<div class="page-head">
+        <div class="nz-label">{esc(kicker)}</div>
+        <h1>{title}</h1>
+        <p>{lede}</p>
+      </div>"""
+    bodyclass = ' class="is-home"' if hero else ""
     return f"""<!doctype html>
 <html lang="de">
 <head>
@@ -110,7 +117,7 @@ def layout(slug, title, kicker, lede, body, index_js, head="", scripts=""):
 {head}
 <script>(function(){{try{{var t=localStorage.getItem('nz-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();</script>
 </head>
-<body>
+<body{bodyclass}>
 <div class="shell">
   <aside class="side">
     <a class="side__brand" href="index.html">nozilla<span>.</span></a>
@@ -135,11 +142,7 @@ def layout(slug, title, kicker, lede, body, index_js, head="", scripts=""):
     </header>
 
     <div class="wrap">
-      <div class="page-head">
-        <div class="nz-label">{esc(kicker)}</div>
-        <h1>{title}</h1>
-        <p>{lede}</p>
-      </div>
+      {pagehead}
       {body}
       <footer class="foot">
         <span class="nz-label">nozilla CI · v1.1</span>
@@ -178,8 +181,8 @@ def build_index():
         ("Wortmarke — Standard", "logo.html", "logo wortmarke svg punkt grün"),
         ("Wortmarke — einfarbig", "logo.html", "logo mono einfarbig grün untergrund"),
         ("Wortmarke — invers", "logo.html", "logo invers dunkel papier"),
-        ("Briefpapier", "vorlagen.html#print", "briefpapier letterhead a4 print"),
-        ("Visitenkarte", "vorlagen.html#print", "visitenkarte business card 85x55"),
+        ("Briefpapier", "print.html#briefpapier", "briefpapier letterhead a4 print"),
+        ("Visitenkarte", "print.html#visitenkarte", "visitenkarte business card 85x55"),
         ("Präsentations-Master", "vorlagen.html#slides", "slides deck master präsentation"),
         ("Icon-Bibliothek (Slides)", "vorlagen.html#slides", "slides icons bibliothek"),
         ("Pitch-Deck", "vorlagen.html#slides", "slides pitch deck"),
@@ -190,7 +193,7 @@ def build_index():
         ("Green Marker", "grundlagen.html#marker", "marker grün hervorhebung mark"),
         ("Schreibweise nozilla", "grundlagen.html#schreibweise", "nozilla klein punkt schreibweise"),
         ("Buzzword-Verbot", "sprache.html", "buzzword seamless disruptive synergy verboten"),
-        ("Web-Elemente", "komponenten.html", "akkordeon modal toast dropdown komponenten"),
+        ("Web-Elemente", "web-elemente.html", "akkordeon modal toast dropdown komponenten"),
         ("Design Tokens", "farbe.html#tokens", "token css variablen nz"),
     ]:
         idx.append({"t": t, "c": "Artefakt", "u": u, "k": k})
@@ -216,7 +219,7 @@ def build_index():
             cat_src = fh.read()
         for c, lbl in re.findall(r'<section class="grp" data-cat="([^"]+)">\s*<h2>(.*?)<span',
                                  cat_src, re.S):
-            idx.append({"t": lbl.strip(), "c": "Kategorie", "u": f"katalog.html#{c}",
+            idx.append({"t": lbl.strip(), "c": "Kategorie", "u": f"katalog.html#cat-{c}",
                         "k": f"{lbl} {c} katalog icon".lower()})
     except OSError:
         pass
@@ -227,10 +230,10 @@ def build_index():
 IDX = build_index()
 
 
-def write(slug, title, kicker, lede, body, head="", scripts=""):
+def write(slug, title, kicker, lede, body, head="", scripts="", hero=""):
     path = os.path.join(OUT, slug)
     with open(path, "w") as f:
-        f.write(layout(slug, title, kicker, lede, body, IDX, head, scripts))
+        f.write(layout(slug, title, kicker, lede, body, IDX, head, scripts, hero))
     return path
 
 
@@ -297,25 +300,56 @@ def p_index():
     cards = "\n".join(
         f'<a class="card-link" href="{h}"><div class="nz-label">{i + 1:02d}</div>'
         f'<h3>{t}</h3><p>{d}</p></a>' for i, (h, t, d) in enumerate(tiles))
-    stats = [(str(len(ICONS.ALL)), "Kern-Icons"), ("462", "Katalog-Icons"),
-             (str(len(COLORS)), "Farbwerte"), ("3", "Schriften"),
-             ("21", "Web-Elemente"), ("14", "Dokument-Vorlagen")]
-    statrow = "\n".join(
-        f'<div class="nz-stat nz-stat--raised"><div class="nz-stat__label">{l}</div>'
-        f'<div class="nz-stat__value">{v}</div></div>' for v, l in stats)
+    # Mosaik: acht Motive auf der Bühne, der Rest wartet im <template> auf seinen Auftritt.
+    stage = ["rocket", "pixel-dino", "ai-neuron", "team-handover",
+             "web-layout", "pixel-ghost", "data-stream", "ws-sticky"]
+    pool = ["proto-loop", "pixel-cat", "lightbulb", "ai-prompt", "ws-vote", "pixel-robot",
+            "sec-key", "data-cluster", "pixel-mushroom", "web-speed", "maze", "pixel-crown",
+            "spark", "terminal", "ops-pulse", "pixel-alien"]
+    tile = lambda slug: f'<span class="mosaic__tile" aria-hidden="true">{ICONS.to_svg(slug)}</span>'
+    mosaic = "".join(tile(s) for s in stage)
+    reserve = "".join(tile(s) for s in pool)
+    quick = [("logo.html", "Logo-Dateien"), ("farbe.html", "Signal-Grün"), ("icons.html", "Icons"),
+             ("print.html", "Briefpapier"), ("vorlagen.html", "Slides")]
+    quicklinks = "".join(f'<a href="{h}">{t}</a>' for h, t in quick)
+    n_icons = len(ICONS.ALL)
+    hero = f"""<section class="hero" aria-labelledby="hero-title">
+        <div class="hero__text">
+          <div class="nz-label">nozilla · Markenportal · v1.1</div>
+          <h1 id="hero-title">Die Marke,<br/><mark class="g">griffbereit</mark>.</h1>
+          <p class="hero__lede">Logo, Farben, Icons und Vorlagen — alles, was nozilla ausmacht.
+          Suchen, finden, verwenden.</p>
+          <form class="hero-search" role="search" action="#">
+            <label class="sr-only" for="hq">CI durchsuchen</label>
+            <input id="hq" type="search" autocomplete="off" aria-controls="hresults"
+                   placeholder="Logo, Signal-Grün, Briefpapier …"/>
+            <kbd class="nz-kbd hero-search__key" aria-hidden="true">/</kbd>
+            <button type="submit">Suchen</button>
+            <div class="results" id="hresults" hidden role="listbox"></div>
+          </form>
+          <div class="hero-quick">
+            <span class="nz-label">Oft gebraucht</span>
+            {quicklinks}
+          </div>
+        </div>
+        <div class="mosaic">
+          {mosaic}
+          <a class="mosaic__cta" href="icons.html"><b>{n_icons}</b><span>Icons ansehen&nbsp;→</span></a>
+        </div>
+        <template id="mosaic-pool">{reserve}</template>
+      </section>"""
+    facts = [(str(n_icons), "Kern-Icons", "icons.html"), ("462", "Katalog", "katalog.html"),
+             (str(len(COLORS)), "Farbwerte", "farbe.html"), ("3", "Schriften", "typografie.html"),
+             ("21", "Web-Elemente", "web-elemente.html"), ("14", "Vorlagen", "vorlagen.html")]
+    factrow = "".join(f'<a href="{h}"><b>{v}</b><span>{l} →</span></a>' for v, l, h in facts)
     body = f"""
-      <div class="nz-alert nz-alert--signal" style="margin-bottom:var(--nz-space-6)">
-        <div><div class="nz-alert__title">Alles an einem Ort.</div>
-        <div class="nz-alert__body">Oben suchen — die Suche findet Icons, Farbwerte, Regeln und Dateien
-        über alle Seiten hinweg. Tastatur: <kbd class="nz-kbd">/</kbd> fokussiert das Feld.</div></div>
-      </div>
-      <div class="nz-grid nz-grid--3" style="margin-bottom:var(--nz-space-7)">{statrow}</div>
+      <nav class="facts" aria-label="Kennzahlen">{factrow}</nav>
       <section class="sec" style="margin-top:0"><h2>Bereiche.</h2>
-        <p class="lede">Zehn Kapitel — von der Haltung bis zur fertigen Datei.</p>
+        <p class="lede">{len(tiles)} Bereiche — von der Haltung bis zur fertigen Datei.</p>
         <div class="cards">{cards}</div>
       </section>"""
-    write("index.html", "Corporate<br/>Identity.", "nozilla · Markenportal",
-          "Jedes Artefakt der Marke — geordnet, durchsuchbar und direkt verwendbar.", body)
+    write("index.html", "Corporate Identity", "nozilla · Markenportal",
+          "Jedes Artefakt der Marke — geordnet, durchsuchbar und direkt verwendbar.", body, hero=hero)
 
 
 def p_grundlagen():
@@ -1006,7 +1040,7 @@ def p_katalog():
             f'<figure class="cat-cell" data-k="{esc((n + " " + meaning + " " + label).lower())}">'
             f'{inline_catalog_icon(f)}<b>{n}</b><small>{esc(meaning)}</small></figure>'
             for f, n, meaning in items)
-        groups.append(f'<section class="cat-grp" data-cat="{c}"><h3>{label} '
+        groups.append(f'<section class="cat-grp" id="cat-{c}" data-cat="{c}"><h3>{label} '
                       f'<span>{len(items)}</span></h3><div class="cat-grid">{cells}</div></section>')
     body = f"""
       <div class="cat-bar">
